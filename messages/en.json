@@ -1,0 +1,92 @@
+{
+  "nav": ["How it works", "Mobile app", "Pricing", "FAQ", "Contact"],
+  "login": "Log in",
+  "ctaNav": "Try for free",
+  "badge": "Platform for online fitness coaches",
+  "h1": "More clients.<br><span class=\"grad\">Less chaos.</span>",
+  "sub": "More clients, same you. UnitLift automates everything in between — from sending plans to tracking payments — while you do what you do best.",
+  "btn1": "Get started free →",
+  "btn2": "See how it works",
+  "note": "No credit card · Setup in 5 minutes · Cancel anytime",
+  "trust": ["GDPR compliant", "iOS & Android for clients", "Setup in 5 minutes", "Made in Croatia", "Encrypted storage"],
+  "howLbl": "How it works",
+  "howTit": "Three steps to a complete coaching system",
+  "howSub": "From registration to your first client in under 10 minutes.",
+  "steps": [
+    { "t": "Set up your profile", "d": "Register and customize training and nutrition parameters to match your coaching approach. Fast and intuitive." },
+    { "t": "Add clients", "d": "Invite clients by email. They download the mobile app and instantly have access to all their plans." },
+    { "t": "Coach and track", "d": "Create plans, track progress through check-ins and communicate — all from one interface." }
+  ],
+  "mobLbl": "Mobile app",
+  "mobTit": "For coaches and clients.<br>Always available.",
+  "mobSub": "The coach tracks everything from their phone. The client has their own app with plans, check-ins and chat.",
+  "mobFeats": [
+    { "t": "Coach — mobile overview", "d": "Check check-ins, finances and client messages directly from your phone. Add the app to your home screen." },
+    { "t": "Client — check-in in 2 minutes", "d": "Client opens the app, fills in the check-in and saves. You instantly see progress. Automatic weekly reminder." },
+    { "t": "Direct in-app communication", "d": "All messages in one place. No more messy WhatsApp conversations." }
+  ],
+  "priceLbl": "Pricing",
+  "priceTit": "Transparent pricing.<br>No hidden costs.",
+  "priceSub": "Choose the plan that fits your business. Change anytime.",
+  "ptM": "Monthly",
+  "ptY": "Yearly",
+  "trialT": "14 days free — card not charged immediately",
+  "trialS": "Try all features. Cancel anytime, no penalties.",
+  "pop": "Most popular",
+  "tiers": [
+    {
+      "name": "Starter", "price": 29, "priceY": 290, "save": "Save €58 per year",
+      "clients": "Up to 5 active clients",
+      "feats": ["Up to 5 active clients", "Training and nutrition plans", "Check-in tracking", "Client chat", "Client mobile app"],
+      "btn": "Get started free"
+    },
+    {
+      "name": "Pro", "price": 59, "priceY": 590, "save": "Save €118 per year",
+      "clients": "Up to 20 active clients",
+      "feats": ["Up to 20 active clients", "Everything in Starter", "Custom check-in fields", "Financial reports", "Push notifications", "Priority support"],
+      "btn": "Get started free"
+    },
+    {
+      "name": "Scale", "price": 99, "priceY": 990, "save": "Save €198 per year",
+      "clients": "Unlimited clients",
+      "feats": ["Unlimited clients", "Everything in Pro", "Advanced analytics", "White label (coming soon)", "Dedicated account manager"],
+      "btn": "Contact us"
+    }
+  ],
+  "priceNote": "All plans include a 14-day free trial. No commitment.",
+  "testLbl": "Reviews",
+  "testTit": "What coaches and clients say",
+  "testimonials": [
+    { "q": "Finally one place for everything. Before I used WhatsApp, Excel and a bunch of random apps — now everything is in one place and I save an hour a day.", "name": "Mark K.", "role": "Online fitness coach, Zagreb", "badge": "Coach" },
+    { "q": "As a client, I love how everything works through one app. My coach sends me a plan, I fill in the check-in and he immediately sees my progress. No more messages everywhere.", "name": "Ana M.", "role": "Client, Zagreb", "badge": "Client" },
+    { "q": "I went from 8 to 15 clients without extra stress. The check-in system automatically reminds clients and I immediately see who's late.", "name": "Tom N.", "role": "Strength coach, Osijek", "badge": "Coach" },
+    { "q": "I've been using UnitLift for 4 months and the difference is huge. I have access to all my plans in one app, my coach sees every check-in and communication is great.", "name": "Ivan B.", "role": "Client, Rijeka", "badge": "Client" },
+    { "q": "Clients are thrilled with the mobile app. They have all plans instantly available and can send check-ins directly from the app. Much more professional.", "name": "Sara P.", "role": "Personal trainer, Split", "badge": "Coach" },
+    { "q": "Weekly check-ins changed my approach to training. My coach sees where I'm struggling and immediately adjusts the plan. It feels like having a personal trainer in my pocket.", "name": "Petra L.", "role": "Client, Zadar", "badge": "Client" },
+    { "q": "Administration reduced to a minimum. Plans, payments, communication — all in one. Clients love having their own app, and I have more time for the actual work.", "name": "Luke H.", "role": "Fitness coach, Varaždin", "badge": "Coach" },
+    { "q": "Financial reports and payment tracking saved my sanity. I know exactly who has paid and when each subscription expires. I recommend it to all coaches.", "name": "Maja R.", "role": "Personal trainer, Dubrovnik", "badge": "Coach" }
+  ],
+  "faqLbl": "FAQ",
+  "faqTit": "Frequently asked questions",
+  "faqs": [
+    { "q": "Is a credit card required to register?", "a": "No. Try UnitLift for 14 days completely free, without entering credit card details. A card is only required when you decide to continue with a paid plan." },
+    { "q": "Do my clients have to pay for the app?", "a": "No. The client app is completely free to download and use on iOS and Android. Only you as the coach pay, for platform access." },
+    { "q": "How long does setup take?", "a": "Less than 5 minutes. Registration is fast, and you can invite your first client the same day." },
+    { "q": "Does UnitLift work on mobile for coaches?", "a": "Yes. The web app is fully responsive — you can add it to your phone's home screen as an app. Clients have a dedicated iOS and Android app." },
+    { "q": "Can I have my own logo and colors?", "a": "Yes, on Pro and Scale plans. Add your logo, choose primary colors and connect social networks. Clients see your brand." },
+    { "q": "Can I cancel my subscription at any time?", "a": "Yes, with no penalties. You can cancel at any time from your account settings." }
+  ],
+  "ctaT": "How many clients can you manage<br>when you don't spend half the day on admin?",
+  "ctaS": "Coaches on UnitLift add an average of 4–6 new clients in their first quarter. Free for 14 days.",
+  "ctaB1": "Get started free →",
+  "ctaB2": "Contact us",
+  "ctaN": "No credit card · Cancel anytime · GDPR compliant",
+  "tagline": "Coaching platform for online fitness coaches. More clients, less chaos.",
+  "payLbl": "Payments via:",
+  "copy": "© 2026 UnitDuo, owner Leon Lišinski. All rights reserved.",
+  "footerCols": [
+    { "title": "Platform", "links": [["How it works", "#kako-radi"], ["Mobile app", "#funkcije"], ["Pricing", "#cijene"], ["Sign up", "https://app.unitlift.com/register"], ["Log in", "https://app.unitlift.com/login"]] },
+    { "title": "Support", "links": [["Blog", "/en/blog"], ["FAQ", "/en/faq"], ["Contact", "/en/kontakt"], ["Email support", "mailto:support@unitlift.com"]] },
+    { "title": "Legal", "links": [["Privacy Policy", "/en/privatnost"], ["Terms of Service", "/en/uvjeti"], ["Account deletion", "/en/privatnost#brisanje-racuna"], ["GDPR", "/en/privatnost"]] }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "nav": ["Kako radi", "Mobilna app", "Cijene", "FAQ", "Kontakt"],
+  "login": "Prijava",
+  "ctaNav": "Isprobaj besplatno",
+  "badge": "Platforma za online fitness trenere",
+  "h1": "Više klijenata.<br><span class=\"grad\">Manje kaosa.</span>",
+  "sub": "Više klijenata, isti ti. UnitLift automatizira sve između — od slanja planova do praćenja plaćanja — dok ti radiš što znaš najbolje.",
+  "btn1": "Kreni besplatno →",
+  "btn2": "Pogledaj kako radi",
+  "note": "Bez kreditne kartice · Postavljanje za 5 minuta · Otkaži kad hoćeš",
+  "trust": ["GDPR sukladan", "iOS & Android za klijente", "Postavljanje za 5 minuta", "Napravljeno u Hrvatskoj", "Enkriptirana pohrana"],
+  "howLbl": "Kako radi",
+  "howTit": "Tri koraka do potpunog coaching sistema",
+  "howSub": "Od registracije do prvog klijenta za manje od 10 minuta.",
+  "steps": [
+    { "t": "Postavi profil", "d": "Registriraj se i prilagodi parametre treninga i prehrane prema svom coaching pristupu. Brzo i intuitivno." },
+    { "t": "Dodaj klijente", "d": "Pozovi klijente putem e-maila. Oni preuzmu mobilnu aplikaciju i odmah imaju pristup svim planovima." },
+    { "t": "Vodi i prati", "d": "Kreiraj planove, prati napredak kroz check-ine i komuniciraj — sve iz jednog sučelja." }
+  ],
+  "mobLbl": "Mobilna app",
+  "mobTit": "Za trenere i klijente.<br>Uvijek dostupno.",
+  "mobSub": "Trener prati sve s mobitela. Klijent ima vlastitu app s planovima, check-inovima i chatom.",
+  "mobFeats": [
+    { "t": "Trener — mobilni pregled", "d": "Provjeri check-ine, financije i poruke klijenata direktno s mobitela. Dodaj app na početni ekran." },
+    { "t": "Klijent — check-in za 2 minute", "d": "Klijent otvori app, popuni check-in i spremi. Ti odmah vidiš napredak. Automatski podsjetnik tjedno." },
+    { "t": "Direktna komunikacija u appu", "d": "Sve poruke na jednom mjestu. Nema više zbrkanih WhatsApp razgovora." }
+  ],
+  "priceLbl": "Cijene",
+  "priceTit": "Transparentne cijene.<br>Bez skrivenih troškova.",
+  "priceSub": "Odaberi plan koji odgovara tvom biznisu. Promijeni u bilo koje vrijeme.",
+  "ptM": "Mjesečno",
+  "ptY": "Godišnje",
+  "trialT": "14 dana besplatno — kartica se ne naplaćuje odmah",
+  "trialS": "Isprobaj sve funkcije. Otkaži kad hoćeš, bez penala.",
+  "pop": "Najpopularniji",
+  "tiers": [
+    {
+      "name": "Starter", "price": 29, "priceY": 290, "save": "Uštedi €58 godišnje",
+      "clients": "Do 5 aktivnih klijenata",
+      "feats": ["Do 5 aktivnih klijenata", "Planovi treninga i prehrane", "Check-in praćenje", "Chat s klijentima", "Mobilna app za klijente"],
+      "btn": "Kreni besplatno"
+    },
+    {
+      "name": "Pro", "price": 59, "priceY": 590, "save": "Uštedi €118 godišnje",
+      "clients": "Do 20 aktivnih klijenata",
+      "feats": ["Do 20 aktivnih klijenata", "Sve iz Starter plana", "Prilagodljivi check-in parametri", "Financijski izvještaji", "Push obavijesti", "Prioritetna podrška"],
+      "btn": "Kreni besplatno"
+    },
+    {
+      "name": "Scale", "price": 99, "priceY": 990, "save": "Uštedi €198 godišnje",
+      "clients": "Neograničeni klijenti",
+      "feats": ["Neograničeni klijenti", "Sve iz Pro plana", "Napredna analitika", "Bijeli branding (uskoro)", "Dedicirani account manager"],
+      "btn": "Kontaktiraj nas"
+    }
+  ],
+  "priceNote": "Svi planovi uključuju 14-dnevno besplatno probno razdoblje. Bez obveze.",
+  "testLbl": "Recenzije",
+  "testTit": "Što kažu treneri i klijenti",
+  "testimonials": [
+    { "q": "Konačno imamo jedno mjesto za sve. Prije sam koristio WhatsApp, Excel i par random appova — sada je sve na jednom mjestu i štedim sat vremena dnevno.", "name": "Marko K.", "role": "Online fitness trener, Zagreb", "badge": "Trener" },
+    { "q": "Kao klijent, obožavam kako sve funkcionira kroz jednu app. Trener mi pošalje plan, ja popunim check-in i on odmah vidi napredak. Nema više poruka na sve strane.", "name": "Ana M.", "role": "Klijent, Zagreb", "badge": "Klijent" },
+    { "q": "Prešao sam s 8 na 15 klijenata bez dodatnog stresa. Check-in sustav automatski podsjeća klijente i ja odmah vidim tko kasni.", "name": "Tomislav N.", "role": "Strength coach, Osijek", "badge": "Trener" },
+    { "q": "Koristim UnitLift već 4 mjeseca i razlika je ogromna. Imam pristup svim planovima u jednoj app, trener vidi svaki moj check-in i komunikacija je odlična.", "name": "Ivan B.", "role": "Klijent, Rijeka", "badge": "Klijent" },
+    { "q": "Klijenti su oduševljeni mobilnom aplikacijom. Imaju sve planove odmah dostupne i mogu mi slati check-ine direktno iz appa. Mnogo profesionalnije.", "name": "Sara P.", "role": "Personal trainer, Split", "badge": "Trener" },
+    { "q": "Tjedni check-ini su mi promijenili pristup treningu. Trener vidi gdje zastajujem i odmah prilagodi plan. Osjećam se kao da imam osobnog trenera u džepu.", "name": "Petra L.", "role": "Klijent, Zadar", "badge": "Klijent" },
+    { "q": "Administracija svedena na minimum. Planovi, plaćanja, komunikacija — sve u jednom. Klijentima je super jer imaju svoju app, a meni ostaje više vremena za pravi posao.", "name": "Luka H.", "role": "Fitness trener, Varaždin", "badge": "Trener" },
+    { "q": "Financijski izvještaji i praćenje plaćanja su mi spasili živce. Znam točno tko je platio i kad komu ističe pretplata. Preporučujem svim trenerima.", "name": "Maja R.", "role": "Personal trainer, Dubrovnik", "badge": "Trener" }
+  ],
+  "faqLbl": "FAQ",
+  "faqTit": "Često postavljana pitanja",
+  "faqs": [
+    { "q": "Je li potrebna kreditna kartica za registraciju?", "a": "Ne. Isprobaj UnitLift 14 dana potpuno besplatno, bez unosa kreditne kartice. Kartica se traži tek kad odlučiš nastaviti s plaćenim planom." },
+    { "q": "Moraju li moji klijenti plaćati za app?", "a": "Ne. Klijentska app je potpuno besplatna za preuzimanje i korištenje na iOS i Android. Plaćaš samo ti kao trener, za pristup platformi." },
+    { "q": "Koliko vremena treba za postavljanje?", "a": "Manje od 5 minuta. Registracija je brza, a prvog klijenta možeš pozvati isti dan." },
+    { "q": "Radi li UnitLift na mobitelu za trenere?", "a": "Da. Web aplikacija je potpuno responzivna — možeš je dodati na početni ekran mobitela kao app. Klijenti imaju zasebnu iOS i Android app." },
+    { "q": "Mogu li imati vlastiti logo i boje?", "a": "Da, na Pro i Scale planovima. Dodaš logo, odabereš primarne boje i povežeš društvene mreže. Klijenti vide tvoj brand." },
+    { "q": "Mogu li otkazati pretplatu u bilo koje vrijeme?", "a": "Da, bez ikakvih penala. Otkazivanje je moguće u bilo koje vrijeme iz postavki računa." }
+  ],
+  "ctaT": "Koliko klijenata možeš voditi<br>kad ne trošiš pola dana na administraciju?",
+  "ctaS": "Treneri na UnitLiftu prosječno dodaju 4–6 novih klijenata u prvom kvartalu. Besplatno 14 dana.",
+  "ctaB1": "Kreni besplatno →",
+  "ctaB2": "Kontaktiraj nas",
+  "ctaN": "Bez kreditne kartice · Otkaži kada hoćeš · GDPR sukladan",
+  "tagline": "Coaching platforma za online fitness trenere. Više klijenata, manje kaosa.",
+  "payLbl": "Plaćanje putem:",
+  "copy": "© 2026 UnitDuo, vl. Leon Lišinski. Sva prava pridržana.",
+  "footerCols": [
+    { "title": "Platforma", "links": [["Kako radi", "#kako-radi"], ["Mobilna app", "#funkcije"], ["Cijene", "#cijene"], ["Registracija", "https://app.unitlift.com/register"], ["Prijava", "https://app.unitlift.com/login"]] },
+    { "title": "Podrška", "links": [["Blog", "/hr/blog"], ["FAQ", "/hr/faq"], ["Kontakt", "/hr/kontakt"], ["Email podrška", "mailto:support@unitlift.com"]] },
+    { "title": "Pravno", "links": [["Politika privatnosti", "/hr/privatnost"], ["Uvjeti korištenja", "/hr/uvjeti"], ["Brisanje računa", "/hr/privatnost#brisanje-racuna"], ["GDPR", "/hr/privatnost"]] }
+  ]
+}
