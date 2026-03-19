@@ -9,6 +9,7 @@ import Testimonials from '@/components/landing/Testimonials'
 import FAQ from '@/components/landing/FAQ'
 import CTA from '@/components/landing/CTA'
 import Footer from '@/components/landing/Footer'
+import WaveDivider from '@/components/landing/WaveDivider'
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -41,10 +42,15 @@ export default function LandingPage() {
       <Navbar />
       <Hero />
       <TrustBar />
+      <WaveDivider from="#eef4ff" to="#f5f7ff" />
       <HowItWorks />
+      <WaveDivider from="#f5f7ff" to="#eceffe" />
       <MobileApp />
+      <WaveDivider from="#eceffe" to="#ffffff" />
       <Pricing />
+      <WaveDivider from="#f5f9ff" to="#eceffe" />
       <Testimonials />
+      <WaveDivider from="#f5f7ff" to="#eceffe" />
       <FAQ />
       <CTA />
       <Footer />

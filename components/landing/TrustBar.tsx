@@ -14,12 +14,22 @@ export default function TrustBar() {
 
   return (
     <div className="trust-bar">
-      {trust.map((label, i) => (
-        <div key={i} className="ti">
+      {/* trust-bar-inner: display:contents on desktop (transparent), flex marquee on mobile */}
+      <div className="trust-bar-inner">
+        {trust.map((label, i) => (
+          <div key={i} className="ti">
             <span className="ti-ico">{icons[i]}</span>
             <span>{label}</span>
-        </div>
-      ))}
+          </div>
+        ))}
+        {/* Duplicate set for seamless mobile marquee loop */}
+        {trust.map((label, i) => (
+          <div key={`d${i}`} className="ti ti-dup" aria-hidden="true">
+            <span className="ti-ico">{icons[i]}</span>
+            <span>{label}</span>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

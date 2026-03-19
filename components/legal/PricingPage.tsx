@@ -88,9 +88,30 @@ export default function PricingPage() {
         },
       ]
 
-  const advantages = isHr
-    ? ['Klijenti dobiju podsjetnik — ti ne moraš ništa slati ručno', 'Mobilna app za klijente (besplatna)', 'Vidi odmah tko je platio i koliko si zaradio', 'Vlastiti branding (Pro i Scale)', 'Planovi, plaćanja i komunikacija — na jednom mjestu']
-    : ['Clients get reminders — you never send anything manually', 'Client mobile app (free)', 'See instantly who paid and how much you earned', 'Custom branding (Pro & Scale)', 'Plans, payments and communication — in one place']
+  const IcoCheckin = <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+  const IcoPhone   = <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" strokeWidth="2.5"/></svg>
+  const IcoMoney   = <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+  const IcoApps    = <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 17h7M17 14v7"/></svg>
+  const IcoChart   = <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+  const IcoLock    = <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+
+  const advCardsHr = [
+    { icon: IcoCheckin, title: 'Check-in praćenje bez muke', desc: 'Klijent ispuni check-in u dvije minute. Ti odmah vidiš napredak — bez jedne poruke, bez čekanja, bez traženja po WhatsAppu.' },
+    { icon: IcoPhone,   title: 'Jedna app za sve', desc: 'Planovi, prehrana, komunikacija, check-ini — sve na jednom mjestu. Zaboravi na Excel, WhatsApp, PDF i ostale kaos-alate.' },
+    { icon: IcoMoney,   title: 'Praćenje plaćanja u sekundi', desc: 'Vidiš točno tko je platio, tko kasni i koliko si zaradio ovaj mjesec. Bez ručnog praćenja, bez neugodnih podsjetnika.' },
+    { icon: IcoApps,    title: 'Klijentima jednostavnije', desc: 'Klijent preuzme jednu app i sve je tamo. Nema registracija na 3 platforme, nema linkova po SMS-u, nema zbunjenosti.' },
+    { icon: IcoChart,   title: 'Napredak koji se vidi', desc: 'Sve mjere, foto check-ini i komentari arhivirani automatski. Lako prilagodi program na temelju podataka, ne nagađanja.' },
+    { icon: IcoLock,    title: 'Manje app, više mira', desc: 'Jedna pretplata. Jedan login. Sve u jednom. Nema više žongliranja s desecima alata i plaćanja na svakom koraku.' },
+  ]
+
+  const advCardsEn = [
+    { icon: IcoCheckin, title: 'Check-in tracking without the hassle', desc: 'Client fills in a check-in in two minutes. You instantly see progress — no messages, no waiting, no digging through WhatsApp.' },
+    { icon: IcoPhone,   title: 'One app for everything', desc: 'Plans, nutrition, communication, check-ins — all in one place. Forget Excel, WhatsApp, PDFs and other chaos tools.' },
+    { icon: IcoMoney,   title: 'Payment tracking in seconds', desc: 'See exactly who paid, who\'s late and how much you earned this month. No manual tracking, no awkward reminders.' },
+    { icon: IcoApps,    title: 'Less hassle for clients', desc: 'Client downloads one app and everything is there. No registrations on 3 platforms, no links over SMS, no confusion.' },
+    { icon: IcoChart,   title: 'Progress that shows', desc: 'All measurements, photo check-ins and comments archived automatically. Adjust programs based on data, not guessing.' },
+    { icon: IcoLock,    title: 'Fewer apps, more peace of mind', desc: 'One subscription. One login. All in one. No more juggling dozens of tools and paying at every step.' },
+  ]
 
   return (
     <div className="legal-root">
@@ -209,16 +230,37 @@ export default function PricingPage() {
             {isHr ? 'Svi planovi uključuju 14-dnevno besplatno probno razdoblje. Kartica potrebna za aktivaciju.' : 'All plans include a 14-day free trial. Card required for activation.'}
           </p>
 
+          {/* Stats row */}
+          <div className="pp-stats-row">
+            {(isHr
+              ? [['5 min', 'postavljanje profila'], ['14 dana', 'besplatno probno'], ['Fiksna cijena', 'bez skrivenih troškova'], ['0 €', 'klijentska app']]
+              : [['5 min', 'profile setup'], ['14 days', 'free trial'], ['Fixed price', 'no hidden costs'], ['€ 0', 'client app']]
+            ).map(([val, lbl]) => (
+              <div key={lbl} className="pp-stat">
+                <span className="pp-stat-val">{val}</span>
+                <span className="pp-stat-lbl">{lbl}</span>
+              </div>
+            ))}
+          </div>
+
           {/* Advantages */}
           <div className="pp-advantages" style={{ background: '#fff', border: '1px solid var(--lb)' }}>
-            <h2 className="pp-adv-h2" style={{ color: 'var(--lt)' }}>
+            <h2 className="pp-adv-h2" style={{ color: 'var(--lt)', marginBottom: '8px' }}>
               {isHr ? 'Zašto treneri biraju UnitLift' : 'Why coaches choose UnitLift'}
             </h2>
-            <div className="pp-adv-grid">
-              {advantages.map((adv, i) => (
-                <div key={i} className="pp-adv-item">
-                  <span className="pp-adv-ico">✓</span>
-                  <span>{adv}</span>
+            <p style={{ color: 'var(--ls)', fontSize: '.88rem', marginBottom: '28px', lineHeight: 1.6 }}>
+              {isHr
+                ? 'Sve što trebaš za profesionalan online coaching — bez Excela, WhatsAppa i gomile PDF-ova.'
+                : 'Everything you need for professional online coaching — no Excel, WhatsApp or endless PDFs.'}
+            </p>
+            <div className="pp-adv-grid-rich">
+              {(isHr ? advCardsHr : advCardsEn).map(({ icon, title, desc }) => (
+                <div key={title} className="pp-adv-card">
+                  <div className="pp-adv-icon">{icon}</div>
+                  <div>
+                    <div className="pp-adv-card-title">{title}</div>
+                    <div className="pp-adv-card-desc">{desc}</div>
+                  </div>
                 </div>
               ))}
             </div>

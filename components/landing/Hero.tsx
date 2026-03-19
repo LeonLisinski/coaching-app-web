@@ -1,9 +1,14 @@
 import { useTranslations, useLocale } from 'next-intl'
 import AppShowcase from './AppShowcase'
 
+const featsHr = ['Pregled klijenata', 'Planovi prehrane', 'Planovi treninga', 'Check-in praćenje', 'Galerija fotografija', 'Chat s klijentima']
+const featsEn = ['Client overview', 'Nutrition plans', 'Training plans', 'Check-in tracking', 'Photo gallery', 'Client chat']
+
 export default function Hero() {
   const t = useTranslations()
   const locale = useLocale()
+  const isHr = locale === 'hr'
+  const feats = isHr ? featsHr : featsEn
 
   return (
     <section className="hero">
@@ -35,7 +40,22 @@ export default function Hero() {
         <p className="hnote">{t('note')}</p>
       </div>
 
-      <AppShowcase />
+      {/* Desktop: app mockup slideshow */}
+      <div className="hero-showcase-desktop">
+        <AppShowcase />
+      </div>
+
+      {/* Mobile only: compact feature checklist */}
+      <div className="hero-feats-wrap">
+        <div className="hero-feats">
+          {feats.map((f) => (
+            <div key={f} className="hero-feat">
+              <span className="hfeat-check">✓</span>
+              <span className="hfeat-lbl">{f}</span>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }
