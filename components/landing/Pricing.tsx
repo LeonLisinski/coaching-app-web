@@ -5,7 +5,8 @@ import { useTranslations } from 'next-intl'
 import { useReveal } from '@/hooks/useReveal'
 
 const MONTHLY_PRICES = [29, 59, 99]
-const YEARLY_PRICES = [24, 49, 82]
+const YEARLY_PRICES  = [24, 49, 82]
+const PLANS          = ['starter', 'pro', 'scale'] as const
 
 export default function Pricing() {
   const t = useTranslations()
@@ -13,16 +14,31 @@ export default function Pricing() {
     name: string; price: number; priceY: number; save: string
     clients: string; feats: string[]; btn: string
   }>
-  const [yearly, setYearly] = useState(false)
+  const [yearly, setYearly]           = useState(false)
+  const [loading, setLoading]         = useState<string | null>(null)
   const ref = useReveal<HTMLElement>()
 
-  const tierClass = ['basic', 'pop', 'elite']
-  const tierLink = [
-    'https://app.unitlift.com/register',
-    'https://app.unitlift.com/register',
-    'mailto:support@unitlift.com',
-  ]
+  const tierClass    = ['basic', 'pop', 'elite']
   const tierBtnClass = ['btn-g', 'btn-p', 'btn-g']
+
+  const handleCheckout = async (plan: string) => {
+    setLoading(plan)
+    try {
+      const res = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan }),
+      })
+      const { url, error } = await res.json()
+      if (error || !url) throw new Error(error || 'No URL')
+      window.location.href = url
+    } catch (err) {
+      console.error('Checkout error:', err)
+      alert('Greška pri otvaranju plaćanja. Pokušaj ponovo.')
+    } finally {
+      setLoading(null)
+    }
+  }
 
   return (
     <section className="sd sp" id="cijene" ref={ref}>
@@ -74,9 +90,14 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a href={tierLink[i]} className={`btn ${tierBtnClass[i]} btn-fw`}>
-                {tier.btn}
-              </a>
+              <button
+                onClick={() => handleCheckout(PLANS[i])}
+                disabled={loading !== null}
+                className={`btn ${tierBtnClass[i]} btn-fw`}
+                style={{ cursor: loading ? 'wait' : 'pointer', opacity: loading && loading !== PLANS[i] ? 0.6 : 1 }}
+              >
+                {loading === PLANS[i] ? '...' : tier.btn}
+              </button>
             </div>
           ))}
         </div>
