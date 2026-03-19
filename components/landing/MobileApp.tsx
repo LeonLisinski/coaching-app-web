@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl'
 import { useReveal } from '@/hooks/useReveal'
 
 const featIcons = [
-  { bg: 'rgba(34,51,238,.1)', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2233ee" strokeWidth="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> },
+  { bg: 'rgba(0,102,255,.1)', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0066FF" strokeWidth="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> },
   { bg: 'rgba(26,158,90,.1)', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a9e5a" strokeWidth="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> },
   { bg: 'rgba(224,96,16,.1)', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e06010" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> },
 ]
@@ -40,7 +40,7 @@ export default function MobileApp() {
                 <div className="mob-card"><div className="mob-card-title">Petra Kovač</div><div className="mob-card-sub" style={{ color: '#e06010' }}>Kasni check-in ⚠</div></div>
                 <div style={{ marginTop: '8px', padding: '8px', background: '#fff', borderRadius: '7px', border: '1px solid #dde2f5' }}>
                   <div style={{ fontSize: '.58rem', fontWeight: 700, color: '#0a0a20', marginBottom: '4px' }}>Prihod ovaj mj.</div>
-                  <div style={{ fontSize: '1rem', fontWeight: 800, color: '#2233ee' }}>1.840€</div>
+                  <div style={{ fontSize: '1rem', fontWeight: 800, color: '#0066FF' }}>1.840€</div>
                   <div style={{ fontSize: '.54rem', color: '#1a9e5a', marginTop: '2px' }}>12/12 klijenata platilo</div>
                 </div>
               </div>
@@ -62,7 +62,7 @@ export default function MobileApp() {
                 <div className="mob-card" style={{ marginBottom: '5px' }}><div className="mob-card-title">Plan prehrane</div><div className="mob-card-sub">3200 kcal · Bulk program</div></div>
                 <div style={{ marginTop: '6px', padding: '8px', background: '#fff', borderRadius: '7px', border: '1px solid #dde2f5' }}>
                   <div style={{ fontSize: '.58rem', fontWeight: 700, color: '#0a0a20', marginBottom: '6px' }}>Tjedni check-in</div>
-                  <div style={{ background: '#2233ee', borderRadius: '6px', padding: '5px 10px', textAlign: 'center', fontSize: '.6rem', fontWeight: 700, color: '#fff' }}>Predaj check-in →</div>
+                  <div style={{ background: '#0066FF', borderRadius: '6px', padding: '5px 10px', textAlign: 'center', fontSize: '.6rem', fontWeight: 700, color: '#fff' }}>Predaj check-in →</div>
                 </div>
               </div>
               <div className="mob-nav mob-nav3">
@@ -88,13 +88,22 @@ export default function MobileApp() {
               ))}
             </div>
             <div className="mob-store-row">
-              <a href="#" className="mob-store-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><path d="M12 2c-1.5 0-4 1.5-6.5 5.5C3 12 3 16 3 18s1 4 3 4c1 0 2-.5 3-1 1 .5 2 1 3 1s2-.5 3-1c1 .5 2 1 3 1 2 0 3-2 3-4s0-6-2.5-10.5C15.5 3.5 13.5 2 12 2z"/><path d="M12 2v8"/></svg>
-                <div className="mob-store-txt"><span>Preuzmi na</span><span>App Store</span></div>
+              <a href="#" className="mob-store-btn" aria-label="Download on the App Store">
+                {/* Apple App Store badge */}
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                </svg>
+                <div className="mob-store-txt"><span>Download on the</span><span>App Store</span></div>
               </a>
-              <a href="#" className="mob-store-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                <div className="mob-store-txt"><span>Preuzmi na</span><span>Google Play</span></div>
+              <a href="#" className="mob-store-btn" aria-label="Get it on Google Play">
+                {/* Google Play badge */}
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.18 23.28c.3.16.64.19.97.09l11.4-6.58-2.53-2.54-9.84 9z" fill="#EA4335"/>
+                  <path d="M20.8 10.35L17.6 8.5l-2.83 2.83 2.83 2.83 3.22-1.86a1.8 1.8 0 0 0 0-3.15v.2z" fill="#FBBC04"/>
+                  <path d="M3.18.72a1.8 1.8 0 0 0-.68 1.42v19.72a1.8 1.8 0 0 0 .68 1.42l.1.09 11.04-11.04v-.26L3.28.63l-.1.09z" fill="#4285F4"/>
+                  <path d="M15.55 14.79l-2.83-2.83-9.54 9.54c.37.27.87.3 1.27.07l11.1-6.78z" fill="#34A853"/>
+                </svg>
+                <div className="mob-store-txt"><span>Get it on</span><span>Google Play</span></div>
               </a>
             </div>
           </div>

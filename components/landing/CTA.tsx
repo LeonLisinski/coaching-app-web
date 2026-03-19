@@ -1,7 +1,8 @@
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 
 export default function CTA() {
   const t = useTranslations()
+  const locale = useLocale()
 
   return (
     <section className="ctasec" id="kontakt">
@@ -11,7 +12,7 @@ export default function CTA() {
       />
       <p className="ctas">{t('ctaS')}</p>
       <div className="ctabtns">
-        <a href="https://app.unitlift.com/register" className="btn btn-p btn-xl">
+        <a href={`/${locale}#cijene`} className="btn btn-p btn-xl">
           {t('ctaB1')}
         </a>
         <a href="mailto:support@unitlift.com" className="btn btn-g btn-lg">

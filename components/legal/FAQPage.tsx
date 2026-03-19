@@ -26,8 +26,8 @@ export default function FAQPage({ data }: { data: FAQData }) {
   const [openItem, setOpenItem] = useState<string | null>(null)
 
   const navLinks = isHr
-    ? [['Kako radi', '#kako-radi'], ['Mobilna app', '#funkcije'], ['Cijene', '#cijene'], ['FAQ', '#faq']]
-    : [['How it works', '#kako-radi'], ['Mobile app', '#funkcije'], ['Pricing', '#cijene'], ['FAQ', '#faq']]
+    ? [['Kako radi', `/${locale}/kako-radi`], ['Mobilna app', `/${locale}#funkcije`], ['Cijene', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
+    : [['How it works', `/${locale}/kako-radi`], ['Mobile app', `/${locale}#funkcije`], ['Pricing', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -78,7 +78,7 @@ export default function FAQPage({ data }: { data: FAQData }) {
           <a href="https://app.unitlift.com/login" className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
             {isHr ? 'Prijava' : 'Login'}
           </a>
-          <a href="https://app.unitlift.com/register" className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
+          <a href={`/${locale}/cijene`} className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
             {isHr ? 'Isprobaj besplatno' : 'Try for free'}
           </a>
           <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label="Menu">
@@ -89,7 +89,7 @@ export default function FAQPage({ data }: { data: FAQData }) {
 
       <div className={`mobmenu${menuOpen ? ' open' : ''}`}>
         {navLinks.map(([label, href]) => (
-          <a key={label} href={`/${locale}${href}`} onClick={() => setMenuOpen(false)}>{label}</a>
+          <a key={label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
         ))}
         <div className="mobc">
           <a href={`/${locale}`} className="btn btn-g btn-fw" onClick={() => setMenuOpen(false)}>

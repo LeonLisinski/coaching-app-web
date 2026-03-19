@@ -28,8 +28,8 @@ export default function LegalPage({ doc, docType }: LegalPageProps) {
   const currentSlug = docType === 'terms' ? termsSlug : privacySlug
 
   const mainNavLinks = isHr
-    ? [['Kako radi', '#kako-radi'], ['Mobilna app', '#funkcije'], ['Cijene', '#cijene'], ['FAQ', '#faq']]
-    : [['How it works', '#kako-radi'], ['Mobile app', '#funkcije'], ['Pricing', '#cijene'], ['FAQ', '#faq']]
+    ? [['Kako radi', `/${locale}/kako-radi`], ['Mobilna app', `/${locale}#funkcije`], ['Cijene', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
+    : [['How it works', `/${locale}/kako-radi`], ['Mobile app', `/${locale}#funkcije`], ['Pricing', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -71,7 +71,7 @@ export default function LegalPage({ doc, docType }: LegalPageProps) {
         <ul className="navlinks">
           {mainNavLinks.map(([label, href]) => (
             <li key={label}>
-              <a href={`/${locale}${href}`}>{label}</a>
+              <a href={href}>{label}</a>
             </li>
           ))}
         </ul>
@@ -89,7 +89,7 @@ export default function LegalPage({ doc, docType }: LegalPageProps) {
           <a href="https://app.unitlift.com/login" className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
             {isHr ? 'Prijava' : 'Login'}
           </a>
-          <a href="https://app.unitlift.com/register" className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
+          <a href={`/${locale}/cijene`} className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
             {isHr ? 'Isprobaj besplatno' : 'Try for free'}
           </a>
           <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label="Menu">
@@ -101,7 +101,7 @@ export default function LegalPage({ doc, docType }: LegalPageProps) {
       {/* Mobile menu */}
       <div className={`mobmenu${menuOpen ? ' open' : ''}`}>
         {mainNavLinks.map(([label, href]) => (
-          <a key={label} href={`/${locale}${href}`} onClick={() => setMenuOpen(false)}>
+          <a key={label} href={href} onClick={() => setMenuOpen(false)}>
             {label}
           </a>
         ))}

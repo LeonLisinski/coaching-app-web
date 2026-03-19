@@ -39,8 +39,8 @@ export default function BlogPostPage({ post, relatedPosts }: Props) {
   const catColor = categoryColors[post.categorySlug] || '#2233ee'
 
   const navLinks = isHr
-    ? [['Kako radi', '#kako-radi'], ['Mobilna app', '#funkcije'], ['Cijene', '#cijene'], ['FAQ', '#faq']]
-    : [['How it works', '#kako-radi'], ['Mobile app', '#funkcije'], ['Pricing', '#cijene'], ['FAQ', '#faq']]
+    ? [['Kako radi', `/${locale}/kako-radi`], ['Mobilna app', `/${locale}#funkcije`], ['Cijene', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
+    : [['How it works', `/${locale}/kako-radi`], ['Mobile app', `/${locale}#funkcije`], ['Pricing', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -58,7 +58,7 @@ export default function BlogPostPage({ post, relatedPosts }: Props) {
         </Link>
         <ul className="navlinks">
           {navLinks.map(([label, href]) => (
-            <li key={label}><a href={`/${locale}${href}`}>{label}</a></li>
+            <li key={label}><a href={href}>{label}</a></li>
           ))}
         </ul>
         <div className="navact">
@@ -71,7 +71,7 @@ export default function BlogPostPage({ post, relatedPosts }: Props) {
           <a href="https://app.unitlift.com/login" className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
             {isHr ? 'Prijava' : 'Login'}
           </a>
-          <a href="https://app.unitlift.com/register" className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
+          <a href={`/${locale}/cijene`} className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
             {isHr ? 'Isprobaj besplatno' : 'Try for free'}
           </a>
           <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label="Menu">
@@ -82,7 +82,7 @@ export default function BlogPostPage({ post, relatedPosts }: Props) {
 
       <div className={`mobmenu${menuOpen ? ' open' : ''}`}>
         {navLinks.map(([label, href]) => (
-          <a key={label} href={`/${locale}${href}`} onClick={() => setMenuOpen(false)}>{label}</a>
+          <a key={label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
         ))}
         <div className="mobc">
           <a href={`/${locale}`} className="btn btn-g btn-fw" onClick={() => setMenuOpen(false)}>
@@ -181,7 +181,7 @@ export default function BlogPostPage({ post, relatedPosts }: Props) {
                       : 'Try UnitLift free for 14 days and see how the platform can transform your coaching business.'}
                   </div>
                 </div>
-                <a href="https://app.unitlift.com/register" className="btn btn-p" style={{ whiteSpace: 'nowrap', fontSize: '.85rem' }}>
+                <a href={`/${locale}/cijene`} className="btn btn-p" style={{ whiteSpace: 'nowrap', fontSize: '.85rem' }}>
                   {isHr ? 'Isprobaj besplatno →' : 'Try for free →'}
                 </a>
               </div>

@@ -1,5 +1,5 @@
 {
-  "nav": ["How it works", "Mobile app", "Pricing", "FAQ", "Contact"],
+  "nav": ["How it works", "Mobile app", "Pricing", "Blog", "FAQ"],
   "login": "Log in",
   "ctaNav": "Try for free",
   "badge": "Platform for online fitness coaches",
@@ -7,7 +7,7 @@
   "sub": "More clients, same you. UnitLift automates everything in between — from sending plans to tracking payments — while you do what you do best.",
   "btn1": "Get started free →",
   "btn2": "See how it works",
-  "note": "No credit card · Setup in 5 minutes · Cancel anytime",
+  "note": "Card required for activation · No charge for 14 days · Cancel anytime",
   "trust": ["GDPR compliant", "iOS & Android for clients", "Setup in 5 minutes", "Made in Croatia", "Encrypted storage"],
   "howLbl": "How it works",
   "howTit": "Three steps to a complete coaching system",
@@ -26,36 +26,50 @@
     { "t": "Direct in-app communication", "d": "All messages in one place. No more messy WhatsApp conversations." }
   ],
   "priceLbl": "Pricing",
-  "priceTit": "Transparent pricing.<br>No hidden costs.",
-  "priceSub": "Choose the plan that fits your business. Change anytime.",
-  "ptM": "Monthly",
-  "ptY": "Yearly",
-  "trialT": "14 days free — card not charged immediately",
-  "trialS": "Try all features. Cancel anytime, no penalties.",
+  "priceTit": "Which plan suits you?",
+  "priceSub": "All plans include the same features — the only difference is the number of clients you can manage.",
   "pop": "Most popular",
   "tiers": [
     {
-      "name": "Starter", "price": 29, "priceY": 290, "save": "Save €58 per year",
-      "clients": "Up to 5 active clients",
-      "feats": ["Up to 5 active clients", "Training and nutrition plans", "Check-in tracking", "Client chat", "Client mobile app"],
+      "name": "Starter", "price": 29,
+      "clients": "Up to 15 clients",
+      "feats": [
+        "Up to 15 active clients",
+        "Training and nutrition plans",
+        "Check-in tracking with automatic reminders",
+        "Client chat",
+        "Client mobile app (free)",
+        "Financial overview and payment tracking",
+        "Custom tracking parameters"
+      ],
       "btn": "Get started free"
     },
     {
-      "name": "Pro", "price": 59, "priceY": 590, "save": "Save €118 per year",
-      "clients": "Up to 20 active clients",
-      "feats": ["Up to 20 active clients", "Everything in Starter", "Custom check-in fields", "Financial reports", "Push notifications", "Priority support"],
+      "name": "Pro", "price": 59,
+      "clients": "Up to 50 clients",
+      "feats": [
+        "Up to 50 active clients",
+        "Everything in Starter",
+        "Custom logo and colors in client app",
+        "Priority support"
+      ],
       "btn": "Get started free"
     },
     {
-      "name": "Scale", "price": 99, "priceY": 990, "save": "Save €198 per year",
-      "clients": "Unlimited clients",
-      "feats": ["Unlimited clients", "Everything in Pro", "Advanced analytics", "White label (coming soon)", "Dedicated account manager"],
-      "btn": "Contact us"
+      "name": "Scale", "price": 99,
+      "clients": "Up to 150 clients",
+      "feats": [
+        "Up to 150 active clients",
+        "Everything in Pro",
+        "More than 150 clients: +€10/mo per additional 25"
+      ],
+      "btn": "Get started free"
     }
   ],
-  "priceNote": "All plans include a 14-day free trial. No commitment.",
+  "scaleNote": "More than 150 clients? +€10/mo for every additional 25.",
+  "priceNote": "All plans include a 14-day free trial. Card required for activation.",
   "testLbl": "Reviews",
-  "testTit": "What coaches and clients say",
+  "testTit": "Coaches who switched to the system",
   "testimonials": [
     { "q": "Finally one place for everything. Before I used WhatsApp, Excel and a bunch of random apps — now everything is in one place and I save an hour a day.", "name": "Mark K.", "role": "Online fitness coach, Zagreb", "badge": "Coach" },
     { "q": "As a client, I love how everything works through one app. My coach sends me a plan, I fill in the check-in and he immediately sees my progress. No more messages everywhere.", "name": "Ana M.", "role": "Client, Zagreb", "badge": "Client" },
@@ -69,24 +83,24 @@
   "faqLbl": "FAQ",
   "faqTit": "Frequently asked questions",
   "faqs": [
-    { "q": "Is a credit card required to register?", "a": "No. Try UnitLift for 14 days completely free, without entering credit card details. A card is only required when you decide to continue with a paid plan." },
-    { "q": "Do my clients have to pay for the app?", "a": "No. The client app is completely free to download and use on iOS and Android. Only you as the coach pay, for platform access." },
-    { "q": "How long does setup take?", "a": "Less than 5 minutes. Registration is fast, and you can invite your first client the same day." },
-    { "q": "Does UnitLift work on mobile for coaches?", "a": "Yes. The web app is fully responsive — you can add it to your phone's home screen as an app. Clients have a dedicated iOS and Android app." },
-    { "q": "Can I have my own logo and colors?", "a": "Yes, on Pro and Scale plans. Add your logo, choose primary colors and connect social networks. Clients see your brand." },
-    { "q": "Can I cancel my subscription at any time?", "a": "Yes, with no penalties. You can cancel at any time from your account settings." }
+    { "q": "Is a credit card required to register?", "a": "Yes, a card is required to activate the trial period, but you are not charged immediately. Try UnitLift free for 14 days — billing only starts after the trial ends if you choose to continue." },
+    { "q": "Do my clients have to pay for the app?", "a": "No. The client app is completely free to download and use on iOS and Android devices. Only you as the coach pay, for access to the coaching platform." },
+    { "q": "How long does setup take?", "a": "Less than 5 minutes. Registration is fast and intuitive — set up your profile, customize parameters and invite your first client the same day." },
+    { "q": "Does UnitLift work on mobile for coaches?", "a": "Yes. The web app is fully responsive and you can add it to your phone's home screen as an app. Clients have a dedicated native iOS and Android app." },
+    { "q": "Can I have my own logo and colors?", "a": "Yes, branding is available on all plans. In settings, add your logo, choose primary colors and connect your social media profiles. Clients will then see your brand instead of UnitLift's." },
+    { "q": "Can I cancel my subscription at any time?", "a": "Yes, with no penalties or hidden fees. You can cancel at any time from your account settings — no deadlines and no explanation needed." }
   ],
-  "ctaT": "How many clients can you manage<br>when you don't spend half the day on admin?",
-  "ctaS": "Coaches on UnitLift add an average of 4–6 new clients in their first quarter. Free for 14 days.",
+  "ctaT": "Stop wasting time on administration.",
+  "ctaS": "Set up UnitLift in 5 minutes and focus on what you do best — coaching.",
   "ctaB1": "Get started free →",
   "ctaB2": "Contact us",
-  "ctaN": "No credit card · Cancel anytime · GDPR compliant",
+  "ctaN": "Card required for activation · No charge for 14 days · Cancel anytime",
   "tagline": "Coaching platform for online fitness coaches. More clients, less chaos.",
   "payLbl": "Payments via:",
   "copy": "© 2026 UnitDuo, owner Leon Lišinski. All rights reserved.",
   "footerCols": [
-    { "title": "Platform", "links": [["How it works", "#kako-radi"], ["Mobile app", "#funkcije"], ["Pricing", "#cijene"], ["Sign up", "https://app.unitlift.com/register"], ["Log in", "https://app.unitlift.com/login"]] },
-    { "title": "Support", "links": [["Blog", "/en/blog"], ["FAQ", "/en/faq"], ["Contact", "/en/kontakt"], ["Email support", "mailto:support@unitlift.com"]] },
-    { "title": "Legal", "links": [["Privacy Policy", "/en/privatnost"], ["Terms of Service", "/en/uvjeti"], ["Account deletion", "/en/privatnost#brisanje-racuna"], ["GDPR", "/en/privatnost"]] }
+    { "title": "Platform", "links": [["How it works", "/en/kako-radi"], ["Mobile app", "#funkcije"], ["Pricing", "/en/cijene"], ["Blog", "/en/blog"], ["Log in", "https://app.unitlift.com/login"]] },
+    { "title": "Support", "links": [["FAQ", "/en/faq"], ["Contact", "/en/kontakt"], ["Email support", "mailto:support@unitlift.com"]] },
+    { "title": "Legal", "links": [["Privacy Policy", "/en/privatnost"], ["Terms of Service", "/en/uvjeti"], ["GDPR", "/en/privatnost"]] }
   ]
 }

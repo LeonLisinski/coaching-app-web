@@ -1,8 +1,9 @@
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import AppShowcase from './AppShowcase'
 
 export default function Hero() {
   const t = useTranslations()
+  const locale = useLocale()
 
   return (
     <section className="hero">
@@ -25,12 +26,12 @@ export default function Hero() {
       <div>
         <div className="hcta">
           <a
-            href="https://app.unitlift.com/register"
+            href={`/${locale}#cijene`}
             className="btn btn-p btn-xl"
           >
             {t('btn1')}
           </a>
-          <a href="#kako-radi" className="btn btn-g btn-lg">
+          <a href={`/${locale}/kako-radi`} className="btn btn-g btn-lg">
             {t('btn2')}
           </a>
         </div>

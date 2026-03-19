@@ -55,7 +55,7 @@ function SlideDashboard() {
 
 function SlideKlijenti() {
   const clients = [
-    { init:'AM', bg:'linear-gradient(135deg,#3344ff,#5566ff)', name:'Ana Marković', sub:'Gubitak težine · 3mj', bdg:'bg2', lbl:'Aktivan' },
+    { init:'AM', bg:'linear-gradient(135deg,#0066FF,#4488ff)', name:'Ana Marković', sub:'Gubitak težine · 3mj', bdg:'bg2', lbl:'Aktivan' },
     { init:'IH', bg:'linear-gradient(135deg,#1a9e5a,#3dbb78)', name:'Ivan Horvat', sub:'Mišićna masa · 6mj', bdg:'bb2', lbl:'Check-in danas' },
     { init:'PK', bg:'linear-gradient(135deg,#e06010,#f0851a)', name:'Petra Kovač', sub:'Rekomp · 2mj', bdg:'bo2', lbl:'Kasni check-in' },
     { init:'MN', bg:'linear-gradient(135deg,#8833cc,#aa55ee)', name:'Maja Novak', sub:'Snaga · 1mj', bdg:'bg2', lbl:'Aktivan' },
@@ -106,7 +106,7 @@ function SlidePrehrana() {
     <div className="mcnt">
       <div className="mh">Plan prehrane · Ivan H.</div><div className="msh">Bulk · 3200 kcal target</div>
       <div className="mmacs">
-        <div className="mmac"><div className="mmacv" style={{color:'#3344ff'}}>3200</div><div className="mmacl">Kalorije</div></div>
+        <div className="mmac"><div className="mmacv" style={{color:'#0066FF'}}>3200</div><div className="mmacl">Kalorije</div></div>
         <div className="mmac"><div className="mmacv" style={{color:'#1a9e5a'}}>200g</div><div className="mmacl">Proteini</div></div>
         <div className="mmac"><div className="mmacv" style={{color:'#e06010'}}>380g</div><div className="mmacl">Ugljikohidrati</div></div>
         <div className="mmac"><div className="mmacv" style={{color:'#8833cc'}}>90g</div><div className="mmacl">Masti</div></div>

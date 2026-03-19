@@ -2,12 +2,11 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { useTranslations, useLocale } from 'next-intl'
+import { useLocale } from 'next-intl'
 import { useRouter, usePathname } from 'next/navigation'
 import LogoSvg from './LogoSvg'
 
 export default function Navbar() {
-  const t = useTranslations()
   const locale = useLocale()
   const router = useRouter()
   const pathname = usePathname()
@@ -16,7 +15,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', onScroll)
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
@@ -27,15 +26,30 @@ export default function Navbar() {
     router.push(segments.join('/') || '/')
   }
 
-  const navItems = t.raw('nav') as string[]
-  const anchors = ['#kako-radi', '#funkcije', '#cijene', '#faq', '#kontakt']
+  const isHr = locale === 'hr'
+
+  const navItems = isHr
+    ? [
+        { label: 'Kako radi', href: `/${locale}/kako-radi` },
+        { label: 'Mobilna app', href: '#funkcije' },
+        { label: 'Cijene', href: `/${locale}/cijene` },
+        { label: 'Blog', href: `/${locale}/blog` },
+        { label: 'FAQ', href: '#faq' },
+      ]
+    : [
+        { label: 'How it works', href: `/${locale}/kako-radi` },
+        { label: 'Mobile app', href: '#funkcije' },
+        { label: 'Pricing', href: `/${locale}/cijene` },
+        { label: 'Blog', href: `/${locale}/blog` },
+        { label: 'FAQ', href: '#faq' },
+      ]
 
   return (
     <>
       <nav
         id="navbar"
         style={{
-          background: scrolled ? 'rgba(8,8,24,.97)' : 'rgba(8,8,24,.9)',
+          background: scrolled ? 'rgba(10,16,36,.97)' : 'rgba(10,16,36,.9)',
         }}
       >
         <Link href={`/${locale}`} className="nl">
@@ -44,26 +58,23 @@ export default function Navbar() {
         </Link>
 
         <ul className="navlinks">
-          {navItems.map((label, i) => (
-            <li key={i}>
-              <a href={anchors[i]}>{label}</a>
+          {navItems.map((item) => (
+            <li key={item.label}>
+              <a href={item.href}>{item.label}</a>
             </li>
           ))}
         </ul>
 
         <div className="navact">
-          <button className="langbtn" onClick={toggleLang}>
+          <a href="https://app.unitlift.com/login" className="btn btn-g">
+            {isHr ? 'Prijava' : 'Log in'}
+          </a>
+          <a href={`/${locale}#cijene`} className="btn btn-p">
+            {isHr ? 'Isprobaj besplatno' : 'Try for free'}
+          </a>
+          <button className="langbtn navlang" onClick={toggleLang}>
             {locale === 'hr' ? 'EN' : 'HR'}
           </button>
-          <a href="https://app.unitlift.com/login" className="btn btn-g">
-            {t('login')}
-          </a>
-          <a
-            href="https://app.unitlift.com/register"
-            className="btn btn-p"
-          >
-            {t('ctaNav')}
-          </a>
           <button
             className="hburg"
             onClick={() => setMenuOpen((o) => !o)}
@@ -77,24 +88,27 @@ export default function Navbar() {
       </nav>
 
       <div className={`mobmenu${menuOpen ? ' open' : ''}`} id="mobMenu">
-        {navItems.map((label, i) => (
-          <a key={i} href={anchors[i]} onClick={() => setMenuOpen(false)}>
-            {label}
+        {navItems.map((item) => (
+          <a key={item.label} href={item.href} onClick={() => setMenuOpen(false)}>
+            {item.label}
           </a>
         ))}
         <a
           href="https://app.unitlift.com/login"
           onClick={() => setMenuOpen(false)}
         >
-          {t('login')}
+          {isHr ? 'Prijava' : 'Log in'}
         </a>
         <a
-          href="https://app.unitlift.com/register"
+          href={`/${locale}#cijene`}
           className="btn btn-p btn-fw mobc"
           onClick={() => setMenuOpen(false)}
         >
-          {t('ctaNav')}
+          {isHr ? 'Isprobaj besplatno' : 'Try for free'}
         </a>
+        <button className="langbtn mobc" onClick={() => { toggleLang(); setMenuOpen(false) }}>
+          {locale === 'hr' ? 'EN ↕' : 'HR ↕'}
+        </button>
       </div>
     </>
   )
