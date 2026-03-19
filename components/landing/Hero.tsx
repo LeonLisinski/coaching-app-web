@@ -25,10 +25,7 @@ export default function Hero() {
 
       <div>
         <div className="hcta">
-          <a
-            href={`/${locale}#cijene`}
-            className="btn btn-p btn-xl"
-          >
+          <a href={`/${locale}#cijene`} className="btn btn-p btn-xl">
             {t('btn1')}
           </a>
           <a href={`/${locale}/kako-radi`} className="btn btn-g btn-lg">

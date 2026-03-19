@@ -78,7 +78,7 @@ export default function LegalPage({ doc, docType }: LegalPageProps) {
 
         <div className="navact">
           <button
-            className="langbtn"
+            className="langbtn navlang"
             onClick={() => router.push(`/${otherLocale}${currentSlug}`)}
           >
             {otherLocale.toUpperCase()} ↕
@@ -110,6 +110,9 @@ export default function LegalPage({ doc, docType }: LegalPageProps) {
             {isHr ? '← Na web' : '← Back to site'}
           </a>
         </div>
+        <button className="langbtn mobc" onClick={() => { router.push(`/${otherLocale}${currentSlug}`); setMenuOpen(false) }}>
+          {isHr ? `Jezik: ${otherLocale.toUpperCase()}` : `Language: ${otherLocale.toUpperCase()}`}
+        </button>
       </div>
 
       {/* ─── Hero Header ─── */}

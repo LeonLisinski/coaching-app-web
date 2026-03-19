@@ -107,7 +107,7 @@ export default function Navbar() {
           {isHr ? 'Isprobaj besplatno' : 'Try for free'}
         </a>
         <button className="langbtn mobc" onClick={() => { toggleLang(); setMenuOpen(false) }}>
-          {locale === 'hr' ? 'EN ↕' : 'HR ↕'}
+          {locale === 'hr' ? 'Jezik: EN' : 'Language: HR'}
         </button>
       </div>
     </>

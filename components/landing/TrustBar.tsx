@@ -16,8 +16,8 @@ export default function TrustBar() {
     <div className="trust-bar">
       {trust.map((label, i) => (
         <div key={i} className="ti">
-          {icons[i]}
-          <span>{label}</span>
+            <span className="ti-ico">{icons[i]}</span>
+            <span>{label}</span>
         </div>
       ))}
     </div>

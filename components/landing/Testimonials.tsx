@@ -46,6 +46,7 @@ export default function Testimonials() {
   const [rawIdx, setRawIdx] = useState(CLONES)
   const [anim,   setAnim]     = useState(true)
   const [perPage, setPerPage] = useState(3)
+  const [isMobile, setIsMobile] = useState(false)
 
   const autoRef     = useRef<ReturnType<typeof setInterval> | null>(null)
   const touchStartX = useRef(0)
@@ -54,6 +55,7 @@ export default function Testimonials() {
   // Responsive perPage (integer used for dots/logic)
   useEffect(() => {
     const update = () => {
+      setIsMobile(window.innerWidth < 768)
       setPerPage(window.innerWidth < 640 ? 1 : window.innerWidth < 1100 ? 2 : 3)
     }
     update()
@@ -127,83 +129,120 @@ export default function Testimonials() {
       </div>
 
       <div className="tcar-wrap">
-        {/* Full-width sliding viewport */}
-        <div
-          className="tcar-vp"
-          onTouchStart={onTouchStart}
-          onTouchEnd={onTouchEnd}
-        >
-          <div
-            className="tcar-track"
-            style={{
-              transform: `translateX(-${rawIdx * slideW}%)`,
-              transition: anim ? 'transform .46s cubic-bezier(.4,0,.2,1)' : 'none',
-            }}
-          >
-            {slides.map((item, i) => {
-              const isClient = item.badge === 'Klijent' || item.badge === 'Client'
-              return (
-                <div
-                  key={i}
-                  className="tcar-slide"
-                  style={{ flex: `0 0 ${slideW}%` }}
-                >
-                  <div className="tcard">
-                    <div className="tbadge-row">
-                      <span className={`tbadge${isClient ? ' client' : ' trainer'}`}>
-                        {item.badge}
-                      </span>
-                      <div className="tstars">
-                        {[...Array(5)].map((_, s) => <StarIcon key={s} />)}
+        {isMobile ? (
+          <div className="con">
+            <div className="tcar-track tcar-mobile-list">
+              {items.map((item, i) => {
+                const isClient = item.badge === 'Klijent' || item.badge === 'Client'
+                return (
+                  <div key={item.name + i} className="tcar-slide tcar-mobile-slide">
+                    <div className="tcard">
+                      <div className="tbadge-row">
+                        <span className={`tbadge${isClient ? ' client' : ' trainer'}`}>
+                          {item.badge}
+                        </span>
+                        <div className="tstars">
+                          {[...Array(5)].map((_, s) => <StarIcon key={s} />)}
+                        </div>
                       </div>
-                    </div>
-                    <p className="ttext">&ldquo;{item.q}&rdquo;</p>
-                    <div className="tauth">
-                      <div
-                        className="tav"
-                        style={{ background: avatarPalette[i % avatarPalette.length] }}
-                      >
-                        {getInitials(item.name)}
-                      </div>
-                      <div>
-                        <div className="tname">{item.name}</div>
-                        <div className="trole">{item.role}</div>
+                      <p className="ttext">&ldquo;{item.q}&rdquo;</p>
+                      <div className="tauth">
+                        <div
+                          className="tav"
+                          style={{ background: avatarPalette[i % avatarPalette.length] }}
+                        >
+                          {getInitials(item.name)}
+                        </div>
+                        <div>
+                          <div className="tname">{item.name}</div>
+                          <div className="trole">{item.role}</div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </div>
-        </div>
-
-        {/* Controls */}
-        <div className="con">
-          <div className="tcar-ctrl">
-            <button className="tcar-arrow" onClick={prev} aria-label="Previous">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M11 4L6 9l5 5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-
-            <div className="tcar-dots">
-              {items.map((_, d) => (
-                <button
-                  key={d}
-                  className={`tcar-dot${dotActive === d ? ' active' : ''}`}
-                  onClick={() => go(d + CLONES)}
-                  aria-label={`Recenzija ${d + 1}`}
-                />
-              ))}
+        ) : (
+          <>
+            <div
+              className="tcar-vp"
+              onTouchStart={onTouchStart}
+              onTouchEnd={onTouchEnd}
+            >
+              <div
+                className="tcar-track"
+                style={{
+                  transform: `translateX(-${rawIdx * slideW}%)`,
+                  transition: anim ? 'transform .46s cubic-bezier(.4,0,.2,1)' : 'none',
+                }}
+              >
+                {slides.map((item, i) => {
+                  const isClient = item.badge === 'Klijent' || item.badge === 'Client'
+                  return (
+                    <div
+                      key={i}
+                      className="tcar-slide"
+                      style={{ flex: `0 0 ${slideW}%` }}
+                    >
+                      <div className="tcard">
+                        <div className="tbadge-row">
+                          <span className={`tbadge${isClient ? ' client' : ' trainer'}`}>
+                            {item.badge}
+                          </span>
+                          <div className="tstars">
+                            {[...Array(5)].map((_, s) => <StarIcon key={s} />)}
+                          </div>
+                        </div>
+                        <p className="ttext">&ldquo;{item.q}&rdquo;</p>
+                        <div className="tauth">
+                          <div
+                            className="tav"
+                            style={{ background: avatarPalette[i % avatarPalette.length] }}
+                          >
+                            {getInitials(item.name)}
+                          </div>
+                          <div>
+                            <div className="tname">{item.name}</div>
+                            <div className="trole">{item.role}</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
             </div>
 
-            <button className="tcar-arrow" onClick={next} aria-label="Next">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M7 4l5 5-5 5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-          </div>
-        </div>
+            <div className="con">
+              <div className="tcar-ctrl">
+                <button className="tcar-arrow" onClick={prev} aria-label="Previous">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M11 4L6 9l5 5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+
+                <div className="tcar-dots">
+                  {items.map((_, d) => (
+                    <button
+                      key={d}
+                      className={`tcar-dot${dotActive === d ? ' active' : ''}`}
+                      onClick={() => go(d + CLONES)}
+                      aria-label={`Recenzija ${d + 1}`}
+                    />
+                  ))}
+                </div>
+
+                <button className="tcar-arrow" onClick={next} aria-label="Next">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M7 4l5 5-5 5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </section>
   )

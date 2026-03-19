@@ -49,14 +49,14 @@ export default function PricingPage() {
   }
 
   const baseFeats = isHr
-    ? ['Planovi treninga i prehrane', 'Check-in praćenje s automatskim podsjetnicima', 'Chat s klijentima', 'Mobilna app za klijente (besplatna)', 'Vidi odmah tko je platio i koliko si zaradio', 'Prati što ti je važno — koraci, san, težina, raspoloženje']
-    : ['Training and nutrition plans', 'Check-in tracking with automatic reminders', 'Client chat', 'Client mobile app (free)', 'See instantly who paid and how much you earned', 'Track what matters — steps, sleep, weight, mood']
+    ? ['Planovi treninga i prehrane', 'Prati što ti je važno — koraci, san, težina, raspoloženje', 'Chat s klijentima', 'Mobilna app za klijente (besplatna)', 'Vidi odmah tko je platio i koliko si zaradio']
+    : ['Training and nutrition plans', 'Track what matters — steps, sleep, weight, mood', 'Client chat', 'Client mobile app (free)', 'See instantly who paid and how much you earned']
 
   const tiers = isHr
     ? [
         {
           name: 'Starter', price: 29, clients: 'Do 15 klijenata', popular: false,
-          feats: ['Do 15 aktivnih klijenata', 'Planovi treninga i prehrane', 'Check-in praćenje s automatskim podsjetnicima', 'Chat s klijentima', 'Mobilna app za klijente (besplatna)', 'Vidi odmah tko je platio i koliko si zaradio', 'Prati što ti je važno — koraci, san, težina, raspoloženje'],
+          feats: ['Do 15 aktivnih klijenata'],
           btn: 'Kreni besplatno', note: null,
         },
         {
@@ -73,7 +73,7 @@ export default function PricingPage() {
     : [
         {
           name: 'Starter', price: 29, clients: 'Up to 15 clients', popular: false,
-          feats: ['Up to 15 active clients', 'Training and nutrition plans', 'Check-in tracking with automatic reminders', 'Client chat', 'Client mobile app (free)', 'See instantly who paid and how much you earned', 'Track what matters — steps, sleep, weight, mood'],
+          feats: ['Up to 15 active clients'],
           btn: 'Get started free', note: null,
         },
         {
@@ -128,7 +128,7 @@ export default function PricingPage() {
         ))}
         <a href="https://app.unitlift.com/login" onClick={() => setMenuOpen(false)}>{isHr ? 'Prijava' : 'Log in'}</a>
         <button className="langbtn mobc" onClick={() => { router.push(`/${otherLocale}/cijene`); setMenuOpen(false) }}>
-          {otherLocale.toUpperCase()} ↕
+          {isHr ? `Jezik: ${otherLocale.toUpperCase()}` : `Language: ${otherLocale.toUpperCase()}`}
         </button>
       </div>
 
@@ -153,8 +153,8 @@ export default function PricingPage() {
       </div>
 
       {/* Body */}
-      <div style={{ background: '#f5f7ff', padding: '52px 5% 80px', flex: 1 }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+      <div className="legal-body" style={{ background: '#ffffff' }}>
+        <div className="con">
 
           {/* Intro */}
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
@@ -169,9 +169,9 @@ export default function PricingPage() {
           </div>
 
           {/* Pricing cards */}
-          <div className="pg" style={{ marginTop: 0 }}>
+          <div className="pg pricing-page-grid" style={{ marginTop: 0 }}>
             {tiers.map((tier, i) => (
-              <div key={i} className={`pc ${['basic', 'pop', 'elite'][i]}`} style={{ paddingTop: tier.popular ? '50px' : undefined }}>
+              <div key={i} className={`pc pricing-page-card ${['basic', 'pop', 'elite'][i]}`} style={{ paddingTop: tier.popular ? '50px' : undefined }}>
                 {tier.popular && <div className="popbdg">{isHr ? 'Najpopularniji' : 'Most popular'}</div>}
                 <div className="ptier">{tier.name}</div>
                 <div className="pamt">€<span>{PRICES[i]}</span><span className="psmall">/mj</span></div>
@@ -181,26 +181,26 @@ export default function PricingPage() {
                   {tier.feats.map((feat, j) => (
                     <li key={j}><span className="pchk">✓</span>{feat}</li>
                   ))}
-                  {i > 0 && baseFeats.map((feat, j) => (
+                  {baseFeats.map((feat, j) => (
                     <li key={`base-${j}`} className="pfeat-muted">
                       <span className="pchk pchk-muted">✓</span>
                       {feat}
                     </li>
                   ))}
                 </ul>
+                {tier.note && (
+                  <p style={{ marginBottom: '12px', fontSize: '.75rem', color: 'var(--lt)', textAlign: 'center', lineHeight: 1.5 }}>
+                    {tier.note}
+                  </p>
+                )}
                 <button
                   onClick={() => handleCheckout(PLANS[i])}
                   disabled={loading !== null}
-                  className={`btn ${['btn-g', 'btn-p', 'btn-g'][i]} btn-fw`}
+                  className="btn btn-p btn-fw"
                   style={{ cursor: loading ? 'wait' : 'pointer', opacity: loading && loading !== PLANS[i] ? 0.6 : 1 }}
                 >
                   {loading === PLANS[i] ? '...' : tier.btn}
                 </button>
-                {tier.note && (
-                  <p style={{ marginTop: '12px', fontSize: '.75rem', color: 'rgba(255,255,255,.45)', textAlign: 'center', lineHeight: 1.5 }}>
-                    {tier.note}
-                  </p>
-                )}
               </div>
             ))}
           </div>

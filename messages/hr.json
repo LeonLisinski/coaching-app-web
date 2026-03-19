@@ -4,8 +4,8 @@
   "ctaNav": "Isprobaj besplatno",
   "badge": "Platforma za online fitness trenere",
   "h1": "Više klijenata.<br><span class=\"grad\">Manje kaosa.</span>",
-  "sub": "UnitLift automatizira sve između — slanje planova, podsjetnici, praćenje plaćanja — dok ti radiš ono što si stvarno dobar: coaching.",
-  "btn1": "Kreni besplatno →",
+  "sub": "Manje administracije. Profesionalniji dojam prema klijentima. Bolji retention. UnitLift automatizira sve između — dok ti radiš ono što si stvarno dobar: coaching.",
+  "btn1": "Odaberi plan i aktiviraj probu →",
   "btn2": "Pogledaj kako radi",
   "note": "Kartica potrebna za aktivaciju · Bez naplate 14 dana · Otkaži kad hoćeš",
   "trust": ["GDPR sukladan", "iOS & Android za klijente", "Postavljanje za 5 minuta", "Napravljeno u Hrvatskoj", "Enkriptirana pohrana"],
@@ -34,13 +34,7 @@
       "name": "Starter", "price": 29,
       "clients": "Do 15 klijenata",
       "feats": [
-        "Do 15 aktivnih klijenata",
-        "Planovi treninga i prehrane",
-        "Check-in praćenje s automatskim podsjetnicima",
-        "Chat s klijentima",
-        "Mobilna app za klijente (besplatna)",
-        "Vidi odmah tko je platio i koliko si zaradio",
-        "Prati što ti je važno — koraci, san, težina, raspoloženje"
+        "Do 15 aktivnih klijenata"
       ],
       "btn": "Kreni besplatno"
     },
@@ -65,11 +59,10 @@
   ],
   "baseFeats": [
     "Planovi treninga i prehrane",
-    "Check-in praćenje s automatskim podsjetnicima",
+    "Prati što ti je važno — koraci, san, težina, raspoloženje",
     "Chat s klijentima",
     "Mobilna app za klijente (besplatna)",
-    "Vidi odmah tko je platio i koliko si zaradio",
-    "Prati što ti je važno — koraci, san, težina, raspoloženje"
+    "Vidi odmah tko je platio i koliko si zaradio"
   ],
   "scaleNote": "Više od 150 klijenata? +€10/mj za svakih dodatnih 25.",
   "priceNote": "Svi planovi uključuju 14-dnevno besplatno probno razdoblje. Kartica potrebna za aktivaciju.",
@@ -77,13 +70,13 @@
   "testTit": "Treneri koji su prešli na sustav",
   "testimonials": [
     { "q": "Konačno imamo jedno mjesto za sve. Prije sam koristio WhatsApp, Excel i par random appova — sada je sve na jednom mjestu i štedim sat vremena dnevno.", "name": "Marko K.", "role": "Online fitness trener, Zagreb", "badge": "Trener" },
-    { "q": "Kao klijent, obožavam kako sve funkcionira kroz jednu app. Trener mi pošalje plan, ja popunim check-in i on odmah vidi napredak. Nema više poruka na sve strane.", "name": "Ana M.", "role": "Klijent, Zagreb", "badge": "Klijent" },
     { "q": "Prešao sam s 8 na 15 klijenata bez dodatnog stresa. Check-in sustav automatski podsjeća klijente i ja odmah vidim tko kasni s predajom.", "name": "Tomislav N.", "role": "Strength coach, Osijek", "badge": "Trener" },
-    { "q": "Koristim UnitLift već 4 mjeseca i razlika je ogromna. Imam pristup svim planovima u jednoj app, trener vidi svaki moj check-in i komunikacija je odlična.", "name": "Ivan B.", "role": "Klijent, Rijeka", "badge": "Klijent" },
     { "q": "Klijenti su oduševljeni mobilnom aplikacijom. Imaju sve planove odmah dostupne i mogu mi slati check-ine direktno iz appa. Mnogo profesionalnije nego prije.", "name": "Sara P.", "role": "Personal trainer, Split", "badge": "Trener" },
-    { "q": "Tjedni check-ini su mi promijenili pristup treningu. Trener vidi gdje zastajujem i odmah prilagodi plan. Osjećam se kao da imam osobnog trenera u džepu.", "name": "Petra L.", "role": "Klijent, Zadar", "badge": "Klijent" },
     { "q": "Administracija svedena na minimum. Planovi, plaćanja, komunikacija — sve u jednom. Klijentima je super jer imaju svoju app, a meni ostaje više vremena za pravi posao.", "name": "Luka H.", "role": "Fitness trener, Varaždin", "badge": "Trener" },
-    { "q": "Znam točno tko je platio i kad komu ističe pretplata — sve na jednom ekranu. Nema više zapisivanja po bilježnicama i zaboravljenih uplata. Preporučujem svim trenerima.", "name": "Maja R.", "role": "Personal trainer, Dubrovnik", "badge": "Trener" }
+    { "q": "Znam točno tko je platio i kad komu ističe pretplata — sve na jednom ekranu. Nema više zapisivanja po bilježnicama i zaboravljenih uplata. Preporučujem svim trenerima.", "name": "Maja R.", "role": "Personal trainer, Dubrovnik", "badge": "Trener" },
+    { "q": "Kao klijent, obožavam kako sve funkcionira kroz jednu app. Trener mi pošalje plan, ja popunim check-in i on odmah vidi napredak. Nema više poruka na sve strane.", "name": "Ana M.", "role": "Klijent, Zagreb", "badge": "Klijent" },
+    { "q": "Koristim UnitLift već 4 mjeseca i razlika je ogromna. Imam pristup svim planovima u jednoj app, trener vidi svaki moj check-in i komunikacija je odlična.", "name": "Ivan B.", "role": "Klijent, Rijeka", "badge": "Klijent" },
+    { "q": "Tjedni check-ini su mi promijenili pristup treningu. Trener vidi gdje zastajujem i odmah prilagodi plan. Osjećam se kao da imam osobnog trenera u džepu.", "name": "Petra L.", "role": "Klijent, Zadar", "badge": "Klijent" }
   ],
   "faqLbl": "FAQ",
   "faqTit": "Često postavljana pitanja",

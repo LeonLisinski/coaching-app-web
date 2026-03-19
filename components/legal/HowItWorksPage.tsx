@@ -76,7 +76,7 @@ export default function HowItWorksPage() {
           {isHr ? 'Isprobaj besplatno' : 'Try for free'}
         </a>
         <button className="langbtn mobc" onClick={() => { router.push(`/${otherLocale}/kako-radi`); setMenuOpen(false) }}>
-          {otherLocale.toUpperCase()} ↕
+          {isHr ? `Jezik: ${otherLocale.toUpperCase()}` : `Language: ${otherLocale.toUpperCase()}`}
         </button>
       </div>
 
@@ -102,7 +102,7 @@ export default function HowItWorksPage() {
 
       {/* Body */}
       <div className="legal-body">
-        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 5%' }}>
+        <div className="con">
 
           {/* Section 1: Za trenere */}
           <div className="hiw-section">

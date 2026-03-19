@@ -33,7 +33,6 @@ export default async function BlogSlugPage({ params }: Props) {
 
   const relatedPosts = posts
     .filter(p => p.slug !== slug)
-    .sort(() => 0.5 - Math.random())
     .slice(0, 3)
 
   return <BlogPostPage post={post} relatedPosts={relatedPosts} />

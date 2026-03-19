@@ -21,7 +21,7 @@ export default function Pricing() {
   const ref = useReveal<HTMLElement>()
 
   const tierClass    = ['basic', 'pop', 'elite']
-  const tierBtnClass = ['btn-g', 'btn-p', 'btn-g']
+  const tierBtnClass = ['btn-p', 'btn-p', 'btn-p']
 
   const handleCheckout = async (plan: string) => {
     setLoading(plan)
@@ -43,21 +43,21 @@ export default function Pricing() {
   }
 
   return (
-    <section className="sd sp" id="cijene" ref={ref}>
+    <section className="sl sp pricing-home-sec" id="cijene" ref={ref}>
       <div className="con">
         <div className="tc rev">
           <div className="slbl">{t('priceLbl')}</div>
           <h2
             className="stit"
-            style={{ color: '#fff' }}
+            style={{ color: 'var(--lt)' }}
             dangerouslySetInnerHTML={{ __html: t.raw('priceTit') as string }}
           />
           <p className="ssub">{t('priceSub')}</p>
         </div>
 
-        <div className="pg">
+        <div className="pg pricing-page-grid">
           {tiers.map((tier, i) => (
-            <div key={i} className={`pc ${tierClass[i]} rev d${i + 1}`}>
+            <div key={i} className={`pc pricing-page-card ${tierClass[i]} rev d${i + 1}`}>
               {i === 1 && <div className="popbdg">{t('pop')}</div>}
               <div className="ptier">{tier.name}</div>
               <div className="pamt">
@@ -73,13 +73,18 @@ export default function Pricing() {
                     {feat}
                   </li>
                 ))}
-                {i > 0 && baseFeats.map((feat, j) => (
+                {baseFeats.map((feat, j) => (
                   <li key={`base-${j}`} className="pfeat-muted">
                     <span className="pchk pchk-muted">✓</span>
                     {feat}
                   </li>
                 ))}
               </ul>
+              {i === 2 && (
+                <p style={{ marginBottom: '12px', fontSize: '.75rem', color: 'var(--lt)', textAlign: 'center', lineHeight: 1.5 }}>
+                  {t('scaleNote')}
+                </p>
+              )}
               <button
                 onClick={() => handleCheckout(PLANS[i])}
                 disabled={loading !== null}
@@ -88,11 +93,6 @@ export default function Pricing() {
               >
                 {loading === PLANS[i] ? '...' : tier.btn}
               </button>
-              {i === 2 && (
-                <p style={{ marginTop: '12px', fontSize: '.75rem', color: 'rgba(255,255,255,.45)', textAlign: 'center', lineHeight: 1.5 }}>
-                  {t('scaleNote')}
-                </p>
-              )}
             </div>
           ))}
         </div>
@@ -101,7 +101,7 @@ export default function Pricing() {
           style={{
             textAlign: 'center',
             marginTop: '28px',
-            color: 'rgba(255,255,255,.5)',
+            color: 'var(--ls)',
             fontSize: '.83rem',
           }}
         >

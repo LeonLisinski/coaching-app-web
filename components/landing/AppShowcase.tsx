@@ -183,7 +183,7 @@ export default function AppShowcase() {
   }, [])
 
   return (
-    <div className="showcase" style={{ marginTop: '52px' }}>
+    <div className="showcase">
       <div className="sf">
         <div className="si">
           <div className="sbar">
@@ -195,7 +195,7 @@ export default function AppShowcase() {
             <div className="surl">app.unitlift.com</div>
           </div>
 
-          <div className="ss" style={{ minWidth: 560, overflowX: 'auto' }}>
+          <div className="ss">
             {slideContents.map((SlideComp, i) => (
               <div key={i} className={`slide${i === cur ? ' active' : ''}`}>
                 <div className="mui">

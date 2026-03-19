@@ -84,7 +84,7 @@ export default function ContactPage() {
           ))}
         </ul>
         <div className="navact">
-          <button className="langbtn" onClick={() => router.push(`/${otherLocale}/kontakt`)}>
+          <button className="langbtn navlang" onClick={() => router.push(`/${otherLocale}/kontakt`)}>
             {otherLocale.toUpperCase()} ↕
           </button>
           <a href={`/${locale}`} className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
@@ -111,6 +111,9 @@ export default function ContactPage() {
             {isHr ? '← Na web' : '← Back to site'}
           </a>
         </div>
+        <button className="langbtn mobc" onClick={() => { router.push(`/${otherLocale}/kontakt`); setMenuOpen(false) }}>
+          {isHr ? `Jezik: ${otherLocale.toUpperCase()}` : `Language: ${otherLocale.toUpperCase()}`}
+        </button>
       </div>
 
       {/* Hero */}

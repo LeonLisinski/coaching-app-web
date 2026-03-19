@@ -4,8 +4,8 @@
   "ctaNav": "Try for free",
   "badge": "Platform for online fitness coaches",
   "h1": "More clients.<br><span class=\"grad\">Less chaos.</span>",
-  "sub": "UnitLift automates everything in between — sending plans, reminders, tracking payments — while you do what you're actually great at: coaching.",
-  "btn1": "Get started free →",
+  "sub": "Less admin. More professional impression on clients. Better retention. UnitLift automates everything in between — while you do what you're actually great at: coaching.",
+  "btn1": "Choose a plan and activate trial →",
   "btn2": "See how it works",
   "note": "Card required for activation · No charge for 14 days · Cancel anytime",
   "trust": ["GDPR compliant", "iOS & Android for clients", "Setup in 5 minutes", "Made in Croatia", "Encrypted storage"],
@@ -34,13 +34,7 @@
       "name": "Starter", "price": 29,
       "clients": "Up to 15 clients",
       "feats": [
-        "Up to 15 active clients",
-        "Training and nutrition plans",
-        "Check-in tracking with automatic reminders",
-        "Client chat",
-        "Client mobile app (free)",
-        "See instantly who paid and how much you earned",
-        "Track what matters — steps, sleep, weight, mood"
+        "Up to 15 active clients"
       ],
       "btn": "Get started free"
     },
@@ -65,11 +59,10 @@
   ],
   "baseFeats": [
     "Training and nutrition plans",
-    "Check-in tracking with automatic reminders",
+    "Track what matters — steps, sleep, weight, mood",
     "Client chat",
     "Client mobile app (free)",
-    "See instantly who paid and how much you earned",
-    "Track what matters — steps, sleep, weight, mood"
+    "See instantly who paid and how much you earned"
   ],
   "scaleNote": "More than 150 clients? +€10/mo for every additional 25.",
   "priceNote": "All plans include a 14-day free trial. Card required for activation.",
@@ -77,13 +70,13 @@
   "testTit": "Coaches who switched to the system",
   "testimonials": [
     { "q": "Finally one place for everything. Before I used WhatsApp, Excel and a bunch of random apps — now everything is in one place and I save an hour a day.", "name": "Mark K.", "role": "Online fitness coach, Zagreb", "badge": "Coach" },
-    { "q": "As a client, I love how everything works through one app. My coach sends me a plan, I fill in the check-in and he immediately sees my progress. No more messages everywhere.", "name": "Ana M.", "role": "Client, Zagreb", "badge": "Client" },
     { "q": "I went from 8 to 15 clients without extra stress. The check-in system automatically reminds clients and I immediately see who's late submitting.", "name": "Tom N.", "role": "Strength coach, Osijek", "badge": "Coach" },
-    { "q": "I've been using UnitLift for 4 months and the difference is huge. I have access to all my plans in one app, my coach sees every check-in and communication is great.", "name": "Ivan B.", "role": "Client, Rijeka", "badge": "Client" },
     { "q": "Clients are thrilled with the mobile app. They have all plans instantly available and can send check-ins directly from the app. Much more professional than before.", "name": "Sara P.", "role": "Personal trainer, Split", "badge": "Coach" },
-    { "q": "Weekly check-ins changed my approach to training. My coach sees where I'm struggling and immediately adjusts the plan. It feels like having a personal trainer in my pocket.", "name": "Petra L.", "role": "Client, Zadar", "badge": "Client" },
     { "q": "Administration reduced to a minimum. Plans, payments, communication — all in one. Clients love having their own app, and I have more time for the actual work.", "name": "Luke H.", "role": "Fitness coach, Varaždin", "badge": "Coach" },
-    { "q": "I know exactly who has paid and when each subscription expires — all on one screen. No more notebooks and forgotten payments. I recommend it to all coaches.", "name": "Maja R.", "role": "Personal trainer, Dubrovnik", "badge": "Coach" }
+    { "q": "I know exactly who has paid and when each subscription expires — all on one screen. No more notebooks and forgotten payments. I recommend it to all coaches.", "name": "Maja R.", "role": "Personal trainer, Dubrovnik", "badge": "Coach" },
+    { "q": "As a client, I love how everything works through one app. My coach sends me a plan, I fill in the check-in and he immediately sees my progress. No more messages everywhere.", "name": "Ana M.", "role": "Client, Zagreb", "badge": "Client" },
+    { "q": "I've been using UnitLift for 4 months and the difference is huge. I have access to all my plans in one app, my coach sees every check-in and communication is great.", "name": "Ivan B.", "role": "Client, Rijeka", "badge": "Client" },
+    { "q": "Weekly check-ins changed my approach to training. My coach sees where I'm struggling and immediately adjusts the plan. It feels like having a personal trainer in my pocket.", "name": "Petra L.", "role": "Client, Zadar", "badge": "Client" }
   ],
   "faqLbl": "FAQ",
   "faqTit": "Frequently asked questions",
