@@ -16,6 +16,7 @@ export default function Pricing() {
     feats: string[]
     btn: string
   }>
+  const baseFeats = t.raw('baseFeats') as string[]
   const [loading, setLoading] = useState<string | null>(null)
   const ref = useReveal<HTMLElement>()
 
@@ -69,6 +70,12 @@ export default function Pricing() {
                 {tier.feats.map((feat, j) => (
                   <li key={j}>
                     <span className="pchk">✓</span>
+                    {feat}
+                  </li>
+                ))}
+                {i > 0 && baseFeats.map((feat, j) => (
+                  <li key={`base-${j}`} className="pfeat-muted">
+                    <span className="pchk pchk-muted">✓</span>
                     {feat}
                   </li>
                 ))}

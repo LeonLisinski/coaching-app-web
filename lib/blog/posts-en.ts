@@ -1,4 +1,4 @@
-import type { BlogPost } from './types'
+﻿import type { BlogPost } from './types'
 
 export const postsEn: BlogPost[] = [
   {
@@ -9,7 +9,7 @@ export const postsEn: BlogPost[] = [
     categorySlug: 'guide',
     readTime: 6,
     publishedAt: 'March 14, 2025',
-    author: 'Leon Lišinski',
+    author: 'Leon',
     authorRole: 'Online fitness trainer & founder UnitLift',
     content: [
       { type: 'paragraph', text: 'Building a client base is one of the biggest challenges every online fitness coach faces. The good news: you don\'t need expensive ads — you need the right strategy and consistency.' },
@@ -36,7 +36,7 @@ export const postsEn: BlogPost[] = [
     categorySlug: 'tools',
     readTime: 4,
     publishedAt: 'March 11, 2025',
-    author: 'Leon Lišinski',
+    author: 'Leon',
     authorRole: 'Online fitness trainer & founder UnitLift',
     content: [
       { type: 'paragraph', text: 'I started with Excel. One sheet per client, formulas for calorie calculation, color-coding for each week. It looked clean — until I had 12 clients at the same time.' },
@@ -65,7 +65,7 @@ export const postsEn: BlogPost[] = [
     categorySlug: 'clients',
     readTime: 5,
     publishedAt: 'March 7, 2025',
-    author: 'Leon Lišinski',
+    author: 'Leon',
     authorRole: 'Online fitness trainer & founder UnitLift',
     content: [
       { type: 'paragraph', text: 'The check-in is the heart of online coaching. Without regular and quality tracking, plans remain just theory. Here\'s how to make a check-in that actually works.' },
@@ -97,7 +97,7 @@ export const postsEn: BlogPost[] = [
     categorySlug: 'growth',
     readTime: 7,
     publishedAt: 'March 1, 2025',
-    author: 'Leon Lišinski',
+    author: 'Leon',
     authorRole: 'Online fitness trainer & founder UnitLift',
     content: [
       { type: 'paragraph', text: 'Pricing is often the question where coaches get most stuck. Fear of rejection, uncertainty about one\'s own worth, comparison to competitors — all of this leads to the same outcome: underpricing.' },
@@ -129,7 +129,7 @@ export const postsEn: BlogPost[] = [
     categorySlug: 'guide',
     readTime: 6,
     publishedAt: 'February 14, 2025',
-    author: 'Leon Lišinski',
+    author: 'Leon',
     authorRole: 'Online fitness trainer & founder UnitLift',
     content: [
       { type: 'paragraph', text: 'Automation has a bad reputation in coaching. Coaches fear losing the "personal touch" and becoming robots that send mailers. But there\'s a fundamental difference between automating processes and automating relationships.' },
