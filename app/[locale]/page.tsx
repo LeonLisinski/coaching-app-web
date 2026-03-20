@@ -1,8 +1,9 @@
-import { getLocale } from 'next-intl/server'
 import RevealObserver from '@/components/landing/RevealObserver'
 
-export async function generateMetadata() {
-  const locale = await getLocale()
+interface Props { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params
   return {
     alternates: {
       canonical: `/${locale}`,

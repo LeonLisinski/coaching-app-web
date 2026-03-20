@@ -1,8 +1,9 @@
-import { getLocale } from 'next-intl/server'
 import HowItWorksPage from '@/components/legal/HowItWorksPage'
 
-export async function generateMetadata() {
-  const locale = await getLocale()
+interface Props { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params
   const isHr = locale === 'hr'
   return {
     title: isHr ? 'Kako radi | UnitLift' : 'How it works | UnitLift',
