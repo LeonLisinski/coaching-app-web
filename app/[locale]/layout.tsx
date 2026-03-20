@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: '%s | UnitLift',
   },
   description:
-    'Profesionalna coaching platforma za online fitness trenere. Planovi treninga i prehrane, check-in praćenje, chat s klijentima, financijski pregled i mobilna app za klijente — sve na jednom mjestu.',
+    'Coaching platforma za online fitness trenere. Planovi treninga, prehrana, check-ini, chat i financije — sve na jednom mjestu. 14 dana besplatno.',
   keywords: [
     'coaching platforma',
     'fitness trener app',
