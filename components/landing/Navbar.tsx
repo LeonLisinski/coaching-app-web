@@ -34,14 +34,14 @@ export default function Navbar() {
         { label: 'Mobilna app', href: '#funkcije' },
         { label: 'Cijene', href: `/${locale}/cijene` },
         { label: 'Blog', href: `/${locale}/blog` },
-        { label: 'FAQ', href: '#faq' },
+        { label: 'FAQ', href: `/${locale}/faq` },
       ]
     : [
         { label: 'How it works', href: `/${locale}/kako-radi` },
         { label: 'Mobile app', href: '#funkcije' },
         { label: 'Pricing', href: `/${locale}/cijene` },
         { label: 'Blog', href: `/${locale}/blog` },
-        { label: 'FAQ', href: '#faq' },
+        { label: 'FAQ', href: `/${locale}/faq` },
       ]
 
   return (
@@ -69,7 +69,7 @@ export default function Navbar() {
           <a href="https://app.unitlift.com/login" className="btn btn-g">
             {isHr ? 'Prijava' : 'Log in'}
           </a>
-          <a href={`/${locale}#cijene`} className="btn btn-p">
+          <a href={`/${locale}#cijene`} className="btn btn-p" aria-label={isHr ? 'Isprobaj besplatno – odaberi plan' : 'Try for free – choose a plan'}>
             {isHr ? 'Isprobaj besplatno' : 'Try for free'}
           </a>
           <button className="langbtn navlang" onClick={toggleLang}>
@@ -103,6 +103,7 @@ export default function Navbar() {
           href={`/${locale}#cijene`}
           className="btn btn-p btn-fw mobc"
           onClick={() => setMenuOpen(false)}
+          aria-label={isHr ? 'Isprobaj besplatno – izbornik' : 'Try for free – menu'}
         >
           {isHr ? 'Isprobaj besplatno' : 'Try for free'}
         </a>

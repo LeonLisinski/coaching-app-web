@@ -141,11 +141,13 @@ export default function Testimonials() {
           >
             {slides.map((item, i) => {
               const isClient = item.badge === 'Klijent' || item.badge === 'Client'
+              const isClone = i < CLONES || i >= CLONES + N
               return (
                 <div
                   key={i}
                   className="tcar-slide"
                   style={{ flex: `0 0 ${slideW}%` }}
+                  aria-hidden={isClone ? 'true' : undefined}
                 >
                   <div className="tcard">
                     <div className="tbadge-row">

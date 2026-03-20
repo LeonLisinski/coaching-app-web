@@ -1,9 +1,16 @@
-import type { Metadata } from 'next'
+import { getLocale } from 'next-intl/server'
 import PricingPage from '@/components/legal/PricingPage'
 
-export const metadata: Metadata = {
-  title: 'Cijene | UnitLift',
-  description: 'Jednostavne cijene bez iznenađenja. 14 dana besplatno na svim planovima. Starter €29/mj, Pro €59/mj, Scale €99/mj.',
+export async function generateMetadata() {
+  const locale = await getLocale()
+  const isHr = locale === 'hr'
+  return {
+    title: isHr ? 'Cijene | UnitLift' : 'Pricing | UnitLift',
+    description: isHr
+      ? 'Jednostavne cijene bez iznenađenja. 14 dana besplatno na svim planovima. Starter €29/mj, Pro €59/mj, Scale €99/mj.'
+      : 'Simple pricing, no surprises. 14 days free on all plans. Starter €29/mo, Pro €59/mo, Scale €99/mo.',
+    alternates: { canonical: `/${locale}/cijene` },
+  }
 }
 
 export default function CijenePage() {

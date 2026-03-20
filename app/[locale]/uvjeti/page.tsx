@@ -14,6 +14,7 @@ export async function generateMetadata() {
       ? 'Uvjeti korištenja platforme UnitLift za online fitness trenere.'
       : 'Terms of Service for the UnitLift online fitness coaching platform.',
     robots: { index: true, follow: true },
+    alternates: { canonical: `/${locale}/uvjeti` },
   }
 }
 

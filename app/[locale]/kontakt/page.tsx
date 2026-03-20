@@ -10,6 +10,7 @@ export async function generateMetadata() {
       ? 'Kontaktiraj UnitLift tim. Odgovaramo unutar jednog radnog dana.'
       : 'Contact the UnitLift team. We respond within one business day.',
     robots: { index: true, follow: true },
+    alternates: { canonical: `/${locale}/kontakt` },
   }
 }
 

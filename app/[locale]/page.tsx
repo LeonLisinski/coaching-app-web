@@ -1,4 +1,12 @@
+import { getLocale } from 'next-intl/server'
 import RevealObserver from '@/components/landing/RevealObserver'
+
+export async function generateMetadata() {
+  const locale = await getLocale()
+  return {
+    alternates: { canonical: `/${locale}` },
+  }
+}
 import Navbar from '@/components/landing/Navbar'
 import Hero from '@/components/landing/Hero'
 import TrustBar from '@/components/landing/TrustBar'

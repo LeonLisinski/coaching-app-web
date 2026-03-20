@@ -14,6 +14,7 @@ export async function generateMetadata() {
       ? 'Politika privatnosti platforme UnitLift — kako prikupljamo i štitimo vaše osobne podatke.'
       : 'Privacy Policy of UnitLift — how we collect and protect your personal data.',
     robots: { index: true, follow: true },
+    alternates: { canonical: `/${locale}/privatnost` },
   }
 }
 
