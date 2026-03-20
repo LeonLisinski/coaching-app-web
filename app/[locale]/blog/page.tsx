@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: isHr
       ? 'Savjeti, vodiči i novosti za online fitness trenere. Više klijenata, manje kaosa.'
       : 'Tips, guides and news for online fitness coaches. More clients, less chaos.',
-    alternates: { canonical: `/${locale}/blog` },
+    alternates: { canonical: `/${locale}/blog`, languages: { hr: '/hr/blog', en: '/en/blog' } },
   }
 }
 

@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.title} | UnitLift Blog`,
     description: post.excerpt,
-    alternates: { canonical: `/${locale}/blog/${slug}` },
+    alternates: { canonical: `/${locale}/blog/${slug}`, languages: { hr: `/hr/blog/${slug}`, en: `/en/blog/${slug}` } },
   }
 }
 

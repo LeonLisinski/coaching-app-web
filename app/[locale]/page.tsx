@@ -4,7 +4,10 @@ import RevealObserver from '@/components/landing/RevealObserver'
 export async function generateMetadata() {
   const locale = await getLocale()
   return {
-    alternates: { canonical: `/${locale}` },
+    alternates: {
+      canonical: `/${locale}`,
+      languages: { hr: '/hr', en: '/en' },
+    },
   }
 }
 import Navbar from '@/components/landing/Navbar'

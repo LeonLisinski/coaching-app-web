@@ -21,12 +21,6 @@ export const metadata: Metadata = {
     'unitlift',
   ],
   metadataBase: new URL('https://unitlift.com'),
-  alternates: {
-    languages: {
-      hr: '/hr',
-      en: '/en',
-    },
-  },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
