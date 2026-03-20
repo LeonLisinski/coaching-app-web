@@ -1,11 +1,11 @@
 'use client'
 
-import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { useReveal } from '@/hooks/useReveal'
 
 const PRICES = [29, 59, 99]
 const PLANS  = ['starter', 'pro', 'scale'] as const
+const APP_URL = 'https://app.unitlift.com'
 
 export default function Pricing() {
   const t = useTranslations()
@@ -17,30 +17,10 @@ export default function Pricing() {
     btn: string
   }>
   const baseFeats = t.raw('baseFeats') as string[]
-  const [loading, setLoading] = useState<string | null>(null)
   const ref = useReveal<HTMLElement>()
 
   const tierClass    = ['basic', 'pop', 'elite']
   const tierBtnClass = ['btn-p', 'btn-p', 'btn-p']
-
-  const handleCheckout = async (plan: string) => {
-    setLoading(plan)
-    try {
-      const res = await fetch('/api/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ plan }),
-      })
-      const { url, error } = await res.json()
-      if (error || !url) throw new Error(error || 'No URL')
-      window.location.href = url
-    } catch (err) {
-      console.error('Checkout error:', err)
-      alert('Greška pri otvaranju plaćanja. Pokušaj ponovo.')
-    } finally {
-      setLoading(null)
-    }
-  }
 
   return (
     <section className="sl sp pricing-home-sec" id="cijene" ref={ref}>
@@ -85,14 +65,13 @@ export default function Pricing() {
                   {t('scaleNote')}
                 </p>
               )}
-              <button
-                onClick={() => handleCheckout(PLANS[i])}
-                disabled={loading !== null}
+              <a
+                href={`${APP_URL}/register?plan=${PLANS[i]}`}
                 className={`btn ${tierBtnClass[i]} btn-fw`}
-                style={{ cursor: loading ? 'wait' : 'pointer', opacity: loading && loading !== PLANS[i] ? 0.6 : 1 }}
+                style={{ textAlign: 'center' }}
               >
-                {loading === PLANS[i] ? '...' : tier.btn}
-              </button>
+                {tier.btn}
+              </a>
             </div>
           ))}
         </div>

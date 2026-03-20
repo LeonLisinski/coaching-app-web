@@ -17,7 +17,7 @@ export default function PricingPage() {
 
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const [loading, setLoading] = useState<string | null>(null)
+  const APP_URL = 'https://app.unitlift.com'
 
   const navLinks = isHr
     ? [['Kako radi', `/${locale}/kako-radi`], ['Mobilna app', `/${locale}#funkcije`], ['Cijene', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
@@ -28,25 +28,6 @@ export default function PricingPage() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  const handleCheckout = async (plan: string) => {
-    setLoading(plan)
-    try {
-      const res = await fetch('/api/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ plan }),
-      })
-      const { url, error } = await res.json()
-      if (error || !url) throw new Error(error || 'No URL')
-      window.location.href = url
-    } catch (err) {
-      console.error('Checkout error:', err)
-      alert(isHr ? 'Greška pri otvaranju plaćanja. Pokušaj ponovo.' : 'Payment error. Please try again.')
-    } finally {
-      setLoading(null)
-    }
-  }
 
   const baseFeats = isHr
     ? ['Planovi treninga i prehrane', 'Prati što ti je važno — koraci, san, težina, raspoloženje', 'Chat s klijentima', 'Mobilna app za klijente (besplatna)', 'Vidi odmah tko je platio i koliko si zaradio']
@@ -214,14 +195,13 @@ export default function PricingPage() {
                     {tier.note}
                   </p>
                 )}
-                <button
-                  onClick={() => handleCheckout(PLANS[i])}
-                  disabled={loading !== null}
+                <a
+                  href={`${APP_URL}/register?plan=${PLANS[i]}`}
                   className="btn btn-p btn-fw"
-                  style={{ cursor: loading ? 'wait' : 'pointer', opacity: loading && loading !== PLANS[i] ? 0.6 : 1 }}
+                  style={{ textAlign: 'center' }}
                 >
-                  {loading === PLANS[i] ? '...' : tier.btn}
-                </button>
+                  {tier.btn}
+                </a>
               </div>
             ))}
           </div>
