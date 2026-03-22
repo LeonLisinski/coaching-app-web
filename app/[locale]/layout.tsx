@@ -2,8 +2,19 @@ import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
+import Script from 'next/script'
+import { Plus_Jakarta_Sans } from 'next/font/google'
 import { routing } from '@/i18n/routing'
 import '../globals.css'
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  display: 'swap',
+  variable: '--font-plus-jakarta',
+})
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 export const metadata: Metadata = {
   title: {
@@ -24,10 +35,8 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
     ],
     shortcut: '/favicon.svg',
-    apple: '/apple-icon.png',
   },
   openGraph: {
     title: 'UnitLift – Više klijenata. Manje kaosa.',
@@ -75,8 +84,24 @@ export default async function LocaleLayout({
   const messages = await getMessages()
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} className={plusJakarta.variable} suppressHydrationWarning>
       <body suppressHydrationWarning>
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}');
+              `}
+            </Script>
+          </>
+        )}
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

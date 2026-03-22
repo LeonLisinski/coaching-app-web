@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+/* Font loaded via next/font in layout.tsx — no render-blocking @import */
 @import "tailwindcss";
 
 :root {
@@ -7,7 +7,7 @@
   --w:#fff;--w70:rgba(255,255,255,.7);--w50:rgba(255,255,255,.5);
   --w20:rgba(255,255,255,.2);--w10:rgba(255,255,255,.1);--w06:rgba(255,255,255,.06);
   --lg:#f5f7ff;--la:#eceffe;--lt:#0a0a20;--ls:#525280;--lb:#dde2f5;
-  --f:'Plus Jakarta Sans',sans-serif;--r:16px;
+  --f:var(--font-plus-jakarta),'Plus Jakarta Sans',sans-serif;--r:16px;
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
