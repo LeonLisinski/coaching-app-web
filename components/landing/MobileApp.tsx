@@ -57,7 +57,7 @@ export default function MobileApp() {
               <div className="mob-status"><span>9:41</span><span>●●● 🔋</span></div>
               <div className="mob-header"><span className="mob-header-title">Moji planovi</span></div>
               <div className="mob-body" style={{ padding: '8px' }}>
-                <div className="mob-label">Klijentska app</div>
+                <div className="mob-label">Klijentska aplikacija</div>
                 <div className="mob-card" style={{ marginBottom: '5px' }}><div className="mob-card-title">Plan treninga</div><div className="mob-card-sub">Push/Pull/Legs · Tjedan 3</div></div>
                 <div className="mob-card" style={{ marginBottom: '5px' }}><div className="mob-card-title">Plan prehrane</div><div className="mob-card-sub">3200 kcal · Bulk program</div></div>
                 <div style={{ marginTop: '6px', padding: '8px', background: '#fff', borderRadius: '7px', border: '1px solid #dde2f5' }}>

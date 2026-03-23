@@ -16,7 +16,7 @@ export default function HowItWorksPage() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const navLinks = isHr
-    ? [['← Početna', `/${locale}`], ['Kako radi', `/${locale}/kako-radi`], ['Mobilna app', `/${locale}#funkcije`], ['Cijene', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
+    ? [['← Početna', `/${locale}`], ['Kako radi', `/${locale}/kako-radi`], ['Mobilna aplikacija', `/${locale}#funkcije`], ['Cijene', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
     : [['← Home', `/${locale}`], ['How it works', `/${locale}/kako-radi`], ['Mobile app', `/${locale}#funkcije`], ['Pricing', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
 
   useEffect(() => {
@@ -108,7 +108,7 @@ export default function HowItWorksPage() {
           <div className="hiw-section">
             <div className="legal-badge" style={{ marginBottom: '16px', display: 'inline-flex' }}>
               <span className="bdot" />
-              {isHr ? 'Za trenere — web app' : 'For coaches — web app'}
+              {isHr ? 'Za trenere — web aplikacija' : 'For coaches — web app'}
             </div>
             <h2 className="hiw-h2">
               {isHr ? 'Sve što trener treba — na jednom ekranu' : 'Everything a coach needs — on one screen'}
@@ -120,7 +120,7 @@ export default function HowItWorksPage() {
             </p>
             <div className="hiw-features">
               {(isHr
-                ? ['Planovi treninga i prehrane za svakog klijenta', 'Tjedni check-in sustav s automatskim podsjetnicima', 'Financijski pregled — tko je platio, komu ističe pretplata', 'Integrirani chat s klijentima', 'Mobilni pregled — dodaj web app na početni ekran']
+                ? ['Planovi treninga i prehrane za svakog klijenta', 'Tjedni check-in sustav s automatskim podsjetnicima', 'Financijski pregled — tko je platio, komu ističe pretplata', 'Integrirani chat s klijentima', 'Mobilni pregled — dodaj web aplikaciju na početni ekran']
                 : ['Training and nutrition plans for every client', 'Weekly check-in system with automatic reminders', 'Financial overview — who has paid, whose subscription expires', 'Integrated client chat', 'Mobile overview — add web app to your home screen']
               ).map((feat, i) => (
                 <div key={i} className="hiw-feat">
@@ -140,19 +140,19 @@ export default function HowItWorksPage() {
           <div className="hiw-section">
             <div className="legal-badge" style={{ marginBottom: '16px', display: 'inline-flex' }}>
               <span className="bdot" />
-              {isHr ? 'Za klijente — mobilna app' : 'For clients — mobile app'}
+              {isHr ? 'Za klijente — mobilna aplikacija' : 'For clients — mobile app'}
             </div>
             <h2 className="hiw-h2">
-              {isHr ? 'Klijenti preuzmu app, ti im pošalješ pristup' : 'Clients download the app, you send them access'}
+              {isHr ? 'Klijenti preuzmu aplikaciju, ti im pošalješ pristup' : 'Clients download the app, you send them access'}
             </h2>
             <p className="hiw-p">
               {isHr
-                ? 'Klijent preuzme besplatnu UnitLift app na App Store ili Google Play, kreira račun i odmah vidi planove koje si mu dodijelio. Nema papira, nema PDF-ova, nema WhatsApp poruka s rasporedom.'
+                ? 'Klijent preuzme besplatnu UnitLift aplikaciju na App Store ili Google Play, kreira račun i odmah vidi planove koje si mu dodijelio. Nema papira, nema PDF-ova, nema WhatsApp poruka s rasporedom.'
                 : 'The client downloads the free UnitLift app from the App Store or Google Play, creates an account and immediately sees the plans you assigned them. No paperwork, no PDFs, no WhatsApp messages with schedules.'}
             </p>
             <div className="hiw-features">
               {(isHr
-                ? ['Planovi treninga i prehrane uvijek dostupni u appu', 'Tjedni check-in za 2 minute — direktno iz appu', 'Chat s trenerom — sve poruke na jednom mjestu', 'Push obavijesti za podsjetnike i novosti']
+                ? ['Planovi treninga i prehrane uvijek dostupni u aplikaciji', 'Tjedni check-in za 2 minute — direktno iz aplikacije', 'Chat s trenerom — sve poruke na jednom mjestu', 'Push obavijesti za podsjetnike i novosti']
                 : ['Training and nutrition plans always available in the app', 'Weekly check-in in 2 minutes — directly in the app', 'Chat with coach — all messages in one place', 'Push notifications for reminders and updates']
               ).map((feat, i) => (
                 <div key={i} className="hiw-feat">
@@ -163,7 +163,7 @@ export default function HowItWorksPage() {
             </div>
             <p className="hiw-quote">
               {isHr
-                ? '"Klijenti preuzmu app, ti im pošalješ pristup. Od tog trenutka — sve je automatsko."'
+                ? '"Klijenti preuzmu aplikaciju, ti im pošalješ pristup. Od tog trenutka sve je automatsko."'
                 : '"Clients download the app, you send them access. From that moment — everything is automatic."'}
             </p>
           </div>

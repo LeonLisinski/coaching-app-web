@@ -10,7 +10,7 @@ export const postsHr: BlogPost[] = [
     readTime: 6,
     publishedAt: '14. ožujka 2025.',
     author: 'Leon',
-    authorRole: 'Online fitness trener & osnivač UnitLift',
+    authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
       { type: 'paragraph', text: 'Izgradnja baze klijenata jedan je od najvećih izazova svakog online fitness trenera. Dobra vijest je da ti za to ne trebaju skupi oglasi — trebaju ti prava strategija i konzistentnost.' },
       { type: 'heading', text: '1. Definiraj svog idealnog klijenta' },
@@ -36,8 +36,8 @@ export const postsHr: BlogPost[] = [
     categorySlug: 'alati',
     readTime: 4,
     publishedAt: '11. ožujka 2025.',
-    author: 'Leon Lišinski',
-    authorRole: 'Online fitness trener & osnivač UnitLift',
+    author: 'Leon',
+    authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
       { type: 'paragraph', text: 'Počeo sam s Excelom. Jedan sheet za svakoga klijenta, formule za izračun kalorija, boja za svaki tjedan. Izgledalo je uredno — dok nisam imao 12 klijenata odjednom.' },
       { type: 'heading', text: 'Problem raste s brojem klijenata' },
@@ -65,8 +65,8 @@ export const postsHr: BlogPost[] = [
     categorySlug: 'klijenti',
     readTime: 5,
     publishedAt: '7. ožujka 2025.',
-    author: 'Leon Lišinski',
-    authorRole: 'Online fitness trener & osnivač UnitLift',
+    author: 'Leon',
+    authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
       { type: 'paragraph', text: 'Check-in je srce online coachinga. Bez redovitog i kvalitetnog praćenja, planovi ostaju samo teorija. Evo kako napraviti check-in koji stvarno funkcionira.' },
       { type: 'heading', text: '1. Standardiziraj pitanja' },
@@ -97,8 +97,8 @@ export const postsHr: BlogPost[] = [
     categorySlug: 'rast',
     readTime: 7,
     publishedAt: '1. ožujka 2025.',
-    author: 'Leon Lišinski',
-    authorRole: 'Online fitness trener & osnivač UnitLift',
+    author: 'Leon',
+    authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
       { type: 'paragraph', text: 'Pitanje cijena najčešće je ono pred kojim se treneri najviše blokiraju. Strah od odbijanja, neizvjesnost o vlastite vrijednosti, usporedba s konkurencijom — sve to vodi prema istom ishodu: podcjenjivanju.' },
       { type: 'heading', text: 'Zašto niska cijena nije prednost' },
@@ -129,8 +129,8 @@ export const postsHr: BlogPost[] = [
     categorySlug: 'vodic',
     readTime: 6,
     publishedAt: '14. veljače 2025.',
-    author: 'Leon Lišinski',
-    authorRole: 'Online fitness trener & osnivač UnitLift',
+    author: 'Leon',
+    authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
       { type: 'paragraph', text: 'Automatizacija ima lošu reputaciju u coachingu. Treneri se boje da će izgubiti "osobni dodir" i postati roboti koji šalju mailers. Ali postoji fundamentalna razlika između automatizacije procesa i automatizacije odnosa.' },
       { type: 'heading', text: 'Što je sigurno automatizirati' },
@@ -167,11 +167,11 @@ export const postsHr: BlogPost[] = [
     readTime: 5,
     publishedAt: '10. veljače 2025.',
     author: 'Leon',
-    authorRole: 'Online fitness trener & osnivač UnitLift',
+    authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
       { type: 'paragraph', text: 'Potražnja za aplikacijama za fitness trenere nikad nije bila veća. Rast online coachinga doveo je do pojave desetaka rješenja — od generičkih projektnih alata do specijaliziranih coaching platformi. Kako odabrati pravo?' },
       { type: 'heading', text: '1. Mobilna aplikacija za klijente' },
-      { type: 'paragraph', text: 'Najvažnija stavka. Klijent mora moći pristupiti planu s mobitela, predati check-in i komunicirati s trenerom bez potrebe za prijavom u web-preglednik. Namjenska iOS/Android app drastično povećava angažman klijenta.' },
+      { type: 'paragraph', text: 'Najvažnija stavka. Klijent mora moći pristupiti planu s mobitela, predati check-in i komunicirati s trenerom bez potrebe za prijavom u web-preglednik. Namjenska iOS/Android aplikacija drastično povećava angažman klijenta.' },
       { type: 'heading', text: '2. Integrirano praćenje napretka' },
       { type: 'paragraph', text: 'Platforma treba automatski bilježiti check-in podatke kroz vrijeme i prikazivati trendove. Trener ne smije ručno prepisivati vrijednosti iz jednog alata u drugi — sve mora biti na jednom mjestu.' },
       { type: 'heading', text: '3. Planovi treninga i prehrane' },
@@ -181,7 +181,7 @@ export const postsHr: BlogPost[] = [
       { type: 'heading', text: '5. Financijsko praćenje' },
       { type: 'paragraph', text: 'Praćenje plaćanja, status pretplate po klijentu i pregled prihoda trebaju biti automatski. Ručno vođenje financija oduzima dragocjeno vrijeme i povećava mogućnost greške.' },
       { type: 'list', items: [
-        'Mobilna app za klijente (iOS & Android)',
+        'Mobilna aplikacija za klijente (iOS & Android)',
         'Automatski check-in i praćenje napretka',
         'Knjižnica predložaka za planove',
         'Ugrađena komunikacija (ne WhatsApp)',
@@ -200,7 +200,7 @@ export const postsHr: BlogPost[] = [
     readTime: 8,
     publishedAt: '3. veljače 2025.',
     author: 'Leon',
-    authorRole: 'Online fitness trener & osnivač UnitLift',
+    authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
       { type: 'paragraph', text: 'Online coaching biznis može izgledati kao kompleksna mašinerija — web stranica, društvene mreže, planovi, komunikacija, plaćanje. Ali suština je jednostavna: pomozi osobi da postigne cilj, i naplati za to. Ostatak dolazi postepeno.' },
       { type: 'heading', text: 'Tjedan 1: temelji' },
@@ -224,7 +224,7 @@ export const postsHr: BlogPost[] = [
         'Odustajanje prerano — rast dolazi između 3. i 6. mjeseca',
       ]},
       { type: 'quote', text: '"Svaki uspješan online trener kojeg poznajem imao je loš početak. Razlika je u tome što su nastavili dovoljno dugo da sustav počne raditi za njih."' },
-      { type: 'paragraph', text: 'UnitLift je dizajniran upravo za ovu fazu rasta — od prvog klijenta do skaliranja. Postavljanje traje manje od 5 minuta, a 14-dnevni besplatni trial ti daje dovoljno vremena da vidiš razliku.' },
+      { type: 'paragraph', text: 'UnitLift je dizajniran upravo za ovu fazu rasta — od prvog klijenta do skaliranja. Postavljanje traje manje od 5 minuta, a 14-dnevno besplatno probno razdoblje daje ti dovoljno vremena da vidiš razliku.' },
     ],
   },
   {
@@ -236,7 +236,7 @@ export const postsHr: BlogPost[] = [
     readTime: 5,
     publishedAt: '28. siječnja 2025.',
     author: 'Leon',
-    authorRole: 'Online fitness trener & osnivač UnitLift',
+    authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
       { type: 'paragraph', text: 'Generički alati imaju jednu veliku prednost: besplatni su (ili jeftini). I zato većina početnih trenera počinje s njima. Pero za Google Doc, WhatsApp za komunikaciju, Revolut ili PayPal za plaćanje. Funkcionira — do određene točke.' },
       { type: 'heading', text: 'Problem fragmentacije' },
@@ -245,7 +245,7 @@ export const postsHr: BlogPost[] = [
       { type: 'list', items: [
         'Sve na jednom mjestu — klijent, plan, komunikacija, check-in, plaćanje',
         'Automatizacija koja ne zahtijeva tvoju pozornost',
-        'Profesionalan dojam — klijent ima svoju app, ne dijeli Docs dokument',
+        'Profesionalan dojam — klijent ima svoju aplikaciju, ne dijeli Docs dokument',
         'Podaci koji se akumuliraju i postaju vrijedni za coaching',
         'GDPR sukladnost i sigurna pohrana — ne brigeš se za privatnost podataka',
       ]},
@@ -264,7 +264,7 @@ export const postsHr: BlogPost[] = [
     readTime: 6,
     publishedAt: '20. siječnja 2025.',
     author: 'Leon',
-    authorRole: 'Online fitness trener & osnivač UnitLift',
+    authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
       { type: 'paragraph', text: 'Postoje dvije strategije za veći prihod: više klijenata ili veća cijena po klijentu. Obje funkcioniraju, ali obje imaju preduvjet — sustav koji ti ne troši svo slobodno vrijeme.' },
       { type: 'heading', text: 'Strategija 1: Optimiziraj prihod po klijentu' },

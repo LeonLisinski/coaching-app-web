@@ -31,7 +31,7 @@ export default function Navbar() {
   const navItems = isHr
     ? [
         { label: 'Kako radi', href: `/${locale}/kako-radi` },
-        { label: 'Mobilna app', href: '#funkcije' },
+        { label: 'Mobilna aplikacija', href: '#funkcije' },
         { label: 'Cijene', href: `/${locale}/cijene` },
         { label: 'Blog', href: `/${locale}/blog` },
         { label: 'FAQ', href: `/${locale}/faq` },

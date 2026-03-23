@@ -20,7 +20,7 @@ export default function PricingPage() {
   const APP_URL = 'https://app.unitlift.com'
 
   const navLinks = isHr
-    ? [['← Početna', `/${locale}`], ['Kako radi', `/${locale}/kako-radi`], ['Mobilna app', `/${locale}#funkcije`], ['Cijene', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
+    ? [['← Početna', `/${locale}`], ['Kako radi', `/${locale}/kako-radi`], ['Mobilna aplikacija', `/${locale}#funkcije`], ['Cijene', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
     : [['← Home', `/${locale}`], ['How it works', `/${locale}/kako-radi`], ['Mobile app', `/${locale}#funkcije`], ['Pricing', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function PricingPage() {
   }, [])
 
   const baseFeats = isHr
-    ? ['Planovi treninga i prehrane', 'Prati što ti je važno — koraci, san, težina, raspoloženje', 'Chat s klijentima', 'Mobilna app za klijente (besplatna)', 'Vidi odmah tko je platio i koliko si zaradio']
+    ? ['Planovi treninga i prehrane', 'Prati što ti je važno — koraci, san, težina, raspoloženje', 'Chat s klijentima', 'Mobilna aplikacija za klijente (besplatna)', 'Vidi odmah tko je platio i koliko si zaradio']
     : ['Training and nutrition plans', 'Track what matters — steps, sleep, weight, mood', 'Client chat', 'Client mobile app (free)', 'See instantly who paid and how much you earned']
 
   const tiers = isHr
@@ -42,12 +42,12 @@ export default function PricingPage() {
         },
         {
           name: 'Pro', price: 59, clients: 'Do 50 klijenata', popular: true,
-          feats: ['Do 50 aktivnih klijenata', 'Vlastiti logo i boje u klijentskoj app'],
+          feats: ['Do 50 aktivnih klijenata', 'Vlastiti logo i boje u klijentskoj aplikaciji'],
           btn: 'Kreni besplatno', note: null,
         },
         {
           name: 'Scale', price: 99, clients: 'Do 150 klijenata', popular: false,
-          feats: ['Do 150 aktivnih klijenata', 'Vlastiti logo i boje u klijentskoj app'],
+          feats: ['Do 150 aktivnih klijenata', 'Vlastiti logo i boje u klijentskoj aplikaciji'],
           btn: 'Kreni besplatno', note: 'Više od 150 klijenata? +€10/mj za svakih dodatnih 25.',
         },
       ]
@@ -78,11 +78,11 @@ export default function PricingPage() {
 
   const advCardsHr = [
     { icon: IcoCheckin, title: 'Check-in praćenje bez muke', desc: 'Klijent ispuni check-in u dvije minute. Ti odmah vidiš napredak — bez jedne poruke, bez čekanja, bez traženja po WhatsAppu.' },
-    { icon: IcoPhone,   title: 'Jedna app za sve', desc: 'Planovi, prehrana, komunikacija, check-ini — sve na jednom mjestu. Zaboravi na Excel, WhatsApp, PDF i ostale kaos-alate.' },
+    { icon: IcoPhone,   title: 'Jedna aplikacija za sve', desc: 'Planovi, prehrana, komunikacija, check-ini — sve na jednom mjestu. Zaboravi na Excel, WhatsApp, PDF i ostale kaos-alate.' },
     { icon: IcoMoney,   title: 'Praćenje plaćanja u sekundi', desc: 'Vidiš točno tko je platio, tko kasni i koliko si zaradio ovaj mjesec. Bez ručnog praćenja, bez neugodnih podsjetnika.' },
-    { icon: IcoApps,    title: 'Klijentima jednostavnije', desc: 'Klijent preuzme jednu app i sve je tamo. Nema registracija na 3 platforme, nema linkova po SMS-u, nema zbunjenosti.' },
+    { icon: IcoApps,    title: 'Klijentima jednostavnije', desc: 'Klijent preuzme jednu aplikaciju i sve je tamo. Nema registracija na 3 platforme, nema linkova po SMS-u, nema zbunjenosti.' },
     { icon: IcoChart,   title: 'Napredak koji se vidi', desc: 'Sve mjere, foto check-ini i komentari arhivirani automatski. Lako prilagodi program na temelju podataka, ne nagađanja.' },
-    { icon: IcoLock,    title: 'Manje app, više mira', desc: 'Jedna pretplata. Jedan login. Sve u jednom. Nema više žongliranja s desecima alata i plaćanja na svakom koraku.' },
+    { icon: IcoLock,    title: 'Manje aplikacija, više mira', desc: 'Jedna pretplata. Jedan login. Sve u jednom. Nema više žongliranja s desecima alata i plaćanja na svakom koraku.' },
   ]
 
   const advCardsEn = [
@@ -213,7 +213,7 @@ export default function PricingPage() {
           {/* Stats row */}
           <div className="pp-stats-row">
             {(isHr
-              ? [['5 min', 'postavljanje profila'], ['14 dana', 'besplatno probno'], ['Fiksna cijena', 'bez skrivenih troškova'], ['0 €', 'klijentska app']]
+              ? [['5 min', 'postavljanje profila'], ['14 dana', 'besplatno probno'], ['Fiksna cijena', 'bez skrivenih troškova'], ['0 €', 'klijentska aplikacija']]
               : [['5 min', 'profile setup'], ['14 days', 'free trial'], ['Fixed price', 'no hidden costs'], ['€ 0', 'client app']]
             ).map(([val, lbl]) => (
               <div key={lbl} className="pp-stat">

@@ -1,4 +1,4 @@
-﻿import type { BlogPost } from './types'
+import type { BlogPost } from './types'
 
 export const postsEn: BlogPost[] = [
   {
@@ -10,7 +10,7 @@ export const postsEn: BlogPost[] = [
     readTime: 6,
     publishedAt: 'March 14, 2025',
     author: 'Leon',
-    authorRole: 'Online fitness trainer & founder UnitLift',
+    authorRole: 'Personal trainer and owner of UnitLift',
     content: [
       { type: 'paragraph', text: 'Building a client base is one of the biggest challenges every online fitness coach faces. The good news: you don\'t need expensive ads — you need the right strategy and consistency.' },
       { type: 'heading', text: '1. Define Your Ideal Client' },
@@ -37,7 +37,7 @@ export const postsEn: BlogPost[] = [
     readTime: 4,
     publishedAt: 'March 11, 2025',
     author: 'Leon',
-    authorRole: 'Online fitness trainer & founder UnitLift',
+    authorRole: 'Personal trainer and owner of UnitLift',
     content: [
       { type: 'paragraph', text: 'I started with Excel. One sheet per client, formulas for calorie calculation, color-coding for each week. It looked clean — until I had 12 clients at the same time.' },
       { type: 'heading', text: 'The Problem Grows With Your Client Count' },
@@ -66,7 +66,7 @@ export const postsEn: BlogPost[] = [
     readTime: 5,
     publishedAt: 'March 7, 2025',
     author: 'Leon',
-    authorRole: 'Online fitness trainer & founder UnitLift',
+    authorRole: 'Personal trainer and owner of UnitLift',
     content: [
       { type: 'paragraph', text: 'The check-in is the heart of online coaching. Without regular and quality tracking, plans remain just theory. Here\'s how to make a check-in that actually works.' },
       { type: 'heading', text: '1. Standardize Your Questions' },
@@ -98,7 +98,7 @@ export const postsEn: BlogPost[] = [
     readTime: 7,
     publishedAt: 'March 1, 2025',
     author: 'Leon',
-    authorRole: 'Online fitness trainer & founder UnitLift',
+    authorRole: 'Personal trainer and owner of UnitLift',
     content: [
       { type: 'paragraph', text: 'Pricing is often the question where coaches get most stuck. Fear of rejection, uncertainty about one\'s own worth, comparison to competitors — all of this leads to the same outcome: underpricing.' },
       { type: 'heading', text: 'Why Low Price Is Not an Advantage' },
@@ -130,7 +130,7 @@ export const postsEn: BlogPost[] = [
     readTime: 6,
     publishedAt: 'February 14, 2025',
     author: 'Leon',
-    authorRole: 'Online fitness trainer & founder UnitLift',
+    authorRole: 'Personal trainer and owner of UnitLift',
     content: [
       { type: 'paragraph', text: 'Automation has a bad reputation in coaching. Coaches fear losing the "personal touch" and becoming robots that send mailers. But there\'s a fundamental difference between automating processes and automating relationships.' },
       { type: 'heading', text: 'What\'s Safe to Automate' },
@@ -167,7 +167,7 @@ export const postsEn: BlogPost[] = [
     readTime: 5,
     publishedAt: 'February 10, 2025',
     author: 'Leon',
-    authorRole: 'Online fitness trainer & founder UnitLift',
+    authorRole: 'Personal trainer and owner of UnitLift',
     content: [
       { type: 'paragraph', text: 'Demand for fitness trainer apps has never been higher. The rise of online coaching has led to dozens of solutions — from generic project management tools to specialized coaching platforms. How do you choose the right one?' },
       { type: 'heading', text: '1. Mobile App for Clients' },
@@ -200,7 +200,7 @@ export const postsEn: BlogPost[] = [
     readTime: 8,
     publishedAt: 'February 3, 2025',
     author: 'Leon',
-    authorRole: 'Online fitness trainer & founder UnitLift',
+    authorRole: 'Personal trainer and owner of UnitLift',
     content: [
       { type: 'paragraph', text: 'An online coaching business can look like a complex machine — website, social media, plans, communication, payments. But the essence is simple: help someone achieve a goal, and charge for it. The rest comes gradually.' },
       { type: 'heading', text: 'Week 1: The Foundation' },
@@ -236,7 +236,7 @@ export const postsEn: BlogPost[] = [
     readTime: 5,
     publishedAt: 'January 28, 2025',
     author: 'Leon',
-    authorRole: 'Online fitness trainer & founder UnitLift',
+    authorRole: 'Personal trainer and owner of UnitLift',
     content: [
       { type: 'paragraph', text: 'Generic tools have one big advantage: they\'re free (or cheap). That\'s why most coaches start with them. Pen for Google Doc, WhatsApp for communication, Revolut or PayPal for payments. It works — up to a point.' },
       { type: 'heading', text: 'The Problem of Fragmentation' },
@@ -264,7 +264,7 @@ export const postsEn: BlogPost[] = [
     readTime: 6,
     publishedAt: 'January 20, 2025',
     author: 'Leon',
-    authorRole: 'Online fitness trainer & founder UnitLift',
+    authorRole: 'Personal trainer and owner of UnitLift',
     content: [
       { type: 'paragraph', text: 'There are two strategies for higher income: more clients or a higher price per client. Both work, but both have a prerequisite — a system that doesn\'t consume all your free time.' },
       { type: 'heading', text: 'Strategy 1: Optimize Revenue Per Client' },

@@ -19,7 +19,7 @@ export const faqHr: FAQData = {
         },
         {
           q: 'Na kojim uređajima radi UnitLift?',
-          a: 'Web aplikacija za trenere radi na svim modernim preglednicima (Chrome, Firefox, Safari, Edge) i potpuno je responzivna — možeš je dodati na početni ekran mobitela kao PWA. Klijenti imaju zasebnu nativnu iOS i Android app koja je besplatna za preuzimanje.',
+          a: 'Web aplikacija za trenere radi na svim modernim preglednicima (Chrome, Firefox, Safari, Edge) i potpuno je responzivna — možeš je dodati na početni ekran mobitela kao PWA. Klijenti imaju zasebnu nativnu iOS i Android aplikaciju koja je besplatna za preuzimanje.',
         },
         {
           q: 'Je li UnitLift GDPR sukladan?',
@@ -67,11 +67,11 @@ export const faqHr: FAQData = {
         },
         {
           q: 'Mogu li imati vlastiti branding?',
-          a: 'Da, branding opcija dostupna je na svim planovima. U postavkama dodaš logo, odabereš primarne boje i povežeš profile društvenih mreža. Klijenti tada vide tvoj brand unutar aplikacije umjesto UnitLift branda — izgleda kao da si razvio vlastitu app.',
+          a: 'Da, branding opcija dostupna je na svim planovima. U postavkama dodaš logo, odabereš primarne boje i povežeš profile društvenih mreža. Klijenti tada vide tvoj brand unutar aplikacije umjesto UnitLift branda — izgleda kao da si razvio vlastitu aplikaciju.',
         },
         {
           q: 'Kako funkcioniraju check-ini?',
-          a: 'Sam definiraš parametre check-ina za svakog klijenta (npr. tjedna tjelesna masa, broj koraka, sate sna, raspoloženje, fotografija napretka). Klijenti ih ispunjavaju u app-u, ti odmah vidiš odgovore s grafikonima napretka u dashboardu. Sustav automatski šalje podsjetnike klijentima koji kasne.',
+          a: 'Sam definiraš parametre check-ina za svakog klijenta (npr. tjedna tjelesna masa, broj koraka, sate sna, raspoloženje, fotografija napretka). Klijenti ih ispunjavaju u aplikaciji, a ti odmah vidiš odgovore s grafikonima napretka u dashboardu. Sustav automatski šalje podsjetnike klijentima koji kasne.',
         },
         {
           q: 'Kako pratim financije i plaćanja klijenata?',
@@ -79,7 +79,7 @@ export const faqHr: FAQData = {
         },
         {
           q: 'Mogu li slati obavijesti klijentima?',
-          a: 'Da, na svim planovima. Možeš slati ručne obavijesti ili postaviti automatske podsjetnike za check-in. Push obavijesti dolaze direktno na klijentov mobitel kroz app.',
+          a: 'Da, na svim planovima. Možeš slati ručne obavijesti ili postaviti automatske podsjetnike za check-in. Push obavijesti dolaze direktno na klijentov mobitel kroz aplikaciju.',
         },
       ],
     },
@@ -88,16 +88,16 @@ export const faqHr: FAQData = {
       title: 'Za klijente',
       questions: [
         {
-          q: 'Moraju li moji klijenti plaćati za app?',
-          a: 'Ne. Klijentska app je potpuno besplatna za preuzimanje i korištenje na iOS i Android uređajima. Plaćaš samo ti kao trener za pristup coaching platformi — klijenti nikad ne vide nikakve troškove.',
+          q: 'Moraju li moji klijenti plaćati za aplikaciju?',
+          a: 'Ne. Klijentska aplikacija potpuno je besplatna za preuzimanje i korištenje na iOS i Android uređajima. Plaćaš samo ti kao trener za pristup coaching platformi — klijenti nikad ne vide nikakve troškove.',
         },
         {
           q: 'Kako klijent dobiva pristup?',
-          a: 'Trener šalje pozivnicu na email klijenta direktno iz platforme. Klijent klikne na link, preuzme app na App Store ili Google Play, kreira račun i odmah ima pristup svim planovima, check-inovima i chatu. Cijeli proces traje manje od 2 minute.',
+          a: 'Trener šalje pozivnicu na email klijenta direktno iz platforme. Klijent klikne na link, preuzme aplikaciju na App Store ili Google Play, kreira račun i odmah ima pristup svim planovima, check-inovima i chatu. Cijeli proces traje manje od 2 minute.',
         },
         {
           q: 'Mogu li klijenti komunicirati s trenerom?',
-          a: 'Da. Klijentska app ima integrirani chat s trenerom. Sve poruke su na jednom mjestu — nema više razbacanih WhatsApp razgovora. Trener vidi sve poruke u web platformi i može odgovarati s mobitela ili računala.',
+          a: 'Da. Klijentska aplikacija ima integrirani chat s trenerom. Sve poruke su na jednom mjestu — nema više razbacanih WhatsApp razgovora. Trener vidi sve poruke u web platformi i može odgovarati s mobitela ili računala.',
         },
         {
           q: 'Što se dogodi s podacima klijenta ako trener ugasi račun?',
@@ -119,7 +119,7 @@ export const faqHr: FAQData = {
         },
         {
           q: 'Radi li aplikacija bez interneta?',
-          a: 'Web platforma zahtijeva internet vezu. Klijentska mobilna app može prikazati prethodno učitane planove i offline, ali za slanje check-ina i chat potrebna je aktivna internet veza.',
+          a: 'Web platforma zahtijeva internet vezu. Klijentska mobilna aplikacija može prikazati prethodno učitane planove i offline, ali za slanje check-ina i chat potrebna je aktivna internet veza.',
         },
         {
           q: 'Kako kontaktirati podršku?',
