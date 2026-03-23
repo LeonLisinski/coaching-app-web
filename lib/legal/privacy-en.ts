@@ -79,6 +79,7 @@ export const privacyEn: LegalDocument = {
             'Supabase Inc. — data storage and authentication (USA; protected via standard contractual clauses)',
             'Vercel Inc. — web application hosting',
             'Stripe Inc. — payment processing',
+            'Resend Inc. — transactional email delivery (contact form)',
             'Push notification providers — Apple (APNs) and Google (FCM)',
           ],
         },
@@ -158,7 +159,7 @@ export const privacyEn: LegalDocument = {
       id: 'minors',
       title: '11. Minors',
       content: [
-        { text: 'The service is not intended for persons under 16 years of age. We do not knowingly collect personal data from children. If we become aware that we have collected data from a child, we will delete it immediately.' },
+        { text: 'The service is not intended for persons under 18 years of age. We do not knowingly collect personal data from children. If we become aware that we have collected data from a child, we will delete it immediately.' },
       ],
     },
     {

@@ -79,6 +79,7 @@ export const privacyHr: LegalDocument = {
             'Supabase Inc. — pohrana podataka i autentifikacija (SAD; zaštita putem standardnih ugovornih klauzula)',
             'Vercel Inc. — hosting web aplikacije',
             'Stripe Inc. — obrada plaćanja',
+            'Resend Inc. — transakcijska dostava e-pošte (kontakt obrazac)',
             'Davatelji push obavijesti — Apple (APNs) i Google (FCM)',
           ],
         },
@@ -158,7 +159,7 @@ export const privacyHr: LegalDocument = {
       id: 'maloljetnici',
       title: '11. Maloljetnici',
       content: [
-        { text: 'Usluga nije namijenjena osobama mlađim od 16 godina. Ne prikupljamo namjerno osobne podatke djece. Ako saznamo da smo prikupili podatke djeteta, odmah ćemo ih izbrisati.' },
+        { text: 'Usluga nije namijenjena osobama mlađim od 18 godina. Ne prikupljamo namjerno osobne podatke djece. Ako saznamo da smo prikupili podatke djeteta, odmah ćemo ih izbrisati.' },
       ],
     },
     {
