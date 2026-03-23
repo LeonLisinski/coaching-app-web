@@ -80,9 +80,6 @@ export default function BlogListPage({ posts }: Props) {
           <button className="langbtn navlang" onClick={() => router.push(`/${otherLocale}/blog`)}>
             {otherLocale.toUpperCase()} ↕
           </button>
-          <a href={`/${locale}`} className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {isHr ? '← Na web' : '← Back to site'}
-          </a>
           <a href="https://app.unitlift.com/login" className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
             {isHr ? 'Prijava' : 'Login'}
           </a>
@@ -99,11 +96,6 @@ export default function BlogListPage({ posts }: Props) {
         {navLinks.map(([label, href]) => (
           <a key={label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
         ))}
-        <div className="mobc">
-          <a href={`/${locale}`} className="btn btn-g btn-fw" onClick={() => setMenuOpen(false)}>
-            {isHr ? '← Na web' : '← Back to site'}
-          </a>
-        </div>
         <button className="langbtn mobc" onClick={() => { router.push(`/${otherLocale}/blog`); setMenuOpen(false) }}>
           {isHr ? `Jezik: ${otherLocale.toUpperCase()}` : `Language: ${otherLocale.toUpperCase()}`}
         </button>
