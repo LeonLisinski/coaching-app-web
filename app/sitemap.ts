@@ -15,6 +15,11 @@ const staticRoutes = [
   '/uvjeti',
 ]
 
+const seoRoutes: Array<{ url: string; priority: number }> = [
+  { url: `${BASE}/hr/software-za-online-fitness-trenere`, priority: 0.85 },
+  { url: `${BASE}/en/online-personal-trainer-software`,  priority: 0.85 },
+]
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = []
 
@@ -27,6 +32,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: route === '' ? 1.0 : route === '/cijene' ? 0.9 : 0.7,
       })
     }
+  }
+
+  // SEO landing pages
+  for (const { url, priority } of seoRoutes) {
+    entries.push({ url, lastModified: new Date(), changeFrequency: 'monthly', priority })
   }
 
   // Blog posts

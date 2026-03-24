@@ -66,11 +66,6 @@ export default function SeoLandingPage() {
       { '@type': 'Offer', name: 'Pro',     price: '59', priceCurrency: 'EUR' },
       { '@type': 'Offer', name: 'Scale',   price: '99', priceCurrency: 'EUR' },
     ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '47',
-    },
   }
 
   return (

@@ -1,4 +1,4 @@
-import { redirect } from 'next/navigation'
+import { permanentRedirect } from 'next/navigation'
 import SeoLandingPage from '@/components/landing/SeoLandingPage'
 
 interface Props { params: Promise<{ locale: string }> }
@@ -29,6 +29,6 @@ export async function generateMetadata({ params }: Props) {
 export default async function SoftwareZaFitnessTrenerePage({ params }: Props) {
   const { locale } = await params
   // Redirect EN visitors to the EN-keyword URL
-  if (locale === 'en') redirect('/en/online-personal-trainer-software')
+  if (locale === 'en') permanentRedirect('/en/online-personal-trainer-software')
   return <SeoLandingPage />
 }

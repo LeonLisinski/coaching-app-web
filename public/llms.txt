@@ -1,0 +1,30 @@
+# UnitLift
+
+> Coaching platforma za online fitness trenere. Planovi treninga i prehrane, tjedni check-ini, praćenje plaćanja i chat s klijentima — sve na jednom mjestu.
+
+UnitLift je SaaS platforma namijenjena online personal trenerima koji žele zamijeniti WhatsApp, Excel i PDF-ove jednim profesionalnim rješenjem.
+
+## Što UnitLift nudi
+
+- Planovi treninga i prehrane (personalizirani po klijentu)
+- Tjedni check-in sustav s automatskim podsjetnicima
+- Praćenje plaćanja i pregled prihoda
+- Integrirani chat s klijentima
+- Besplatna mobilna aplikacija za klijente (iOS i Android)
+- Branding (vlastiti logo i boje) na Pro i Scale planovima
+
+## Cijene
+
+- Starter: €29/mj — do 15 klijenata
+- Pro: €59/mj — do 50 klijenata, vlastiti branding
+- Scale: €99/mj — do 150 klijenata
+
+Svi planovi uključuju 14-dnevno besplatno probno razdoblje. Naplata počinje tek nakon probe.
+
+## Kontakt i linkovi
+
+- Web: https://unitlift.com
+- Aplikacija: https://app.unitlift.com
+- Email: support@unitlift.com
+- Privatnost: https://unitlift.com/hr/privatnost
+- Uvjeti: https://unitlift.com/hr/uvjeti
