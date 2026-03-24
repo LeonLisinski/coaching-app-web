@@ -1,3 +1,5 @@
+'use client'
+
 import { useTranslations, useLocale } from 'next-intl'
 import dynamic from 'next/dynamic'
 
