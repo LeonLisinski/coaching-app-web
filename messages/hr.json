@@ -146,6 +146,180 @@
       { "q": "Radi li UnitLift na mobitelu za trenere?", "a": "Da. Web aplikacija za trenere je potpuno responzivna i možeš je dodati na početni ekran mobitela kao aplikaciju. Klijenti imaju zasebnu nativnu iOS i Android aplikaciju optimiziranu za svakodnevnu upotrebu." }
     ]
   },
+  "seoPageApp": {
+    "heroBadge": "Aplikacija za personal trenere",
+    "heroH1": "Aplikacija za personal trenere <span class=\"grad\">kojoj se klijenti vraćaju</span>",
+    "heroSub": "UnitLift daje svakom klijentu vlastitu mobilnu aplikaciju s planovima, check-inima i chatom. Ti izgledaš profesionalnije — bez ijednog PDF-a ili WhatsApp poruke.",
+    "heroBtn1": "Isprobaj besplatno 14 dana",
+    "heroBtn2": "Pogledaj kako radi →",
+    "heroNote": "Kartica potrebna za aktivaciju · Bez naplate 14 dana · Otkaži kad hoćeš",
+    "mockupTitle": "UnitLift — Klijentska aplikacija",
+    "mockupClients": [
+      { "initials": "AM", "name": "Ana Marković", "sub": "Tjedan 12 — Plan aktivan", "status": "Aktivna ✓", "type": "ok" },
+      { "initials": "IH", "name": "Ivan Horvat", "sub": "Check-in poslan", "status": "Predano ✓", "type": "ok" },
+      { "initials": "PK", "name": "Petra Kovač", "sub": "Novi plan dostupan", "status": "Na čekanju", "type": "warn" }
+    ],
+    "mockupStat1Val": "98%", "mockupStat1Lbl": "Stopa predaje check-ina",
+    "mockupStat2Val": "4.9★", "mockupStat2Lbl": "Ocjena klijenata",
+    "problemTag": "Problem bez prave aplikacije",
+    "problemH2": "Klijenti bez dobre aplikacije<br/>gube motivaciju i odustaju",
+    "problemSub": "Ako klijent mora tražiti plan u WhatsApp porukama ili printati PDF, doživljava kaos. A kaos vodi do odustajanja — i do toga da krivi tebe.",
+    "problemCards": [
+      { "icon": "📱", "title": "Plan zakopan u chatu", "text": "Klijent mora skrolati kroz tjedne poruka da nađe plan. Koji je novi? Koji stari? Često pitaju — a ti gubiš živce objašnjavajući." },
+      { "icon": "📄", "title": "PDF koji nitko ne otvara", "text": "Pošalješ lijepo uređen PDF, klijent ga spremi... i nikad više ne otvori. Nema notifikacija, nema praćenja — nema povratne informacije." },
+      { "icon": "🔄", "title": "Svaka promjena = nova poruka", "text": "Promijeniš jedno vježbu, moraš slati novi dokument. Klijent ne zna koja je verzija aktualna. Ti trošiš više vremena na slanje nego na coaching." }
+    ],
+    "featTag": "Rješenje",
+    "featH2": "Jedna aplikacija.<br/>Klijent uvijek ima sve.",
+    "featSub": "UnitLift klijentima daje nativnu iOS i Android aplikaciju — besplatno. Planovi, check-ini, chat i napredak na jednom ekranu.",
+    "features": [
+      { "icon": "📋", "title": "Planovi uvijek dostupni", "desc": "Klijent otvori aplikaciju i odmah vidi aktualni plan treninga i prehrane. Nema traganja, nema pitanja — sve je na jednom mjestu." },
+      { "icon": "✅", "title": "Check-in za 2 minute", "desc": "Klijent popuni tjedni check-in direktno iz mobitela. Ti odmah vidiš mjere, fotografije i komentare — sve arhivirano automatski." },
+      { "icon": "💬", "title": "Chat bez WhatsAppa", "desc": "Sve poruke između tebe i klijenta ostaju u aplikaciji. Organizirano, pregledno — bez miješanja s privatnim životom." },
+      { "icon": "📊", "title": "Praćenje napretka", "desc": "Klijent vidi vlastiti napredak kroz grafikone i usporedbe. Motivacija raste kad su rezultati vidljivi na ekranu." },
+      { "icon": "🔔", "title": "Automatske notifikacije", "desc": "Sustav automatski podsjeća klijenta na check-in, novi plan ili neodgovorenu poruku. Ti ne moraš ništa slati ručno." }
+    ],
+    "featVisualTitle": "Klijentski check-ini — automatizirano",
+    "featVisualItems": [
+      { "initials": "AM", "name": "Ana Marković", "meta": "Tjedan 12 · 68.2 kg · ✓ Foto", "badge": "✓ Predano", "type": "ok" },
+      { "initials": "MK", "name": "Marko Krišto", "meta": "Tjedan 8 · 84.5 kg · Odlično", "badge": "✓ Predano", "type": "ok" },
+      { "initials": "TN", "name": "Tomislav Novak", "meta": "Podsjetnik poslan automatski", "badge": "Na čekanju", "type": "warn" }
+    ],
+    "featVisualStatVal": "94%",
+    "featVisualStatLbl": "Klijenata predaje check-in na vrijeme · Prosjek platforma: 42%",
+    "usecaseTag": "Tko koristi UnitLift",
+    "usecaseH2": "Za trenere kojima je važan dojam koji ostavljaju",
+    "usecases": [
+      { "num": "01", "title": "Trener koji gradi brand", "text": "Klijenti preporučuju tebe — dijelom i zato što tvoja aplikacija izgleda profesionalno. Pro i Scale planovi uključuju vlastiti logo i boje u aplikaciji." },
+      { "num": "02", "title": "Trener s više od 10 klijenata", "text": "Kad imaš 10+ klijenata, ručno slanje planova postaje noćna mora. UnitLift automatizira distribuciju — svaki klijent dobije plan odmah." },
+      { "num": "03", "title": "Trener koji želi manje poruka", "text": "Klijenti koji imaju sve na jednom mjestu šalju upola manje pitanja. Chat ostaje za coaching, ne za traženje planova." }
+    ],
+    "faqTag": "Česta pitanja",
+    "faqH2": "O klijentskoj aplikaciji",
+    "faqs": [
+      { "q": "Koja je razlika između UnitLifta i Trainerizea?", "a": "Trainerize je kompleksna platforma na engleskom jeziku, namijenjena većim coaching operacijama. UnitLift je jednostavniji, na hrvatskom, s transparentnim cijenama bez skrivenih add-ona — i gotov za rad za 5 minuta." },
+      { "q": "Moraju li klijenti plaćati za aplikaciju?", "a": "Ne. Klijentska mobilna aplikacija potpuno je besplatna za preuzimanje i korištenje na iOS i Android uređajima. Trener plaća pretplatu — klijent ne plaća ništa." },
+      { "q": "Mogu li imati vlastiti logo u aplikaciji?", "a": "Da. Na Pro i Scale planovima možeš dodati vlastiti logo i odabrati primarne boje. Klijenti tada vide tvoj brand umjesto UnitLift branda — izgleda profesionalnije i gradi povjerenje." },
+      { "q": "Što klijent vidi u aplikaciji?", "a": "Klijent vidi planove treninga i prehrane, tjedne check-ine, povijest napretka, chat s trenerom i vlastiti profil. Sve što treba za uspješan coaching — na jednom ekranu." },
+      { "q": "Radi li aplikacija na iPhoneu i Androidu?", "a": "Da. Klijentska aplikacija dostupna je na App Storeu i Google Playu. Besplatno preuzimanje, bez registracije kreditne kartice za klijente." }
+    ]
+  },
+  "seoPageCoaching": {
+    "heroBadge": "Coaching platforma za trenere",
+    "heroH1": "Coaching platforma koja <span class=\"grad\">skalira s tvojim biznisom</span>",
+    "heroSub": "UnitLift je platforma za online coaching koja zamjenjuje kaotičan miks alata jednim sustavom. Od prvih klijenata do pune prakse — bez mijenjanja alata.",
+    "heroBtn1": "Isprobaj besplatno 14 dana",
+    "heroBtn2": "Pogledaj kako radi →",
+    "heroNote": "Kartica potrebna za aktivaciju · Bez naplate 14 dana · Otkaži kad hoćeš",
+    "mockupTitle": "UnitLift — Coaching dashboard",
+    "mockupClients": [
+      { "initials": "AM", "name": "Ana Marković", "sub": "Check-in tjedan 12", "status": "Predano ✓", "type": "ok" },
+      { "initials": "IH", "name": "Ivan Horvat", "sub": "Novi klijent — onboarding", "status": "Aktivan", "type": "ok" },
+      { "initials": "PK", "name": "Petra Kovač", "sub": "Pretplata ističe za 3 dana", "status": "Upozorenje", "type": "warn" }
+    ],
+    "mockupStat1Val": "28 kl.", "mockupStat1Lbl": "Aktivnih klijenata",
+    "mockupStat2Val": "€2.1k", "mockupStat2Lbl": "Prihod ovaj mj.",
+    "problemTag": "Zašto coaching biznis stagnira",
+    "problemH2": "Bez prave platforme,<br/>coaching posao ne može rasti",
+    "problemSub": "Svaki novi klijent dodaje više administracije nego prihoda. U jednom trenutku admin posao prestigne coaching — i tu mnogi stanu.",
+    "problemCards": [
+      { "icon": "⏰", "title": "Administracija jede prihode", "text": "Prosječan trener s 15 klijenata troši 8–10 sati tjedno na admin. To je cijeli radni dan koji ide na Excel, WhatsApp i slanje PDF-ova — ne na coaching." },
+      { "icon": "📉", "title": "Bez sustava nema rasta", "text": "Onboarding novog klijenta traje sat vremena jer sve radiš ručno. Kad bi trajao 10 minuta, mogao bi primiti dvostruko više klijenata." },
+      { "icon": "💰", "title": "Zaboravljena plaćanja", "text": "Tko je platio prošli mjesec? Kome istječe paket? Bez jasnog pregleda, propuštaš novac koji ti pripada — i osjećaš se neugodno kad moraš pitati." }
+    ],
+    "featTag": "Platforma",
+    "featH2": "Sustav koji radi<br/>dok ti coachiraš.",
+    "featSub": "UnitLift automatizira sve administrativne zadatke tako da možeš primiti više klijenata bez više posla.",
+    "features": [
+      { "icon": "⚡", "title": "Onboarding za 5 minuta", "desc": "Pošalji klijentu link — on preuzme aplikaciju i odmah vidi plan. Nema dugog postavljanja, nema mailova s attachmentima, nema objašnjavanja." },
+      { "icon": "✅", "title": "Automatski check-in podsjetnici", "desc": "Sustav automatski šalje tjedne podsjetike klijentima. Stopa odaziva raste s 40% na 90%+ — bez jedne poruke s tvoje strane." },
+      { "icon": "💰", "title": "Financije na jednom ekranu", "desc": "Vidiš odmah tko je platio, tko kasni i koliki je prihod ovaj mjesec. Nema ručnog praćenja, nema neugodnih situacija." },
+      { "icon": "📋", "title": "Knjižnica predložaka planova", "desc": "Jednom stvori plan, beskonačno kopiraj i prilagođavaj. Svaki novi klijent dobije personalizirani plan za minute, ne za sat." },
+      { "icon": "📊", "title": "Pregled napretka svih klijenata", "desc": "Jedan pogled, svi klijenti. Vidiš tko napreduje, tko kasni s check-inom i kome treba pažnja — bez otvaranja 20 spreadsheet kartica." }
+    ],
+    "featVisualTitle": "Coaching dashboard — pregled",
+    "featVisualItems": [
+      { "initials": "AM", "name": "Ana Marković", "meta": "Tjedan 12 · Cilj: -5kg · Na putu", "badge": "✓ Predano", "type": "ok" },
+      { "initials": "MK", "name": "Marko Krišto", "meta": "Tjedan 8 · Cilj: +masa · Odlično", "badge": "✓ Predano", "type": "ok" },
+      { "initials": "TN", "name": "Tomislav Novak", "meta": "Podsjetnik poslan automatski", "badge": "Na čekanju", "type": "warn" }
+    ],
+    "featVisualStatVal": "€2.100",
+    "featVisualStatLbl": "Prihod ovaj mjesec · 28 aktivnih klijenata",
+    "usecaseTag": "Tko koristi UnitLift",
+    "usecaseH2": "Za online coaching biznise svih veličina",
+    "usecases": [
+      { "num": "01", "title": "Od 0 do prvih 10 klijenata", "text": "Postavljanje traje 5 minuta. Odmah izgledaš profesionalnije od konkurencije koja šalje PDF-ove. Klijenti ostaju jer imaju pravi sustav — ne WhatsApp." },
+      { "num": "02", "title": "Skaliranje s 10 na 50 klijenata", "text": "Svaki novi klijent ne smije biti nova glavobolja. Onboarding, planovi, check-ini i plaćanja rade automatski. Rast postaje linearan, ne eksponencijalan u naporu." },
+      { "num": "03", "title": "Coaching agencija ili tim trenera", "text": "Scale plan podržava do 150 klijenata. Više trenera, jedan sustav, jedan pregled. Financije, napredak i komunikacija organizirani za cijeli tim." }
+    ],
+    "faqTag": "Česta pitanja",
+    "faqH2": "O platformi za coaching",
+    "faqs": [
+      { "q": "Koja je razlika između UnitLifta i Trainerizea?", "a": "Trainerize je kompleksna platforma na engleskom jeziku, namijenjena većim coaching operacijama. UnitLift je jednostavniji, na hrvatskom, s transparentnim cijenama bez skrivenih add-ona — i gotov za rad za 5 minuta." },
+      { "q": "Koliko vremena treba za postavljanje?", "a": "Manje od 5 minuta. Postavi profil, dodaj parametre praćenja i pošalji prvom klijentu link za preuzimanje aplikacije. Nema tehničkog znanja, nema dugih priručnika." },
+      { "q": "Može li UnitLift zamijeniti sve moje trenutne alate?", "a": "Da — za većinu trenera. UnitLift zamjenjuje Excel (praćenje klijenata), WhatsApp (komunikacija i slanje planova), Google Sheets (financije) i zasebne aplikacije za planove treninga i prehrane." },
+      { "q": "Što ako imam više od 150 klijenata?", "a": "Scale plan podržava do 150 klijenata. Za više, dodaje se €10/mj za svakih dodatnih 25 klijenata. Nema skrivenih naknada — cijena raste proporcionalno s biznisom." },
+      { "q": "Radi li UnitLift za nutricionist-trenere koji nude i prehrane i treninge?", "a": "Da. UnitLift uključuje planove treninga I planove prehrane u svim planovima. Klijent vidi oboje u jednoj aplikaciji — bez razdvajanja na više sustava." }
+    ]
+  },
+  "seoPageTracking": {
+    "heroBadge": "Software za praćenje klijenata",
+    "heroH1": "Software za praćenje klijenata <span class=\"grad\">s automatskim tjednim check-inima</span>",
+    "heroSub": "UnitLift automatski prikuplja tjedne podatke od klijenata — mjere, fotografije, osjećaj, san. Ti dobiješ kompletan pregled bez jedne ručno napisane poruke.",
+    "heroBtn1": "Isprobaj besplatno 14 dana",
+    "heroBtn2": "Pogledaj kako radi →",
+    "heroNote": "Kartica potrebna za aktivaciju · Bez naplate 14 dana · Otkaži kad hoćeš",
+    "mockupTitle": "UnitLift — Praćenje napretka",
+    "mockupClients": [
+      { "initials": "AM", "name": "Ana Marković", "sub": "68.2 kg → 65.1 kg (-3.1 kg)", "status": "Na putu ✓", "type": "ok" },
+      { "initials": "IH", "name": "Ivan Horvat", "sub": "82.0 kg → 86.5 kg (+4.5 kg)", "status": "Odlično ✓", "type": "ok" },
+      { "initials": "PK", "name": "Petra Kovač", "sub": "Check-in nije predан", "status": "Kasni ⚠", "type": "late" }
+    ],
+    "mockupStat1Val": "12 tj.", "mockupStat1Lbl": "Prosječno praćenje",
+    "mockupStat2Val": "89%",  "mockupStat2Lbl": "Stopa predaje check-ina",
+    "problemTag": "Problem bez sustava praćenja",
+    "problemH2": "Bez praćenja ne znaš<br/>radi li tvoj coaching zapravo",
+    "problemSub": "Osjećaš da napreduju, ali nemaš podatke koji to dokazuju. Klijent odustane, a ti ne znaš je li problem bio plan, prehrана ili nedovoljna odgovornost.",
+    "problemCards": [
+      { "icon": "🔍", "title": "Nema vidljivosti napretka", "text": "Klijent kaže 'ide dobro' — ali bez konkretnih mjera i fotografija, to su samo dojmovi. Ne vidiš trendove, ne možeš prilagoditi plan na temelju podataka." },
+      { "icon": "📬", "title": "Check-in je kaos", "text": "Klijent šalje mjere WhatsApp-om, fotografije mailom, komentar u drugoj poruci. Ti sve skupljaš ručno i unosiš u spreadsheet. Svakog tjedna." },
+      { "icon": "📉", "title": "Klijenti odustaju bez odgovornosti", "text": "Istraživanja pokazuju da klijenti koji redovno predaju check-in imaju 3× veći uspjeh. Bez sustava koji ih prati, propuštaš alat za zadržavanje klijenata." }
+    ],
+    "featTag": "Rješenje",
+    "featH2": "Automatsko praćenje.<br/>Kompletna slika svakog klijenta.",
+    "featSub": "UnitLift prikuplja, organizira i prikazuje sve podatke o napretku klijenata — automatski, tjedno, arhivirano.",
+    "features": [
+      { "icon": "✅", "title": "Strukturirani tjedni check-ini", "desc": "Klijent iz mobitela popuni check-in: tjelesna težina, mjere, fotografije, razina energije, san, adherencija planu. Sve na jednom obrascu, za 2 minute." },
+      { "icon": "🔔", "title": "Automatski podsjetnici", "desc": "Sustav šalje podsjetnik svakom klijentu koji nije predao check-in. Stopa odaziva raste s prosječnih 40% na 90%+ bez tvoje intervencije." },
+      { "icon": "📊", "title": "Grafovi napretka kroz vrijeme", "desc": "Vidiš krivulju težine, mjera i subjektivnog osjećaja za svakog klijenta kroz tjedne i mjesece. Prilagođavaj plan na temelju stvarnih podataka, ne pretpostavki." },
+      { "icon": "📸", "title": "Arhiva fotografija napretka", "desc": "Sve fotografije automatski se arhiviraju kronološki. Usporedi tjedan 1 i tjedan 12 jednim klikom. Privatno, sigurno, uvijek dostupno." },
+      { "icon": "⚡", "title": "Instant uvid bez administracije", "desc": "Čim klijent preda check-in, ti to vidiš. Nema kopiranja podataka, nema obrade — samo coaching na temelju svježih podataka." }
+    ],
+    "featVisualTitle": "Napredak klijenata — automatizirano",
+    "featVisualItems": [
+      { "initials": "AM", "name": "Ana Marković", "meta": "Tjedan 12 · -3.1 kg · Cilj na putu", "badge": "✓ Predano", "type": "ok" },
+      { "initials": "IH", "name": "Ivan Horvat", "meta": "Tjedan 8 · +4.5 kg · Odlično", "badge": "✓ Predano", "type": "ok" },
+      { "initials": "PK", "name": "Petra Kovač", "meta": "Podsjetnik poslan automatski", "badge": "Na čekanju", "type": "warn" }
+    ],
+    "featVisualStatVal": "89%",
+    "featVisualStatLbl": "Stopa predaje check-ina · Prosjek bez sustava: 38%",
+    "usecaseTag": "Tko koristi UnitLift za praćenje",
+    "usecaseH2": "Za trenere kojima su podaci osnova coachinga",
+    "usecases": [
+      { "num": "01", "title": "Trener usmjeren na rezultate", "text": "Svaki plan prilagođavaš na temelju stvarnih podataka, ne pretpostavki. Check-in podaci ti daju konkretne informacije za svaku sesiju prilagodbe." },
+      { "num": "02", "title": "Trener s visokom stopom zadržavanja", "text": "Klijenti koji redovno predaju check-in ostaju 3× duže. Sustav odgovornosti nije ništa bez infrastrukture koja ga podržava — UnitLift je ta infrastruktura." },
+      { "num": "03", "title": "Trener koji gradi portfolio transformacija", "text": "Arhiva fotografija napretka i grafovi automatski stvaraju tvoje najjače marketinško oruđe: dokaz da coaching funkcionira." }
+    ],
+    "faqTag": "Česta pitanja",
+    "faqH2": "O praćenju klijenata",
+    "faqs": [
+      { "q": "Koja je razlika između UnitLifta i Trainerizea?", "a": "Trainerize je kompleksna platforma na engleskom jeziku, namijenjena većim coaching operacijama. UnitLift je jednostavniji, na hrvatskom, s transparentnim cijenama bez skrivenih add-ona — i gotov za rad za 5 minuta." },
+      { "q": "Što klijent popunjava u check-inu?", "a": "Klijent popunjava: tjelesna težina, opcionalне mjere (struk, bokovi, biceps itd.), fotografije napretka, razina energije (1–10), kvaliteta sna, adherencija planu prehrane i treninga te slobodni komentar. Svako polje je opcionalno — postaviš što je relevantno za tvoj coaching pristup." },
+      { "q": "Mogu li usporediti fotografije napretka?", "a": "Da. Sve fotografije automatski se arhiviraju kronološki po klijentu. Možeš usporediti bilo koji tjedan s bilo kojim drugim — front, side i back pozicija." },
+      { "q": "Šalje li sustav automatske podsjetike?", "a": "Da. Svaki klijent koji nije predao check-in do određenog dana tjedno automatski dobije push notifikaciju na mobitel. Stopa predaje raste s prosječnih 40% na 90%+." },
+      { "q": "Mogu li pratiti klijente koji nisu u UnitLiftu?", "a": "UnitLift je dizajniran za klijente koji koriste mobilnu aplikaciju. Za praćenje svog napretka bez trenerovog sustava, klijent bi trebao koristiti jednu od generičkih aplikacija za fitness." }
+    ]
+  },
   "ctaT": "Prestani gubiti vrijeme na administraciju.",
   "ctaS": "Postavi UnitLift za 5 minuta i fokusiraj se na ono što znaš raditi — coaching.",
   "ctaB1": "Kreni besplatno →",

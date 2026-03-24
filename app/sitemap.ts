@@ -16,8 +16,14 @@ const staticRoutes = [
 ]
 
 const seoRoutes: Array<{ url: string; priority: number }> = [
-  { url: `${BASE}/hr/software-za-online-fitness-trenere`, priority: 0.85 },
-  { url: `${BASE}/en/online-personal-trainer-software`,  priority: 0.85 },
+  { url: `${BASE}/hr/software-za-online-fitness-trenere`,  priority: 0.85 },
+  { url: `${BASE}/en/online-personal-trainer-software`,    priority: 0.85 },
+  { url: `${BASE}/hr/aplikacija-za-personal-trenere`,      priority: 0.85 },
+  { url: `${BASE}/en/personal-trainer-app`,                priority: 0.85 },
+  { url: `${BASE}/hr/coaching-platforma-za-trenere`,       priority: 0.85 },
+  { url: `${BASE}/en/online-coaching-software`,            priority: 0.85 },
+  { url: `${BASE}/hr/software-za-pracenje-klijenata`,      priority: 0.85 },
+  { url: `${BASE}/en/client-tracking-software`,            priority: 0.85 },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

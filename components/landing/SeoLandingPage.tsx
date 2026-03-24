@@ -18,8 +18,10 @@ const PlusIcon = () => (
   </svg>
 )
 
-export default function SeoLandingPage() {
-  const t      = useTranslations('seoPage')
+interface Props { namespace?: string }
+
+export default function SeoLandingPage({ namespace = 'seoPage' }: Props) {
+  const t      = useTranslations(namespace as Parameters<typeof useTranslations>[0])
   const locale = useLocale()
   const [faqOpen, setFaqOpen] = useState<number | null>(null)
 
