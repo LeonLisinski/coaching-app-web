@@ -1,5 +1,13 @@
+'use client'
+
 import { useTranslations, useLocale } from 'next-intl'
 import LogoSvg from './LogoSvg'
+
+function ObfuscatedEmail() {
+  const user = 'info'
+  const domain = 'unitlift.com'
+  return <a href={`mailto:${user}@${domain}`}>{user}@{domain}</a>
+}
 
 const InstagramIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -56,7 +64,7 @@ export default function Footer() {
               vl. Leon Lišinski<br />
               Vijenac Ivana Meštrovića 80, Osijek<br />
               OIB: 61111415884 &nbsp;·&nbsp; MB: 99113821<br />
-              <a href="mailto:info@unitlift.com">info@unitlift.com</a>
+              <ObfuscatedEmail />
             </div>
           </div>
 

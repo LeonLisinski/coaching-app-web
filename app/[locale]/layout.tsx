@@ -22,21 +22,24 @@ export const metadata: Metadata = {
     template: '%s | UnitLift',
   },
   description:
-    'Coaching platforma za online fitness trenere. Planovi treninga, prehrana, check-ini, chat i financije — sve na jednom mjestu. 14 dana besplatno.',
+    'UnitLift — coaching platforma za online fitness trenere. Planovi treninga, prehrana, check-ini, chat i financije — sve na jednom mjestu. Isprobaj besplatno 14 dana.',
   keywords: [
+    'unitlift',
     'coaching platforma',
     'aplikacija za fitness trenere',
     'online personal trainer',
     'aplikacija za planove treninga',
     'check-in praćenje',
-    'unitlift',
+    'fitness trener software',
   ],
   metadataBase: new URL('https://unitlift.com'),
   icons: {
     icon: [
+      { url: '/favicon.ico', sizes: 'any' },
       { url: '/favicon.svg', type: 'image/svg+xml' },
     ],
-    shortcut: '/favicon.svg',
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
   openGraph: {
     title: 'UnitLift – Više klijenata. Manje kaosa.',

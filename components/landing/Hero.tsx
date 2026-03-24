@@ -1,5 +1,7 @@
 import { useTranslations, useLocale } from 'next-intl'
-import AppShowcase from './AppShowcase'
+import dynamic from 'next/dynamic'
+
+const AppShowcase = dynamic(() => import('./AppShowcase'), { ssr: false })
 
 const featsHr = ['Pregled klijenata', 'Planovi prehrane', 'Planovi treninga', 'Check-in praćenje', 'Galerija fotografija', 'Chat s klijentima']
 const featsEn = ['Client overview', 'Nutrition plans', 'Training plans', 'Check-in tracking', 'Photo gallery', 'Client chat']
