@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props) {
     },
     openGraph: {
       title: 'Coaching Platforma za Trenere | UnitLift',
-      description: 'Sustav koji automatizira administraciju i skalira s tvojim biznisom.',
+      description: 'Sustav koji automatizira administraciju i skalira s tvojim poslom.',
       url: 'https://unitlift.com/hr/coaching-platforma-za-trenere',
       type: 'website',
     },

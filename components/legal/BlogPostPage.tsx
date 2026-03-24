@@ -179,7 +179,7 @@ export default function BlogPostPage({ post, relatedPosts }: Props) {
                   </div>
                   <div className="blog-post-cta-text">
                     {isHr
-                      ? 'Isprobaj UnitLift 14 dana besplatno i vidi kako platforma može promijeniti tvoj coaching biznis.'
+                      ? 'Isprobaj UnitLift 14 dana besplatno i vidi kako platforma može promijeniti tvoj coaching posao.'
                       : 'Try UnitLift free for 14 days and see how the platform can transform your coaching business.'}
                   </div>
                 </div>

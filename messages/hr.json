@@ -206,7 +206,7 @@
   },
   "seoPageCoaching": {
     "heroBadge": "Coaching platforma za trenere",
-    "heroH1": "Coaching platforma koja <span class=\"grad\">skalira s tvojim biznisom</span>",
+    "heroH1": "Coaching platforma koja <span class=\"grad\">skalira s tvojim poslom</span>",
     "heroSub": "UnitLift je platforma za online coaching koja zamjenjuje kaotičan miks alata jednim sustavom. Od prvih klijenata do pune prakse — bez mijenjanja alata.",
     "heroBtn1": "Isprobaj besplatno 14 dana",
     "heroBtn2": "Pogledaj kako radi →",
@@ -219,8 +219,8 @@
     ],
     "mockupStat1Val": "28 kl.", "mockupStat1Lbl": "Aktivnih klijenata",
     "mockupStat2Val": "€2.1k", "mockupStat2Lbl": "Prihod ovaj mj.",
-    "problemTag": "Zašto coaching biznis stagnira",
-    "problemH2": "Bez prave platforme,<br/>coaching posao ne može rasti",
+    "problemTag": "Zašto za�to coaching posao stagnira",
+    "problemH2": "Bez prave platforme,<br/>coaching praksa ne može rasti",
     "problemSub": "Svaki novi klijent dodaje više administracije nego prihoda. U jednom trenutku admin posao prestigne coaching — i tu mnogi stanu.",
     "problemCards": [
       { "icon": "⏰", "title": "Administracija jede prihode", "text": "Prosječan trener s 15 klijenata troši 8–10 sati tjedno na admin. To je cijeli radni dan koji ide na Excel, WhatsApp i slanje PDF-ova — ne na coaching." },
@@ -246,7 +246,7 @@
     "featVisualStatVal": "€2.100",
     "featVisualStatLbl": "Prihod ovaj mjesec · 28 aktivnih klijenata",
     "usecaseTag": "Tko koristi UnitLift",
-    "usecaseH2": "Za online coaching biznise svih veličina",
+    "usecaseH2": "Za online coaching prakse svih veličina",
     "usecases": [
       { "num": "01", "title": "Od 0 do prvih 10 klijenata", "text": "Postavljanje traje 5 minuta. Odmah izgledaš profesionalnije od konkurencije koja šalje PDF-ove. Klijenti ostaju jer imaju pravi sustav — ne WhatsApp." },
       { "num": "02", "title": "Skaliranje s 10 na 50 klijenata", "text": "Svaki novi klijent ne smije biti nova glavobolja. Onboarding, planovi, check-ini i plaćanja rade automatski. Rast postaje linearan, ne eksponencijalan u naporu." },
@@ -258,7 +258,7 @@
       { "q": "Koja je razlika između UnitLifta i Trainerizea?", "a": "Trainerize je kompleksna platforma na engleskom jeziku, namijenjena većim coaching operacijama. UnitLift je jednostavniji, na hrvatskom, s transparentnim cijenama bez skrivenih add-ona — i gotov za rad za 5 minuta." },
       { "q": "Koliko vremena treba za postavljanje?", "a": "Manje od 5 minuta. Postavi profil, dodaj parametre praćenja i pošalji prvom klijentu link za preuzimanje aplikacije. Nema tehničkog znanja, nema dugih priručnika." },
       { "q": "Može li UnitLift zamijeniti sve moje trenutne alate?", "a": "Da — za većinu trenera. UnitLift zamjenjuje Excel (praćenje klijenata), WhatsApp (komunikacija i slanje planova), Google Sheets (financije) i zasebne aplikacije za planove treninga i prehrane." },
-      { "q": "Što ako imam više od 150 klijenata?", "a": "Scale plan podržava do 150 klijenata. Za više, dodaje se €10/mj za svakih dodatnih 25 klijenata. Nema skrivenih naknada — cijena raste proporcionalno s biznisom." },
+      { "q": "Što ako imam više od 150 klijenata?", "a": "Scale plan podržava do 150 klijenata. Za više, dodaje se €10/mj za svakih dodatnih 25 klijenata. Nema skrivenih naknada — cijena raste proporcionalno s posaoom." },
       { "q": "Radi li UnitLift za nutricionist-trenere koji nude i prehrane i treninge?", "a": "Da. UnitLift uključuje planove treninga I planove prehrane u svim planovima. Klijent vidi oboje u jednoj aplikaciji — bez razdvajanja na više sustava." }
     ]
   },
