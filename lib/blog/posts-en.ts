@@ -3,12 +3,12 @@ import type { BlogPost } from './types'
 export const postsEn: BlogPost[] = [
   {
     slug: 'how-to-grow-your-client-base',
-    title: 'How to Grow Your Online Client Base in 2025',
+    title: 'How to Grow Your Online Client Base',
     excerpt: 'Nine proven tactics fitness coaches use to attract new clients without expensive ads or marketing agencies.',
     category: 'Guide',
     categorySlug: 'guide',
     readTime: 6,
-    publishedAt: 'March 14, 2025',
+    publishedAt: 'March 14, 2026',
     author: 'Leon',
     authorRole: 'Personal trainer and owner of UnitLift',
     content: [
@@ -35,7 +35,7 @@ export const postsEn: BlogPost[] = [
     category: 'Tools',
     categorySlug: 'tools',
     readTime: 4,
-    publishedAt: 'March 11, 2025',
+    publishedAt: 'March 11, 2026',
     author: 'Leon',
     authorRole: 'Personal trainer and owner of UnitLift',
     content: [
@@ -64,7 +64,7 @@ export const postsEn: BlogPost[] = [
     category: 'Clients',
     categorySlug: 'clients',
     readTime: 5,
-    publishedAt: 'March 7, 2025',
+    publishedAt: 'March 7, 2026',
     author: 'Leon',
     authorRole: 'Personal trainer and owner of UnitLift',
     content: [
@@ -96,7 +96,7 @@ export const postsEn: BlogPost[] = [
     category: 'Growth',
     categorySlug: 'growth',
     readTime: 7,
-    publishedAt: 'March 1, 2025',
+    publishedAt: 'March 1, 2026',
     author: 'Leon',
     authorRole: 'Personal trainer and owner of UnitLift',
     content: [
@@ -128,7 +128,7 @@ export const postsEn: BlogPost[] = [
     category: 'Guide',
     categorySlug: 'guide',
     readTime: 6,
-    publishedAt: 'February 14, 2025',
+    publishedAt: 'February 14, 2026',
     author: 'Leon',
     authorRole: 'Personal trainer and owner of UnitLift',
     content: [
@@ -160,12 +160,12 @@ export const postsEn: BlogPost[] = [
   },
   {
     slug: 'fitness-trainer-app',
-    title: 'Fitness Trainer App: What to Look For in 2025',
+    title: 'Fitness Trainer App: What to Look For',
     excerpt: 'More coaches are switching to digital tools — but not every app is equal. Here are the key features that should be on your checklist.',
     category: 'Tools',
     categorySlug: 'tools',
     readTime: 5,
-    publishedAt: 'February 10, 2025',
+    publishedAt: 'February 10, 2026',
     author: 'Leon',
     authorRole: 'Personal trainer and owner of UnitLift',
     content: [
@@ -198,7 +198,7 @@ export const postsEn: BlogPost[] = [
     category: 'Growth',
     categorySlug: 'growth',
     readTime: 8,
-    publishedAt: 'February 3, 2025',
+    publishedAt: 'February 3, 2026',
     author: 'Leon',
     authorRole: 'Personal trainer and owner of UnitLift',
     content: [
@@ -234,7 +234,7 @@ export const postsEn: BlogPost[] = [
     category: 'Tools',
     categorySlug: 'tools',
     readTime: 5,
-    publishedAt: 'January 28, 2025',
+    publishedAt: 'January 28, 2026',
     author: 'Leon',
     authorRole: 'Personal trainer and owner of UnitLift',
     content: [
@@ -262,7 +262,7 @@ export const postsEn: BlogPost[] = [
     category: 'Growth',
     categorySlug: 'growth',
     readTime: 6,
-    publishedAt: 'January 20, 2025',
+    publishedAt: 'January 20, 2026',
     author: 'Leon',
     authorRole: 'Personal trainer and owner of UnitLift',
     content: [

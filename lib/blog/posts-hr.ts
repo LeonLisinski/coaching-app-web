@@ -3,12 +3,12 @@ import type { BlogPost } from './types'
 export const postsHr: BlogPost[] = [
   {
     slug: 'kako-povecati-bazu-klijenata',
-    title: 'Kako povećati bazu online klijenata u 2025.',
+    title: 'Kako povećati bazu klijenata',
     excerpt: 'Devet provjerenih taktika kojima fitness treneri privlače nove klijente bez skupih reklama i marketinških agencija.',
     category: 'Vodič',
     categorySlug: 'vodic',
     readTime: 6,
-    publishedAt: '14. ožujka 2025.',
+    publishedAt: '14. ožujka 2026.',
     author: 'Leon',
     authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
@@ -30,12 +30,12 @@ export const postsHr: BlogPost[] = [
   },
   {
     slug: 'zasto-excel-nije-dovoljan',
-    title: 'Zašto Excel više nije dovoljan za vođenje klijenata',
+    title: 'Zašto Excel nije dovoljan za vođenje klijenata',
     excerpt: 'Spreadsheetovi su dobri za početnike, ali rastuće coaching prakse nužno trebaju pravo rješenje — evo zašto.',
     category: 'Alati',
     categorySlug: 'alati',
     readTime: 4,
-    publishedAt: '11. ožujka 2025.',
+    publishedAt: '11. ožujka 2026.',
     author: 'Leon',
     authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
@@ -60,12 +60,12 @@ export const postsHr: BlogPost[] = [
   },
   {
     slug: 'savjeti-za-check-in-razgovore',
-    title: '5 savjeta za učinkovitije check-in razgovore s klijentima',
+    title: '5 savjeta za bolje check-in razgovore s klijentima',
     excerpt: 'Kako strukturirati tjedno praćenje napretka tako da klijenti budu motivirani, a ti informiran — bez gubitka sati.',
     category: 'Klijenti',
     categorySlug: 'klijenti',
     readTime: 5,
-    publishedAt: '7. ožujka 2025.',
+    publishedAt: '7. ožujka 2026.',
     author: 'Leon',
     authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
@@ -97,7 +97,7 @@ export const postsHr: BlogPost[] = [
     category: 'Rast',
     categorySlug: 'rast',
     readTime: 7,
-    publishedAt: '1. ožujka 2025.',
+    publishedAt: '1. ožujka 2026.',
     author: 'Leon',
     authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
@@ -124,12 +124,12 @@ export const postsHr: BlogPost[] = [
   },
   {
     slug: 'automatizacija-u-coachingu',
-    title: 'Automatizacija u fitness coachingu: što delegirati, a što zadržati',
+    title: 'Što automatizirati u online fitness coachingu',
     excerpt: 'Koji zadaci u tvom coaching posaou oduzimaju najviše vremena i kako ih automatizirati bez gubitka osobnog dodira s klijentom.',
     category: 'Vodič',
     categorySlug: 'vodic',
     readTime: 6,
-    publishedAt: '14. veljače 2025.',
+    publishedAt: '14. veljače 2026.',
     author: 'Leon',
     authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
@@ -161,12 +161,12 @@ export const postsHr: BlogPost[] = [
   },
   {
     slug: 'aplikacija-za-fitness-trenere',
-    title: 'Aplikacija za fitness trenere: što tražiti u 2025.',
+    title: 'Aplikacija za fitness trenere: što tražiti',
     excerpt: 'Sve više trenera prelazi na digitalne alate — ali nije svaka aplikacija jednaka. Evo ključnih značajki koje trebaju biti na popisu.',
     category: 'Alati',
     categorySlug: 'alati',
     readTime: 5,
-    publishedAt: '10. veljače 2025.',
+    publishedAt: '10. veljače 2026.',
     author: 'Leon',
     authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
@@ -195,12 +195,12 @@ export const postsHr: BlogPost[] = [
   },
   {
     slug: 'online-coaching-posao-vodic',
-    title: 'Kako pokrenuti online coaching posao: od 0 do prvih klijenata',
+    title: 'Online trening: od 0 do prvih klijenata',
     excerpt: 'Korak po korak: od registracije do prvih plaćenih klijenata — što napraviti u prvom tjednu, prvom mjesecu i prvom kvartalu.',
     category: 'Rast',
     categorySlug: 'rast',
     readTime: 8,
-    publishedAt: '3. veljače 2025.',
+    publishedAt: '3. veljače 2026.',
     author: 'Leon',
     authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
@@ -231,12 +231,12 @@ export const postsHr: BlogPost[] = [
   },
   {
     slug: 'online-coaching-treneri-platforma',
-    title: 'Zašto online fitness treneri biraju specijalizirane platforme — a ne generičke alate',
+    title: 'Specijalizirane platforme vs generički alati za trenere',
     excerpt: 'Google Docs, Notion i WhatsApp su besplatni. Ali koliko zapravo koštaju tvoje vrijeme i profesionalnost? Objašnjenje za trenere koji razmišljaju o prelasku.',
     category: 'Alati',
     categorySlug: 'alati',
     readTime: 5,
-    publishedAt: '28. siječnja 2025.',
+    publishedAt: '28. siječnja 2026.',
     author: 'Leon',
     authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
@@ -259,12 +259,12 @@ export const postsHr: BlogPost[] = [
   },
   {
     slug: 'kako-zaraditi-vise-kao-online-fitness-trener',
-    title: 'Kako zaraditi više kao online fitness trener bez više radnih sati',
+    title: 'Kako zaraditi više kao online trener',
     excerpt: 'Prihod online trenera ne ovisi samo o broju klijenata — ovisi o sustavima, cijenama i tome koliko vrijemena trošiš na svaki klijent.',
     category: 'Rast',
     categorySlug: 'rast',
     readTime: 6,
-    publishedAt: '20. siječnja 2025.',
+    publishedAt: '20. siječnja 2026.',
     author: 'Leon',
     authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
@@ -288,12 +288,12 @@ export const postsHr: BlogPost[] = [
   },
   {
     slug: 'kako-naplatiti-online-coaching-hrvatska',
-    title: 'Kako naplatiti online coaching u Hrvatskoj (2025.)',
+    title: 'Kako naplatiti online trening u Hrvatskoj',
     excerpt: 'Koji su načini naplate, što je zakonski ispravno i kako ne propustiti ni jednu uplatu — praktični vodič za fitness trenere.',
     category: 'posao',
     categorySlug: 'posao',
     readTime: 5,
-    publishedAt: '18. ožujka 2025.',
+    publishedAt: '18. ožujka 2026.',
     author: 'Leon',
     authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
@@ -318,12 +318,12 @@ export const postsHr: BlogPost[] = [
   },
   {
     slug: 'koliko-naplacivati-online-personal-trening',
-    title: 'Koliko naplaćivati za online personal trening u 2025.',
+    title: 'Koliko naplaćivati za online personal trening',
     excerpt: 'Konkretni brojevi, faktori koji utječu na cijenu i kako prestati podcijeniti vlastiti rad — za fitness trenere na HR tržištu.',
     category: 'posao',
     categorySlug: 'posao',
     readTime: 5,
-    publishedAt: '20. ožujka 2025.',
+    publishedAt: '20. ožujka 2026.',
     author: 'Leon',
     authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
@@ -347,12 +347,12 @@ export const postsHr: BlogPost[] = [
   },
   {
     slug: 'kako-organizirati-online-klijente',
-    title: 'Kako organizirati 20 online klijenata bez gubitka uma',
+    title: 'Kako organizirati 20 online klijenata',
     excerpt: 'Konkretan sustav za upravljanje većim brojem klijenata — što automatizirati, što ručno i kako ne dopustiti da itko propadne kroz pukotine.',
     category: 'Produktivnost',
     categorySlug: 'produktivnost',
     readTime: 6,
-    publishedAt: '21. ožujka 2025.',
+    publishedAt: '21. ožujka 2026.',
     author: 'Leon',
     authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
@@ -382,12 +382,12 @@ export const postsHr: BlogPost[] = [
   },
   {
     slug: 'trainerize-alternative-hrvatska',
-    title: 'Trainerize alternative u 2025. — što koristiti u Hrvatskoj',
+    title: 'Trainerize alternative za trenere u Hrvatskoj',
     excerpt: 'Iskrena usporedba Trainerizea i domaćih alternativa za online fitness trenere koji rade s klijentima u Hrvatskoj.',
     category: 'Alati',
     categorySlug: 'alati',
     readTime: 5,
-    publishedAt: '22. ožujka 2025.',
+    publishedAt: '22. ožujka 2026.',
     author: 'Leon',
     authorRole: 'Osobni trener i vlasnik UnitLift-a',
     content: [
