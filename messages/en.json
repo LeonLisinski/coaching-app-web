@@ -88,6 +88,64 @@
     { "q": "Can I have my own logo and colors?", "a": "Yes, branding is available on Pro and Scale plans. In settings, add your logo, choose primary colors and connect your social media profiles. Clients will then see your brand instead of UnitLift's — looks more professional and builds trust in you as a coach." },
     { "q": "Can I cancel my subscription at any time?", "a": "Yes, with no penalties or hidden fees. You can cancel at any time from your account settings — no deadlines and no explanation needed. Access remains active until the end of the paid period." }
   ],
+  "seoPage": {
+    "heroBadge": "Software for online fitness coaches",
+    "heroH1": "Software that replaces <span class=\"grad\">WhatsApp and Excel</span>",
+    "heroSub": "UnitLift is a platform for online personal trainers. Training plans, nutrition, weekly check-ins and payment tracking — all on one screen. More clients, without more chaos.",
+    "heroBtn1": "Try free for 14 days",
+    "heroBtn2": "See how it works →",
+    "heroNote": "Card required for activation · No charge for 14 days · Cancel anytime",
+    "mockupTitle": "UnitLift — Client overview",
+    "mockupClients": [
+      { "initials": "AM", "name": "Ana Marković", "sub": "Check-in week 12", "status": "Submitted ✓", "type": "ok" },
+      { "initials": "IH", "name": "Ivan Horvat", "sub": "Check-in today", "status": "Pending", "type": "warn" },
+      { "initials": "PK", "name": "Petra Kovač", "sub": "Check-in late", "status": "Late ⚠", "type": "late" }
+    ],
+    "mockupStat1Val": "€1,840", "mockupStat1Lbl": "Revenue this mo.",
+    "mockupStat2Val": "12/12",  "mockupStat2Lbl": "Clients paid",
+    "problemTag": "A problem every coach knows",
+    "problemH2": "Online coaching without proper software<br/>is chaos that compounds",
+    "problemSub": "Messages on WhatsApp, plans in Excel, payments on paper — it works with 5 clients. At 15, you start losing track of things.",
+    "problemCards": [
+      { "icon": "📱", "title": "WhatsApp as a \"system\"", "text": "Training plans are sent as photos or PDFs. The client can't find an older plan. You don't know if they even saw the new one." },
+      { "icon": "📊", "title": "Excel for client tracking", "text": "A spreadsheet with names, dates and notes. You manually enter every check-in. You lose an hour a week on copy-paste that solves nothing." },
+      { "icon": "💸", "title": "Payments without a system", "text": "Who paid this month? Whose subscription is expiring soon? Without a clear system — you don't know, or you forget to ask. Money stays on the table." }
+    ],
+    "featTag": "The solution",
+    "featH2": "One software.<br/>Your entire coaching business.",
+    "featSub": "UnitLift centralizes everything a coach needs into one web platform — with a free mobile app for clients included.",
+    "features": [
+      { "icon": "📋", "title": "Training and nutrition plans", "desc": "Create personalized plans for each client. They see them instantly in the app — no PDFs, no sending over WhatsApp." },
+      { "icon": "✅", "title": "Weekly check-in system", "desc": "A client fills in a check-in in 2 minutes from their phone. You immediately see progress, measurements and photos — all archived automatically." },
+      { "icon": "💬", "title": "Integrated chat", "desc": "All messages with clients in one place. No more tangled WhatsApp threads and lost messages about workouts." },
+      { "icon": "💰", "title": "Payment tracking", "desc": "See exactly who paid, who's late and how much you earned this month. No manual tracking, no awkward situations." },
+      { "icon": "📱", "title": "Mobile app for clients", "desc": "Clients download the free iOS/Android app and instantly have access to their plans. More professional than any PDF." }
+    ],
+    "featVisualTitle": "Weekly check-ins — automated",
+    "featVisualItems": [
+      { "initials": "AM", "name": "Ana Marković", "meta": "Week 12 · 68.2 kg", "badge": "✓ Submitted", "type": "ok" },
+      { "initials": "MK", "name": "Marko Krišto", "meta": "Week 8 · 84.5 kg", "badge": "✓ Submitted", "type": "ok" },
+      { "initials": "TN", "name": "Tomislav Novak", "meta": "Reminder sent automatically", "badge": "Pending", "type": "warn" }
+    ],
+    "featVisualStatVal": "€1,840",
+    "featVisualStatLbl": "Revenue this month · 12/12 clients paid",
+    "usecaseTag": "Who uses UnitLift",
+    "usecaseH2": "Built for online fitness coaches of all kinds",
+    "usecases": [
+      { "num": "01", "title": "Personal trainer going online", "text": "You have 10–20 clients and have been getting by with WhatsApp. You want to look more professional and stop wasting an hour a day on admin. UnitLift is ready in 5 minutes." },
+      { "num": "02", "title": "Strength coach scaling up", "text": "You have 30–50 clients and manual tracking no longer works. You need a system that automatically sends check-in reminders and clearly shows who has paid." },
+      { "num": "03", "title": "Nutritionist adding coaching", "text": "You make nutrition plans and need a system where the client sees their macros, logs progress and communicates with you — without 4 different apps and confused clients." }
+    ],
+    "faqTag": "FAQ",
+    "faqH2": "What coaches ask most",
+    "faqs": [
+      { "q": "What is the difference between UnitLift and Trainerize?", "a": "Trainerize is a complex platform in English, designed for larger coaching operations. UnitLift is simpler, available in Croatian, with transparent pricing and no hidden add-ons — and ready to use in 5 minutes." },
+      { "q": "Do my clients have to pay for the app?", "a": "No. The client mobile app is completely free to download and use on iOS and Android. The coach pays the subscription; the client pays nothing to access the platform." },
+      { "q": "How quickly can I start using UnitLift?", "a": "Less than 5 minutes. Registration is fast and intuitive — set up your profile, adjust your parameters and invite your first client the same day. No long manuals, no technical knowledge needed." },
+      { "q": "Can I try UnitLift without being charged?", "a": "Yes. All plans include a 14-day free trial. A card is required for activation, but billing only starts after the trial ends. You can cancel at any time with no penalties." },
+      { "q": "Does UnitLift work on mobile for coaches?", "a": "Yes. The coach web app is fully responsive and can be added to your phone's home screen as an app. Clients have a separate native iOS and Android app optimized for daily use." }
+    ]
+  },
   "ctaT": "Stop wasting time on administration.",
   "ctaS": "Set up UnitLift in 5 minutes and focus on what you do best — coaching.",
   "ctaB1": "Get started free →",
@@ -97,7 +155,7 @@
   "payLbl": "Payments via:",
   "copy": "© 2026 UnitDuo, owner Leon Lišinski. All rights reserved.",
   "footerCols": [
-    { "title": "Platform", "links": [["How it works", "/en/kako-radi"], ["Mobile app", "#funkcije"], ["Pricing", "/en/cijene"], ["Blog", "/en/blog"], ["Log in", "https://app.unitlift.com/login"]] },
+    { "title": "Platform", "links": [["How it works", "/en/kako-radi"], ["Mobile app", "#funkcije"], ["Pricing", "/en/cijene"], ["Blog", "/en/blog"], ["Trainer software", "/en/online-personal-trainer-software"], ["Log in", "https://app.unitlift.com/login"]] },
     { "title": "Support", "links": [["FAQ", "/en/faq"], ["Contact", "/en/kontakt"], ["Email support", "mailto:support@unitlift.com"]] },
     { "title": "Legal", "links": [["Privacy Policy", "/en/privatnost"], ["Terms of Service", "/en/uvjeti"], ["GDPR", "/en/privatnost"]] }
   ]

@@ -160,6 +160,13 @@ export default function BlogPostPage({ post, relatedPosts }: Props) {
                   </blockquote>
                 )
               }
+              if (block.type === 'internal-link' && block.href && block.text) {
+                return (
+                  <p key={i} className="blog-internal-link-note">
+                    <a href={block.href}>{block.text}</a>
+                  </p>
+                )
+              }
               return null
             })}
 

@@ -1,7 +1,8 @@
 export interface BlogBlock {
-  type: 'paragraph' | 'heading' | 'subheading' | 'list' | 'quote'
+  type: 'paragraph' | 'heading' | 'subheading' | 'list' | 'quote' | 'internal-link'
   text?: string
   items?: string[]
+  href?: string
 }
 
 export interface BlogPost {

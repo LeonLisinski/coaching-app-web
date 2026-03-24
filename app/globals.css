@@ -759,3 +759,81 @@ a.contact-info-val:hover{color:var(--ba)}
   .legal-toc{display:none}
   .legal-main{padding:24px 20px}
 }
+
+/* Wave divider — fix sub-pixel hairlines on mobile */
+.wave-div{margin-top:-1px;margin-bottom:-1px}
+.wave-svg{display:block;width:100%;height:64px}
+@media(max-width:640px){.wave-svg{height:32px}}
+
+/* Blog internal link note */
+.blog-internal-link-note{margin:20px 0;padding:14px 18px;background:rgba(0,102,255,.06);border-left:3px solid var(--ba);border-radius:0 8px 8px 0;font-size:.9rem;color:var(--ls)}
+.blog-internal-link-note a{color:var(--ba);font-weight:600;text-decoration:none}
+.blog-internal-link-note a:hover{text-decoration:underline}
+
+/* ─── SEO LANDING PAGE ─── */
+/* Hero */
+.seo-hero{position:relative;padding:110px 5% 80px;overflow:hidden}
+.seo-hero-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:center}
+.seo-h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:800;line-height:1.07;letter-spacing:-1.5px;margin-bottom:20px}
+.seo-hsub{font-size:1rem;color:var(--w70);line-height:1.72;max-width:520px;margin-bottom:32px}
+/* Buttons: left-aligned on desktop (override .hcta centered default) */
+.seo-hcta{display:flex;align-items:center;justify-content:flex-start;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.seo-hnote{font-size:.63rem;color:var(--w50);white-space:nowrap}
+/* Static mockup */
+.seo-mockup{background:#0d1530;border:1px solid rgba(0,102,255,.28);border-radius:16px;overflow:hidden;box-shadow:0 32px 64px rgba(0,0,0,.5),0 0 60px rgba(0,102,255,.1)}
+.seo-mockup-body{padding:16px}
+.seo-mclient{display:flex;align-items:center;gap:10px;padding:10px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid var(--w06);margin-bottom:7px}
+.seo-mav{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:700;color:#0a0a20;flex-shrink:0}
+.seo-minfo{flex:1}
+.seo-mname{font-size:.75rem;font-weight:600;color:var(--w)}
+.seo-msub{font-size:.62rem;color:var(--w50)}
+.seo-mstat{font-size:.65rem;font-weight:600;padding:3px 9px;border-radius:20px;white-space:nowrap}
+.seo-mstats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.seo-mstat-box{background:rgba(255,255,255,.04);border:1px solid var(--w06);border-radius:8px;padding:10px}
+.seo-mstat-val{font-size:1.1rem;font-weight:800;color:#4488ff;line-height:1}
+.seo-mstat-lbl{font-size:.6rem;color:var(--w50);margin-top:3px}
+/* Problem — light theme cards */
+.seo-problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.seo-problem-card{background:#fff;border:1px solid var(--lb);border-radius:var(--r);padding:28px 24px;transition:box-shadow .25s,transform .25s}
+.seo-problem-card:hover{box-shadow:0 8px 28px rgba(0,102,255,.1);transform:translateY(-2px)}
+.seo-problem-icon{font-size:1.8rem;margin-bottom:14px}
+.seo-problem-title{font-size:.95rem;font-weight:700;color:var(--lt);margin-bottom:8px}
+.seo-problem-text{font-size:.85rem;color:var(--ls);line-height:1.65}
+/* Features */
+.seo-feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:52px}
+.seo-feat-list{list-style:none}
+.seo-feat-item{display:flex;gap:14px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--lb)}
+.seo-feat-item:first-child{border-top:1px solid var(--lb);padding-top:18px}
+.seo-feat-icon{width:38px;height:38px;border-radius:9px;background:rgba(0,102,255,.09);border:1px solid rgba(0,102,255,.14);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.seo-feat-title{font-size:.93rem;font-weight:700;color:var(--lt);margin-bottom:4px}
+.seo-feat-desc{font-size:.82rem;color:var(--ls);line-height:1.6}
+/* Feature visual */
+.seo-feat-visual{background:#fff;border:1px solid var(--lb);border-radius:var(--r);padding:24px;box-shadow:0 8px 32px rgba(0,102,255,.08)}
+.seo-fv-header{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ls);margin-bottom:14px}
+.seo-fv-item{display:flex;align-items:center;gap:10px;padding:11px;background:var(--lg);border-radius:8px;border:1px solid var(--lb);margin-bottom:7px}
+.seo-fv-av{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;color:#0a0a20;flex-shrink:0}
+.seo-fv-info{flex:1}
+.seo-fv-name{font-size:.75rem;font-weight:600;color:var(--lt)}
+.seo-fv-meta{font-size:.62rem;color:var(--ls)}
+.seo-fv-badge{font-size:.65rem;font-weight:600;padding:3px 9px;border-radius:20px;background:rgba(0,102,255,.1);color:var(--ba);white-space:nowrap}
+.seo-fv-stat{margin-top:14px;padding:14px;background:var(--la);border-radius:8px;border:1px solid rgba(0,102,255,.1)}
+.seo-fv-stat-lbl{font-size:.65rem;color:var(--ls);margin-bottom:4px}
+.seo-fv-stat-val{font-size:1.5rem;font-weight:800;color:var(--ba)}
+/* Use cases */
+.seo-usecase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.seo-usecase-card{background:#fff;border:1px solid var(--lb);border-radius:var(--r);padding:28px;transition:border-color .2s,box-shadow .2s}
+.seo-usecase-card:hover{border-color:rgba(0,102,255,.3);box-shadow:0 8px 32px rgba(0,102,255,.1)}
+.seo-usecase-num{font-size:3rem;font-weight:800;color:var(--ba);line-height:1;margin-bottom:10px}
+.seo-usecase-title{font-size:.95rem;font-weight:700;color:var(--lt);margin-bottom:10px}
+.seo-usecase-text{font-size:.84rem;color:var(--ls);line-height:1.65}
+/* Mobile */
+@media(max-width:900px){
+  .seo-hero-inner{grid-template-columns:1fr}
+  .seo-mockup{display:none}
+  .seo-problem-grid,.seo-usecase-grid{grid-template-columns:1fr}
+  .seo-feat-grid{grid-template-columns:1fr;gap:40px}
+}
+@media(max-width:600px){
+  .seo-hero{padding:96px 5% 60px}
+  .seo-h1{letter-spacing:-1px}
+}

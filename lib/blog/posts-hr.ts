@@ -55,6 +55,7 @@ export const postsHr: BlogPost[] = [
       { type: 'heading', text: 'Kada je pravo vrijeme za promjenu?' },
       { type: 'paragraph', text: 'Ako imaš 5 i više aktivnih klijenata i osjećaš da administracija jede tvoje vrijeme, to je jasan signal. Sustav koji skalira s tvojim biznisom nije luksuz — to je preduvjet za rast.' },
       { type: 'paragraph', text: 'Dobra platforma ti daje automatske podsjetike, mobilni pristup klijentima, centraliziranu komunikaciju i financijske preglede — sve iz jednog mjesta. Excel to ne može.' },
+      { type: 'internal-link', text: '→ Pogledaj kako UnitLift zamjenjuje Excel i WhatsApp za online fitness trenere', href: '/hr/software-za-online-fitness-trenere' },
     ],
   },
   {
@@ -189,6 +190,7 @@ export const postsHr: BlogPost[] = [
         'GDPR sukladnost i sigurna pohrana podataka',
       ]},
       { type: 'quote', text: '"UnitLift je dizajniran upravo s ovim popisom na umu. Isprobaj 14 dana besplatno i uvjeri se zašto je to platforma koja raste zajedno s tvojim biznisom."' },
+      { type: 'internal-link', text: '→ Saznaj više o softveru za online fitness trenere — što UnitLift nudi i kako početi', href: '/hr/software-za-online-fitness-trenere' },
     ],
   },
   {
