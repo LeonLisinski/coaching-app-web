@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: '%s | UnitLift',
   },
   description:
-    'UnitLift — coaching platforma za online fitness trenere. Planovi treninga, prehrana, check-ini, chat i financije — sve na jednom mjestu. Isprobaj besplatno 14 dana.',
+    'UnitLift - coaching platforma za online fitness trenere. Planovi treninga, prehrana, check-ini, chat i financije — sve na jednom mjestu. Isprobaj besplatno 14 dana.',
   keywords: [
     'unitlift',
     'coaching platforma',

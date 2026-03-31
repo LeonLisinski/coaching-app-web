@@ -49,18 +49,18 @@ export default function Footer() {
             </a>
             <p className="ftag">{t('tagline')}</p>
             <div className="fsocial">
-              <a href="#" className="fsoc-link" aria-label="Instagram" title="Instagram">
+              <a href="https://www.instagram.com/unitlift.app/" className="fsoc-link" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
                 <InstagramIcon />
               </a>
-              <a href="#" className="fsoc-link" aria-label="TikTok" title="TikTok">
+              <a href="https://www.tiktok.com/@unitlift" className="fsoc-link" aria-label="TikTok" title="TikTok" target="_blank" rel="noopener noreferrer">
                 <TikTokIcon />
               </a>
-              <a href="#" className="fsoc-link" aria-label="Facebook" title="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61575384151370" className="fsoc-link" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
                 <FacebookIcon />
               </a>
             </div>
             <div className="fco">
-              UnitDuo, obrt za digitalne usluge<br />
+              UnitLift, obrt za digitalne usluge<br />
               vl. Leon Lišinski<br />
               Vijenac Ivana Meštrovića 80, Osijek<br />
               OIB: 61111415884 &nbsp;·&nbsp; MB: 99113821<br />
