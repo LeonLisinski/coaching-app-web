@@ -17,6 +17,15 @@
     { "t": "Invite clients", "d": "Send the client a link. They download the app and instantly see all their plans — you never have to send anything manually again." },
     { "t": "Track and grow", "d": "Check-ins arrive automatically, payments are visible in seconds, and you have more time for actual coaching." }
   ],
+  "cappLbl": "Mobile app",
+  "cappTit": "Everything your client needs,<br>in their pocket",
+  "cappFeats": [
+    { "badge": "Overview", "t": "Everything in one place", "d": "Workout, nutrition and check-in available in one tap. The client always knows what's ahead today.", "bullets": ["Workout, nutrition and check-in on one screen", "Client always knows what's ahead today", "Quick access without searching the app"] },
+    { "badge": "Training", "t": "Train with a plan, no paper", "d": "Log weight and reps per set. Rest timer starts automatically after each set.", "bullets": ["Log weight and reps per set", "Rest timer starts automatically", "Previous session history always visible"] },
+    { "badge": "Nutrition", "t": "Macros calculated in advance", "d": "The coach sets meals, the client just follows. Confirm the day with one tap.", "bullets": ["Coach sets meals once", "Client just follows and confirms", "Macros visible for every ingredient"] },
+    { "badge": "Chat", "t": "Coach always available", "d": "Question in a second, answer without WhatsApp chaos. All messages in one place.", "bullets": ["All messages in one place", "No WhatsApp groups or lost messages", "Client asks, coach answers"] },
+    { "badge": "Check-in", "t": "Weekly and daily check-in in 2 minutes", "d": "Client logs data, the coach instantly sees progress without a single message.", "bullets": ["Latest metrics tracked in one place", "Progress photos directly from the app", "Coach sees everything without asking"] }
+  ],
   "mobLbl": "Mobile app",
   "mobTit": "For coaches and clients.<br>Always available.",
   "mobSub": "The coach tracks everything from their phone. The client has their own app with plans, check-ins and chat.",

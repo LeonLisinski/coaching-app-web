@@ -17,6 +17,15 @@
     { "t": "Pozovi klijente", "d": "Pošalji klijentu link. On preuzme aplikaciju i odmah vidi sve planove — ti više ne moraš ništa slati ručno." },
     { "t": "Prati i rasti", "d": "Check-ini stižu automatski, plaćanja su vidljiva u sekundi, a ti imaš više vremena za pravi coaching." }
   ],
+  "cappLbl": "Mobilna aplikacija",
+  "cappTit": "Sve što tvoj klijent treba,<br>u džepu",
+  "cappFeats": [
+    { "badge": "Pregled", "t": "Sve na jednom mjestu", "d": "Trening, prehrana i check-in dostupni jednim klikom. Klijent uvijek zna što ga čeka danas.", "bullets": ["Trening, prehrana i check-in na jednom ekranu", "Klijent uvijek zna što ga čeka danas", "Brzi pristup bez traženja po aplikaciji"] },
+    { "badge": "Trening", "t": "Treniraj s planom, bez papira", "d": "Unosiš težinu i ponavljanja po serijama. Timer odmora krene automatski nakon svake serije.", "bullets": ["Unos težine i ponavljanja po serijama", "Timer odmora kreće automatski", "Povijest prethodnog treninga uvijek vidljiva"] },
+    { "badge": "Prehrana", "t": "Makrosi izračunati unaprijed", "d": "Trener postavlja obroke, klijent ih samo prati. Potvrdi dan jednim klikom.", "bullets": ["Trener postavlja obroke jednom", "Klijent samo prati i potvrđuje", "Makroi vidljivi za svaki sastojak"] },
+    { "badge": "Chat", "t": "Trener uvijek dostupan", "d": "Pitanje u sekundi, odgovor bez WhatsApp kaosa. Sve poruke na jednom mjestu.", "bullets": ["Sve poruke na jednom mjestu", "Bez WhatsApp grupe i izgubljenih poruka", "Klijent pita, trener odgovara"] },
+    { "badge": "Check-in", "t": "Tjedni i dnevni check-in za 2 minute", "d": "Klijent unosi podatke, a trener odmah vidi napredak bez jedne poruke.", "bullets": ["Praćenje zadnih metrika na jednome mjestu", "Fotografije napretka direktno iz aplikacije", "Trener vidi sve bez pitanja"] }
+  ],
   "mobLbl": "Mobilna aplikacija",
   "mobTit": "Za trenere i klijente.<br>Uvijek dostupno.",
   "mobSub": "Trener prati sve s mobitela. Klijent ima vlastitu aplikaciju s planovima, check-inovima i chatom.",

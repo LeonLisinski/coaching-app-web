@@ -312,7 +312,7 @@ footer::after{content:'';position:absolute;top:0;left:0;right:0;height:48px;back
 .fls a:hover{color:var(--w)}
 .fbot{border-top:1px solid var(--w06);padding-top:26px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
 .fcopy{font-size:.76rem;color:var(--w50)}
-.payrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.payrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center}
 .paylbl{font-size:.7rem;color:var(--w50)}
 .payico{display:flex;align-items:center;justify-content:center;background:#fff;border-radius:5px;padding:3px 8px;height:26px;min-width:44px}
 .payico svg{display:block;margin:0 auto}
@@ -366,6 +366,37 @@ footer::after{content:'';position:absolute;top:0;left:0;right:0;height:48px;back
 .mob-store-txt span:first-child{display:block;font-size:.65rem;color:rgba(255,255,255,.5)}
 .mob-store-txt span:last-child{display:block;font-size:.85rem;font-weight:700;color:#fff}
 
+/* CLIENT APP SECTION — sticky scroll (desktop) + infinite carousel (mobile) */
+.capp-header{padding-top:4rem;text-align:center;margin-bottom:2rem}
+/* Desktop sticky scroll */
+.capp-sticky-wrap{display:flex;align-items:flex-start;max-width:1100px;margin:0 auto;padding:0 5%}
+.capp-sticky-left{width:40%;flex-shrink:0;position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center}
+.capp-img-stack{position:relative;width:320px;height:692px}
+.capp-fade-img{position:absolute;top:0;left:0;width:320px;height:692px;object-fit:contain;opacity:0;transition:opacity .4s ease}
+.capp-fade-img.active{opacity:1}
+.capp-sticky-right{width:60%}
+.capp-text-block{min-height:70vh;padding-top:20vh;padding-bottom:8vh;padding-left:48px}
+.capp-text-inner{max-width:480px}
+.capp-badge{display:inline-flex;align-items:center;background:rgba(0,102,255,.1);color:var(--ba);font-size:.68rem;font-weight:700;padding:5px 13px;border-radius:20px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.capp-title{font-size:clamp(1.45rem,2.4vw,1.9rem);font-weight:800;color:var(--lt);line-height:1.15;margin-bottom:12px;letter-spacing:-.4px}
+.capp-desc{font-size:.97rem;color:var(--ls);line-height:1.78;margin-bottom:18px}
+.capp-bullets{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.capp-bullet{display:flex;align-items:flex-start;gap:8px;font-size:.87rem;color:var(--ls);line-height:1.5}
+.capp-bullet-check{color:var(--ba);font-weight:700;flex-shrink:0;font-size:.85rem;margin-top:.05em}
+.capp-bullets-car{text-align:left;margin-top:12px}
+.capp-right-end{height:88px}
+/* Mobile carousel — hidden on desktop */
+.capp-carousel-outer{display:none;overflow:hidden;padding-top:40px;padding-bottom:56px}
+.capp-carousel-track{display:flex;will-change:transform}
+.capp-car-slide{flex-shrink:0;width:80vw;display:flex;flex-direction:column;align-items:center;text-align:center}
+.capp-car-img{max-width:300px;width:100%;height:auto;filter:drop-shadow(0 16px 32px rgba(0,0,0,.15)) drop-shadow(0 4px 8px rgba(0,0,0,.1));margin-bottom:20px}
+.capp-car-info{padding:0 12px}
+.capp-car-title{font-size:1.25rem;font-weight:700;color:var(--lt);margin-top:8px;line-height:1.25}
+.capp-car-desc{font-size:.88rem;color:var(--ls);line-height:1.65;margin-top:6px}
+.capp-dots{display:flex;justify-content:center;gap:6px;margin-top:24px}
+.capp-dot{height:7px;border-radius:4px;background:var(--lb);border:none;cursor:pointer;transition:all .3s;width:7px;padding:0;flex-shrink:0}
+.capp-dot.active{background:var(--ba);width:22px}
+
 /* RESPONSIVE */
 @media(max-width:1024px){
   .fg{grid-template-columns:repeat(2,1fr)}
@@ -399,6 +430,10 @@ footer::after{content:'';position:absolute;top:0;left:0;right:0;height:48px;back
   .tcar-track{padding-left:0}
   .tcar-slide{width:85vw}
   .legal-body{padding:32px 16px 60px}
+  /* Client app — hide sticky scroll, show carousel */
+  .capp-sticky-wrap{display:none}
+  .capp-carousel-outer{display:block}
+  .capp-header{padding-top:56px}
 }
 @media(max-width:520px){
   .legal-footer-row{display:flex !important;flex-direction:column;align-items:center;gap:10px;text-align:center}
@@ -446,7 +481,7 @@ footer::after{content:'';position:absolute;top:0;left:0;right:0;height:48px;back
   .fg2>div:last-child{grid-column:1/-1}
   .fg2>div:last-child .fls{flex-direction:row;flex-wrap:wrap;gap:6px 20px}
   .fsocial{justify-content:flex-start}
-  .payrow{justify-content:flex-start;flex-wrap:wrap;gap:8px}
+  .payrow{justify-content:center;flex-wrap:wrap;gap:8px}
   footer{padding:40px 5% 28px}
   .fbot{padding-top:20px;gap:12px}
   .fcopy{font-size:.7rem}

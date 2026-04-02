@@ -15,7 +15,7 @@ import Navbar from '@/components/landing/Navbar'
 import Hero from '@/components/landing/Hero'
 import TrustBar from '@/components/landing/TrustBar'
 import HowItWorks from '@/components/landing/HowItWorks'
-import MobileApp from '@/components/landing/MobileApp'
+import ClientApp from '@/components/landing/ClientApp'
 import Pricing from '@/components/landing/Pricing'
 import Testimonials from '@/components/landing/Testimonials'
 import FAQ from '@/components/landing/FAQ'
@@ -57,7 +57,7 @@ export default function LandingPage() {
       <WaveDivider from="#eef4ff" to="#f5f7ff" />
       <HowItWorks />
       <WaveDivider from="#f5f7ff" to="#eceffe" />
-      <MobileApp />
+      <ClientApp />
       <WaveDivider from="#eceffe" to="#ffffff" />
       <Pricing />
       <WaveDivider from="#f5f9ff" to="#eceffe" />

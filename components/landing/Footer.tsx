@@ -89,7 +89,7 @@ export default function Footer() {
             <span className="paylbl">{t('payLbl')}</span>
             <div className="payico">
               <svg viewBox="0 0 52 18" width="44" height="16">
-                <text x="1" y="14" fontFamily="Arial" fontWeight="900" fontSize="15" fill="#1a1f71" letterSpacing="-0.3">VISA</text>
+                <text x="26" y="14" textAnchor="middle" fontFamily="Arial" fontWeight="900" fontSize="15" fill="#1a1f71" letterSpacing="-0.3">VISA</text>
               </svg>
             </div>
             <div className="payico" style={{ padding: '3px 5px' }}>
@@ -101,12 +101,12 @@ export default function Footer() {
             </div>
             <div className="payico dark">
               <svg viewBox="0 0 60 18" width="52" height="16">
-                <text x="2" y="13" fontFamily="-apple-system,Arial" fontWeight="500" fontSize="10" fill="white">Apple Pay</text>
+                <text x="30" y="13" textAnchor="middle" fontFamily="-apple-system,Arial" fontWeight="500" fontSize="10" fill="white">Apple Pay</text>
               </svg>
             </div>
             <div className="payico">
               <svg viewBox="0 0 66 18" width="58" height="16">
-                <text x="1" y="13" fontFamily="Arial" fontWeight="500" fontSize="11">
+                <text x="33" y="13" textAnchor="middle" fontFamily="Arial" fontWeight="500" fontSize="11">
                   <tspan fill="#4285F4">G</tspan>
                   <tspan fill="#5f6368">oogle </tspan>
                   <tspan fill="#4285F4">P</tspan>
@@ -117,7 +117,7 @@ export default function Footer() {
             </div>
             <div className="payico blue">
               <svg viewBox="0 0 48 14" width="44" height="13">
-                <text x="2" y="11" fontFamily="Arial" fontWeight="700" fontSize="9" fill="white" letterSpacing="0.5">SEPA</text>
+                <text x="24" y="11" textAnchor="middle" fontFamily="Arial" fontWeight="700" fontSize="9" fill="white" letterSpacing="0.5">SEPA</text>
               </svg>
             </div>
           </div>
