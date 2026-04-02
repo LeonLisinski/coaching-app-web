@@ -385,8 +385,9 @@ footer::after{content:'';position:absolute;top:0;left:0;right:0;height:48px;back
 .capp-bullet-check{color:var(--ba);font-weight:700;flex-shrink:0;font-size:.85rem;margin-top:.05em}
 .capp-bullets-car{text-align:left;margin-top:12px}
 .capp-right-end{height:88px}
-/* Mobile carousel — hidden on desktop */
+/* Mobile carousel + store buttons — hidden on desktop */
 .capp-carousel-outer{display:none;overflow:hidden;padding-top:40px;padding-bottom:56px}
+.capp-store-row{display:none}
 .capp-carousel-track{display:flex;will-change:transform}
 .capp-car-slide{flex-shrink:0;width:80vw;display:flex;flex-direction:column;align-items:center;text-align:center}
 .capp-car-img{max-width:260px;width:100%;height:auto;filter:drop-shadow(0 16px 32px rgba(0,0,0,.15)) drop-shadow(0 4px 8px rgba(0,0,0,.1));margin-bottom:20px}
@@ -434,6 +435,12 @@ footer::after{content:'';position:absolute;top:0;left:0;right:0;height:48px;back
   .capp-sticky-wrap{display:none}
   .capp-carousel-outer{display:block}
   .capp-header{padding-top:56px}
+  /* Store buttons */
+  .capp-store-row{display:flex;justify-content:center;gap:10px;padding:24px 16px 0;flex-wrap:wrap}
+  .capp-store-btn{display:flex;align-items:center;gap:9px;background:#0A1024;border-radius:11px;padding:10px 18px;text-decoration:none;min-height:44px;flex:1;max-width:180px;justify-content:center}
+  .capp-store-txt{display:flex;flex-direction:column}
+  .capp-store-txt span:first-child{font-size:.62rem;color:rgba(255,255,255,.55);line-height:1.2}
+  .capp-store-txt span:last-child{font-size:.82rem;font-weight:700;color:#fff;line-height:1.2}
 }
 @media(max-width:520px){
   .legal-footer-row{display:flex !important;flex-direction:column;align-items:center;gap:10px;text-align:center}
@@ -482,6 +489,7 @@ footer::after{content:'';position:absolute;top:0;left:0;right:0;height:48px;back
   .fg2>div:last-child .fls{flex-direction:row;flex-wrap:wrap;gap:6px 20px}
   .fsocial{justify-content:flex-start}
   .payrow{justify-content:center;flex-wrap:wrap;gap:8px}
+  .paylbl{display:none}
   footer{padding:40px 5% 28px}
   .fbot{padding-top:20px;gap:12px}
   .fcopy{font-size:.7rem}
