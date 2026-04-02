@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props) {
       ? 'Odgovori na najčešća pitanja o UnitLift platformi — cijene, postavljanje, klijenti i tehničke informacije.'
       : 'Answers to the most common questions about UnitLift — pricing, setup, clients and technical information.',
     robots: { index: true, follow: true },
-    alternates: { canonical: `/${locale}/faq`, languages: { hr: '/hr/faq', en: '/en/faq' } },
+    alternates: { canonical: locale === 'hr' ? '/faq' : '/en/faq', languages: { hr: '/faq', en: '/en/faq', 'x-default': '/faq' } },
   }
 }
 

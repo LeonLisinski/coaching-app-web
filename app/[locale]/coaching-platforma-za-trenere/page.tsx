@@ -11,13 +11,13 @@ export async function generateMetadata({ params }: Props) {
     description: 'UnitLift je coaching platforma koja automatizira onboarding, check-ine i praćenje plaćanja. Od prvih klijenata do pune prakse — bez mijenjanja alata.',
     keywords: ['coaching platforma za trenere', 'online coaching platforma', 'platforma za personal trenere', 'coaching software hrvatska'],
     alternates: {
-      canonical: '/hr/coaching-platforma-za-trenere',
-      languages: { hr: '/hr/coaching-platforma-za-trenere', en: '/en/online-coaching-software' },
+      canonical: '/coaching-platforma-za-trenere',
+      languages: { hr: '/coaching-platforma-za-trenere', en: '/en/online-coaching-software', 'x-default': '/coaching-platforma-za-trenere' },
     },
     openGraph: {
       title: 'Coaching Platforma za Trenere | UnitLift',
       description: 'Sustav koji automatizira administraciju i skalira s tvojim poslom.',
-      url: 'https://unitlift.com/hr/coaching-platforma-za-trenere',
+      url: 'https://unitlift.com/coaching-platforma-za-trenere',
       type: 'website',
     },
   }

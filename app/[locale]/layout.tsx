@@ -33,6 +33,14 @@ export const metadata: Metadata = {
     'fitness trener software',
   ],
   metadataBase: new URL('https://unitlift.com'),
+  alternates: {
+    canonical: 'https://unitlift.com',
+    languages: {
+      'hr': 'https://unitlift.com',
+      'en': 'https://unitlift.com/en',
+      'x-default': 'https://unitlift.com',
+    },
+  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },

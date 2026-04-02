@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: Props) {
     keywords: ['client tracking software', 'client progress tracking', 'check-in system for trainers', 'trainer client management'],
     alternates: {
       canonical: '/en/client-tracking-software',
-      languages: { hr: '/hr/software-za-pracenje-klijenata', en: '/en/client-tracking-software' },
+      languages: { hr: '/software-za-pracenje-klijenata', en: '/en/client-tracking-software', 'x-default': '/software-za-pracenje-klijenata' },
     },
     openGraph: {
       title: 'Client Tracking Software for Personal Trainers | UnitLift',
@@ -25,6 +25,6 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function ClientTrackingSoftwarePage({ params }: Props) {
   const { locale } = await params
-  if (locale === 'hr') permanentRedirect('/hr/software-za-pracenje-klijenata')
+  if (locale === 'hr') permanentRedirect('/software-za-pracenje-klijenata')
   return <SeoLandingPage namespace="seoPageTracking" />
 }

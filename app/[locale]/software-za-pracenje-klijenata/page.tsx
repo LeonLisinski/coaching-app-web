@@ -11,13 +11,13 @@ export async function generateMetadata({ params }: Props) {
     description: 'UnitLift automatski prikuplja tjedne check-ine od klijenata — mjere, fotografije, osjećaj, san. Kompletna slika napretka bez ručne administracije.',
     keywords: ['software za praćenje klijenata', 'praćenje napretka klijenata', 'check-in sustav za trenere', 'trenerski software za napredak'],
     alternates: {
-      canonical: '/hr/software-za-pracenje-klijenata',
-      languages: { hr: '/hr/software-za-pracenje-klijenata', en: '/en/client-tracking-software' },
+      canonical: '/software-za-pracenje-klijenata',
+      languages: { hr: '/software-za-pracenje-klijenata', en: '/en/client-tracking-software', 'x-default': '/software-za-pracenje-klijenata' },
     },
     openGraph: {
       title: 'Software za Praćenje Klijenata | UnitLift',
       description: 'Automatski tjedni check-ini — mjere, fotografije i napredak na jednom ekranu.',
-      url: 'https://unitlift.com/hr/software-za-pracenje-klijenata',
+      url: 'https://unitlift.com/software-za-pracenje-klijenata',
       type: 'website',
     },
   }

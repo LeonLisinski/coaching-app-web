@@ -11,13 +11,13 @@ export async function generateMetadata({ params }: Props) {
     description: 'UnitLift daje svakom klijentu vlastitu mobilnu aplikaciju s planovima, check-inima i chatom. Profesionalni personal trening bez PDF-ova i WhatsAppa.',
     keywords: ['aplikacija za personal trenere', 'trenerska aplikacija', 'mobilna aplikacija za klijente', 'coaching aplikacija hrvatska'],
     alternates: {
-      canonical: '/hr/aplikacija-za-personal-trenere',
-      languages: { hr: '/hr/aplikacija-za-personal-trenere', en: '/en/personal-trainer-app' },
+      canonical: '/aplikacija-za-personal-trenere',
+      languages: { hr: '/aplikacija-za-personal-trenere', en: '/en/personal-trainer-app', 'x-default': '/aplikacija-za-personal-trenere' },
     },
     openGraph: {
       title: 'Aplikacija za Personal Trenere | UnitLift',
       description: 'Daj klijentima pravu aplikaciju — planovi, check-ini i chat na jednom ekranu.',
-      url: 'https://unitlift.com/hr/aplikacija-za-personal-trenere',
+      url: 'https://unitlift.com/aplikacija-za-personal-trenere',
       type: 'website',
     },
   }

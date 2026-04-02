@@ -6,8 +6,8 @@ export async function generateMetadata({ params }: Props) {
   const { locale } = await params
   return {
     alternates: {
-      canonical: `/${locale}`,
-      languages: { hr: '/hr', en: '/en' },
+      canonical: locale === 'hr' ? '/' : '/en',
+      languages: { hr: '/', en: '/en', 'x-default': '/' },
     },
   }
 }

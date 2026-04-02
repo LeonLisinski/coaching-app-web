@@ -11,16 +11,17 @@ export async function generateMetadata({ params }: Props) {
     description: 'UnitLift je platforma za online fitness trenere koja zamjenjuje WhatsApp, Excel i PDF-ove. Planovi treninga, prehrane, check-ini i plaćanja — sve na jednom mjestu. Isprobaj 14 dana besplatno.',
     keywords: ['software za fitness trenere', 'aplikacija za personal trenere', 'online coaching platforma', 'program za trenere', 'trenerska aplikacija hrvatska', 'unitlift'],
     alternates: {
-      canonical: '/hr/software-za-online-fitness-trenere',
+      canonical: '/software-za-online-fitness-trenere',
       languages: {
-        hr: '/hr/software-za-online-fitness-trenere',
+        hr: '/software-za-online-fitness-trenere',
         en: '/en/online-personal-trainer-software',
+        'x-default': '/software-za-online-fitness-trenere',
       },
     },
     openGraph: {
       title: 'Software za Online Fitness Trenere | UnitLift',
       description: 'Zamijeni WhatsApp i Excel jednom platformom. Planovi, check-ini, plaćanja — sve na jednom ekranu.',
-      url: 'https://unitlift.com/hr/software-za-online-fitness-trenere',
+      url: 'https://unitlift.com/software-za-online-fitness-trenere',
       type: 'website',
     },
   }

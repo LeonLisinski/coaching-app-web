@@ -13,8 +13,9 @@ export async function generateMetadata({ params }: Props) {
     alternates: {
       canonical: '/en/online-personal-trainer-software',
       languages: {
-        hr: '/hr/software-za-online-fitness-trenere',
+        hr: '/software-za-online-fitness-trenere',
         en: '/en/online-personal-trainer-software',
+        'x-default': '/software-za-online-fitness-trenere',
       },
     },
     openGraph: {
@@ -29,6 +30,6 @@ export async function generateMetadata({ params }: Props) {
 export default async function OnlinePersonalTrainerSoftwarePage({ params }: Props) {
   const { locale } = await params
   // Redirect HR visitors to the HR-keyword URL
-  if (locale === 'hr') permanentRedirect('/hr/software-za-online-fitness-trenere')
+  if (locale === 'hr') permanentRedirect('/software-za-online-fitness-trenere')
   return <SeoLandingPage />
 }

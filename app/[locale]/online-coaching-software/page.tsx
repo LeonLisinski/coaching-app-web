@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: Props) {
     keywords: ['online coaching software', 'coaching platform for trainers', 'personal trainer platform', 'coach management software'],
     alternates: {
       canonical: '/en/online-coaching-software',
-      languages: { hr: '/hr/coaching-platforma-za-trenere', en: '/en/online-coaching-software' },
+      languages: { hr: '/coaching-platforma-za-trenere', en: '/en/online-coaching-software', 'x-default': '/coaching-platforma-za-trenere' },
     },
     openGraph: {
       title: 'Online Coaching Software | UnitLift',
@@ -25,6 +25,6 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function OnlineCoachingSoftwarePage({ params }: Props) {
   const { locale } = await params
-  if (locale === 'hr') permanentRedirect('/hr/coaching-platforma-za-trenere')
+  if (locale === 'hr') permanentRedirect('/coaching-platforma-za-trenere')
   return <SeoLandingPage namespace="seoPageCoaching" />
 }

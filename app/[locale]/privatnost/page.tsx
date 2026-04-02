@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props) {
       ? 'Politika privatnosti platforme UnitLift — kako prikupljamo i štitimo vaše osobne podatke.'
       : 'Privacy Policy of UnitLift — how we collect and protect your personal data.',
     robots: { index: true, follow: true },
-    alternates: { canonical: `/${locale}/privatnost`, languages: { hr: '/hr/privatnost', en: '/en/privatnost' } },
+    alternates: { canonical: locale === 'hr' ? '/privatnost' : '/en/privatnost', languages: { hr: '/privatnost', en: '/en/privatnost', 'x-default': '/privatnost' } },
   }
 }
 

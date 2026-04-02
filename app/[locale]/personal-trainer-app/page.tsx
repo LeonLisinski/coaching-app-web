@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: Props) {
     keywords: ['personal trainer app', 'trainer app for clients', 'coaching app', 'client management app'],
     alternates: {
       canonical: '/en/personal-trainer-app',
-      languages: { hr: '/hr/aplikacija-za-personal-trenere', en: '/en/personal-trainer-app' },
+      languages: { hr: '/aplikacija-za-personal-trenere', en: '/en/personal-trainer-app', 'x-default': '/aplikacija-za-personal-trenere' },
     },
     openGraph: {
       title: 'Personal Trainer App | UnitLift',
@@ -25,6 +25,6 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function PersonalTrainerAppPage({ params }: Props) {
   const { locale } = await params
-  if (locale === 'hr') permanentRedirect('/hr/aplikacija-za-personal-trenere')
+  if (locale === 'hr') permanentRedirect('/aplikacija-za-personal-trenere')
   return <SeoLandingPage namespace="seoPageApp" />
 }
