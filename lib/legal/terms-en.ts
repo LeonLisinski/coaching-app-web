@@ -11,7 +11,7 @@ export const termsEn: LegalDocument = {
       id: 'acceptance',
       title: '1. Acceptance of Terms',
       content: [
-        { text: 'These Terms of Service ("Terms") govern your use of the UnitLift application available at https://app.unitlift.com and in the mobile application (collectively: "Service"). The Service is provided by UnitDuo, obrt za digitalne usluge, vl. Leon Lišinski ("we", "Service Provider").' },
+        { text: 'These Terms of Service ("Terms") govern your use of the UnitLift application available at https://app.unitlift.com and in the mobile application (collectively: "Service"). The Service is provided by UnitLift, obrt za digitalne usluge, vl. Leon Lišinski ("we", "Service Provider").' },
         { text: 'By registering or using the Service, you confirm that you have read, understood, and accepted these Terms. If you do not agree, please stop using the Service.' },
       ],
     },
@@ -166,7 +166,7 @@ export const termsEn: LegalDocument = {
         { text: 'For questions regarding these Terms, contact us:' },
         {
           items: [
-            'UnitDuo, obrt za digitalne usluge, vl. Leon Lišinski',
+            'UnitLift, obrt za digitalne usluge, vl. Leon Lišinski',
             'Vijenac Ivana Meštrovića 80, Osijek, Croatia',
             'Email: support@unitlift.com',
           ],

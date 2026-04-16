@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import LogoSvg from '@/components/landing/LogoSvg'
@@ -39,17 +39,23 @@ interface Props {
 
 export default function BlogListPage({ posts }: Props) {
   const locale = useLocale()
+  const t = useTranslations()
   const router = useRouter()
-  const isHr = locale === 'hr'
-  const otherLocale = isHr ? 'en' : 'hr'
+  const otherLocale = locale === 'hr' ? 'en' : 'hr'
 
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeFilter, setActiveFilter] = useState('all')
 
-  const navLinks = isHr
-    ? [['← Početna', `/${locale}`], ['Kako radi', `/${locale}/kako-radi`], ['Mobilna aplikacija', `/${locale}#funkcije`], ['Cijene', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
-    : [['← Home', `/${locale}`], ['How it works', `/${locale}/kako-radi`], ['Mobile app', `/${locale}#funkcije`], ['Pricing', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
+  const navLabels = t.raw('nav') as string[]
+  const navLinks = [
+    [t('common.navBack'), `/${locale}`],
+    [navLabels[0], `/${locale}/kako-radi`],
+    [navLabels[1], `/${locale}#funkcije`],
+    [navLabels[2], `/${locale}/cijene`],
+    ['Blog', `/${locale}/blog`],
+    ['FAQ', `/${locale}/faq`],
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -62,6 +68,11 @@ export default function BlogListPage({ posts }: Props) {
   )
 
   const filtered = activeFilter === 'all' ? posts : posts.filter(p => p.categorySlug === activeFilter)
+
+  function switchLang() {
+    try { localStorage.setItem('unitlift_locale', otherLocale) } catch {}
+    router.push(`/${otherLocale}/blog`)
+  }
 
   return (
     <div className="legal-root">
@@ -77,16 +88,16 @@ export default function BlogListPage({ posts }: Props) {
           ))}
         </ul>
         <div className="navact">
-          <button className="langbtn navlang" onClick={() => router.push(`/${otherLocale}/blog`)}>
+          <button className="langbtn navlang" onClick={switchLang}>
             {otherLocale.toUpperCase()} ↕
           </button>
           <a href="https://app.unitlift.com/login" className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {isHr ? 'Prijava' : 'Login'}
+            {t('login')}
           </a>
           <a href={`/${locale}/cijene`} className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {isHr ? 'Isprobaj besplatno' : 'Try for free'}
+            {t('common.tryFree')}
           </a>
-          <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label="Menu">
+          <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label={t('common.menuAria')}>
             <span /><span /><span />
           </button>
         </div>
@@ -96,8 +107,8 @@ export default function BlogListPage({ posts }: Props) {
         {navLinks.map(([label, href]) => (
           <a key={label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
         ))}
-        <button className="langbtn mobc" onClick={() => { router.push(`/${otherLocale}/blog`); setMenuOpen(false) }}>
-          {isHr ? `Jezik: ${otherLocale.toUpperCase()}` : `Language: ${otherLocale.toUpperCase()}`}
+        <button className="langbtn mobc" onClick={() => { switchLang(); setMenuOpen(false) }}>
+          {t('common.langSwitchLabel')} {otherLocale.toUpperCase()}
         </button>
       </div>
 
@@ -110,25 +121,19 @@ export default function BlogListPage({ posts }: Props) {
             <span className="bdot" />
             Blog
           </div>
-          <h1 className="legal-title">
-            {isHr ? 'Savjeti, novosti i vodiči' : 'Tips, news and guides'}
-          </h1>
-          <p className="legal-date">
-            {isHr
-              ? 'Sve što trebaš znati o online fitness coachingu — iz prve ruke.'
-              : 'Everything you need to know about online fitness coaching — from the source.'}
-          </p>
+          <h1 className="legal-title">{t('blogPage.heroTitle')}</h1>
+          <p className="legal-date">{t('blogPage.heroSub')}</p>
           <div className="legal-tabs">
             <Link href={`/${locale}/blog`} className="legal-tab active">Blog</Link>
             <Link href={`/${locale}/faq`} className="legal-tab">FAQ</Link>
             <Link href={`/${locale}/kontakt`} className="legal-tab">
-              {isHr ? 'Kontakt' : 'Contact'}
+              {t('common.contact')}
             </Link>
           </div>
           <div className="faq-stats">
-            <span><strong>{posts.length}</strong> {isHr ? 'objava' : 'posts'}</span>
+            <span><strong>{posts.length}</strong> {t('blogPage.postsLbl')}</span>
             <span className="faq-stats-sep">·</span>
-            <span><strong>{allCategories.length}</strong> {isHr ? 'kategorija' : 'categories'}</span>
+            <span><strong>{allCategories.length}</strong> {t('blogPage.catLbl')}</span>
           </div>
         </div>
       </div>
@@ -141,7 +146,7 @@ export default function BlogListPage({ posts }: Props) {
             className={`blog-filter-btn${activeFilter === 'all' ? ' active' : ''}`}
             onClick={() => setActiveFilter('all')}
           >
-            {isHr ? 'Sve' : 'All'}
+            {t('blogPage.filterAll')}
             <span className="blog-filter-count">{posts.length}</span>
           </button>
           {allCategories.map(([slug, label]) => (
@@ -166,7 +171,6 @@ export default function BlogListPage({ posts }: Props) {
             const icon = categoryIcons[post.categorySlug] || '📄'
             return (
               <Link key={post.slug} href={`/${locale}/blog/${post.slug}`} className="blog-card">
-                {/* Card top */}
                 <div className="blog-card-top" style={{ background: color }}>
                   <div className="blog-card-circles">
                     <span /><span /><span />
@@ -183,7 +187,6 @@ export default function BlogListPage({ posts }: Props) {
                   </div>
                 </div>
 
-                {/* Card body */}
                 <div className="blog-card-body">
                   <h3 className="blog-card-title">{post.title}</h3>
                   <p className="blog-card-excerpt">{post.excerpt}</p>
@@ -201,7 +204,7 @@ export default function BlogListPage({ posts }: Props) {
                       </div>
                     </div>
                     <span className="blog-card-read">
-                      {isHr ? 'Čitaj' : 'Read'}
+                      {t('blogPage.readBtn')}
                       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
                         <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
@@ -214,9 +217,7 @@ export default function BlogListPage({ posts }: Props) {
         </div>
 
         {filtered.length === 0 && (
-          <div className="blog-empty">
-            {isHr ? 'Nema objava u ovoj kategoriji.' : 'No posts in this category.'}
-          </div>
+          <div className="blog-empty">{t('blogPage.empty')}</div>
         )}
       </div>
 
@@ -231,11 +232,11 @@ export default function BlogListPage({ posts }: Props) {
             <div className="legal-footer-links">
               <Link href={`/${locale}/blog`}>Blog</Link>
               <Link href={`/${locale}/faq`}>FAQ</Link>
-              <Link href={`/${locale}/kontakt`}>{isHr ? 'Kontakt' : 'Contact'}</Link>
-              <Link href={`/${locale}/uvjeti`}>{isHr ? 'Uvjeti' : 'Terms'}</Link>
-              <Link href={`/${locale}/privatnost`}>{isHr ? 'Privatnost' : 'Privacy'}</Link>
+              <Link href={`/${locale}/kontakt`}>{t('common.contact')}</Link>
+              <Link href={`/${locale}/uvjeti`}>{t('common.termsShort')}</Link>
+              <Link href={`/${locale}/privatnost`}>{t('common.privacy')}</Link>
             </div>
-            <span className="legal-footer-copy">© 2026 UnitDuo, vl. Leon Lišinski</span>
+            <span className="legal-footer-copy">{t('common.footerCopy')}</span>
           </div>
         </div>
       </footer>

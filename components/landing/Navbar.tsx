@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useRouter, usePathname } from 'next/navigation'
 import LogoSvg from './LogoSvg'
 
 export default function Navbar() {
   const locale = useLocale()
+  const t = useTranslations()
   const router = useRouter()
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
@@ -19,30 +20,36 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Restore preferred locale on first load
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('unitlift_locale')
+      if (saved && saved !== locale) {
+        const segments = pathname.split('/')
+        segments[1] = saved
+        router.replace(segments.join('/') || '/')
+      }
+    } catch {}
+  }, [])
+
   function toggleLang() {
     const next = locale === 'hr' ? 'en' : 'hr'
+    try { localStorage.setItem('unitlift_locale', next) } catch {}
     const segments = pathname.split('/')
     segments[1] = next
     router.push(segments.join('/') || '/')
   }
 
-  const isHr = locale === 'hr'
+  const navLabels = t.raw('nav') as string[]
+  const navItems = [
+    { label: navLabels[0], href: `/${locale}/kako-radi` },
+    { label: navLabels[1], href: '#funkcije' },
+    { label: navLabels[2], href: `/${locale}/cijene` },
+    { label: navLabels[3], href: `/${locale}/blog` },
+    { label: navLabels[4], href: `/${locale}/faq` },
+  ]
 
-  const navItems = isHr
-    ? [
-        { label: 'Kako radi', href: `/${locale}/kako-radi` },
-        { label: 'Mobilna aplikacija', href: '#funkcije' },
-        { label: 'Cijene', href: `/${locale}/cijene` },
-        { label: 'Blog', href: `/${locale}/blog` },
-        { label: 'FAQ', href: `/${locale}/faq` },
-      ]
-    : [
-        { label: 'How it works', href: `/${locale}/kako-radi` },
-        { label: 'Mobile app', href: '#funkcije' },
-        { label: 'Pricing', href: `/${locale}/cijene` },
-        { label: 'Blog', href: `/${locale}/blog` },
-        { label: 'FAQ', href: `/${locale}/faq` },
-      ]
+  const otherLocale = locale === 'hr' ? 'en' : 'hr'
 
   return (
     <>
@@ -67,18 +74,22 @@ export default function Navbar() {
 
         <div className="navact">
           <a href="https://app.unitlift.com/login" className="btn btn-g">
-            {isHr ? 'Prijava' : 'Log in'}
+            {t('login')}
           </a>
-          <a href={`/${locale}#cijene`} className="btn btn-p" aria-label={isHr ? 'Isprobaj besplatno – odaberi plan' : 'Try for free – choose a plan'}>
-            {isHr ? 'Isprobaj besplatno' : 'Try for free'}
+          <a
+            href={`/${locale}#cijene`}
+            className="btn btn-p"
+            aria-label={t('common.tryFreeAria')}
+          >
+            {t('common.tryFree')}
           </a>
           <button className="langbtn navlang" onClick={toggleLang}>
-            {locale === 'hr' ? 'EN' : 'HR'}
+            {otherLocale.toUpperCase()}
           </button>
           <button
             className="hburg"
             onClick={() => setMenuOpen((o) => !o)}
-            aria-label="Menu"
+            aria-label={t('common.menuAria')}
           >
             <span />
             <span />
@@ -97,18 +108,21 @@ export default function Navbar() {
           href="https://app.unitlift.com/login"
           onClick={() => setMenuOpen(false)}
         >
-          {isHr ? 'Prijava' : 'Log in'}
+          {t('login')}
         </a>
         <a
           href={`/${locale}#cijene`}
           className="btn btn-p btn-fw mobc"
           onClick={() => setMenuOpen(false)}
-          aria-label={isHr ? 'Isprobaj besplatno – izbornik' : 'Try for free – menu'}
+          aria-label={t('common.tryFreeMenuAria')}
         >
-          {isHr ? 'Isprobaj besplatno' : 'Try for free'}
+          {t('common.tryFree')}
         </a>
-        <button className="langbtn mobc" onClick={() => { toggleLang(); setMenuOpen(false) }}>
-          {locale === 'hr' ? 'Jezik: EN' : 'Language: HR'}
+        <button
+          className="langbtn mobc"
+          onClick={() => { toggleLang(); setMenuOpen(false) }}
+        >
+          {t('common.langSwitchLabel')} {otherLocale.toUpperCase()}
         </button>
       </div>
     </>

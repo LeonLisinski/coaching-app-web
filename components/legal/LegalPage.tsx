@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import LogoSvg from '@/components/landing/LogoSvg'
@@ -14,22 +14,26 @@ interface LegalPageProps {
 
 export default function LegalPage({ doc, docType }: LegalPageProps) {
   const locale = useLocale()
+  const t = useTranslations()
   const router = useRouter()
   const [activeId, setActiveId] = useState<string>(doc.sections[0]?.id ?? '')
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const tocRef = useRef<HTMLDivElement>(null)
 
-  const isHr = locale === 'hr'
-  const otherLocale = isHr ? 'en' : 'hr'
-  // Routes are always /uvjeti and /privatnost for both locales
+  const otherLocale = locale === 'hr' ? 'en' : 'hr'
   const termsSlug = '/uvjeti'
   const privacySlug = '/privatnost'
   const currentSlug = docType === 'terms' ? termsSlug : privacySlug
 
-  const mainNavLinks = isHr
-    ? [['Kako radi', `/${locale}/kako-radi`], ['Mobilna aplikacija', `/${locale}#funkcije`], ['Cijene', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
-    : [['How it works', `/${locale}/kako-radi`], ['Mobile app', `/${locale}#funkcije`], ['Pricing', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
+  const navLabels = t.raw('nav') as string[]
+  const mainNavLinks = [
+    [navLabels[0], `/${locale}/kako-radi`],
+    [navLabels[1], `/${locale}#funkcije`],
+    [navLabels[2], `/${locale}/cijene`],
+    ['Blog', `/${locale}/blog`],
+    ['FAQ', `/${locale}/faq`],
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -53,15 +57,19 @@ export default function LegalPage({ doc, docType }: LegalPageProps) {
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id)
     if (el) {
-      const offset = 90
-      const top = el.getBoundingClientRect().top + window.scrollY - offset
+      const top = el.getBoundingClientRect().top + window.scrollY - 90
       window.scrollTo({ top, behavior: 'smooth' })
     }
   }
 
+  function switchLang() {
+    try { localStorage.setItem('unitlift_locale', otherLocale) } catch {}
+    router.push(`/${otherLocale}${currentSlug}`)
+  }
+
   return (
     <div className="legal-root">
-      {/* ─── Navbar ─── */}
+      {/* Navbar */}
       <nav className={scrolled ? 'scrolled' : ''}>
         <Link href={`/${locale}`} className="nl">
           <LogoSvg height={28} />
@@ -77,19 +85,16 @@ export default function LegalPage({ doc, docType }: LegalPageProps) {
         </ul>
 
         <div className="navact">
-          <button
-            className="langbtn navlang"
-            onClick={() => router.push(`/${otherLocale}${currentSlug}`)}
-          >
+          <button className="langbtn navlang" onClick={switchLang}>
             {otherLocale.toUpperCase()} ↕
           </button>
           <a href="https://app.unitlift.com/login" className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {isHr ? 'Prijava' : 'Login'}
+            {t('login')}
           </a>
           <a href={`/${locale}/cijene`} className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {isHr ? 'Isprobaj besplatno' : 'Try for free'}
+            {t('common.tryFree')}
           </a>
-          <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label="Menu">
+          <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label={t('common.menuAria')}>
             <span /><span /><span />
           </button>
         </div>
@@ -102,48 +107,45 @@ export default function LegalPage({ doc, docType }: LegalPageProps) {
             {label}
           </a>
         ))}
-        <button className="langbtn mobc" onClick={() => { router.push(`/${otherLocale}${currentSlug}`); setMenuOpen(false) }}>
-          {isHr ? `Jezik: ${otherLocale.toUpperCase()}` : `Language: ${otherLocale.toUpperCase()}`}
+        <button className="langbtn mobc" onClick={() => { switchLang(); setMenuOpen(false) }}>
+          {t('common.langSwitchLabel')} {otherLocale.toUpperCase()}
         </button>
       </div>
 
-      {/* ─── Hero Header ─── */}
+      {/* Hero */}
       <div className="legal-hero">
         <div className="legal-hero-bg" />
         <div className="legal-hero-grid" />
         <div className="legal-hero-inner">
           <div className="legal-badge">
             <span className="bdot" />
-            {isHr ? 'Pravni dokumenti' : 'Legal documents'}
+            {t('legalPage.badge')}
           </div>
           <h1 className="legal-title">{doc.title}</h1>
           <p className="legal-date">
-            {isHr ? 'Zadnja izmjena:' : 'Last updated:'} <strong>{doc.lastUpdated}</strong>
+            {t('common.lastUpdated')} <strong>{doc.lastUpdated}</strong>
           </p>
-          {/* Doc type tabs */}
           <div className="legal-tabs">
             <Link
               href={`/${locale}${termsSlug}`}
               className={`legal-tab${docType === 'terms' ? ' active' : ''}`}
             >
-              {isHr ? 'Uvjeti korištenja' : 'Terms of Service'}
+              {t('legalPage.termsTitle')}
             </Link>
             <Link
               href={`/${locale}${privacySlug}`}
               className={`legal-tab${docType === 'privacy' ? ' active' : ''}`}
             >
-              {isHr ? 'Politika privatnosti' : 'Privacy Policy'}
+              {t('legalPage.privacyTitle')}
             </Link>
           </div>
         </div>
       </div>
 
-      {/* ─── Body ─── */}
+      {/* Body */}
       <div className="legal-body">
         <div className="legal-body-inner">
-          {/* Main content */}
           <main className="legal-main">
-            {/* Callout */}
             <div className="legal-callout">{doc.callout}</div>
 
             {doc.sections.map(section => (
@@ -180,7 +182,7 @@ export default function LegalPage({ doc, docType }: LegalPageProps) {
             ))}
 
             <div className="legal-footer-note">
-              <span>{isHr ? 'Verzija' : 'Version'} {doc.version} &nbsp;·&nbsp; {doc.lastUpdated}</span>
+              <span>{t('common.version')} {doc.version} &nbsp;·&nbsp; {doc.lastUpdated}</span>
               <a href="mailto:support@unitlift.com">support@unitlift.com</a>
             </div>
           </main>
@@ -188,9 +190,7 @@ export default function LegalPage({ doc, docType }: LegalPageProps) {
           {/* Sticky TOC */}
           <aside className="legal-toc" ref={tocRef}>
             <div className="legal-toc-sticky">
-              <div className="legal-toc-title">
-                {isHr ? 'Sadržaj' : 'Contents'}
-              </div>
+              <div className="legal-toc-title">{t('legalPage.tocTitle')}</div>
               <div className="legal-toc-nav">
                 {doc.sections.map(s => (
                   <button
@@ -207,7 +207,7 @@ export default function LegalPage({ doc, docType }: LegalPageProps) {
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
                     <path d="M6 2L1 7l5 5M1 7h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                  {isHr ? 'Na glavnu stranicu' : 'Back to homepage'}
+                  {t('legalPage.backHome')}
                 </a>
               </div>
             </div>
@@ -215,7 +215,7 @@ export default function LegalPage({ doc, docType }: LegalPageProps) {
         </div>
       </div>
 
-      {/* ─── Footer (minimal) ─── */}
+      {/* Footer */}
       <footer className="legal-footer-bar">
         <div className="con">
           <div className="legal-footer-row">
@@ -224,17 +224,11 @@ export default function LegalPage({ doc, docType }: LegalPageProps) {
               <span>UnitLift</span>
             </a>
             <div className="legal-footer-links">
-              <Link href={`/${locale}${termsSlug}`}>
-                {isHr ? 'Uvjeti korištenja' : 'Terms of Service'}
-              </Link>
-              <Link href={`/${locale}${privacySlug}`}>
-                {isHr ? 'Politika privatnosti' : 'Privacy Policy'}
-              </Link>
+              <Link href={`/${locale}${termsSlug}`}>{t('legalPage.termsTitle')}</Link>
+              <Link href={`/${locale}${privacySlug}`}>{t('legalPage.privacyTitle')}</Link>
               <a href="mailto:support@unitlift.com">support@unitlift.com</a>
             </div>
-            <span className="legal-footer-copy">
-              © 2026 UnitDuo, vl. Leon Lišinski
-            </span>
+            <span className="legal-footer-copy">{t('common.footerCopy')}</span>
           </div>
         </div>
       </footer>

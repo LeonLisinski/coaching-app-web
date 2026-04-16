@@ -14,7 +14,7 @@ export const privacyHr: LegalDocument = {
         { text: 'Voditelj obrade podataka je:' },
         {
           items: [
-            'UnitDuo, obrt za digitalne usluge, vl. Leon Lišinski',
+            'UnitLift, obrt za digitalne usluge, vl. Leon Lišinski',
             'Vijenac Ivana Meštrovića 80, Osijek, Hrvatska',
             'OIB: 61111415884',
             'Matični broj obrta: 99113821',
@@ -176,7 +176,7 @@ export const privacyHr: LegalDocument = {
         { text: 'Za sva pitanja u vezi s privatnošću kontaktirajte nas:' },
         {
           items: [
-            'UnitDuo, obrt za digitalne usluge, vl. Leon Lišinski',
+            'UnitLift, obrt za digitalne usluge, vl. Leon Lišinski',
             'Vijenac Ivana Meštrovića 80, Osijek, Hrvatska',
             'E-mail: support@unitlift.com',
           ],

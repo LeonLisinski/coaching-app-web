@@ -5,14 +5,10 @@ import dynamic from 'next/dynamic'
 
 const AppShowcase = dynamic(() => import('./AppShowcase'), { ssr: false })
 
-const featsHr = ['Pregled klijenata', 'Planovi prehrane', 'Planovi treninga', 'Check-in praćenje', 'Galerija fotografija', 'Chat s klijentima']
-const featsEn = ['Client overview', 'Nutrition plans', 'Training plans', 'Check-in tracking', 'Photo gallery', 'Client chat']
-
 export default function Hero() {
   const t = useTranslations()
   const locale = useLocale()
-  const isHr = locale === 'hr'
-  const feats = isHr ? featsHr : featsEn
+  const feats = t.raw('heroFeats') as string[]
 
   return (
     <section className="hero">

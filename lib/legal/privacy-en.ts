@@ -14,7 +14,7 @@ export const privacyEn: LegalDocument = {
         { text: 'The data controller is:' },
         {
           items: [
-            'UnitDuo, obrt za digitalne usluge, vl. Leon Lišinski',
+            'UnitLift, obrt za digitalne usluge, vl. Leon Lišinski',
             'Vijenac Ivana Meštrovića 80, Osijek, Croatia',
             'Tax ID (OIB): 61111415884',
             'Business Registration Number: 99113821',
@@ -176,7 +176,7 @@ export const privacyEn: LegalDocument = {
         { text: 'For any privacy-related questions, contact us:' },
         {
           items: [
-            'UnitDuo, obrt za digitalne usluge, vl. Leon Lišinski',
+            'UnitLift, obrt za digitalne usluge, vl. Leon Lišinski',
             'Vijenac Ivana Meštrovića 80, Osijek, Croatia',
             'Email: support@unitlift.com',
           ],

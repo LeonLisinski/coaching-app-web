@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import LogoSvg from '@/components/landing/LogoSvg'
@@ -11,17 +11,23 @@ const PRICES = [29, 59, 99]
 
 export default function PricingPage() {
   const locale = useLocale()
+  const t = useTranslations()
   const router = useRouter()
-  const isHr = locale === 'hr'
-  const otherLocale = isHr ? 'en' : 'hr'
+  const otherLocale = locale === 'hr' ? 'en' : 'hr'
 
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const APP_URL = 'https://app.unitlift.com'
 
-  const navLinks = isHr
-    ? [['← Početna', `/${locale}`], ['Kako radi', `/${locale}/kako-radi`], ['Mobilna aplikacija', `/${locale}#funkcije`], ['Cijene', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
-    : [['← Home', `/${locale}`], ['How it works', `/${locale}/kako-radi`], ['Mobile app', `/${locale}#funkcije`], ['Pricing', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
+  const navLabels = t.raw('nav') as string[]
+  const navLinks = [
+    [t('common.navBack'), `/${locale}`],
+    [navLabels[0], `/${locale}/kako-radi`],
+    [navLabels[1], `/${locale}#funkcije`],
+    [navLabels[2], `/${locale}/cijene`],
+    ['Blog', `/${locale}/blog`],
+    ['FAQ', `/${locale}/faq`],
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -29,45 +35,17 @@ export default function PricingPage() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const baseFeats = isHr
-    ? ['Planovi treninga i prehrane', 'Prati što ti je važno — koraci, san, težina, raspoloženje', 'Chat s klijentima', 'Mobilna aplikacija za klijente (besplatna)', 'Vidi odmah tko je platio i koliko si zaradio']
-    : ['Training and nutrition plans', 'Track what matters — steps, sleep, weight, mood', 'Client chat', 'Client mobile app (free)', 'See instantly who paid and how much you earned']
+  const tiers = (t.raw('tiers') as Array<{
+    name: string; price: number; clients: string; feats: string[]; btn: string
+  }>).map((tier, i) => ({
+    ...tier,
+    popular: i === 1,
+    note: i === 2 ? t('scaleNote') : null,
+  }))
 
-  const tiers = isHr
-    ? [
-        {
-          name: 'Starter', price: 29, clients: 'Do 15 klijenata', popular: false,
-          feats: ['Do 15 aktivnih klijenata'],
-          btn: 'Kreni besplatno', note: null,
-        },
-        {
-          name: 'Pro', price: 59, clients: 'Do 50 klijenata', popular: true,
-          feats: ['Do 50 aktivnih klijenata', 'Vlastiti logo i boje u klijentskoj aplikaciji'],
-          btn: 'Kreni besplatno', note: null,
-        },
-        {
-          name: 'Scale', price: 99, clients: 'Do 150 klijenata', popular: false,
-          feats: ['Do 150 aktivnih klijenata', 'Vlastiti logo i boje u klijentskoj aplikaciji'],
-          btn: 'Kreni besplatno', note: 'Više od 150 klijenata? +€10/mj za svakih dodatnih 25.',
-        },
-      ]
-    : [
-        {
-          name: 'Starter', price: 29, clients: 'Up to 15 clients', popular: false,
-          feats: ['Up to 15 active clients'],
-          btn: 'Get started free', note: null,
-        },
-        {
-          name: 'Pro', price: 59, clients: 'Up to 50 clients', popular: true,
-          feats: ['Up to 50 active clients', 'Custom logo and colors in client app'],
-          btn: 'Get started free', note: null,
-        },
-        {
-          name: 'Scale', price: 99, clients: 'Up to 150 clients', popular: false,
-          feats: ['Up to 150 active clients', 'Custom logo and colors in client app'],
-          btn: 'Get started free', note: 'More than 150 clients? +€10/mo for every additional 25.',
-        },
-      ]
+  const baseFeats = t.raw('baseFeats') as string[]
+  const advCards = t.raw('pricingPage.advCards') as Array<{ title: string; desc: string }>
+  const stats = t.raw('pricingPage.stats') as [string, string][]
 
   const IcoCheckin = <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
   const IcoPhone   = <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" strokeWidth="2.5"/></svg>
@@ -75,24 +53,12 @@ export default function PricingPage() {
   const IcoApps    = <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 17h7M17 14v7"/></svg>
   const IcoChart   = <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
   const IcoLock    = <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+  const icons = [IcoCheckin, IcoPhone, IcoMoney, IcoApps, IcoChart, IcoLock]
 
-  const advCardsHr = [
-    { icon: IcoCheckin, title: 'Check-in praćenje bez muke', desc: 'Klijent ispuni check-in u dvije minute. Ti odmah vidiš napredak — bez jedne poruke, bez čekanja, bez traženja po WhatsAppu.' },
-    { icon: IcoPhone,   title: 'Jedna aplikacija za sve', desc: 'Planovi, prehrana, komunikacija, check-ini — sve na jednom mjestu. Zaboravi na Excel, WhatsApp, PDF i ostale kaos-alate.' },
-    { icon: IcoMoney,   title: 'Praćenje plaćanja u sekundi', desc: 'Vidiš točno tko je platio, tko kasni i koliko si zaradio ovaj mjesec. Bez ručnog praćenja, bez neugodnih podsjetnika.' },
-    { icon: IcoApps,    title: 'Klijentima jednostavnije', desc: 'Klijent preuzme jednu aplikaciju i sve je tamo. Nema registracija na 3 platforme, nema linkova po SMS-u, nema zbunjenosti.' },
-    { icon: IcoChart,   title: 'Napredak koji se vidi', desc: 'Sve mjere, foto check-ini i komentari arhivirani automatski. Lako prilagodi program na temelju podataka, ne nagađanja.' },
-    { icon: IcoLock,    title: 'Manje aplikacija, više mira', desc: 'Jedna pretplata. Jedan login. Sve u jednom. Nema više žongliranja s desecima alata i plaćanja na svakom koraku.' },
-  ]
-
-  const advCardsEn = [
-    { icon: IcoCheckin, title: 'Check-in tracking without the hassle', desc: 'Client fills in a check-in in two minutes. You instantly see progress — no messages, no waiting, no digging through WhatsApp.' },
-    { icon: IcoPhone,   title: 'One app for everything', desc: 'Plans, nutrition, communication, check-ins — all in one place. Forget Excel, WhatsApp, PDFs and other chaos tools.' },
-    { icon: IcoMoney,   title: 'Payment tracking in seconds', desc: 'See exactly who paid, who\'s late and how much you earned this month. No manual tracking, no awkward reminders.' },
-    { icon: IcoApps,    title: 'Less hassle for clients', desc: 'Client downloads one app and everything is there. No registrations on 3 platforms, no links over SMS, no confusion.' },
-    { icon: IcoChart,   title: 'Progress that shows', desc: 'All measurements, photo check-ins and comments archived automatically. Adjust programs based on data, not guessing.' },
-    { icon: IcoLock,    title: 'Fewer apps, more peace of mind', desc: 'One subscription. One login. All in one. No more juggling dozens of tools and paying at every step.' },
-  ]
+  function switchLang() {
+    try { localStorage.setItem('unitlift_locale', otherLocale) } catch {}
+    router.push(`/${otherLocale}/cijene`)
+  }
 
   return (
     <div className="legal-root">
@@ -109,15 +75,15 @@ export default function PricingPage() {
         </ul>
         <div className="navact">
           <a href="https://app.unitlift.com/login" className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {isHr ? 'Prijava' : 'Log in'}
+            {t('login')}
           </a>
           <a href={`/${locale}/cijene`} className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {isHr ? 'Isprobaj besplatno' : 'Try for free'}
+            {t('common.tryFree')}
           </a>
-          <button className="langbtn navlang" onClick={() => router.push(`/${otherLocale}/cijene`)}>
+          <button className="langbtn navlang" onClick={switchLang}>
             {otherLocale.toUpperCase()} ↕
           </button>
-          <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label="Menu">
+          <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label={t('common.menuAria')}>
             <span /><span /><span />
           </button>
         </div>
@@ -128,9 +94,9 @@ export default function PricingPage() {
         {navLinks.map(([label, href]) => (
           <a key={label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
         ))}
-        <a href="https://app.unitlift.com/login" onClick={() => setMenuOpen(false)}>{isHr ? 'Prijava' : 'Log in'}</a>
-        <button className="langbtn mobc" onClick={() => { router.push(`/${otherLocale}/cijene`); setMenuOpen(false) }}>
-          {isHr ? `Jezik: ${otherLocale.toUpperCase()}` : `Language: ${otherLocale.toUpperCase()}`}
+        <a href="https://app.unitlift.com/login" onClick={() => setMenuOpen(false)}>{t('login')}</a>
+        <button className="langbtn mobc" onClick={() => { switchLang(); setMenuOpen(false) }}>
+          {t('common.langSwitchLabel')} {otherLocale.toUpperCase()}
         </button>
       </div>
 
@@ -141,16 +107,10 @@ export default function PricingPage() {
         <div className="legal-hero-inner">
           <div className="legal-badge">
             <span className="bdot" />
-            {isHr ? 'Cijene i planovi' : 'Pricing & plans'}
+            {t('pricingPage.badge')}
           </div>
-          <h1 className="legal-title">
-            {isHr ? 'Jednostavne cijene. Bez iznenađenja.' : 'Simple pricing. No surprises.'}
-          </h1>
-          <p className="legal-date">
-            {isHr
-              ? '14 dana besplatno na svim planovima. Kartica potrebna za aktivaciju.'
-              : '14 days free on all plans. Card required for activation.'}
-          </p>
+          <h1 className="legal-title">{t('pricingPage.heroTitle')}</h1>
+          <p className="legal-date">{t('pricingPage.heroSub')}</p>
         </div>
       </div>
 
@@ -161,12 +121,10 @@ export default function PricingPage() {
           {/* Intro */}
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <h2 style={{ fontSize: 'clamp(1.5rem,2.8vw,2.2rem)', fontWeight: 800, color: 'var(--lt)', marginBottom: '12px', letterSpacing: '-.5px' }}>
-              {isHr ? 'Koji plan odgovara tebi?' : 'Which plan suits you?'}
+              {t('priceTit')}
             </h2>
             <p style={{ color: 'var(--ls)', fontSize: '1rem', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
-              {isHr
-                ? 'Svi planovi uključuju iste funkcije — jedina razlika je broj klijenata koje možeš voditi.'
-                : 'All plans include the same features — the only difference is the number of clients you can manage.'}
+              {t('priceSub')}
             </p>
           </div>
 
@@ -174,9 +132,9 @@ export default function PricingPage() {
           <div className="pg pricing-page-grid" style={{ marginTop: 0 }}>
             {tiers.map((tier, i) => (
               <div key={i} className={`pc pricing-page-card ${['basic', 'pop', 'elite'][i]}`} style={{ paddingTop: tier.popular ? '50px' : undefined }}>
-                {tier.popular && <div className="popbdg">{isHr ? 'Najpopularniji' : 'Most popular'}</div>}
+                {tier.popular && <div className="popbdg">{t('pop')}</div>}
                 <div className="ptier">{tier.name}</div>
-                <div className="pamt">€<span>{PRICES[i]}</span><span className="psmall">/mj</span></div>
+                <div className="pamt">€<span>{PRICES[i]}</span><span className="psmall">/{t('common.monthSuffix')}</span></div>
                 <div className="pper" style={{ marginBottom: '22px' }}>{tier.clients}</div>
                 <div className="pdiv" />
                 <ul className="pfeats">
@@ -207,15 +165,12 @@ export default function PricingPage() {
           </div>
 
           <p style={{ textAlign: 'center', marginTop: '28px', color: 'var(--ls)', fontSize: '.83rem' }}>
-            {isHr ? 'Svi planovi uključuju 14-dnevno besplatno probno razdoblje. Kartica potrebna za aktivaciju.' : 'All plans include a 14-day free trial. Card required for activation.'}
+            {t('priceNote')}
           </p>
 
           {/* Stats row */}
           <div className="pp-stats-row">
-            {(isHr
-              ? [['5 min', 'postavljanje profila'], ['14 dana', 'besplatno probno'], ['Fiksna cijena', 'bez skrivenih troškova'], ['0 €', 'klijentska aplikacija']]
-              : [['5 min', 'profile setup'], ['14 days', 'free trial'], ['Fixed price', 'no hidden costs'], ['€ 0', 'client app']]
-            ).map(([val, lbl]) => (
+            {stats.map(([val, lbl]) => (
               <div key={lbl} className="pp-stat">
                 <span className="pp-stat-val">{val}</span>
                 <span className="pp-stat-lbl">{lbl}</span>
@@ -226,17 +181,15 @@ export default function PricingPage() {
           {/* Advantages */}
           <div className="pp-advantages" style={{ background: '#fff', border: '1px solid var(--lb)' }}>
             <h2 className="pp-adv-h2" style={{ color: 'var(--lt)', marginBottom: '8px' }}>
-              {isHr ? 'Zašto treneri biraju UnitLift' : 'Why coaches choose UnitLift'}
+              {t('pricingPage.whyTitle')}
             </h2>
             <p style={{ color: 'var(--ls)', fontSize: '.88rem', marginBottom: '28px', lineHeight: 1.6 }}>
-              {isHr
-                ? 'Sve što trebaš za profesionalan online coaching — bez Excela, WhatsAppa i gomile PDF-ova.'
-                : 'Everything you need for professional online coaching — no Excel, WhatsApp or endless PDFs.'}
+              {t('pricingPage.whySub')}
             </p>
             <div className="pp-adv-grid-rich">
-              {(isHr ? advCardsHr : advCardsEn).map(({ icon, title, desc }) => (
+              {advCards.map(({ title, desc }, i) => (
                 <div key={title} className="pp-adv-card">
-                  <div className="pp-adv-icon">{icon}</div>
+                  <div className="pp-adv-icon">{icons[i]}</div>
                   <div>
                     <div className="pp-adv-card-title">{title}</div>
                     <div className="pp-adv-card-desc">{desc}</div>
@@ -250,15 +203,11 @@ export default function PricingPage() {
           <div className="pp-partner" style={{ background: 'var(--bdk)' }}>
             <div className="pp-partner-inner">
               <div>
-                <h3 className="pp-partner-h">{isHr ? 'Trener si? Preporuči UnitLift.' : 'Are you a coach? Recommend UnitLift.'}</h3>
-                <p className="pp-partner-p">
-                  {isHr
-                    ? 'Svaki trener kojeg preporučiš donosi ti pogodnosti. Kontaktiraj nas za detalje o partnerskom programu.'
-                    : 'Every coach you refer brings you benefits. Contact us for details about our partner program.'}
-                </p>
+                <h3 className="pp-partner-h">{t('pricingPage.partnerTitle')}</h3>
+                <p className="pp-partner-p">{t('pricingPage.partnerText')}</p>
               </div>
               <a href="mailto:info@unitlift.com" className="btn btn-g">
-                {isHr ? 'Kontaktiraj nas' : 'Contact us'}
+                {t('pricingPage.partnerBtn')}
               </a>
             </div>
           </div>
@@ -275,12 +224,12 @@ export default function PricingPage() {
               <span>UnitLift</span>
             </a>
             <div className="legal-footer-links">
-              <Link href={`/${locale}/kako-radi`}>{isHr ? 'Kako radi' : 'How it works'}</Link>
-              <Link href={`/${locale}/cijene`}>{isHr ? 'Cijene' : 'Pricing'}</Link>
+              <Link href={`/${locale}/kako-radi`}>{navLabels[0]}</Link>
+              <Link href={`/${locale}/cijene`}>{navLabels[2]}</Link>
               <Link href={`/${locale}/faq`}>FAQ</Link>
-              <Link href={`/${locale}/kontakt`}>{isHr ? 'Kontakt' : 'Contact'}</Link>
+              <Link href={`/${locale}/kontakt`}>{t('common.contact')}</Link>
             </div>
-            <span className="legal-footer-copy">© 2026 UnitDuo, vl. Leon Lišinski</span>
+            <span className="legal-footer-copy">{t('common.footerCopy')}</span>
           </div>
         </div>
       </footer>

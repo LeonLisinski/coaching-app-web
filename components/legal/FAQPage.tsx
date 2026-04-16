@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import LogoSvg from '@/components/landing/LogoSvg'
@@ -16,18 +16,24 @@ const PlusIcon = () => (
 
 export default function FAQPage({ data }: { data: FAQData }) {
   const locale = useLocale()
+  const t = useTranslations()
   const router = useRouter()
-  const isHr = locale === 'hr'
-  const otherLocale = isHr ? 'en' : 'hr'
+  const otherLocale = locale === 'hr' ? 'en' : 'hr'
 
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState(data.categories[0]?.id ?? '')
   const [openItem, setOpenItem] = useState<string | null>(null)
 
-  const navLinks = isHr
-    ? [['← Početna', `/${locale}`], ['Kako radi', `/${locale}/kako-radi`], ['Mobilna aplikacija', `/${locale}#funkcije`], ['Cijene', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
-    : [['← Home', `/${locale}`], ['How it works', `/${locale}/kako-radi`], ['Mobile app', `/${locale}#funkcije`], ['Pricing', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
+  const navLabels = t.raw('nav') as string[]
+  const navLinks = [
+    [t('common.navBack'), `/${locale}`],
+    [navLabels[0], `/${locale}/kako-radi`],
+    [navLabels[1], `/${locale}#funkcije`],
+    [navLabels[2], `/${locale}/cijene`],
+    ['Blog', `/${locale}/blog`],
+    ['FAQ', `/${locale}/faq`],
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -52,8 +58,12 @@ export default function FAQPage({ data }: { data: FAQData }) {
   }
 
   const toggle = (key: string) => setOpenItem(prev => prev === key ? null : key)
-
   const totalQ = data.categories.reduce((s, c) => s + c.questions.length, 0)
+
+  function switchLang() {
+    try { localStorage.setItem('unitlift_locale', otherLocale) } catch {}
+    router.push(`/${otherLocale}/faq`)
+  }
 
   return (
     <div className="legal-root">
@@ -69,16 +79,16 @@ export default function FAQPage({ data }: { data: FAQData }) {
           ))}
         </ul>
         <div className="navact">
-          <button className="langbtn navlang" onClick={() => router.push(`/${otherLocale}/faq`)}>
+          <button className="langbtn navlang" onClick={switchLang}>
             {otherLocale.toUpperCase()} ↕
           </button>
           <a href="https://app.unitlift.com/login" className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {isHr ? 'Prijava' : 'Login'}
+            {t('login')}
           </a>
           <a href={`/${locale}/cijene`} className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {isHr ? 'Isprobaj besplatno' : 'Try for free'}
+            {t('common.tryFree')}
           </a>
-          <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label="Menu">
+          <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label={t('common.menuAria')}>
             <span /><span /><span />
           </button>
         </div>
@@ -88,8 +98,8 @@ export default function FAQPage({ data }: { data: FAQData }) {
         {navLinks.map(([label, href]) => (
           <a key={label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
         ))}
-        <button className="langbtn mobc" onClick={() => { router.push(`/${otherLocale}/faq`); setMenuOpen(false) }}>
-          {isHr ? `Jezik: ${otherLocale.toUpperCase()}` : `Language: ${otherLocale.toUpperCase()}`}
+        <button className="langbtn mobc" onClick={() => { switchLang(); setMenuOpen(false) }}>
+          {t('common.langSwitchLabel')} {otherLocale.toUpperCase()}
         </button>
       </div>
 
@@ -100,7 +110,7 @@ export default function FAQPage({ data }: { data: FAQData }) {
         <div className="legal-hero-inner">
           <div className="legal-badge">
             <span className="bdot" />
-            {isHr ? 'Pomoć i podrška' : 'Help & Support'}
+            {t('faqPage.badge')}
           </div>
           <h1 className="legal-title">{data.title}</h1>
           <p className="legal-date">{data.subtitle}</p>
@@ -108,13 +118,13 @@ export default function FAQPage({ data }: { data: FAQData }) {
             <Link href={`/${locale}/blog`} className="legal-tab">Blog</Link>
             <Link href={`/${locale}/faq`} className="legal-tab active">FAQ</Link>
             <Link href={`/${locale}/kontakt`} className="legal-tab">
-              {isHr ? 'Kontakt' : 'Contact'}
+              {t('common.contact')}
             </Link>
           </div>
           <div className="faq-stats">
-            <span><strong>{data.categories.length}</strong> {isHr ? 'kategorija' : 'categories'}</span>
+            <span><strong>{data.categories.length}</strong> {t('faqPage.catLbl')}</span>
             <span className="faq-stats-sep">·</span>
-            <span><strong>{totalQ}</strong> {isHr ? 'pitanja' : 'questions'}</span>
+            <span><strong>{totalQ}</strong> {t('faqPage.qLbl')}</span>
           </div>
         </div>
       </div>
@@ -145,9 +155,9 @@ export default function FAQPage({ data }: { data: FAQData }) {
             ))}
 
             <div className="legal-footer-note">
-              <span>{isHr ? 'Ne nalaziš odgovor?' : 'Can\'t find an answer?'}</span>
+              <span>{t('faqPage.notFound')}</span>
               <Link href={`/${locale}/kontakt`} style={{ color: 'var(--ba)', textDecoration: 'none', fontWeight: 600 }}>
-                {isHr ? 'Kontaktiraj nas →' : 'Contact us →'}
+                {t('faqPage.contactUs')}
               </Link>
             </div>
           </main>
@@ -155,7 +165,7 @@ export default function FAQPage({ data }: { data: FAQData }) {
           {/* Sticky TOC */}
           <aside className="legal-toc">
             <div className="legal-toc-sticky">
-              <div className="legal-toc-title">{isHr ? 'Kategorije' : 'Categories'}</div>
+              <div className="legal-toc-title">{t('faqPage.tocTitle')}</div>
               <div className="legal-toc-nav">
                 {data.categories.map(cat => (
                   <button
@@ -173,7 +183,7 @@ export default function FAQPage({ data }: { data: FAQData }) {
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
                     <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  {isHr ? 'Postavi pitanje' : 'Ask a question'}
+                  {t('faqPage.askQuestion')}
                 </Link>
               </div>
             </div>
@@ -191,11 +201,11 @@ export default function FAQPage({ data }: { data: FAQData }) {
             </a>
             <div className="legal-footer-links">
               <Link href={`/${locale}/faq`}>FAQ</Link>
-              <Link href={`/${locale}/kontakt`}>{isHr ? 'Kontakt' : 'Contact'}</Link>
-              <Link href={`/${locale}/uvjeti`}>{isHr ? 'Uvjeti korištenja' : 'Terms'}</Link>
-              <Link href={`/${locale}/privatnost`}>{isHr ? 'Privatnost' : 'Privacy'}</Link>
+              <Link href={`/${locale}/kontakt`}>{t('common.contact')}</Link>
+              <Link href={`/${locale}/uvjeti`}>{t('common.termsShort')}</Link>
+              <Link href={`/${locale}/privatnost`}>{t('common.privacy')}</Link>
             </div>
-            <span className="legal-footer-copy">© 2026 UnitDuo, vl. Leon Lišinski</span>
+            <span className="legal-footer-copy">{t('common.footerCopy')}</span>
           </div>
         </div>
       </footer>

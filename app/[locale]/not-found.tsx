@@ -1,12 +1,12 @@
 'use client'
 
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
 import LogoSvg from '@/components/landing/LogoSvg'
 
 export default function NotFound() {
   const locale = useLocale()
-  const isHr = locale === 'hr'
+  const t = useTranslations('notFound')
 
   return (
     <div style={{
@@ -27,12 +27,10 @@ export default function NotFound() {
 
       <div style={{ fontSize: 96, fontWeight: 900, color: '#0066FF', lineHeight: 1, marginBottom: 16 }}>404</div>
       <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#fff', margin: '0 0 12px' }}>
-        {isHr ? 'Stranica nije pronađena' : 'Page not found'}
+        {t('title')}
       </h1>
       <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.55)', maxWidth: 420, lineHeight: 1.6, margin: '0 0 36px' }}>
-        {isHr
-          ? 'Stranica koju tražiš ne postoji ili je premještena. Vrati se na početnu stranicu.'
-          : 'The page you\'re looking for doesn\'t exist or has been moved. Go back to the homepage.'}
+        {t('text')}
       </p>
 
       <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -42,7 +40,7 @@ export default function NotFound() {
           fontSize: '0.95rem', padding: '13px 28px', borderRadius: 12,
           textDecoration: 'none', transition: 'opacity .2s',
         }}>
-          {isHr ? '← Početna' : '← Home'}
+          {t('backHome')}
         </Link>
         <Link href={`/${locale}/cijene`} style={{
           display: 'inline-flex', alignItems: 'center', gap: 8,
@@ -50,7 +48,7 @@ export default function NotFound() {
           fontWeight: 600, fontSize: '0.95rem', padding: '13px 28px',
           borderRadius: 12, textDecoration: 'none', border: '1px solid rgba(255,255,255,0.12)',
         }}>
-          {isHr ? 'Pogledaj cijene' : 'See pricing'}
+          {t('seePricing')}
         </Link>
       </div>
     </div>

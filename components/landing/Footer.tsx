@@ -3,6 +3,7 @@
 import { useTranslations, useLocale } from 'next-intl'
 import LogoSvg from './LogoSvg'
 
+
 function ObfuscatedEmail() {
   const user = 'info'
   const domain = 'unitlift.com'
@@ -60,10 +61,10 @@ export default function Footer() {
               </a>
             </div>
             <div className="fco">
-              UnitLift, obrt za digitalne usluge<br />
-              vl. Leon Lišinski<br />
-              Vijenac Ivana Meštrovića 80, Osijek<br />
-              OIB: 61111415884 &nbsp;·&nbsp; MB: 99113821<br />
+              {t('footer.company')}<br />
+              {t('footer.owner')}<br />
+              {t('footer.address')}<br />
+              {t('footer.legal')}<br />
               <ObfuscatedEmail />
             </div>
           </div>

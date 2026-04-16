@@ -39,7 +39,7 @@ export default function MobileApp() {
                 <div className="mob-island" />
                 <Image
                   src="/screenshot-trening.png"
-                  alt="UnitLift – plan treninga"
+                  alt={t('mobImgAltTraining')}
                   width={471}
                   height={938}
                   style={{ width: '100%', height: 'auto', display: 'block' }}
@@ -58,7 +58,7 @@ export default function MobileApp() {
                 <div className="mob-island" />
                 <Image
                   src="/screenshot-nutrition.png"
-                  alt="UnitLift – plan prehrane"
+                  alt={t('mobImgAltNutrition')}
                   width={471}
                   height={938}
                   style={{ width: '100%', height: 'auto', display: 'block' }}

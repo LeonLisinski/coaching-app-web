@@ -11,7 +11,7 @@ export const termsHr: LegalDocument = {
       id: 'prihvacanje',
       title: '1. Prihvaćanje uvjeta',
       content: [
-        { text: 'Ovi Uvjeti korištenja ("Uvjeti") reguliraju korištenje aplikacije UnitLift dostupne na https://app.unitlift.com i u mobilnoj aplikaciji (zajedno: "Usluga"). Uslugu pruža UnitDuo, obrt za digitalne usluge, vl. Leon Lišinski ("mi", "Pružatelj usluge").' },
+        { text: 'Ovi Uvjeti korištenja ("Uvjeti") reguliraju korištenje aplikacije UnitLift dostupne na https://app.unitlift.com i u mobilnoj aplikaciji (zajedno: "Usluga"). Uslugu pruža UnitLift, obrt za digitalne usluge, vl. Leon Lišinski ("mi", "Pružatelj usluge").' },
         { text: 'Registracijom ili korištenjem Usluge potvrđujete da ste pročitali, razumjeli i prihvatili ove Uvjete. Ako se ne slažete s Uvjetima, prestanite koristiti Uslugu.' },
       ],
     },
@@ -166,7 +166,7 @@ export const termsHr: LegalDocument = {
         { text: 'Za pitanja vezana uz ove Uvjete kontaktirajte nas:' },
         {
           items: [
-            'UnitDuo, obrt za digitalne usluge, vl. Leon Lišinski',
+            'UnitLift, obrt za digitalne usluge, vl. Leon Lišinski',
             'Vijenac Ivana Meštrovića 80, Osijek, Hrvatska',
             'E-mail: support@unitlift.com',
           ],

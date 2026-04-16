@@ -1,21 +1,16 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import LogoSvg from '@/components/landing/LogoSvg'
 
-const topics = {
-  hr: ['Opće pitanje', 'Tehnička podrška', 'Fakturiranje i plaćanje', 'Partnerstvo', 'Prijava greške'],
-  en: ['General question', 'Technical support', 'Billing & payments', 'Partnership', 'Bug report'],
-}
-
 export default function ContactPage() {
   const locale = useLocale()
+  const t = useTranslations()
   const router = useRouter()
-  const isHr = locale === 'hr'
-  const otherLocale = isHr ? 'en' : 'hr'
+  const otherLocale = locale === 'hr' ? 'en' : 'hr'
 
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -23,9 +18,15 @@ export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', topic: '', message: '' })
   const [errors, setErrors] = useState<Record<string, string>>({})
 
-  const navLinks = isHr
-    ? [['← Početna', `/${locale}`], ['Kako radi', `/${locale}/kako-radi`], ['Mobilna aplikacija', `/${locale}#funkcije`], ['Cijene', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
-    : [['← Home', `/${locale}`], ['How it works', `/${locale}/kako-radi`], ['Mobile app', `/${locale}#funkcije`], ['Pricing', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
+  const navLabels = t.raw('nav') as string[]
+  const navLinks = [
+    [t('common.navBack'), `/${locale}`],
+    [navLabels[0], `/${locale}/kako-radi`],
+    [navLabels[1], `/${locale}#funkcije`],
+    [navLabels[2], `/${locale}/cijene`],
+    ['Blog', `/${locale}/blog`],
+    ['FAQ', `/${locale}/faq`],
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -35,12 +36,12 @@ export default function ContactPage() {
 
   const validate = () => {
     const e: Record<string, string> = {}
-    if (!form.name.trim()) e.name = isHr ? 'Unesite ime' : 'Enter your name'
+    if (!form.name.trim()) e.name = t('contact.nameErr')
     if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email))
-      e.email = isHr ? 'Unesite valjanu email adresu' : 'Enter a valid email'
-    if (!form.topic) e.topic = isHr ? 'Odaberite temu' : 'Select a topic'
+      e.email = t('contact.emailErr')
+    if (!form.topic) e.topic = t('contact.topicErr')
     if (form.message.trim().length < 10)
-      e.message = isHr ? 'Poruka mora imati najmanje 10 znakova' : 'Message must be at least 10 characters'
+      e.message = t('contact.msgErr')
     setErrors(e)
     return Object.keys(e).length === 0
   }
@@ -68,7 +69,12 @@ export default function ContactPage() {
     if (errors[k]) setErrors(e => { const n = { ...e }; delete n[k]; return n })
   }
 
-  const topicList = isHr ? topics.hr : topics.en
+  const topicList = t.raw('contact.topics') as string[]
+
+  function switchLang() {
+    try { localStorage.setItem('unitlift_locale', otherLocale) } catch {}
+    router.push(`/${otherLocale}/kontakt`)
+  }
 
   return (
     <div className="legal-root">
@@ -84,16 +90,16 @@ export default function ContactPage() {
           ))}
         </ul>
         <div className="navact">
-          <button className="langbtn navlang" onClick={() => router.push(`/${otherLocale}/kontakt`)}>
+          <button className="langbtn navlang" onClick={switchLang}>
             {otherLocale.toUpperCase()} ↕
           </button>
           <a href="https://app.unitlift.com/login" className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {isHr ? 'Prijava' : 'Login'}
+            {t('login')}
           </a>
           <a href={`/${locale}/cijene`} className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {isHr ? 'Isprobaj besplatno' : 'Try for free'}
+            {t('common.tryFree')}
           </a>
-          <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label="Menu">
+          <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label={t('common.menuAria')}>
             <span /><span /><span />
           </button>
         </div>
@@ -103,8 +109,8 @@ export default function ContactPage() {
         {navLinks.map(([label, href]) => (
           <a key={label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
         ))}
-        <button className="langbtn mobc" onClick={() => { router.push(`/${otherLocale}/kontakt`); setMenuOpen(false) }}>
-          {isHr ? `Jezik: ${otherLocale.toUpperCase()}` : `Language: ${otherLocale.toUpperCase()}`}
+        <button className="langbtn mobc" onClick={() => { switchLang(); setMenuOpen(false) }}>
+          {t('common.langSwitchLabel')} {otherLocale.toUpperCase()}
         </button>
       </div>
 
@@ -115,17 +121,15 @@ export default function ContactPage() {
         <div className="legal-hero-inner">
           <div className="legal-badge">
             <span className="bdot" />
-            {isHr ? 'Pomoć i podrška' : 'Help & Support'}
+            {t('contact.badge')}
           </div>
-          <h1 className="legal-title">{isHr ? 'Kontaktiraj nas' : 'Contact us'}</h1>
-          <p className="legal-date">
-            {isHr ? 'Odgovaramo unutar jednog radnog dana.' : 'We respond within one business day.'}
-          </p>
+          <h1 className="legal-title">{t('contact.heroTitle')}</h1>
+          <p className="legal-date">{t('contact.heroSub')}</p>
           <div className="legal-tabs">
             <Link href={`/${locale}/blog`} className="legal-tab">Blog</Link>
             <Link href={`/${locale}/faq`} className="legal-tab">FAQ</Link>
             <Link href={`/${locale}/kontakt`} className="legal-tab active">
-              {isHr ? 'Kontakt' : 'Contact'}
+              {t('contact.tab')}
             </Link>
           </div>
         </div>
@@ -144,25 +148,21 @@ export default function ContactPage() {
                     <path d="M8 14l4 4 8-8" stroke="var(--ba)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <h3>{isHr ? 'Poruka je poslana!' : 'Message sent!'}</h3>
-                <p>
-                  {isHr
-                    ? 'Hvala na poruci. Javljamo se unutar jednog radnog dana na email koji si naveo.'
-                    : 'Thanks for reaching out. We\'ll get back to you within one business day.'}
-                </p>
+                <h3>{t('contact.successTitle')}</h3>
+                <p>{t('contact.successText')}</p>
                 <button className="btn btn-p" style={{ marginTop: '20px' }} onClick={() => setStatus('idle')}>
-                  {isHr ? 'Pošalji još jednu poruku' : 'Send another message'}
+                  {t('contact.sendAnother')}
                 </button>
               </div>
             ) : (
               <form className="contact-form" onSubmit={handleSubmit} noValidate>
                 <div className="cf-row">
                   <div className="cf-field">
-                    <label className="cf-label">{isHr ? 'Ime i prezime' : 'Full name'}</label>
+                    <label className="cf-label">{t('contact.nameLbl')}</label>
                     <input
                       className={`cf-input${errors.name ? ' error' : ''}`}
                       type="text"
-                      placeholder={isHr ? 'Marko Markić' : 'John Smith'}
+                      placeholder={t('contact.namePh')}
                       value={form.name}
                       onChange={e => set('name', e.target.value)}
                     />
@@ -181,22 +181,22 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <div className="cf-field">
-                  <label className="cf-label">{isHr ? 'Tema' : 'Topic'}</label>
+                  <label className="cf-label">{t('contact.topicLbl')}</label>
                   <select
                     className={`cf-input${errors.topic ? ' error' : ''}`}
                     value={form.topic}
                     onChange={e => set('topic', e.target.value)}
                   >
-                    <option value="">{isHr ? 'Odaberi temu…' : 'Select topic…'}</option>
-                    {topicList.map(t => <option key={t} value={t}>{t}</option>)}
+                    <option value="">{t('contact.topicPh')}</option>
+                    {topicList.map(topic => <option key={topic} value={topic}>{topic}</option>)}
                   </select>
                   {errors.topic && <span className="cf-error">{errors.topic}</span>}
                 </div>
                 <div className="cf-field">
-                  <label className="cf-label">{isHr ? 'Poruka' : 'Message'}</label>
+                  <label className="cf-label">{t('contact.msgLbl')}</label>
                   <textarea
                     className={`cf-input cf-textarea${errors.message ? ' error' : ''}`}
-                    placeholder={isHr ? 'Opiši svoju situaciju ili pitanje…' : 'Describe your situation or question…'}
+                    placeholder={t('contact.msgPh')}
                     rows={6}
                     value={form.message}
                     onChange={e => set('message', e.target.value)}
@@ -205,11 +205,7 @@ export default function ContactPage() {
                 </div>
 
                 {status === 'error' && (
-                  <div className="cf-send-error">
-                    {isHr
-                      ? 'Slanje nije uspjelo. Pokušaj ponovo ili nam se javi direktno na support@unitlift.com'
-                      : 'Sending failed. Please try again or contact us at support@unitlift.com'}
-                  </div>
+                  <div className="cf-send-error">{t('contact.sendErr')}</div>
                 )}
 
                 <button
@@ -218,9 +214,7 @@ export default function ContactPage() {
                   disabled={status === 'loading'}
                   style={{ opacity: status === 'loading' ? 0.7 : 1 }}
                 >
-                  {status === 'loading'
-                    ? (isHr ? 'Šalje se…' : 'Sending…')
-                    : (isHr ? 'Pošalji poruku →' : 'Send message →')}
+                  {status === 'loading' ? t('contact.sending') : t('contact.send')}
                 </button>
               </form>
             )}
@@ -229,9 +223,7 @@ export default function ContactPage() {
           {/* Sidebar */}
           <aside className="legal-toc">
             <div className="legal-toc-sticky">
-              <div className="legal-toc-title">
-                {isHr ? 'Kontakt info' : 'Contact info'}
-              </div>
+              <div className="legal-toc-title">{t('contact.infoTitle')}</div>
 
               <div className="contact-info-list">
                 <div className="contact-info-item">
@@ -247,7 +239,6 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* FAQ CTA — prominent */}
               <div className="contact-faq-cta">
                 <div className="contact-faq-cta-inner">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style={{ flexShrink: 0 }}>
@@ -255,18 +246,12 @@ export default function ContactPage() {
                     <path d="M10 13v.5M10 6.5c1.1 0 2 .9 2 2 0 1.5-2 2-2 2.5" stroke="var(--ba)" strokeWidth="1.5" strokeLinecap="round" />
                   </svg>
                   <div>
-                    <div className="contact-faq-cta-title">
-                      {isHr ? 'Možda je odgovor već tu' : 'Your answer might already be here'}
-                    </div>
-                    <p className="contact-faq-cta-text">
-                      {isHr
-                        ? 'Provjeri FAQ s 24 odgovora na najčešća pitanja o UnitLiftu.'
-                        : 'Check our FAQ with 24 answers to the most common questions.'}
-                    </p>
+                    <div className="contact-faq-cta-title">{t('contact.faqCtaTitle')}</div>
+                    <p className="contact-faq-cta-text">{t('contact.faqCtaText')}</p>
                   </div>
                 </div>
                 <Link href={`/${locale}/faq`} className="btn btn-p btn-fw" style={{ fontSize: '.82rem', marginTop: '14px' }}>
-                  {isHr ? 'Pogledaj FAQ →' : 'Browse FAQ →'}
+                  {t('contact.faqCtaBtn')}
                 </Link>
               </div>
 
@@ -275,7 +260,7 @@ export default function ContactPage() {
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
                     <path d="M6 2L1 7l5 5M1 7h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  {isHr ? 'Na glavnu stranicu' : 'Back to homepage'}
+                  {t('contact.backHome')}
                 </a>
               </div>
             </div>
@@ -293,11 +278,11 @@ export default function ContactPage() {
             </a>
             <div className="legal-footer-links">
               <Link href={`/${locale}/faq`}>FAQ</Link>
-              <Link href={`/${locale}/kontakt`}>{isHr ? 'Kontakt' : 'Contact'}</Link>
-              <Link href={`/${locale}/uvjeti`}>{isHr ? 'Uvjeti korištenja' : 'Terms'}</Link>
-              <Link href={`/${locale}/privatnost`}>{isHr ? 'Privatnost' : 'Privacy'}</Link>
+              <Link href={`/${locale}/kontakt`}>{t('common.contact')}</Link>
+              <Link href={`/${locale}/uvjeti`}>{t('common.termsShort')}</Link>
+              <Link href={`/${locale}/privatnost`}>{t('common.privacy')}</Link>
             </div>
-            <span className="legal-footer-copy">© 2026 UnitDuo, vl. Leon Lišinski</span>
+            <span className="legal-footer-copy">{t('common.footerCopy')}</span>
           </div>
         </div>
       </footer>

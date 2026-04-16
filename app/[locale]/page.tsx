@@ -38,7 +38,7 @@ const jsonLd = {
   },
   author: {
     '@type': 'Organization',
-    name: 'UnitDuo',
+    name: 'UnitLift',
     url: 'https://unitlift.com',
   },
 }

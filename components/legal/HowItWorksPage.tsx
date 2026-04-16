@@ -1,23 +1,29 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import LogoSvg from '@/components/landing/LogoSvg'
 
 export default function HowItWorksPage() {
   const locale = useLocale()
+  const t = useTranslations()
   const router = useRouter()
-  const isHr = locale === 'hr'
-  const otherLocale = isHr ? 'en' : 'hr'
+  const otherLocale = locale === 'hr' ? 'en' : 'hr'
 
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const navLinks = isHr
-    ? [['← Početna', `/${locale}`], ['Kako radi', `/${locale}/kako-radi`], ['Mobilna aplikacija', `/${locale}#funkcije`], ['Cijene', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
-    : [['← Home', `/${locale}`], ['How it works', `/${locale}/kako-radi`], ['Mobile app', `/${locale}#funkcije`], ['Pricing', `/${locale}/cijene`], ['Blog', `/${locale}/blog`], ['FAQ', `/${locale}/faq`]]
+  const navLabels = t.raw('nav') as string[]
+  const navLinks = [
+    [t('common.navBack'), `/${locale}`],
+    [navLabels[0], `/${locale}/kako-radi`],
+    [navLabels[1], `/${locale}#funkcije`],
+    [navLabels[2], `/${locale}/cijene`],
+    ['Blog', `/${locale}/blog`],
+    ['FAQ', `/${locale}/faq`],
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -25,17 +31,14 @@ export default function HowItWorksPage() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const steps = isHr
-    ? [
-        { n: '01', t: 'Postavi profil', d: 'Registriraj se i prilagodi parametre treninga i prehrane prema svom coaching pristupu. Brzo i intuitivno — za manje od 5 minuta.' },
-        { n: '02', t: 'Dodaj klijente', d: 'Pozovi klijente putem e-maila. Oni preuzmu mobilnu aplikaciju i odmah imaju pristup svim planovima i check-inovima.' },
-        { n: '03', t: 'Vodi i prati', d: 'Kreiraj planove, prati napredak kroz check-ine i komuniciraj — sve iz jednog sučelja. Administracija svedena na minimum.' },
-      ]
-    : [
-        { n: '01', t: 'Set up your profile', d: 'Register and customize training and nutrition parameters to match your coaching approach. Fast and intuitive — in under 5 minutes.' },
-        { n: '02', t: 'Add clients', d: 'Invite clients by email. They download the mobile app and instantly have access to all their plans and check-ins.' },
-        { n: '03', t: 'Coach and track', d: 'Create plans, track progress through check-ins and communicate — all from one interface. Administration reduced to a minimum.' },
-      ]
+  const steps = t.raw('howItWorksPage.steps') as Array<{ n: string; t: string; d: string }>
+  const coachFeats = t.raw('howItWorksPage.coachFeats') as string[]
+  const clientFeats = t.raw('howItWorksPage.clientFeats') as string[]
+
+  function switchLang() {
+    try { localStorage.setItem('unitlift_locale', otherLocale) } catch {}
+    router.push(`/${otherLocale}/kako-radi`)
+  }
 
   return (
     <div className="legal-root">
@@ -52,15 +55,15 @@ export default function HowItWorksPage() {
         </ul>
         <div className="navact">
           <a href="https://app.unitlift.com/login" className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {isHr ? 'Prijava' : 'Log in'}
+            {t('login')}
           </a>
           <a href={`/${locale}#cijene`} className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {isHr ? 'Isprobaj besplatno' : 'Try for free'}
+            {t('common.tryFree')}
           </a>
-          <button className="langbtn navlang" onClick={() => router.push(`/${otherLocale}/kako-radi`)}>
+          <button className="langbtn navlang" onClick={switchLang}>
             {otherLocale.toUpperCase()} ↕
           </button>
-          <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label="Menu">
+          <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label={t('common.menuAria')}>
             <span /><span /><span />
           </button>
         </div>
@@ -71,12 +74,12 @@ export default function HowItWorksPage() {
         {navLinks.map(([label, href]) => (
           <a key={label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
         ))}
-        <a href="https://app.unitlift.com/login" onClick={() => setMenuOpen(false)}>{isHr ? 'Prijava' : 'Log in'}</a>
+        <a href="https://app.unitlift.com/login" onClick={() => setMenuOpen(false)}>{t('login')}</a>
         <a href={`/${locale}#cijene`} className="btn btn-p btn-fw mobc" onClick={() => setMenuOpen(false)}>
-          {isHr ? 'Isprobaj besplatno' : 'Try for free'}
+          {t('common.tryFree')}
         </a>
-        <button className="langbtn mobc" onClick={() => { router.push(`/${otherLocale}/kako-radi`); setMenuOpen(false) }}>
-          {isHr ? `Jezik: ${otherLocale.toUpperCase()}` : `Language: ${otherLocale.toUpperCase()}`}
+        <button className="langbtn mobc" onClick={() => { switchLang(); setMenuOpen(false) }}>
+          {t('common.langSwitchLabel')} {otherLocale.toUpperCase()}
         </button>
       </div>
 
@@ -87,16 +90,10 @@ export default function HowItWorksPage() {
         <div className="legal-hero-inner">
           <div className="legal-badge">
             <span className="bdot" />
-            {isHr ? 'Platforma za trenere' : 'Platform for coaches'}
+            {t('howItWorksPage.badge')}
           </div>
-          <h1 className="legal-title">
-            {isHr ? 'Kako UnitLift funkcionira' : 'How UnitLift works'}
-          </h1>
-          <p className="legal-date">
-            {isHr
-              ? 'Jedna platforma. Trener radi, klijent napreduje.'
-              : 'One platform. Coach works, client progresses.'}
-          </p>
+          <h1 className="legal-title">{t('howItWorksPage.heroTitle')}</h1>
+          <p className="legal-date">{t('howItWorksPage.heroSub')}</p>
         </div>
       </div>
 
@@ -104,82 +101,52 @@ export default function HowItWorksPage() {
       <div className="legal-body">
         <div className="con">
 
-          {/* Section 1: Za trenere */}
+          {/* Section 1: For coaches */}
           <div className="hiw-section">
             <div className="legal-badge" style={{ marginBottom: '16px', display: 'inline-flex' }}>
               <span className="bdot" />
-              {isHr ? 'Za trenere — web aplikacija' : 'For coaches — web app'}
+              {t('howItWorksPage.coachBadge')}
             </div>
-            <h2 className="hiw-h2">
-              {isHr ? 'Sve što trener treba — na jednom ekranu' : 'Everything a coach needs — on one screen'}
-            </h2>
-            <p className="hiw-p">
-              {isHr
-                ? 'Zaboravi na Excel, WhatsApp i PDF-ove. UnitLift je web platforma koja centralizira cijeli tvoj coaching posao — od planiranja treninga i prehrane do praćenja plaćanja i komunikacije s klijentima.'
-                : 'Forget Excel, WhatsApp and PDFs. UnitLift is a web platform that centralizes your entire coaching business — from planning training and nutrition to tracking payments and communicating with clients.'}
-            </p>
+            <h2 className="hiw-h2">{t('howItWorksPage.coachH2')}</h2>
+            <p className="hiw-p">{t('howItWorksPage.coachP')}</p>
             <div className="hiw-features">
-              {(isHr
-                ? ['Planovi treninga i prehrane za svakog klijenta', 'Tjedni check-in sustav s automatskim podsjetnicima', 'Financijski pregled — tko je platio, komu ističe pretplata', 'Integrirani chat s klijentima', 'Mobilni pregled — dodaj web aplikaciju na početni ekran']
-                : ['Training and nutrition plans for every client', 'Weekly check-in system with automatic reminders', 'Financial overview — who has paid, whose subscription expires', 'Integrated client chat', 'Mobile overview — add web app to your home screen']
-              ).map((feat, i) => (
+              {coachFeats.map((feat, i) => (
                 <div key={i} className="hiw-feat">
                   <span className="hiw-check">✓</span>
                   <span>{feat}</span>
                 </div>
               ))}
             </div>
-            <p className="hiw-quote">
-              {isHr
-                ? '"Sve što trebaš za profesionalan online coaching — na jednom ekranu. Zaboravi na Excel, WhatsApp i PDF-ove."'
-                : '"Everything you need for professional online coaching — on one screen. Forget Excel, WhatsApp and PDFs."'}
-            </p>
+            <p className="hiw-quote">{t('howItWorksPage.coachQuote')}</p>
           </div>
 
-          {/* Section 2: Za klijente */}
+          {/* Section 2: For clients */}
           <div className="hiw-section">
             <div className="legal-badge" style={{ marginBottom: '16px', display: 'inline-flex' }}>
               <span className="bdot" />
-              {isHr ? 'Za klijente — mobilna aplikacija' : 'For clients — mobile app'}
+              {t('howItWorksPage.clientBadge')}
             </div>
-            <h2 className="hiw-h2">
-              {isHr ? 'Klijenti preuzmu aplikaciju, ti im pošalješ pristup' : 'Clients download the app, you send them access'}
-            </h2>
-            <p className="hiw-p">
-              {isHr
-                ? 'Klijent preuzme besplatnu UnitLift aplikaciju na App Store ili Google Play, kreira račun i odmah vidi planove koje si mu dodijelio. Nema papira, nema PDF-ova, nema WhatsApp poruka s rasporedom.'
-                : 'The client downloads the free UnitLift app from the App Store or Google Play, creates an account and immediately sees the plans you assigned them. No paperwork, no PDFs, no WhatsApp messages with schedules.'}
-            </p>
+            <h2 className="hiw-h2">{t('howItWorksPage.clientH2')}</h2>
+            <p className="hiw-p">{t('howItWorksPage.clientP')}</p>
             <div className="hiw-features">
-              {(isHr
-                ? ['Planovi treninga i prehrane uvijek dostupni u aplikaciji', 'Tjedni check-in za 2 minute — direktno iz aplikacije', 'Chat s trenerom — sve poruke na jednom mjestu', 'Push obavijesti za podsjetnike i novosti']
-                : ['Training and nutrition plans always available in the app', 'Weekly check-in in 2 minutes — directly in the app', 'Chat with coach — all messages in one place', 'Push notifications for reminders and updates']
-              ).map((feat, i) => (
+              {clientFeats.map((feat, i) => (
                 <div key={i} className="hiw-feat">
                   <span className="hiw-check">✓</span>
                   <span>{feat}</span>
                 </div>
               ))}
             </div>
-            <p className="hiw-quote">
-              {isHr
-                ? '"Klijenti preuzmu aplikaciju, ti im pošalješ pristup. Od tog trenutka sve je automatsko."'
-                : '"Clients download the app, you send them access. From that moment — everything is automatic."'}
-            </p>
+            <p className="hiw-quote">{t('howItWorksPage.clientQuote')}</p>
           </div>
 
-          {/* Section 3: 3 koraka */}
+          {/* Section 3: 3 steps */}
           <div className="hiw-section">
             <div className="legal-badge" style={{ marginBottom: '16px', display: 'inline-flex' }}>
               <span className="bdot" />
-              {isHr ? 'Kako početi' : 'How to start'}
+              {t('howItWorksPage.startBadge')}
             </div>
-            <h2 className="hiw-h2">
-              {isHr ? 'Tri koraka do potpunog coaching sistema' : 'Three steps to a complete coaching system'}
-            </h2>
-            <p className="hiw-p">
-              {isHr ? 'Od registracije do prvog klijenta za manje od 10 minuta.' : 'From registration to your first client in under 10 minutes.'}
-            </p>
+            <h2 className="hiw-h2">{t('howItWorksPage.startH2')}</h2>
+            <p className="hiw-p">{t('howItWorksPage.startP')}</p>
             <div className="hiw-steps">
               {steps.map((step, i) => (
                 <div key={i} className="hiw-step">
@@ -195,19 +162,13 @@ export default function HowItWorksPage() {
 
           {/* CTA */}
           <div className="hiw-cta">
-            <h2 className="hiw-cta-t">
-              {isHr ? 'Spreman? Odaberi plan.' : 'Ready? Choose a plan.'}
-            </h2>
-            <p className="hiw-cta-s">
-              {isHr
-                ? '14 dana besplatno na svim planovima. Kartica potrebna za aktivaciju.'
-                : '14 days free on all plans. Card required for activation.'}
-            </p>
+            <h2 className="hiw-cta-t">{t('howItWorksPage.ctaTitle')}</h2>
+            <p className="hiw-cta-s">{t('howItWorksPage.ctaSub')}</p>
             <Link href={`/${locale}/cijene`} className="btn btn-p btn-xl">
-              {isHr ? 'Pogledaj cijene →' : 'See pricing →'}
+              {t('howItWorksPage.ctaBtn')}
             </Link>
             <p style={{ marginTop: '14px', fontSize: '.78rem', color: 'rgba(255,255,255,.45)' }}>
-              {isHr ? 'Kartica potrebna za aktivaciju · Bez naplate 14 dana · Otkaži kad hoćeš' : 'Card required for activation · No charge for 14 days · Cancel anytime'}
+              {t('howItWorksPage.ctaNote')}
             </p>
           </div>
 
@@ -223,12 +184,12 @@ export default function HowItWorksPage() {
               <span>UnitLift</span>
             </a>
             <div className="legal-footer-links">
-              <Link href={`/${locale}/kako-radi`}>{isHr ? 'Kako radi' : 'How it works'}</Link>
-              <Link href={`/${locale}/cijene`}>{isHr ? 'Cijene' : 'Pricing'}</Link>
+              <Link href={`/${locale}/kako-radi`}>{navLabels[0]}</Link>
+              <Link href={`/${locale}/cijene`}>{navLabels[2]}</Link>
               <Link href={`/${locale}/faq`}>FAQ</Link>
-              <Link href={`/${locale}/kontakt`}>{isHr ? 'Kontakt' : 'Contact'}</Link>
+              <Link href={`/${locale}/kontakt`}>{t('common.contact')}</Link>
             </div>
-            <span className="legal-footer-copy">© 2026 UnitDuo, vl. Leon Lišinski</span>
+            <span className="legal-footer-copy">{t('common.footerCopy')}</span>
           </div>
         </div>
       </footer>
