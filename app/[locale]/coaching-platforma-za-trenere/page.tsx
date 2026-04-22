@@ -1,26 +1,33 @@
+import type { Metadata } from 'next'
 import { permanentRedirect } from 'next/navigation'
+import { buildPageMetadata } from '@/lib/seo-metadata'
 import SeoLandingPage from '@/components/landing/SeoLandingPage'
 
-interface Props { params: Promise<{ locale: string }> }
+interface Props {
+  params: Promise<{ locale: string }>
+}
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   if (locale !== 'hr') return {}
-  return {
-    title: 'Coaching Platforma za Trenere | UnitLift',
-    description: 'UnitLift je coaching platforma koja automatizira onboarding, check-ine i praćenje plaćanja. Od prvih klijenata do pune prakse — bez mijenjanja alata.',
-    keywords: ['coaching platforma za trenere', 'online coaching platforma', 'platforma za personal trenere', 'coaching software hrvatska'],
-    alternates: {
-      canonical: '/coaching-platforma-za-trenere',
-      languages: { hr: '/coaching-platforma-za-trenere', en: '/en/online-coaching-software', 'x-default': '/coaching-platforma-za-trenere' },
+  return buildPageMetadata({
+    locale: 'hr',
+    pathname: '/coaching-platforma-za-trenere',
+    title: 'Coaching aplikacija - manje organiziranja, više klijenata | UnitLift',
+    description:
+      'Jedan sustav za pozive klijenata, check-ine i plaćanja. Kad raste broj klijenata, ne raste nered u porukama. 14 dana besplatno.',
+    keywords: [
+      'online coaching aplikacija',
+      'aplikacija za fitness trenere',
+      'vođenje klijenata trener',
+      'check-in klijenti',
+    ],
+    languages: {
+      hr: '/coaching-platforma-za-trenere',
+      en: '/en/online-coaching-software',
+      'x-default': '/coaching-platforma-za-trenere',
     },
-    openGraph: {
-      title: 'Coaching Platforma za Trenere | UnitLift',
-      description: 'Sustav koji automatizira administraciju i skalira s tvojim poslom.',
-      url: 'https://unitlift.com/coaching-platforma-za-trenere',
-      type: 'website',
-    },
-  }
+  })
 }
 
 export default async function CoachingPlatformaPage({ params }: Props) {

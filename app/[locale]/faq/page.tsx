@@ -1,20 +1,26 @@
+import type { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/seo-metadata'
 import FAQPage from '@/components/legal/FAQPage'
 import { faqHr } from '@/lib/faq/faq-hr'
 import { faqEn } from '@/lib/faq/faq-en'
 
-interface Props { params: Promise<{ locale: string }> }
+interface Props {
+  params: Promise<{ locale: string }>
+}
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const isHr = locale === 'hr'
-  return {
-    title: 'FAQ – UnitLift',
+  return buildPageMetadata({
+    locale: isHr ? 'hr' : 'en',
+    pathname: isHr ? '/faq' : '/en/faq',
+    title: isHr ? 'FAQ - UnitLift za trenere i klijente' : 'FAQ - UnitLift for coaches and clients',
     description: isHr
-      ? 'Odgovori na najčešća pitanja o UnitLift platformi — cijene, postavljanje, klijenti i tehničke informacije.'
-      : 'Answers to the most common questions about UnitLift — pricing, setup, clients and technical information.',
+      ? 'Planovi, cijene, check-ini, klijentska aplikacija, branding, otkazivanje. Kratki odgovori na pitanja koja stvarno čujemo od trenera.'
+      : 'Plans, pricing, check-ins, client app, branding, canceling. Straight answers to what trainers actually ask us.',
     robots: { index: true, follow: true },
-    alternates: { canonical: locale === 'hr' ? '/faq' : '/en/faq', languages: { hr: '/faq', en: '/en/faq', 'x-default': '/faq' } },
-  }
+    languages: { hr: '/faq', en: '/en/faq', 'x-default': '/faq' },
+  })
 }
 
 export default async function FAQRoutePage({ params }: Props) {

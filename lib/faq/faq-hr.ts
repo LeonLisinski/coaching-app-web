@@ -10,24 +10,24 @@ export const faqHr: FAQData = {
       title: 'Općenito',
       questions: [
         {
-          q: 'Je li potrebna kreditna kartica za registraciju?',
-          a: 'Da, kartica je potrebna za aktivaciju probnog razdoblja, ali se ne naplaćuje odmah. Isprobaj UnitLift 14 dana potpuno besplatno — naplata počinje tek nakon isteka probnog razdoblja ako odlučiš nastaviti s plaćenim planom.',
+          q: 'Treba li mi kartica za registraciju?',
+          a: 'Da, kartica je potrebna za aktivaciju, ali se ne naplaćuje odmah. Isprobaj UnitLift 14 dana besplatno. Naplata počinje tek ako nastaviš s plaćenim planom.',
         },
         {
           q: 'Koliko vremena treba za postavljanje?',
-          a: 'Manje od 5 minuta. Registracija je brza i intuitivna — odmah postavljaš profil, prilagođavaš parametre i možeš pozvati prvog klijenta isti dan. Nema dugih onboarding procesa ni kompleksnih konfiguracija.',
+          a: 'Manje od 5 minuta. Postaviš profil, prilagodiš parametre i prvog klijenta možeš pozvati isti dan. Bez dugog onboardinga i kompleksne konfiguracije.',
         },
         {
           q: 'Na kojim uređajima radi UnitLift?',
-          a: 'Web aplikacija za trenere radi na svim modernim preglednicima (Chrome, Firefox, Safari, Edge) i potpuno je responzivna — možeš je dodati na početni ekran mobitela kao PWA. Klijenti imaju zasebnu nativnu iOS i Android aplikaciju koja je besplatna za preuzimanje.',
+          a: 'Web aplikacija radi u svim modernim preglednicima (Chrome, Firefox, Safari, Edge) i možeš je dodati na početni ekran kao PWA. Klijenti imaju zasebnu iOS i Android aplikaciju koja je besplatna.',
         },
         {
           q: 'Je li UnitLift GDPR sukladan?',
-          a: 'Da. UnitLift je razvijen uz puno poštivanje GDPR regulative. Svi podaci pohranjeni su na sigurnim europskim serverima, zaštićeni TLS enkripcijom u prijenosu i AES-256 u pohrani. Više detalja u Politici privatnosti.',
+          a: 'Da. Svi podaci su na europskim serverima, zaštićeni TLS-om u prijenosu i AES-256 enkripcijom u pohrani. Više detalja u Politici privatnosti.',
         },
         {
           q: 'Koji jezici su podržani?',
-          a: 'Web platforma dostupna je na hrvatskom i engleskom jeziku. Klijentska mobilna aplikacija podržava iste jezike — klijent odabire jezik pri prvom pokretanju.',
+          a: 'Web je dostupan na hrvatskom i engleskom. Klijentska aplikacija podržava iste jezike - klijent bira jezik pri prvom pokretanju.',
         },
       ],
     },
@@ -37,23 +37,23 @@ export const faqHr: FAQData = {
       questions: [
         {
           q: 'Koliko košta UnitLift?',
-          a: 'UnitLift nudi tri plana: Starter (29 €/mj. — do 15 klijenata), Pro (59 €/mj. — do 50 klijenata) i Scale (99 €/mj. — do 150 klijenata). Svi planovi uključuju iste funkcije — razlika je samo u broju klijenata koje možeš voditi. Svaki plan uključuje 14-dnevno besplatno probno razdoblje.',
+          a: 'Tri plana: Starter (29 €/mj - do 15 klijenata), Pro (59 €/mj - do 50 klijenata) i Scale (99 €/mj - do 150 klijenata). Svi planovi imaju iste funkcije, razlika je u broju klijenata. Svaki ima 14 dana besplatno.',
         },
         {
-          q: 'Mogu li promijeniti plan u bilo koje vrijeme?',
-          a: 'Da. Možeš upgradati ili downgradati plan u bilo koje vrijeme iz postavki računa. Upgrade stupa na snagu odmah, a cijena se obračunava proporcionalno za preostale dane u tekućem periodu.',
+          q: 'Mogu li promijeniti plan?',
+          a: 'Da, možeš ga promijeniti u bilo koje vrijeme iz postavki. Upgrade stupa na snagu odmah, naplata se obračunava proporcionalno za preostale dane.',
         },
         {
           q: 'Koji su načini plaćanja?',
-          a: 'Prihvaćamo sve glavne platne kartice (Visa, Mastercard), Apple Pay, Google Pay i SEPA direktno terećenje. Plaćanja su sigurno procesuirana putem Stripe platforme — jedan od najsigurnijih payment providera na svijetu.',
+          a: 'Prihvaćamo Visu, Mastercard, Apple Pay, Google Pay i SEPA izravno terećenje. Plaćanja idu kroz Stripe - jednu od pouzdanijih platformi za plaćanje.',
         },
         {
           q: 'Mogu li otkazati pretplatu?',
-          a: 'Da, bez ikakvih penala i bez obrazlaganja. Otkazivanje je moguće u bilo koje vrijeme iz postavki računa — jednostavnim klikom. Nakon otkazivanja i dalje imaš pristup svim funkcijama do isteka plaćenog perioda.',
+          a: 'Da, bez penala i bez obrazloženja. Otkažeš iz postavki u bilo koje vrijeme. I dalje imaš pristup do isteka plaćenog perioda.',
         },
         {
           q: 'Postoji li povrat novca?',
-          a: 'Unutar 14 dana od prvog plaćanja imaš pravo na puni povrat sredstava bez navođenja razloga (EU pravo na odustanak od ugovora), osim ako si aktivno koristio uslugu. Za povrat se javi na support@unitlift.com.',
+          a: 'Unutar 14 dana od prvog plaćanja imaš pravo na puni povrat bez obrazloženja (EU pravo na odustanak). Za povrat piši na support@unitlift.com.',
         },
       ],
     },
@@ -63,23 +63,23 @@ export const faqHr: FAQData = {
       questions: [
         {
           q: 'Koliko klijenata mogu imati?',
-          a: 'Starter plan podržava do 15 aktivnih klijenata, Pro do 50, a Scale do 150. Ako imaš više od 150 klijenata na Scale planu, cijena raste za +€10/mj za svakih dodatnih 25. Klijente možeš arhivirati i osloboditi mjesto za nove unutar limita plana.',
+          a: 'Starter - do 15, Pro - do 50, Scale - do 150 aktivnih klijenata. Iznad 150 na Scaleu plaća se dodatno 10 €/mj za svakih 25. Klijente možeš arhivirati i osloboditi mjesto za nove.',
         },
         {
           q: 'Mogu li imati vlastiti branding?',
-          a: 'Da, branding opcija dostupna je na svim planovima. U postavkama dodaš logo, odabereš primarne boje i povežeš profile društvenih mreža. Klijenti tada vide tvoj brand unutar aplikacije umjesto UnitLift branda — izgleda kao da si razvio vlastitu aplikaciju.',
+          a: 'Da, branding je dostupan na Pro i Scale planu. U postavkama dodaš logo i odabereš primarne boje. Klijenti vide tvoj brand u aplikaciji umjesto UnitLifta.',
         },
         {
           q: 'Kako funkcioniraju check-ini?',
-          a: 'Sam definiraš parametre check-ina za svakog klijenta (npr. tjedna tjelesna masa, broj koraka, sate sna, raspoloženje, fotografija napretka). Klijenti ih ispunjavaju u aplikaciji, a ti odmah vidiš odgovore s grafikonima napretka u dashboardu. Sustav automatski šalje podsjetnike klijentima koji kasne.',
+          a: 'Ti definiraš parametre check-ina za svakog klijenta (težina, koraci, san, raspoloženje, fotografija napretka). Klijenti ih ispunjavaju u aplikaciji, ti ih vidiš s grafovima u dashboardu. Sustav automatski šalje podsjetnike.',
         },
         {
-          q: 'Kako pratim financije i plaćanja klijenata?',
-          a: 'Na svim planovima imaš pristup financijskom pregledu: prihodi po periodu, status plaćanja svakog klijenta, dospjele fakture i ukupna zarada. Sve na jednom ekranu — znaš točno tko je platio i kad kome ističe pretplata.',
+          q: 'Kako pratim financije i plaćanja?',
+          a: 'Imaš financijski pregled: prihode po periodu, status plaćanja svakog klijenta, dospjele uplate i ukupnu zaradu. Sve na jednom ekranu - znaš tko je platio i komu ističe pretplata.',
         },
         {
           q: 'Mogu li slati obavijesti klijentima?',
-          a: 'Da, na svim planovima. Možeš slati ručne obavijesti ili postaviti automatske podsjetnike za check-in. Push obavijesti dolaze direktno na klijentov mobitel kroz aplikaciju.',
+          a: 'Da, na svim planovima. Možeš slati ručne poruke ili postaviti automatske podsjetnike za check-in. Push obavijesti dolaze direktno u aplikaciju.',
         },
       ],
     },
@@ -88,20 +88,20 @@ export const faqHr: FAQData = {
       title: 'Za klijente',
       questions: [
         {
-          q: 'Moraju li moji klijenti plaćati za aplikaciju?',
-          a: 'Ne. Klijentska aplikacija potpuno je besplatna za preuzimanje i korištenje na iOS i Android uređajima. Plaćaš samo ti kao trener za pristup coaching platformi — klijenti nikad ne vide nikakve troškove.',
+          q: 'Moraju li klijenti plaćati za aplikaciju?',
+          a: 'Ne. Klijentska aplikacija je besplatna za iOS i Android. Trener plaća pretplatu za pristup platformi - klijent ne vidi nikakve troškove.',
         },
         {
           q: 'Kako klijent dobiva pristup?',
-          a: 'Trener šalje pozivnicu na email klijenta direktno iz platforme. Klijent klikne na link, preuzme aplikaciju na App Store ili Google Play, kreira račun i odmah ima pristup svim planovima, check-inovima i chatu. Cijeli proces traje manje od 2 minute.',
+          a: 'Trener šalje pozivnicu na email klijenta direktno iz platforme. Klijent klikne link, preuzme aplikaciju i napravi račun. Odmah ima pristup planovima, check-inu i chatu.',
         },
         {
           q: 'Mogu li klijenti komunicirati s trenerom?',
-          a: 'Da. Klijentska aplikacija ima integrirani chat s trenerom. Sve poruke su na jednom mjestu — nema više razbacanih WhatsApp razgovora. Trener vidi sve poruke u web platformi i može odgovarati s mobitela ili računala.',
+          a: 'Da. Aplikacija ima integrirani chat s trenerom. Sve poruke na jednom mjestu, bez razbacanih WhatsApp razgovora. Trener odgovara s mobitela ili računala.',
         },
         {
           q: 'Što se dogodi s podacima klijenta ako trener ugasi račun?',
-          a: 'Svi osobni podaci i sadržaj vezani uz klijenta bit će obrisani sukladno Politici privatnosti u roku od 30 dana. Trener može eksportirati planove za klijenta prije gašenja računa kako bi klijent zadržao pristup sadržaju.',
+          a: 'Svi osobni podaci brišu se u roku od 30 dana sukladno Politici privatnosti. Trener može izvesti planove prije gašenja računa da klijent zadrži sadržaj.',
         },
       ],
     },
@@ -111,19 +111,19 @@ export const faqHr: FAQData = {
       questions: [
         {
           q: 'Je li pohrana podataka sigurna?',
-          a: 'Da. Svi podaci enkriptirani su TLS protokolom u prijenosu i AES-256 enkripcijom u pohrani. Pristup podacima ograničen je isključivo na ovlaštene osobe. Infrastruktura je hostana na EU serverima u skladu s GDPR zahtjevima.',
+          a: 'Da. Podaci su enkriptirani TLS-om u prijenosu i AES-256 enkripcijom u pohrani. Pristup je ograničen samo na ovlaštene osobe. Serveri su u EU, u skladu s GDPR-om.',
         },
         {
           q: 'Što se dogodi s podacima ako otkažem pretplatu?',
-          a: 'Nakon otkazivanja i dalje imaš pristup podacima do kraja plaćenog perioda. Nakon toga podaci se čuvaju još 30 dana pa se trajno brišu. U bilo koje vrijeme možeš eksportirati sve podatke iz postavki računa.',
+          a: 'Imaš pristup do kraja plaćenog perioda. Nakon toga podaci se čuvaju još 30 dana, pa se brišu. Sve podatke možeš izvesti iz postavki kad god želiš.',
         },
         {
           q: 'Radi li aplikacija bez interneta?',
-          a: 'Web platforma zahtijeva internet vezu. Klijentska mobilna aplikacija može prikazati prethodno učitane planove i offline, ali za slanje check-ina i chat potrebna je aktivna internet veza.',
+          a: 'Web zahtijeva internet. Klijentska aplikacija može prikazati već učitane planove offline, ali za slanje check-ina i chat treba aktivna veza.',
         },
         {
           q: 'Kako kontaktirati podršku?',
-          a: 'Podršku možeš kontaktirati putem emaila support@unitlift.com ili kroz kontakt obrazac na stranici unitlift.com/kontakt. Odgovaramo unutar jednog radnog dana.',
+          a: 'Piši na support@unitlift.com ili koristi obrazac na unitlift.com/kontakt. Odgovaramo unutar jednog radnog dana.',
         },
       ],
     },

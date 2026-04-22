@@ -4,7 +4,7 @@ import { postsEn } from '@/lib/blog/posts-en'
 
 const BASE = 'https://unitlift.com'
 
-// Croatian (default locale) — no /hr/ prefix (localePrefix: 'as-needed')
+// Croatian (default locale) - no /hr/ prefix (localePrefix: 'as-needed')
 const staticRoutesHr = [
   '',
   '/kako-radi',
@@ -16,7 +16,7 @@ const staticRoutesHr = [
   '/uvjeti',
 ]
 
-// English — always /en/ prefix (same Croatian slugs, different locale)
+// English - always /en/ prefix (same Croatian slugs, different locale)
 const staticRoutesEn = [
   '',
   '/kako-radi',
@@ -73,7 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entries.push({ url, lastModified: new Date(), changeFrequency: 'monthly', priority })
   }
 
-  // Blog posts — Croatian
+  // Blog posts - Croatian
   for (const post of postsHr) {
     entries.push({
       url: `${BASE}/blog/${post.slug}`,
@@ -83,7 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   }
 
-  // Blog posts — English
+  // Blog posts - English
   for (const post of postsEn) {
     entries.push({
       url: `${BASE}/en/blog/${post.slug}`,

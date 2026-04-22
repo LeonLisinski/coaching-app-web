@@ -1,20 +1,26 @@
+import type { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/seo-metadata'
 import LegalPage from '@/components/legal/LegalPage'
 import { privacyHr } from '@/lib/legal/privacy-hr'
 import { privacyEn } from '@/lib/legal/privacy-en'
 
-interface Props { params: Promise<{ locale: string }> }
+interface Props {
+  params: Promise<{ locale: string }>
+}
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const isHr = locale === 'hr'
-  return {
-    title: isHr ? 'Politika privatnosti – UnitLift' : 'Privacy Policy – UnitLift',
+  return buildPageMetadata({
+    locale: isHr ? 'hr' : 'en',
+    pathname: isHr ? '/privatnost' : '/en/privatnost',
+    title: isHr ? 'Privatnost - UnitLift' : 'Privacy - UnitLift',
     description: isHr
-      ? 'Politika privatnosti platforme UnitLift — kako prikupljamo i štitimo vaše osobne podatke.'
-      : 'Privacy Policy of UnitLift — how we collect and protect your personal data.',
+      ? 'Koji podaci se prikupljaju, zašto, kako ih štitimo (GDPR). Ukratko: tvoji podaci su pod kontrolom i ne prodajemo ih trećima.'
+      : 'What we collect, why, and how we protect it (GDPR). In short: your data stays yours; we do not sell it.',
     robots: { index: true, follow: true },
-    alternates: { canonical: locale === 'hr' ? '/privatnost' : '/en/privatnost', languages: { hr: '/privatnost', en: '/en/privatnost', 'x-default': '/privatnost' } },
-  }
+    languages: { hr: '/privatnost', en: '/en/privatnost', 'x-default': '/privatnost' },
+  })
 }
 
 export default async function PrivacyPage({ params }: Props) {

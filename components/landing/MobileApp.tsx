@@ -30,7 +30,7 @@ export default function MobileApp() {
 
         <div className="mob-grid">
           <div className="mob-phones rev">
-            {/* Trainer phone — trening screenshot */}
+            {/* Trainer phone - trening screenshot */}
             <div className="mob-phone trainer">
               <div className="mob-btn-vu" />
               <div className="mob-btn-vd" />
@@ -43,13 +43,14 @@ export default function MobileApp() {
                   width={471}
                   height={938}
                   style={{ width: '100%', height: 'auto', display: 'block' }}
+                  sizes="(max-width: 768px) 90vw, 420px"
                   priority
                 />
                 <div className="mob-home-ind" />
               </div>
             </div>
 
-            {/* Client phone — prehrana screenshot */}
+            {/* Client phone - prehrana screenshot */}
             <div className="mob-phone client">
               <div className="mob-btn-vu" />
               <div className="mob-btn-vd" />
@@ -62,6 +63,7 @@ export default function MobileApp() {
                   width={471}
                   height={938}
                   style={{ width: '100%', height: 'auto', display: 'block' }}
+                  sizes="(max-width: 768px) 90vw, 420px"
                   priority
                 />
                 <div className="mob-home-ind" />

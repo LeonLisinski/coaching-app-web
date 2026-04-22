@@ -1,35 +1,37 @@
+import type { Metadata } from 'next'
 import { permanentRedirect } from 'next/navigation'
+import { buildPageMetadata } from '@/lib/seo-metadata'
 import SeoLandingPage from '@/components/landing/SeoLandingPage'
 
-interface Props { params: Promise<{ locale: string }> }
+interface Props {
+  params: Promise<{ locale: string }>
+}
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   if (locale !== 'en') return {}
-  return {
-    title: 'Online Personal Trainer Software | UnitLift',
-    description: 'UnitLift is a platform for online personal trainers that replaces WhatsApp, Excel and PDFs. Training plans, nutrition, check-ins and payments — all in one place. Try free for 14 days.',
-    keywords: ['online personal trainer software', 'fitness trainer app', 'coaching platform', 'personal trainer software', 'client management for trainers', 'unitlift'],
-    alternates: {
-      canonical: '/en/online-personal-trainer-software',
-      languages: {
-        hr: '/software-za-online-fitness-trenere',
-        en: '/en/online-personal-trainer-software',
-        'x-default': '/software-za-online-fitness-trenere',
-      },
+  return buildPageMetadata({
+    locale: 'en',
+    pathname: '/en/online-personal-trainer-software',
+    title: 'Online personal trainer software - plans, payments | UnitLift',
+    description:
+      'One place for training and meal plans, weekly check-ins, messages, and who paid. Stop living in five tabs. 14 days free to try it properly.',
+    keywords: [
+      'online personal trainer software',
+      'workout plan app',
+      'online fitness coach tools',
+      'personal trainer client tracking',
+    ],
+    languages: {
+      hr: '/software-za-online-fitness-trenere',
+      en: '/en/online-personal-trainer-software',
+      'x-default': '/software-za-online-fitness-trenere',
     },
-    openGraph: {
-      title: 'Online Personal Trainer Software | UnitLift',
-      description: 'Replace WhatsApp and Excel with one platform. Plans, check-ins, payments — all on one screen.',
-      url: 'https://unitlift.com/en/online-personal-trainer-software',
-      type: 'website',
-    },
-  }
+  })
 }
 
 export default async function OnlinePersonalTrainerSoftwarePage({ params }: Props) {
   const { locale } = await params
-  // Redirect HR visitors to the HR-keyword URL
   if (locale === 'hr') permanentRedirect('/software-za-online-fitness-trenere')
   return <SeoLandingPage />
 }

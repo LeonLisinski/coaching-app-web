@@ -1,35 +1,37 @@
+import type { Metadata } from 'next'
 import { permanentRedirect } from 'next/navigation'
+import { buildPageMetadata } from '@/lib/seo-metadata'
 import SeoLandingPage from '@/components/landing/SeoLandingPage'
 
-interface Props { params: Promise<{ locale: string }> }
+interface Props {
+  params: Promise<{ locale: string }>
+}
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   if (locale !== 'hr') return {}
-  return {
-    title: 'Software za Online Fitness Trenere | UnitLift',
-    description: 'UnitLift je platforma za online fitness trenere koja zamjenjuje WhatsApp, Excel i PDF-ove. Planovi treninga, prehrane, check-ini i plaćanja — sve na jednom mjestu. Isprobaj 14 dana besplatno.',
-    keywords: ['software za fitness trenere', 'aplikacija za personal trenere', 'online coaching platforma', 'program za trenere', 'trenerska aplikacija hrvatska', 'unitlift'],
-    alternates: {
-      canonical: '/software-za-online-fitness-trenere',
-      languages: {
-        hr: '/software-za-online-fitness-trenere',
-        en: '/en/online-personal-trainer-software',
-        'x-default': '/software-za-online-fitness-trenere',
-      },
+  return buildPageMetadata({
+    locale: 'hr',
+    pathname: '/software-za-online-fitness-trenere',
+    title: 'Online fitness trener - planovi, check-ini, plaćanja | UnitLift',
+    description:
+      'Makni se s Excela: planovi treninga i prehrane, tjedni check-ini, chat, pregled tko je platio. Postavi u pet minuta. 14 dana besplatno.',
+    keywords: [
+      'software za online fitness trenere',
+      'aplikacija za osobne trenere',
+      'planovi treninga online',
+      'online fitness trener aplikacija',
+    ],
+    languages: {
+      hr: '/software-za-online-fitness-trenere',
+      en: '/en/online-personal-trainer-software',
+      'x-default': '/software-za-online-fitness-trenere',
     },
-    openGraph: {
-      title: 'Software za Online Fitness Trenere | UnitLift',
-      description: 'Zamijeni WhatsApp i Excel jednom platformom. Planovi, check-ini, plaćanja — sve na jednom ekranu.',
-      url: 'https://unitlift.com/software-za-online-fitness-trenere',
-      type: 'website',
-    },
-  }
+  })
 }
 
 export default async function SoftwareZaFitnessTrenerePage({ params }: Props) {
   const { locale } = await params
-  // Redirect EN visitors to the EN-keyword URL
   if (locale === 'en') permanentRedirect('/en/online-personal-trainer-software')
   return <SeoLandingPage />
 }

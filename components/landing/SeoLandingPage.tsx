@@ -60,8 +60,8 @@ export default function SeoLandingPage({ namespace = 'seoPage' }: Props) {
     name: 'UnitLift',
     applicationCategory: 'BusinessApplication',
     description: locale === 'hr'
-      ? 'Platforma za online fitness trenere. Planovi treninga i prehrane, check-in sustav, praćenje plaćanja i chat — sve na jednom mjestu.'
-      : 'Platform for online fitness coaches. Training and nutrition plans, check-in system, payment tracking and chat — all in one place.',
+      ? 'Web i aplikacija za trenere s online klijentima: planovi treninga i prehrane, tjedni check-ini, plaćanja i poruke u jednom tijeku rada.'
+      : 'Web and apps for coaches with remote clients: training and meal plans, weekly check-ins, payments, and messages in one workflow.',
     operatingSystem: 'Web, iOS, Android',
     offers: [
       { '@type': 'Offer', name: 'Starter', price: '29', priceCurrency: 'EUR' },
@@ -77,7 +77,7 @@ export default function SeoLandingPage({ namespace = 'seoPage' }: Props) {
       <RevealObserver />
       <Navbar />
 
-      {/* ── HERO — dark background ── */}
+      {/* ── HERO - dark background ── */}
       <section className="seo-hero">
         <div className="hbg" />
         <div className="hgrid" />
@@ -103,7 +103,7 @@ export default function SeoLandingPage({ namespace = 'seoPage' }: Props) {
             <p className="seo-hnote">{t('heroNote')}</p>
           </div>
 
-          {/* Static mockup — lightweight, no JS */}
+          {/* Static mockup - lightweight, no JS */}
           <div className="seo-mockup">
             <div className="sbar">
               <div className="sdots">
@@ -139,7 +139,7 @@ export default function SeoLandingPage({ namespace = 'seoPage' }: Props) {
         </div>
       </section>
 
-      {/* ── PROBLEM — light (sl) ── */}
+      {/* ── PROBLEM - light (sl) ── */}
       <section className="sl sp" ref={problemRef}>
         <div className="con">
           <div className="tc rev">
@@ -162,7 +162,7 @@ export default function SeoLandingPage({ namespace = 'seoPage' }: Props) {
       {/* problem light → features light-accent */}
       <WaveDivider from="#f5f7ff" to="#eceffe" />
 
-      {/* ── FEATURES — light accent (sa) ── */}
+      {/* ── FEATURES - light accent (sa) ── */}
       <section className="sa sp" ref={featRef}>
         <div className="con">
           <div className="rev">
@@ -211,7 +211,7 @@ export default function SeoLandingPage({ namespace = 'seoPage' }: Props) {
       {/* features light-accent → use cases light */}
       <WaveDivider from="#eceffe" to="#f5f7ff" />
 
-      {/* ── USE CASES — light (sl) ── */}
+      {/* ── USE CASES - light (sl) ── */}
       <section className="sl sp" ref={usecaseRef}>
         <div className="con">
           <div className="tc rev">
@@ -233,19 +233,19 @@ export default function SeoLandingPage({ namespace = 'seoPage' }: Props) {
       {/* use cases light → testimonials (#eceffe start) */}
       <WaveDivider from="#f5f7ff" to="#eceffe" />
 
-      {/* ── TESTIMONIALS — reuse existing component ── */}
+      {/* ── TESTIMONIALS - reuse existing component ── */}
       <Testimonials />
 
       {/* testimonials (#f5f7ff end) → pricing (white start) */}
       <WaveDivider from="#f5f7ff" to="#ffffff" />
 
-      {/* ── PRICING — reuse existing component ── */}
+      {/* ── PRICING - reuse existing component ── */}
       <Pricing />
 
       {/* pricing (#f5f9ff end) → faq light-accent */}
       <WaveDivider from="#f5f9ff" to="#eceffe" />
 
-      {/* ── FAQ — light accent (sa) ── */}
+      {/* ── FAQ - light accent (sa) ── */}
       <section className="sa sp">
         <div className="con">
           <div className="tc rev">
@@ -266,10 +266,10 @@ export default function SeoLandingPage({ namespace = 'seoPage' }: Props) {
         </div>
       </section>
 
-      {/* ── CTA — reuse existing component (dark) ── */}
+      {/* ── CTA - reuse existing component (dark) ── */}
       <CTA />
 
-      {/* ── FOOTER — reuse existing component (dark) ── */}
+      {/* ── FOOTER - reuse existing component (dark) ── */}
       <Footer />
     </>
   )

@@ -1,20 +1,26 @@
+import type { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/seo-metadata'
 import LegalPage from '@/components/legal/LegalPage'
 import { termsHr } from '@/lib/legal/terms-hr'
 import { termsEn } from '@/lib/legal/terms-en'
 
-interface Props { params: Promise<{ locale: string }> }
+interface Props {
+  params: Promise<{ locale: string }>
+}
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const isHr = locale === 'hr'
-  return {
-    title: isHr ? 'Uvjeti korištenja – UnitLift' : 'Terms of Service – UnitLift',
+  return buildPageMetadata({
+    locale: isHr ? 'hr' : 'en',
+    pathname: isHr ? '/uvjeti' : '/en/uvjeti',
+    title: isHr ? 'Uvjeti korištenja - UnitLift' : 'Terms of service - UnitLift',
     description: isHr
-      ? 'Uvjeti korištenja platforme UnitLift za online fitness trenere.'
-      : 'Terms of Service for the UnitLift online fitness coaching platform.',
+      ? 'Kako se koristi UnitLift (app i web), plaćanje, sadržaj, odgovornost. Ukratko: pravila korištenja usluge za trenere i klijente.'
+      : 'How to use UnitLift (app and web), billing, content, responsibility. The rules of the service for coaches and clients.',
     robots: { index: true, follow: true },
-    alternates: { canonical: locale === 'hr' ? '/uvjeti' : '/en/uvjeti', languages: { hr: '/uvjeti', en: '/en/uvjeti', 'x-default': '/uvjeti' } },
-  }
+    languages: { hr: '/uvjeti', en: '/en/uvjeti', 'x-default': '/uvjeti' },
+  })
 }
 
 export default async function TermsPage({ params }: Props) {

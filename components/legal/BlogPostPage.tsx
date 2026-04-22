@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import LogoSvg from '@/components/landing/LogoSvg'
 import type { BlogPost } from '@/lib/blog/types'
+import { getAugmentedContent, getResolvedCta } from '@/lib/blog/augment-post'
 
 const categoryColors: Record<string, string> = {
   vodic: '#2233ee',
@@ -16,6 +17,8 @@ const categoryColors: Record<string, string> = {
   clients: '#6c5ce7',
   rast: '#00b894',
   growth: '#00b894',
+  produktivnost: '#0984e3',
+  productivity: '#0984e3',
 }
 
 function getInitials(name: string) {
@@ -37,6 +40,12 @@ export default function BlogPostPage({ post, relatedPosts }: Props) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const catColor = categoryColors[post.categorySlug] || '#2233ee'
+
+  const contentBlocks = getAugmentedContent(post, locale)
+  const cta = getResolvedCta(post, locale)
+  const ctaBody = cta.text.trim() ? cta.text : t('blogPage.ctaText')
+  const ctaBtn = cta.btn.trim() ? cta.btn : t('blogPage.ctaBtn')
+  const ctaHref = cta.href
 
   const navLabels = t.raw('nav') as string[]
   const navLinks = [
@@ -122,7 +131,13 @@ export default function BlogPostPage({ post, relatedPosts }: Props) {
               <div className="blog-author-avatar blog-author-avatar--lg" style={{ background: catColor }}>
                 {getInitials(post.author)}
               </div>
-              <span className="blog-post-author-name">{post.author}</span>
+              <div>
+                <div className="blog-post-author-name">{post.author}</div>
+                <div className="blog-post-author-role">{post.authorRole}</div>
+                {post.author === 'Leon' && (
+                  <p className="blog-post-author-bio">{t('blogPage.authorBio')}</p>
+                )}
+              </div>
             </div>
             <div className="blog-post-meta-right">
               <span className="blog-meta-item">
@@ -147,7 +162,7 @@ export default function BlogPostPage({ post, relatedPosts }: Props) {
         <div className="legal-body-inner">
           {/* Article content */}
           <main className="legal-main blog-post-main">
-            {post.content.map((block, i) => {
+            {contentBlocks.map((block, i) => {
               if (block.type === 'heading') {
                 return <h2 key={i} className="blog-post-h2">{block.text}</h2>
               }
@@ -186,10 +201,10 @@ export default function BlogPostPage({ post, relatedPosts }: Props) {
                 <div className="blog-post-cta-icon">🚀</div>
                 <div>
                   <div className="blog-post-cta-title">{t('blogPage.ctaTitle')}</div>
-                  <div className="blog-post-cta-text">{t('blogPage.ctaText')}</div>
+                  <div className="blog-post-cta-text">{ctaBody}</div>
                 </div>
-                <a href={`/${locale}/cijene`} className="btn btn-p" style={{ whiteSpace: 'nowrap', fontSize: '.85rem' }}>
-                  {t('blogPage.ctaBtn')}
+                <a href={ctaHref} className="btn btn-p" style={{ whiteSpace: 'nowrap', fontSize: '.85rem' }}>
+                  {ctaBtn}
                 </a>
               </div>
             </div>
@@ -211,6 +226,9 @@ export default function BlogPostPage({ post, relatedPosts }: Props) {
                 </div>
                 <div className="blog-sidebar-author-name">{post.author}</div>
                 <div className="blog-sidebar-author-role">{post.authorRole}</div>
+                {post.author === 'Leon' && (
+                  <p className="blog-sidebar-author-bio">{t('blogPage.authorBio')}</p>
+                )}
               </div>
 
               {/* Related posts */}

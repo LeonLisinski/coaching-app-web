@@ -87,7 +87,7 @@ export async function POST(req: NextRequest) {
           </div>
 
           <p style="color:#525280;font-size:12px;margin:24px 0 0">
-            Za odgovor, reply direktno na ovaj email — Reply-To je postavljen na ${rawEmail}
+            Za odgovor, reply direktno na ovaj email - Reply-To je postavljen na ${rawEmail}
           </p>
         </div>
       `,

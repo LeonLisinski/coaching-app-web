@@ -1,18 +1,24 @@
+import type { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/seo-metadata'
 import ContactPage from '@/components/legal/ContactPage'
 
-interface Props { params: Promise<{ locale: string }> }
+interface Props {
+  params: Promise<{ locale: string }>
+}
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const isHr = locale === 'hr'
-  return {
-    title: isHr ? 'Kontakt – UnitLift' : 'Contact – UnitLift',
+  return buildPageMetadata({
+    locale: isHr ? 'hr' : 'en',
+    pathname: isHr ? '/kontakt' : '/en/kontakt',
+    title: isHr ? 'Kontakt - UnitLift | Podrška za fitness trenere' : 'Contact - UnitLift | Help for fitness coaches',
     description: isHr
-      ? 'Kontaktiraj UnitLift tim. Odgovaramo unutar jednog radnog dana.'
-      : 'Contact the UnitLift team. We respond within one business day.',
+      ? 'Pitaj za račun, tehničke stvari ili partnerstvo. Odgovaramo unutar jednog radnog dana na support@unitlift.com.'
+      : 'Ask about billing, tech or partnerships. We reply within one business day at support@unitlift.com.',
     robots: { index: true, follow: true },
-    alternates: { canonical: locale === 'hr' ? '/kontakt' : '/en/kontakt', languages: { hr: '/kontakt', en: '/en/kontakt', 'x-default': '/kontakt' } },
-  }
+    languages: { hr: '/kontakt', en: '/en/kontakt', 'x-default': '/kontakt' },
+  })
 }
 
 export default async function KontaktPage() {

@@ -5,7 +5,7 @@ export const termsHr: LegalDocument = {
   lastUpdated: '18. ožujka 2025.',
   version: '1.0',
   intro: 'Ovi Uvjeti korištenja reguliraju korištenje aplikacije UnitLift. Molimo pročitajte ih pažljivo.',
-  callout: 'Korištenjem aplikacije UnitLift na https://app.unitlift.com ili u mobilnoj aplikaciji prihvaćate ove Uvjete korištenja. Molimo pročitajte ih pažljivo.',
+  callout: 'Ukratko: korištenjem UnitLifta pristaješ na ove uvjete, način naplate i pravila korištenja. Otkaži kad hoćeš - detalji su u nastavku.',
   sections: [
     {
       id: 'prihvacanje',

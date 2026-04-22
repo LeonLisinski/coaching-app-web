@@ -92,16 +92,16 @@ export default function AppShowcase() {
         <div className="mday">
           <div className="mdh"><span className="mdn">{t('workoutMonday')}</span><span className="mbdg bb2">4 {t('workoutExercises')}</span></div>
           <div className="mexs">
-            <div className="mex"><span className="mexd" />Bench Press — 4×8 @ 60kg</div>
-            <div className="mex"><span className="mexd" />Overhead Press — 3×10 @ 40kg</div>
-            <div className="mex"><span className="mexd" />Tricep Dips — 3×12</div>
+            <div className="mex"><span className="mexd" />Bench Press - 4×8 @ 60kg</div>
+            <div className="mex"><span className="mexd" />Overhead Press - 3×10 @ 40kg</div>
+            <div className="mex"><span className="mexd" />Tricep Dips - 3×12</div>
           </div>
         </div>
         <div className="mday">
           <div className="mdh"><span className="mdn">{t('workoutWednesday')}</span><span className="mbdg bb2">4 {t('workoutExercises')}</span></div>
           <div className="mexs">
-            <div className="mex"><span className="mexd" />Deadlift — 3×5 @ 80kg</div>
-            <div className="mex"><span className="mexd" />Bent-over Row — 4×8 @ 55kg</div>
+            <div className="mex"><span className="mexd" />Deadlift - 3×5 @ 80kg</div>
+            <div className="mex"><span className="mexd" />Bent-over Row - 4×8 @ 55kg</div>
           </div>
         </div>
       </div>

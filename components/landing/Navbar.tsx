@@ -20,7 +20,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Restore preferred locale on first load
+  // Restore preferred locale on first load (intentionally runs once on mount)
   useEffect(() => {
     try {
       const saved = localStorage.getItem('unitlift_locale')
@@ -30,7 +30,7 @@ export default function Navbar() {
         router.replace(segments.join('/') || '/')
       }
     } catch {}
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   function toggleLang() {
     const next = locale === 'hr' ? 'en' : 'hr'

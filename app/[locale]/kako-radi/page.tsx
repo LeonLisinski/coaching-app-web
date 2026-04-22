@@ -1,17 +1,25 @@
+import type { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/seo-metadata'
 import HowItWorksPage from '@/components/legal/HowItWorksPage'
 
-interface Props { params: Promise<{ locale: string }> }
+interface Props {
+  params: Promise<{ locale: string }>
+}
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const isHr = locale === 'hr'
-  return {
-    title: isHr ? 'Kako radi | UnitLift' : 'How it works | UnitLift',
+  return buildPageMetadata({
+    locale: isHr ? 'hr' : 'en',
+    pathname: isHr ? '/kako-radi' : '/en/kako-radi',
+    title: isHr
+      ? 'Kako radi UnitLift - postavi coaching za 5 minuta'
+      : 'How UnitLift works - go live in 5 minutes',
     description: isHr
-      ? 'Saznaj kako UnitLift funkcionira za trenere i klijente. Jedna platforma za planove treninga, check-ine, financije i komunikaciju.'
-      : 'Learn how UnitLift works for coaches and clients. One platform for training plans, check-ins, finances and communication.',
-    alternates: { canonical: locale === 'hr' ? '/kako-radi' : '/en/kako-radi', languages: { hr: '/kako-radi', en: '/en/kako-radi', 'x-default': '/kako-radi' } },
-  }
+      ? 'Ti: web i profil, planovi, plaćanja. Klijent: besplatna aplikacija, check-ini, poruke. Jedan pristup, bez Excela i WhatsAppa kao glavnog alata.'
+      : 'You: web dashboard, plans, money. Your client: free app, check-ins, messages. One place to work - not Excel and chat threads.',
+    languages: { hr: '/kako-radi', en: '/en/kako-radi', 'x-default': '/kako-radi' },
+  })
 }
 
 export default function KakoRadiPage() {

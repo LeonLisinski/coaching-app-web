@@ -1,29 +1,36 @@
+import type { Metadata } from 'next'
 import { permanentRedirect } from 'next/navigation'
+import { buildPageMetadata } from '@/lib/seo-metadata'
 import SeoLandingPage from '@/components/landing/SeoLandingPage'
 
-interface Props { params: Promise<{ locale: string }> }
-
-export async function generateMetadata({ params }: Props) {
-  const { locale } = await params
-  if (locale !== 'hr') return {}
-  return {
-    title: 'Software za Praćenje Klijenata | UnitLift',
-    description: 'UnitLift automatski prikuplja tjedne check-ine od klijenata — mjere, fotografije, osjećaj, san. Kompletna slika napretka bez ručne administracije.',
-    keywords: ['software za praćenje klijenata', 'praćenje napretka klijenata', 'check-in sustav za trenere', 'trenerski software za napredak'],
-    alternates: {
-      canonical: '/software-za-pracenje-klijenata',
-      languages: { hr: '/software-za-pracenje-klijenata', en: '/en/client-tracking-software', 'x-default': '/software-za-pracenje-klijenata' },
-    },
-    openGraph: {
-      title: 'Software za Praćenje Klijenata | UnitLift',
-      description: 'Automatski tjedni check-ini — mjere, fotografije i napredak na jednom ekranu.',
-      url: 'https://unitlift.com/software-za-pracenje-klijenata',
-      type: 'website',
-    },
-  }
+interface Props {
+  params: Promise<{ locale: string }>
 }
 
-export default async function SoftwareZaPracenjePage({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  if (locale !== 'hr') return {}
+  return buildPageMetadata({
+    locale: 'hr',
+    pathname: '/software-za-pracenje-klijenata',
+    title: 'Praćenje klijenata - tjedni check-ini | UnitLift',
+    description:
+      'Automatski podsjetnici, fotke napretka, grafovi. Vidi tko drži ritam, tko ne - bez ručnog skupljanja poruka. Isprobaj 14 dana besplatno.',
+    keywords: [
+      'praćenje klijenata osobni trener',
+      'check-in klijenti',
+      'aplikacija za fitness trenere',
+      'planovi treninga online',
+    ],
+    languages: {
+      hr: '/software-za-pracenje-klijenata',
+      en: '/en/client-tracking-software',
+      'x-default': '/software-za-pracenje-klijenata',
+    },
+  })
+}
+
+export default async function SoftwareZaPracenjeKlijenataPage({ params }: Props) {
   const { locale } = await params
   if (locale === 'en') permanentRedirect('/en/client-tracking-software')
   return <SeoLandingPage namespace="seoPageTracking" />

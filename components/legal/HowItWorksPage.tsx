@@ -1,6 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+
+const PlusIcon = () => (
+  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+    <line x1="12" y1="5" x2="12" y2="19" />
+    <line x1="5" y1="12" x2="19" y2="12" />
+  </svg>
+)
 import { useLocale, useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
@@ -34,6 +41,8 @@ export default function HowItWorksPage() {
   const steps = t.raw('howItWorksPage.steps') as Array<{ n: string; t: string; d: string }>
   const coachFeats = t.raw('howItWorksPage.coachFeats') as string[]
   const clientFeats = t.raw('howItWorksPage.clientFeats') as string[]
+  const bottomFaqs = t.raw('howItWorksPage.bottomFaqs') as Array<{ q: string; a: string }> | undefined
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   function switchLang() {
     try { localStorage.setItem('unitlift_locale', otherLocale) } catch {}
@@ -171,6 +180,25 @@ export default function HowItWorksPage() {
               {t('howItWorksPage.ctaNote')}
             </p>
           </div>
+
+          {bottomFaqs && bottomFaqs.length > 0 && (
+            <div className="hiw-section" style={{ marginTop: '48px' }}>
+              <h2 className="hiw-h2" style={{ marginBottom: '20px' }}>{t('howItWorksPage.bottomFaqTitle')}</h2>
+              <div className="faq-list">
+                {bottomFaqs.map((faq, i) => (
+                  <div key={i} className={`faq-item${openFaq === i ? ' open' : ''}`}>
+                    <button type="button" className="faq-q" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                      <span>{faq.q}</span>
+                      <span className="faqico">
+                        <PlusIcon />
+                      </span>
+                    </button>
+                    <div className="faq-a">{faq.a}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
         </div>
       </div>

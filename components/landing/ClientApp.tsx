@@ -17,7 +17,13 @@ const IMG_H = Math.round(IMG_W * 844 / 390) // 692
 
 export default function ClientApp() {
   const t = useTranslations()
-  const feats = t.raw('cappFeats') as Array<{ badge: string; t: string; d: string; bullets: string[] }>
+  const feats = t.raw('cappFeats') as Array<{
+    badge: string
+    t: string
+    d: string
+    bullets: string[]
+    imgAlt: string
+  }>
   const n = feats.length // 4
 
   // ─── Desktop: IntersectionObserver drives active screenshot ───────────────
@@ -49,7 +55,7 @@ export default function ClientApp() {
   ]
 
   const ITEM_VW = 80          // each slide width in vw
-  const SIDE_VW = (100 - ITEM_VW) / 2 // 10vw — centres active slide
+  const SIDE_VW = (100 - ITEM_VW) / 2 // 10vw - centres active slide
 
   const [vi, setVi] = useState(1)           // visual index (1 = first real)
   const [doAnimate, setDoAnimate] = useState(true)
@@ -92,6 +98,7 @@ export default function ClientApp() {
           className="stit"
           dangerouslySetInnerHTML={{ __html: t.raw('cappTit') as string }}
         />
+        <p className="ssub" style={{ margin: '0 auto', color: 'var(--ls)' }}>{t('cappSub')}</p>
       </div>
 
       {/* ── DESKTOP: sticky scroll ── */}
@@ -99,18 +106,21 @@ export default function ClientApp() {
 
         {/* Left: sticky image column */}
         <div className="capp-sticky-left">
-          <div className="capp-img-stack">
-            {IMAGES.map((src, i) => (
-              <img
-                key={src}
-                src={src}
-                alt={feats[i]?.t ?? ''}
-                width={IMG_W}
-                height={IMG_H}
-                className={`capp-fade-img${activeIdx === i ? ' active' : ''}`}
-                loading={i === 0 ? 'eager' : 'lazy'}
-              />
-            ))}
+          <div className="capp-phone-glow">
+            <div className="capp-img-stack">
+              {IMAGES.map((src, i) => (
+                <Image
+                  key={src}
+                  src={src}
+                  alt={feats[i]?.imgAlt ?? feats[i]?.t ?? ''}
+                  width={IMG_W}
+                  height={IMG_H}
+                  className={`capp-fade-img${activeIdx === i ? ' active' : ''}`}
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  sizes="320px"
+                />
+              ))}
+            </div>
           </div>
         </div>
 
@@ -161,14 +171,17 @@ export default function ClientApp() {
         >
           {slides.map(({ feat, src }, i) => (
             <div key={i} className="capp-car-slide">
-              <Image
-                src={src}
-                alt={feat.t}
-                width={390}
-                height={844}
-                className="capp-car-img"
-                priority={i === 1}
-              />
+              <div className="capp-phone-glow">
+                <Image
+                  src={src}
+                  alt={feat.imgAlt ?? feat.t}
+                  width={390}
+                  height={844}
+                  className="capp-car-img"
+                  priority={i === 1}
+                  sizes="80vw"
+                />
+              </div>
               <div className="capp-car-info">
                 <h3 className="capp-car-title">{feat.t}</h3>
                 <p className="capp-car-desc">{feat.d}</p>
@@ -191,7 +204,7 @@ export default function ClientApp() {
           ))}
         </div>
 
-        {/* Store buttons — mobile only */}
+        {/* Store buttons - mobile only */}
         <div className="capp-store-row">
           <a
             href="https://apps.apple.com/app/unitlift/id6742650853"
@@ -217,7 +230,7 @@ export default function ClientApp() {
             aria-label="Get it on Google Play"
           >
             {/* Google Play logo */}
-            <img src="/google-play-icon.png" alt="Google Play" width={22} height={22} style={{ display: 'block' }} />
+            <Image src="/google-play-icon.png" alt="" width={22} height={22} style={{ display: 'block' }} />
             <div className="capp-store-txt">
               <span>Get it on</span>
               <span>Google Play</span>

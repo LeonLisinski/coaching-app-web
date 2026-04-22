@@ -1,26 +1,33 @@
+import type { Metadata } from 'next'
 import { permanentRedirect } from 'next/navigation'
+import { buildPageMetadata } from '@/lib/seo-metadata'
 import SeoLandingPage from '@/components/landing/SeoLandingPage'
 
-interface Props { params: Promise<{ locale: string }> }
+interface Props {
+  params: Promise<{ locale: string }>
+}
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   if (locale !== 'en') return {}
-  return {
-    title: 'Client Tracking Software for Personal Trainers | UnitLift',
-    description: 'UnitLift automatically collects weekly check-ins from clients — measurements, photos, mood, sleep. Complete progress picture without manual admin.',
-    keywords: ['client tracking software', 'client progress tracking', 'check-in system for trainers', 'trainer client management'],
-    alternates: {
-      canonical: '/en/client-tracking-software',
-      languages: { hr: '/software-za-pracenje-klijenata', en: '/en/client-tracking-software', 'x-default': '/software-za-pracenje-klijenata' },
+  return buildPageMetadata({
+    locale: 'en',
+    pathname: '/en/client-tracking-software',
+    title: 'Client tracking for coaches - weekly check-ins | UnitLift',
+    description:
+      'Weekly check-ins with measurements, photos, and flags when someone is late. Less chasing, cleaner history. 14-day free trial.',
+    keywords: [
+      'personal trainer client tracking',
+      'client check-ins',
+      'online coaching software',
+      'workout plan app',
+    ],
+    languages: {
+      hr: '/software-za-pracenje-klijenata',
+      en: '/en/client-tracking-software',
+      'x-default': '/software-za-pracenje-klijenata',
     },
-    openGraph: {
-      title: 'Client Tracking Software for Personal Trainers | UnitLift',
-      description: 'Automatic weekly check-ins — measurements, photos and progress on one screen.',
-      url: 'https://unitlift.com/en/client-tracking-software',
-      type: 'website',
-    },
-  }
+  })
 }
 
 export default async function ClientTrackingSoftwarePage({ params }: Props) {

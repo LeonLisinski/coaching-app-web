@@ -16,6 +16,8 @@ const categoryColors: Record<string, string> = {
   clients: '#6c5ce7',
   rast: '#00b894',
   growth: '#00b894',
+  produktivnost: '#0984e3',
+  productivity: '#0984e3',
 }
 
 const categoryIcons: Record<string, string> = {
@@ -27,6 +29,8 @@ const categoryIcons: Record<string, string> = {
   clients: '👥',
   rast: '📈',
   growth: '📈',
+  produktivnost: '⏱',
+  productivity: '⏱',
 }
 
 function getInitials(name: string) {

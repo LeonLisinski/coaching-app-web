@@ -2,7 +2,10 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { postsHr } from '@/lib/blog/posts-hr'
 import { postsEn } from '@/lib/blog/posts-en'
+import { getMetaPageDescription, getMetaPageTitle } from '@/lib/blog/augment-post'
 import BlogPostPage from '@/components/legal/BlogPostPage'
+import { buildPageMetadata } from '@/lib/seo-metadata'
+import { absoluteUrl } from '@/lib/site'
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>
@@ -22,7 +25,7 @@ const EN_MONTHS: Record<string, string> = {
 function toIsoDate(dateStr: string): string {
   const parts = dateStr.replace(/\./g, '').trim().split(/\s+/)
   if (parts.length < 3) return '2025-01-01'
-  const day  = parts[0].padStart(2, '0')
+  const day = parts[0].padStart(2, '0')
   const month = HR_MONTHS[parts[1]] ?? EN_MONTHS[parts[1]] ?? '01'
   const year = parts[2]
   return `${year}-${month}-${day}`
@@ -39,11 +42,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const posts = locale === 'hr' ? postsHr : postsEn
   const post = posts.find(p => p.slug === slug)
   if (!post) return {}
-  return {
-    title: `${post.title} | UnitLift Blog`,
-    description: post.excerpt,
-    alternates: { canonical: locale === 'hr' ? `/blog/${slug}` : `/en/blog/${slug}`, languages: { hr: `/blog/${slug}`, en: `/en/blog/${slug}`, 'x-default': `/blog/${slug}` } },
-  }
+  const pathname = locale === 'hr' ? `/blog/${slug}` : `/en/blog/${slug}`
+  const metaTitle = getMetaPageTitle(post)
+  const metaDesc = getMetaPageDescription(post)
+  return buildPageMetadata({
+    locale: locale === 'hr' ? 'hr' : 'en',
+    pathname,
+    title: `${metaTitle} | UnitLift`,
+    description: metaDesc,
+    languages: {
+      hr: `/blog/${slug}`,
+      en: `/en/blog/${slug}`,
+      'x-default': `/blog/${slug}`,
+    },
+  })
 }
 
 export default async function BlogSlugPage({ params }: Props) {
@@ -55,6 +67,9 @@ export default async function BlogSlugPage({ params }: Props) {
   const relatedPosts = posts
     .filter(p => p.slug !== slug)
     .slice(0, 3)
+
+  const pagePath = locale === 'hr' ? `/blog/${slug}` : `/en/blog/${slug}`
+  const pageUrl = absoluteUrl(pagePath)
 
   const articleJsonLd = {
     '@context': 'https://schema.org',
@@ -71,13 +86,13 @@ export default async function BlogSlugPage({ params }: Props) {
     publisher: {
       '@type': 'Organization',
       name: 'UnitLift',
-      url: 'https://unitlift.com',
+      url: absoluteUrl('/'),
     },
-    url: `https://unitlift.com/${locale}/blog/${slug}`,
+    url: pageUrl,
     inLanguage: locale,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://unitlift.com/${locale}/blog/${slug}`,
+      '@id': pageUrl,
     },
   }
 

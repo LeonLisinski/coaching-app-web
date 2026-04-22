@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import Script from 'next/script'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import { routing } from '@/i18n/routing'
+import { SITE_URL } from '@/lib/site'
 import '../globals.css'
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -18,61 +19,52 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 export const metadata: Metadata = {
   title: {
-    default: 'UnitLift – Coaching platforma za online fitness trenere',
-    template: '%s | UnitLift',
+    default: 'Aplikacija za osobne trenere | UnitLift',
+    template: '%s',
   },
   description:
-    'UnitLift - coaching platforma za online fitness trenere. Planovi treninga, prehrana, check-ini, chat i financije — sve na jednom mjestu. Isprobaj besplatno 14 dana.',
+    'Coaching aplikacija za online klijente: planovi treninga i prehrane, check-ini, poruke i plaćanja. Postavi u 5 minuta - 14 dana besplatno.',
   keywords: [
     'unitlift',
-    'coaching platforma',
-    'aplikacija za fitness trenere',
-    'online personal trainer',
-    'aplikacija za planove treninga',
-    'check-in praćenje',
-    'fitness trener software',
+    'aplikacija za osobne trenere',
+    'coaching aplikacija',
+    'online fitness trener',
+    'praćenje klijenata',
+    'check-in klijenti',
   ],
-  metadataBase: new URL('https://unitlift.com'),
+  metadataBase: new URL(SITE_URL),
   alternates: {
-    canonical: 'https://unitlift.com',
     languages: {
-      'hr': 'https://unitlift.com',
-      'en': 'https://unitlift.com/en',
-      'x-default': 'https://unitlift.com',
+      hr: '/',
+      en: '/en',
+      'x-default': '/',
     },
   },
   icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-    ],
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
   },
-  manifest: '/site.webmanifest',
   openGraph: {
-    title: 'UnitLift – Više klijenata. Manje kaosa.',
+    title: 'Aplikacija za osobne trenere - manje kaosa, više klijenata',
     description:
-      'Profesionalna coaching platforma za online fitness trenere. Planovi treninga, prehrana, check-ini i financije — sve na jednom mjestu.',
-    url: 'https://unitlift.com',
+      'Planovi treninga i prehrane, tjedni check-ini, chat i plaćanja na jednom mjestu. Za trenere s online klijentima. 14 dana besplatno.',
+    url: SITE_URL,
     siteName: 'UnitLift',
     locale: 'hr_HR',
     type: 'website',
     images: [
       {
-        url: 'https://unitlift.com/og-image.jpg',
+        url: `${SITE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: 'UnitLift – Coaching platforma',
+        alt: 'UnitLift - coaching aplikacija za fitness trenere i online klijente',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'UnitLift – Više klijenata. Manje kaosa.',
-    description: 'Coaching platforma za online fitness trenere.',
-    images: ['https://unitlift.com/og-image.jpg'],
+    title: 'Aplikacija za osobne trenere - manje kaosa, više klijenata',
+    description: 'Check-ini, planovi, plaćanja i poruke u jednom alatu. 14 dana besplatno.',
+    images: [`${SITE_URL}/og-image.jpg`],
   },
   robots: { index: true, follow: true },
 }

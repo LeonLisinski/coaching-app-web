@@ -2,73 +2,77 @@
   "nav": ["How it works", "Mobile app", "Pricing", "Blog", "FAQ"],
   "login": "Log in",
   "ctaNav": "Try for free",
-  "badge": "Platform for online fitness coaches",
+  "badge": "Personal trainer app for online clients",
   "h1": "More clients.<br><span class=\"grad\">Less chaos.</span>",
-  "sub": "UnitLift automates admin so you can focus on what you do best: coaching.",
-  "btn1": "Choose a plan and activate trial →",
+  "sub": "Training and meal plans, weekly check-ins, payments and client messages. All in one tool. Set up in 5 minutes, 14 days free.",
+  "btn1": "Start free and pick a plan →",
   "btn2": "See how it works",
   "note": "Card required for activation · No charge for 14 days · Cancel anytime",
   "trust": ["GDPR compliant", "iOS & Android for clients", "Setup in 5 minutes", "Made in Croatia", "Encrypted storage"],
   "howLbl": "How it works",
-  "howTit": "Three steps to a complete coaching system",
-  "howSub": "From registration to your first client in under 10 minutes.",
+  "howTit": "From registration to your first client in 10 minutes.",
+  "howSub": "Three steps. You own the plan, clients know where to look, the system sends check-in reminders.",
   "steps": [
-    { "t": "Set up your profile", "d": "Set up your coaching parameters in 5 minutes — no technical knowledge needed, no long manuals to read." },
-    { "t": "Invite clients", "d": "Send the client a link. They download the app and instantly see all their plans — you never have to send anything manually again." },
-    { "t": "Track and grow", "d": "Check-ins arrive automatically, payments are visible in seconds, and you have more time for actual coaching." }
+    { "t": "Set up your profile", "d": "In a few minutes you define how you work: which check-in fields matter, what a week looks like. If you can use a phone, you can do this." },
+    { "t": "Invite clients", "d": "Send a link. Your client installs the app and sees training and nutrition in one place. No more five different chats." },
+    { "t": "Track and grow", "d": "Check-ins, payments and clients in one view. Less time on tools, more time for training and real conversations." }
   ],
   "cappLbl": "Mobile app",
-  "cappTit": "Everything your client needs,<br>in their pocket",
+  "cappTit": "Everything your client needs, right there.",
+  "cappSub": "They open the app and know what to do today. Training, nutrition and check-in on one screen.",
   "cappFeats": [
-    { "badge": "Overview", "t": "Everything in one place", "d": "Workout, nutrition and check-in available in one tap. The client always knows what's ahead today.", "bullets": ["Workout, nutrition and check-in on one screen", "Client always knows what's ahead today", "Quick access without searching the app"] },
-    { "badge": "Training", "t": "Train with a plan, no paper", "d": "Log weight and reps per set. Rest timer starts automatically after each set.", "bullets": ["Log weight and reps per set", "Rest timer starts automatically", "Previous session history always visible"] },
-    { "badge": "Nutrition", "t": "Macros calculated in advance", "d": "The coach sets meals, the client just follows. Confirm the day with one tap.", "bullets": ["Coach sets meals once", "Client just follows and confirms", "Macros visible for every ingredient"] },
-    { "badge": "Chat", "t": "Coach always available", "d": "Question in a second, answer without WhatsApp chaos. All messages in one place.", "bullets": ["All messages in one place", "No WhatsApp groups or lost messages", "Client asks, coach answers"] },
-    { "badge": "Check-in", "t": "Weekly and daily check-in in 2 minutes", "d": "Client logs data, the coach instantly sees progress without a single message.", "bullets": ["Latest metrics tracked in one place", "Progress photos directly from the app", "Coach sees everything without asking"] }
+    { "badge": "Overview", "t": "Everything in one place", "d": "Workout, nutrition and check-in available in one tap. The client always knows what's ahead today.", "bullets": ["Workout, nutrition and check-in on one screen", "Client always knows what's ahead today", "Quick access without searching the app"], "imgAlt": "UnitLift personal trainer app - training and meal plan for online coaching clients" },
+    { "badge": "Training", "t": "Train with a plan, no paper", "d": "Log weight and reps per set. Rest timer starts automatically after each set.", "bullets": ["Log weight and reps per set", "Rest timer starts automatically", "Previous session history always visible"], "imgAlt": "Fitness coach app - client following a workout plan on a phone" },
+    { "badge": "Nutrition", "t": "Macros calculated in advance", "d": "The coach sets meals, the client just follows. Confirm the day with one tap.", "bullets": ["Coach sets meals once", "Client just follows and confirms", "Macros visible for every ingredient"], "imgAlt": "Online coaching software - meal plan and macros on one screen" },
+    { "badge": "Chat", "t": "Coach always available", "d": "Question in a second, answer without WhatsApp chaos. All messages in one place.", "bullets": ["All messages in one place", "No WhatsApp groups or lost messages", "Client asks, coach answers"], "imgAlt": "Client chat in UnitLift - messages next to the plan, not mixed with private life" },
+    { "badge": "Check-in", "t": "Weekly and daily check-in in 2 minutes", "d": "Client logs data, the coach instantly sees progress without a single message.", "bullets": ["Latest metrics tracked in one place", "Progress photos directly from the app", "Coach sees everything without asking"], "imgAlt": "Client check-ins for personal trainers - weekly metrics in the app" }
   ],
   "mobLbl": "Mobile app",
   "mobTit": "For coaches and clients.<br>Always available.",
   "mobSub": "The coach tracks everything from their phone. The client has their own app with plans, check-ins and chat.",
   "mobFeats": [
-    { "t": "Coach — everything at a glance", "d": "See check-ins, payments and messages from every client on your phone. Add the app to your home screen and track everything on the go." },
-    { "t": "Client — check-in in 2 minutes", "d": "Client opens the app, fills in the check-in and saves. You instantly see their progress — without a single message." },
+    { "t": "Coach - everything at a glance", "d": "See check-ins, payments and messages from every client on your phone. Add the app to your home screen and track everything on the go." },
+    { "t": "Client - check-in in 2 minutes", "d": "Client opens the app, fills in the check-in and saves. You instantly see their progress - without a single message." },
     { "t": "Communication without the mess", "d": "All client messages in one place. No more messy WhatsApp conversations and lost messages." }
   ],
   "priceLbl": "Pricing",
-  "priceTit": "Which plan suits you?",
-  "priceSub": "All plans include the same features — the only difference is the number of clients you can manage.",
+  "priceTit": "Three plans. You choose by client count.",
+  "priceSub": "Same features in every plan - only the number of seats changes.",
   "pop": "Most popular",
   "tiers": [
     {
       "name": "Starter", "price": 29,
       "clients": "Up to 15 clients",
       "feats": [
+        "For the coach signing up first clients who wants order from day one",
         "Up to 15 active clients"
       ],
-      "btn": "Get started free"
+      "btn": "Start free"
     },
     {
       "name": "Pro", "price": 59,
       "clients": "Up to 50 clients",
       "feats": [
+        "For the active coach who won't lose their week to busywork",
         "Up to 50 active clients",
         "Custom logo and colors in client app"
       ],
-      "btn": "Get started free"
+      "btn": "Start free"
     },
     {
       "name": "Scale", "price": 99,
       "clients": "Up to 150 clients",
       "feats": [
+        "For the coach running coaching as a full job",
         "Up to 150 active clients",
         "Custom logo and colors in client app"
       ],
-      "btn": "Get started free"
+      "btn": "Start free"
     }
   ],
   "baseFeats": [
     "Training and nutrition plans",
-    "Track what matters — steps, sleep, weight, mood",
+    "Track what matters - steps, sleep, weight, mood",
     "Client chat",
     "Client mobile app (free)",
     "See instantly who paid and how much you earned"
@@ -78,33 +82,35 @@
   "testLbl": "Reviews",
   "testTit": "Coaches who switched to the system",
   "testimonials": [
-    { "q": "Finally one place for everything. Before I used WhatsApp, Excel and a bunch of random apps — now everything is in one place and I save an hour a day.", "name": "Mark K.", "role": "Online fitness coach, Zagreb", "badge": "Coach" },
-    { "q": "I went from 8 to 15 clients without extra stress. The check-in system automatically reminds clients and I immediately see who's late submitting.", "name": "Tom N.", "role": "Strength coach, Osijek", "badge": "Coach" },
-    { "q": "Clients are thrilled with the mobile app. They have all plans instantly available and can send check-ins directly from the app. Much more professional than before.", "name": "Sara P.", "role": "Personal trainer, Split", "badge": "Coach" },
-    { "q": "Administration reduced to a minimum. Plans, payments, communication — all in one. Clients love having their own app, and I have more time for the actual work.", "name": "Luke H.", "role": "Fitness coach, Varaždin", "badge": "Coach" },
-    { "q": "I know exactly who has paid and when each subscription expires — all on one screen. No more notebooks and forgotten payments. I recommend it to all coaches.", "name": "Maja R.", "role": "Personal trainer, Dubrovnik", "badge": "Coach" },
-    { "q": "As a client, I love how everything works through one app. My coach sends me a plan, I fill in the check-in and he immediately sees my progress. No more messages everywhere.", "name": "Ana M.", "role": "Client, Zagreb", "badge": "Client" },
-    { "q": "I've been using UnitLift for 4 months and the difference is huge. I have access to all my plans in one app, my coach sees every check-in and communication is great.", "name": "Ivan B.", "role": "Client, Rijeka", "badge": "Client" },
-    { "q": "Weekly check-ins changed my approach to training. My coach sees where I'm struggling and immediately adjusts the plan. It feels like having a personal trainer in my pocket.", "name": "Petra L.", "role": "Client, Zadar", "badge": "Client" }
+    { "q": "Finally one place for everything. I used to use WhatsApp, Excel and random apps. Now everything is in one tool and I save an hour a day.", "name": "Mark K.", "role": "Online fitness coach, Zagreb", "badge": "Coach" },
+    { "q": "I went from 8 to 15 clients without extra stress. The system reminds clients automatically and I instantly see who's late with check-in.", "name": "Tom N.", "role": "Strength coach, Osijek", "badge": "Coach" },
+    { "q": "Clients love the mobile app. They have every plan at hand and send check-in in two minutes. Looks much more professional than before.", "name": "Sara P.", "role": "Personal trainer, Split", "badge": "Coach" },
+    { "q": "The busywork dropped to a minimum. Plans, payments and chat - all in one place. Clients are happy and I have more time for the actual work.", "name": "Luke H.", "role": "Fitness coach, Varaždin", "badge": "Coach" },
+    { "q": "I know exactly who paid and when each subscription expires. No more notebooks and forgotten payments. I recommend it to every coach.", "name": "Maja R.", "role": "Personal trainer, Dubrovnik", "badge": "Coach" },
+    { "q": "As a client, I love having everything in one app. My coach sends a plan, I send a check-in, he sees progress. No messages everywhere.", "name": "Ana M.", "role": "Client, Zagreb", "badge": "Client" },
+    { "q": "I've used UnitLift for 4 months and the difference is huge. All plans in one app, my coach sees every check-in, chat runs smooth.", "name": "Ivan B.", "role": "Client, Rijeka", "badge": "Client" },
+    { "q": "Weekly check-ins changed how I train. My coach sees where I'm stuck and adjusts the plan. Like having a trainer in my pocket.", "name": "Petra L.", "role": "Client, Zadar", "badge": "Client" }
   ],
   "faqLbl": "FAQ",
   "faqTit": "Frequently asked questions",
   "faqs": [
-    { "q": "Is a credit card required to register?", "a": "Yes, a card is required to activate the trial period, but you are not charged immediately. Try UnitLift free for 14 days — billing only starts after the trial ends if you choose to continue. You can cancel at any time with no penalties or hidden fees." },
-    { "q": "Do my clients have to pay for the app?", "a": "No. The client mobile app is completely free to download and use on iOS and Android devices. The client just downloads the app, you send them access, and they instantly see plans, submit check-ins and chat with you — at no cost to the client." },
-    { "q": "How long does setup take?", "a": "Less than 5 minutes. Registration is fast and intuitive — set up your profile, customize parameters and invite your first client the same day. No long manuals or technical knowledge needed — if you can use a smartphone, you can use UnitLift." },
-    { "q": "Does UnitLift work on mobile for coaches?", "a": "Yes. The web app is fully responsive and you can add it to your phone's home screen as an app. Clients have a dedicated native iOS and Android app optimized for daily use — viewing plans, submitting check-ins and direct chat with their coach." },
-    { "q": "Can I have my own logo and colors?", "a": "Yes, branding is available on Pro and Scale plans. In settings, add your logo, choose primary colors and connect your social media profiles. Clients will then see your brand instead of UnitLift's — looks more professional and builds trust in you as a coach." },
-    { "q": "Can I cancel my subscription at any time?", "a": "Yes, with no penalties or hidden fees. You can cancel at any time from your account settings — no deadlines and no explanation needed. Access remains active until the end of the paid period." }
+    { "q": "Do I need a card to register?", "a": "Yes, a card is required to activate the trial, but you're not charged immediately. Billing starts after 14 days. Cancel anytime, no penalties." },
+    { "q": "Do my clients have to pay for the app?", "a": "No. The client app is free on iOS and Android. You send them access and they instantly see plans, submit check-ins and chat with you." },
+    { "q": "How long does setup take?", "a": "Less than 5 minutes. Set up your profile, customize parameters and invite your first client the same day. If you can use a phone, you can use UnitLift." },
+    { "q": "What's the real difference from WhatsApp and a spreadsheet?", "a": "Everything runs through one tool. Plans aren't in a chat, check-ins aren't in three places, and you see who paid on one screen." },
+    { "q": "Is this online coaching software and a workout plan app in one?", "a": "Yes - web for you, app for your client. Same data, same check-in, same training and meal plan. One loop instead of a pile of apps." },
+    { "q": "Does UnitLift work on mobile for coaches?", "a": "Yes. The web app is responsive and you can add it to your home screen. Clients get native iOS and Android apps for daily use." },
+    { "q": "Can I have my own logo and colors?", "a": "On Pro and Scale - yes. You add a logo and colors, and the client app feels like your brand, not ours." },
+    { "q": "How do client payments work - is that tracked here?", "a": "You see who paid, who hasn't and your totals for a period. Your agreement with the client is still yours - this is the visibility layer." }
   ],
   "seoPage": {
     "heroBadge": "Software for online fitness coaches",
     "heroH1": "Software that replaces <span class=\"grad\">WhatsApp and Excel</span>",
-    "heroSub": "UnitLift is a platform for online personal trainers. Training plans, nutrition, weekly check-ins and payment tracking — all on one screen. More clients, without more chaos.",
+    "heroSub": "For online personal trainers: training and meal plans, weekly check-ins and payment tracking - on one screen. More clients, less chaos.",
     "heroBtn1": "Try free for 14 days",
     "heroBtn2": "See how it works →",
     "heroNote": "Card required for activation · No charge for 14 days · Cancel anytime",
-    "mockupTitle": "UnitLift — Client overview",
+    "mockupTitle": "UnitLift - Client overview",
     "mockupClients": [
       { "initials": "AM", "name": "Ana Marković", "sub": "Check-in week 12", "status": "Submitted ✓", "type": "ok" },
       { "initials": "IH", "name": "Ivan Horvat", "sub": "Check-in today", "status": "Pending", "type": "warn" },
@@ -114,23 +120,23 @@
     "mockupStat2Val": "12/12",  "mockupStat2Lbl": "Clients paid",
     "problemTag": "A problem every coach knows",
     "problemH2": "Online coaching without proper software<br/>is chaos that compounds",
-    "problemSub": "Messages on WhatsApp, plans in Excel, payments on paper — it works with 5 clients. At 15, you start losing track of things.",
+    "problemSub": "Messages in WhatsApp, plans in Excel, payments on paper. It works with 5 clients. At 15, things start slipping.",
     "problemCards": [
       { "icon": "📱", "title": "WhatsApp as a \"system\"", "text": "Training plans are sent as photos or PDFs. The client can't find an older plan. You don't know if they even saw the new one." },
-      { "icon": "📊", "title": "Excel for client tracking", "text": "A spreadsheet with names, dates and notes. You manually enter every check-in. You lose an hour a week on copy-paste that solves nothing." },
-      { "icon": "💸", "title": "Payments without a system", "text": "Who paid this month? Whose subscription is expiring soon? Without a clear system — you don't know, or you forget to ask. Money stays on the table." }
+      { "icon": "📊", "title": "Excel for client tracking", "text": "A spreadsheet with names, dates and notes. You enter every check-in by hand. You lose an hour a week on copy-paste that fixes nothing." },
+      { "icon": "💸", "title": "Payments without a system", "text": "Who paid this month? Whose subscription expires soon? Without an overview, you forget to ask and lose money that's yours." }
     ],
-    "featTag": "The solution",
-    "featH2": "One software.<br/>Your entire coaching business.",
-    "featSub": "UnitLift centralizes everything a coach needs into one web platform — with a free mobile app for clients included.",
+    "featTag": "What you get in practice",
+    "featH2": "One tool.<br/>Your whole coaching work.",
+    "featSub": "UnitLift brings everything a coach needs into one web app. The mobile app for clients is included free.",
     "features": [
-      { "icon": "📋", "title": "Training and nutrition plans", "desc": "Create personalized plans for each client. They see them instantly in the app — no PDFs, no sending over WhatsApp." },
-      { "icon": "✅", "title": "Weekly check-in system", "desc": "A client fills in a check-in in 2 minutes from their phone. You immediately see progress, measurements and photos — all archived automatically." },
-      { "icon": "💬", "title": "Integrated chat", "desc": "All messages with clients in one place. No more tangled WhatsApp threads and lost messages about workouts." },
-      { "icon": "💰", "title": "Payment tracking", "desc": "See exactly who paid, who's late and how much you earned this month. No manual tracking, no awkward situations." },
-      { "icon": "📱", "title": "Mobile app for clients", "desc": "Clients download the free iOS/Android app and instantly have access to their plans. More professional than any PDF." }
+      { "icon": "📋", "title": "Training and nutrition plans", "desc": "Create a plan for each client. They see it immediately in the app - no PDFs, no WhatsApp messages." },
+      { "icon": "✅", "title": "Weekly check-in", "desc": "Client fills in a check-in in 2 minutes from their phone. You instantly see measurements, photos and notes - all archived." },
+      { "icon": "💬", "title": "Integrated chat", "desc": "All client messages in one place. No more tangled WhatsApp threads and lost messages about training." },
+      { "icon": "💰", "title": "Payment tracking", "desc": "See who paid, who's late and how much you earned this month. No manual tracking, no awkward asks." },
+      { "icon": "📱", "title": "Mobile app for clients", "desc": "Clients download the free iOS or Android app. Plans are in the app, not stuck in a PDF." }
     ],
-    "featVisualTitle": "Weekly check-ins — automated",
+    "featVisualTitle": "Weekly check-ins - automated",
     "featVisualItems": [
       { "initials": "AM", "name": "Ana Marković", "meta": "Week 12 · 68.2 kg", "badge": "✓ Submitted", "type": "ok" },
       { "initials": "MK", "name": "Marko Krišto", "meta": "Week 8 · 84.5 kg", "badge": "✓ Submitted", "type": "ok" },
@@ -141,54 +147,54 @@
     "usecaseTag": "Who uses UnitLift",
     "usecaseH2": "Built for online fitness coaches of all kinds",
     "usecases": [
-      { "num": "01", "title": "Personal trainer going online", "text": "You have 10–20 clients and have been getting by with WhatsApp. You want to look more professional and stop wasting an hour a day on admin. UnitLift is ready in 5 minutes." },
-      { "num": "02", "title": "Strength coach scaling up", "text": "You have 30–50 clients and manual tracking no longer works. You need a system that automatically sends check-in reminders and clearly shows who has paid." },
-      { "num": "03", "title": "Nutritionist adding coaching", "text": "You make nutrition plans and need a system where the client sees their macros, logs progress and communicates with you — without 4 different apps and confused clients." }
+      { "num": "01", "title": "Personal trainer going online", "text": "You have 10-20 clients and you've been running on WhatsApp. You want to look more professional and stop losing an hour a day to messages and spreadsheets." },
+      { "num": "02", "title": "Strength coach with a full schedule", "text": "You have 30-50 clients and manual tracking doesn't work anymore. You need a system that reminds clients and shows who paid." },
+      { "num": "03", "title": "Nutritionist adding coaching", "text": "You build nutrition plans and need one place where the client sees macros, logs progress and talks to you. No 4 separate apps." }
     ],
     "faqTag": "FAQ",
     "faqH2": "What coaches ask most",
     "faqs": [
-      { "q": "What is the difference between UnitLift and Trainerize?", "a": "Trainerize is a complex platform in English, designed for larger coaching operations. UnitLift is simpler, available in Croatian, with transparent pricing and no hidden add-ons — and ready to use in 5 minutes." },
-      { "q": "Do my clients have to pay for the app?", "a": "No. The client mobile app is completely free to download and use on iOS and Android. The coach pays the subscription; the client pays nothing to access the platform." },
-      { "q": "How quickly can I start using UnitLift?", "a": "Less than 5 minutes. Registration is fast and intuitive — set up your profile, adjust your parameters and invite your first client the same day. No long manuals, no technical knowledge needed." },
-      { "q": "Can I try UnitLift without being charged?", "a": "Yes. All plans include a 14-day free trial. A card is required for activation, but billing only starts after the trial ends. You can cancel at any time with no penalties." },
-      { "q": "Does UnitLift work on mobile for coaches?", "a": "Yes. The coach web app is fully responsive and can be added to your phone's home screen as an app. Clients have a separate native iOS and Android app optimized for daily use." }
+      { "q": "What's the difference between UnitLift and Trainerize?", "a": "Trainerize is a large English-only app for bigger coaching operations. UnitLift is simpler, in English and Croatian, with clear pricing and 5-minute setup." },
+      { "q": "Do my clients have to pay for the app?", "a": "No. The client mobile app is free on iOS and Android. The coach pays the subscription - the client pays nothing." },
+      { "q": "How quickly can I start?", "a": "Less than 5 minutes. Set up your profile, adjust parameters and invite your first client the same day. No long manuals." },
+      { "q": "Can I try UnitLift without being charged?", "a": "Yes. All plans include a 14-day free trial. A card is required for activation, but billing starts after the trial. Cancel anytime." },
+      { "q": "Does UnitLift work on mobile for coaches?", "a": "Yes. The web app is responsive and you can add it to your home screen. Clients have a separate iOS and Android app for daily use." }
     ]
   },
   "seoPageApp": {
     "heroBadge": "App for personal trainers",
     "heroH1": "The personal trainer app <span class=\"grad\">clients actually use</span>",
-    "heroSub": "UnitLift gives every client their own mobile app with plans, check-ins and chat. You look more professional — without a single PDF or WhatsApp message.",
+    "heroSub": "Every client gets a free mobile app with plans, check-ins and chat. You look more professional - without PDFs or WhatsApp messages.",
     "heroBtn1": "Try free for 14 days",
     "heroBtn2": "See how it works →",
     "heroNote": "Card required for activation · No charge for 14 days · Cancel anytime",
-    "mockupTitle": "UnitLift — Client app",
+    "mockupTitle": "UnitLift - Client app",
     "mockupClients": [
-      { "initials": "AM", "name": "Ana Marković", "sub": "Week 12 — Plan active", "status": "Active ✓", "type": "ok" },
+      { "initials": "AM", "name": "Ana Marković", "sub": "Week 12 - Plan active", "status": "Active ✓", "type": "ok" },
       { "initials": "IH", "name": "Ivan Horvat", "sub": "Check-in submitted", "status": "Submitted ✓", "type": "ok" },
       { "initials": "PK", "name": "Petra Kovač", "sub": "New plan available", "status": "Pending", "type": "warn" }
     ],
     "mockupStat1Val": "98%", "mockupStat1Lbl": "Check-in submission rate",
     "mockupStat2Val": "4.9★", "mockupStat2Lbl": "Client rating",
     "problemTag": "The problem without a proper app",
-    "problemH2": "Clients without a good app<br/>lose motivation and quit",
-    "problemSub": "If a client has to search for their plan in WhatsApp messages or print a PDF, they experience chaos. And chaos leads to quitting — and blaming you.",
+    "problemH2": "Clients who have to hunt for their plan<br/>quit quickly",
+    "problemSub": "The quality of your work shouldn't depend on whether a client can find a PDF. The client experience starts the second they leave the gym.",
     "problemCards": [
-      { "icon": "📱", "title": "Plan buried in chat", "text": "The client has to scroll through weeks of messages to find their plan. Which one is new? Which is old? They keep asking — and you keep explaining." },
-      { "icon": "📄", "title": "PDFs nobody opens", "text": "You send a nicely formatted PDF, the client saves it... and never opens it again. No notifications, no tracking — no feedback." },
-      { "icon": "🔄", "title": "Every change = new message", "text": "You change one exercise and have to send a new document. The client doesn't know which version is current. You spend more time sending than coaching." }
+      { "icon": "📱", "title": "Plan buried in chat", "text": "The client scrolls through weeks of messages to find the plan. Which one is new? They keep asking, you keep explaining the same thing." },
+      { "icon": "📄", "title": "PDF nobody opens", "text": "You send a tidy PDF, the client saves it and never opens it. No notifications, no tracking, no feedback loop." },
+      { "icon": "🔄", "title": "Every change - new message", "text": "You change one exercise and send a new document. The client doesn't know which version is current. More time on sending than coaching." }
     ],
-    "featTag": "The solution",
-    "featH2": "One app.<br/>The client always has everything.",
-    "featSub": "UnitLift gives clients a native iOS and Android app — free. Plans, check-ins, chat and progress on one screen.",
+    "featTag": "What your client gets",
+    "featH2": "Plan, check-in and chat -<br/>all on one screen.",
+    "featSub": "Clients get a free iOS and Android app. No explaining, no hunting for PDFs.",
     "features": [
-      { "icon": "📋", "title": "Plans always accessible", "desc": "The client opens the app and immediately sees their current training and nutrition plan. No searching, no questions — everything in one place." },
-      { "icon": "✅", "title": "Check-in in 2 minutes", "desc": "The client submits their weekly check-in directly from their phone. You immediately see measurements, photos and comments — all archived automatically." },
-      { "icon": "💬", "title": "Chat without WhatsApp", "desc": "All messages between you and the client stay in the app. Organised, clear — without mixing with private life." },
-      { "icon": "📊", "title": "Progress tracking", "desc": "The client sees their own progress through charts and comparisons. Motivation grows when results are visible on screen." },
-      { "icon": "🔔", "title": "Automatic notifications", "desc": "The system automatically reminds clients about their check-in, new plan or unanswered message. You don't have to send anything manually." }
+      { "icon": "📋", "title": "Plans always available", "desc": "The client opens the app and sees the current training and nutrition plan. No searching, no questions." },
+      { "icon": "✅", "title": "Check-in in 2 minutes", "desc": "The client submits the weekly check-in from their phone. You see measurements, photos and notes - all archived." },
+      { "icon": "💬", "title": "Chat without WhatsApp", "desc": "All messages between you and the client stay in the app. Clear, organized, and separate from private life." },
+      { "icon": "📊", "title": "Progress tracking", "desc": "The client sees their own progress through charts and comparisons. When results show on screen, motivation stays up." },
+      { "icon": "🔔", "title": "Automatic reminders", "desc": "The system reminds the client about check-in, a new plan or an unanswered message. Nothing sent by hand." }
     ],
-    "featVisualTitle": "Client check-ins — automated",
+    "featVisualTitle": "Client check-ins - automated",
     "featVisualItems": [
       { "initials": "AM", "name": "Ana Marković", "meta": "Week 12 · 68.2 kg · ✓ Photo", "badge": "✓ Submitted", "type": "ok" },
       { "initials": "MK", "name": "Marko Krišto", "meta": "Week 8 · 84.5 kg · Great", "badge": "✓ Submitted", "type": "ok" },
@@ -199,54 +205,54 @@
     "usecaseTag": "Who uses UnitLift",
     "usecaseH2": "For coaches who care about the impression they make",
     "usecases": [
-      { "num": "01", "title": "Coach building a brand", "text": "Clients recommend you — partly because your app looks professional. Pro and Scale plans include your own logo and colors in the app." },
-      { "num": "02", "title": "Coach with 10+ clients", "text": "With 10+ clients, manually sending plans becomes a nightmare. UnitLift automates distribution — every client gets their plan instantly." },
-      { "num": "03", "title": "Coach who wants fewer messages", "text": "Clients who have everything in one place send half as many questions. Chat stays for coaching, not for finding plans." }
+      { "num": "01", "title": "Coach building a brand", "text": "Clients recommend you - partly because your app looks professional. Pro and Scale plans include your own logo and colors." },
+      { "num": "02", "title": "Coach with more than 10 clients", "text": "With more than 10 clients, sending plans by hand gets old fast. UnitLift delivers plans automatically - every client sees theirs instantly." },
+      { "num": "03", "title": "Coach who wants fewer messages", "text": "Clients with everything in one app send half as many questions. Chat stays for coaching, not for finding plans." }
     ],
     "faqTag": "FAQ",
     "faqH2": "About the client app",
     "faqs": [
-      { "q": "What is the difference between UnitLift and Trainerize?", "a": "Trainerize is a complex platform in English, designed for larger coaching operations. UnitLift is simpler, available in Croatian, with transparent pricing and no hidden add-ons — and ready to use in 5 minutes." },
-      { "q": "Do clients have to pay for the app?", "a": "No. The client mobile app is completely free to download and use on iOS and Android. The coach pays the subscription — clients pay nothing." },
-      { "q": "Can I have my own logo in the app?", "a": "Yes. On Pro and Scale plans you can add your own logo and choose primary colors. Clients then see your brand instead of UnitLift's — looks more professional and builds trust." },
-      { "q": "What does the client see in the app?", "a": "The client sees training and nutrition plans, weekly check-ins, progress history, chat with their coach and their own profile. Everything needed for successful coaching — on one screen." },
-      { "q": "Does the app work on iPhone and Android?", "a": "Yes. The client app is available on the App Store and Google Play. Free download, no credit card registration required for clients." }
+      { "q": "What's the difference between UnitLift and Trainerize?", "a": "Trainerize is a large English-only app for bigger coaching operations. UnitLift is simpler, in English and Croatian, with clear pricing and 5-minute setup." },
+      { "q": "Do clients have to pay for the app?", "a": "No. The client mobile app is free on iOS and Android. The coach pays the subscription - clients pay nothing." },
+      { "q": "Can I have my own logo?", "a": "Yes, on Pro and Scale plans. Add a logo and pick primary colors - clients see your brand, not UnitLift's." },
+      { "q": "What does the client see in the app?", "a": "Training and nutrition plans, weekly check-in, progress history, chat with the coach and their own profile. All on one screen." },
+      { "q": "Does the app work on iPhone and Android?", "a": "Yes. The client app is on the App Store and Google Play. Free download, no credit card needed for clients." }
     ]
   },
   "seoPageCoaching": {
     "heroBadge": "Online coaching platform",
-    "heroH1": "The coaching platform that <span class=\"grad\">scales with your business</span>",
-    "heroSub": "UnitLift is an online coaching platform that replaces a chaotic mix of tools with one system. From your first clients to a full practice — without switching tools.",
+    "heroH1": "The online coaching software that <span class=\"grad\">grows with your practice</span>",
+    "heroSub": "UnitLift replaces a messy stack of tools with one system. From your first clients to a full practice - without switching tools.",
     "heroBtn1": "Try free for 14 days",
     "heroBtn2": "See how it works →",
     "heroNote": "Card required for activation · No charge for 14 days · Cancel anytime",
-    "mockupTitle": "UnitLift — Coaching dashboard",
+    "mockupTitle": "UnitLift - Coaching dashboard",
     "mockupClients": [
       { "initials": "AM", "name": "Ana Marković", "sub": "Check-in week 12", "status": "Submitted ✓", "type": "ok" },
-      { "initials": "IH", "name": "Ivan Horvat", "sub": "New client — onboarding", "status": "Active", "type": "ok" },
+      { "initials": "IH", "name": "Ivan Horvat", "sub": "New client - onboarding", "status": "Active", "type": "ok" },
       { "initials": "PK", "name": "Petra Kovač", "sub": "Subscription expires in 3 days", "status": "Warning", "type": "warn" }
     ],
     "mockupStat1Val": "28 cl.", "mockupStat1Lbl": "Active clients",
     "mockupStat2Val": "€2.1k", "mockupStat2Lbl": "Revenue this month",
-    "problemTag": "Why coaching businesses stagnate",
-    "problemH2": "Without the right platform,<br/>your coaching business can't grow",
-    "problemSub": "Every new client adds more admin than revenue. At some point, admin work outpaces coaching — and that's where many stop.",
+    "problemTag": "Why coaches get stuck",
+    "problemH2": "Every new client brings<br/>more busywork, not more revenue",
+    "problemSub": "At some point, busywork overtakes coaching. You answer messages, dig through spreadsheets and resend the same PDFs. Instead of coaching clients.",
     "problemCards": [
-      { "icon": "⏰", "title": "Admin eats your revenue", "text": "The average coach with 15 clients spends 8–10 hours per week on admin. That's an entire workday going to Excel, WhatsApp and PDFs — not coaching." },
-      { "icon": "📉", "title": "No system, no growth", "text": "Onboarding a new client takes an hour because you do everything manually. If it took 10 minutes, you could take on twice as many clients." },
-      { "icon": "💰", "title": "Forgotten payments", "text": "Who paid last month? Whose package expires soon? Without a clear overview, you're missing money that's rightfully yours — and feeling awkward asking for it." }
+      { "icon": "⏰", "title": "Excel and WhatsApp eat your hours", "text": "A coach with 15 clients loses 8-10 hours a week on Excel, WhatsApp and sending plans. That's a full workday that could be coaching." },
+      { "icon": "📉", "title": "Every new client - another scramble", "text": "Onboarding takes an hour because you do it by hand. If it took 10 minutes, you could take on twice as many clients." },
+      { "icon": "💰", "title": "Who even paid?", "text": "Who paid last month? Whose package expires? Without an overview, you miss money that's yours - and feel awkward asking." }
     ],
-    "featTag": "The platform",
-    "featH2": "A system that works<br/>while you coach.",
-    "featSub": "UnitLift automates all administrative tasks so you can take on more clients without more work.",
+    "featTag": "What you get",
+    "featH2": "Everything on one screen -<br/>no tool juggling.",
+    "featSub": "UnitLift takes over the busywork. You focus on the clients.",
     "features": [
-      { "icon": "⚡", "title": "Onboarding in 5 minutes", "desc": "Send the client a link — they download the app and immediately see their plan. No long setup, no emails with attachments, no explaining." },
-      { "icon": "✅", "title": "Automatic check-in reminders", "desc": "The system automatically sends weekly reminders to clients. Response rate jumps from 40% to 90%+ — without a single message from you." },
-      { "icon": "💰", "title": "Finances on one screen", "desc": "See immediately who paid, who's late and what your revenue is this month. No manual tracking, no awkward situations." },
-      { "icon": "📋", "title": "Plan template library", "desc": "Create a plan once, copy and customise endlessly. Every new client gets a personalised plan in minutes, not an hour." },
-      { "icon": "📊", "title": "Overview of all clients' progress", "desc": "One view, all clients. See who's progressing, who's late with their check-in and who needs attention — without opening 20 spreadsheet tabs." }
+      { "icon": "⚡", "title": "Onboarding in 5 minutes", "desc": "Send the client a link - they download the app and see their plan. No long setup, no emails with attachments." },
+      { "icon": "✅", "title": "Automatic check-in reminders", "desc": "The system sends weekly reminders to clients. Submission rate jumps from 40% to 90% - without a message from you." },
+      { "icon": "💰", "title": "Finances on one screen", "desc": "See who paid, who's late and what you earned this month. No manual tracking, no awkward asks." },
+      { "icon": "📋", "title": "Plan template library", "desc": "Build a plan once, copy and customize. Every new client gets a personalized plan in minutes, not an hour." },
+      { "icon": "📊", "title": "Overview of all clients", "desc": "One view, every client. You see who's progressing, who's late with check-in and who needs attention." }
     ],
-    "featVisualTitle": "Coaching dashboard — overview",
+    "featVisualTitle": "Coaching dashboard - overview",
     "featVisualItems": [
       { "initials": "AM", "name": "Ana Marković", "meta": "Week 12 · Goal: -5kg · On track", "badge": "✓ Submitted", "type": "ok" },
       { "initials": "MK", "name": "Marko Krišto", "meta": "Week 8 · Goal: +mass · Excellent", "badge": "✓ Submitted", "type": "ok" },
@@ -255,30 +261,30 @@
     "featVisualStatVal": "€2,100",
     "featVisualStatLbl": "Revenue this month · 28 active clients",
     "usecaseTag": "Who uses UnitLift",
-    "usecaseH2": "For online coaching businesses of all sizes",
+    "usecaseH2": "For online coaches - from first client to fiftieth",
     "usecases": [
-      { "num": "01", "title": "From 0 to your first 10 clients", "text": "Setup takes 5 minutes. You immediately look more professional than competitors sending PDFs. Clients stay because they have a real system — not WhatsApp." },
-      { "num": "02", "title": "Scaling from 10 to 50 clients", "text": "Every new client shouldn't be a new headache. Onboarding, plans, check-ins and payments run automatically. Growth becomes linear, not exponentially harder." },
-      { "num": "03", "title": "Coaching agency or trainer team", "text": "Scale plan supports up to 150 clients. Multiple trainers, one system, one overview. Finances, progress and communication organised for the whole team." }
+      { "num": "01", "title": "From 0 to your first 10 clients", "text": "Setup takes 5 minutes. You look more professional than coaches sending PDFs. Clients stay because there's a real system behind the work." },
+      { "num": "02", "title": "From 10 to 50 clients", "text": "A new client shouldn't mean a new mess. Onboarding, plans, check-in and payments run automatically. You focus on training." },
+      { "num": "03", "title": "Coaching agency or team", "text": "Scale plan supports up to 150 clients. Multiple trainers, one system, one overview - for the whole team." }
     ],
     "faqTag": "FAQ",
     "faqH2": "About the coaching platform",
     "faqs": [
-      { "q": "What is the difference between UnitLift and Trainerize?", "a": "Trainerize is a complex platform in English, designed for larger coaching operations. UnitLift is simpler, available in Croatian, with transparent pricing and no hidden add-ons — and ready to use in 5 minutes." },
-      { "q": "How long does setup take?", "a": "Less than 5 minutes. Set up your profile, add tracking parameters and send your first client a link to download the app. No technical knowledge, no long manuals." },
-      { "q": "Can UnitLift replace all my current tools?", "a": "Yes — for most coaches. UnitLift replaces Excel (client tracking), WhatsApp (communication and plan distribution), Google Sheets (finances) and separate apps for training and nutrition plans." },
-      { "q": "What if I have more than 150 clients?", "a": "The Scale plan supports up to 150 clients. For more, €10/month is added for every additional 25 clients. No hidden fees — pricing grows proportionally with your business." },
-      { "q": "Does UnitLift work for nutritionist-coaches who offer both nutrition and training?", "a": "Yes. UnitLift includes both training and nutrition plans on all plans. The client sees both in one app — no splitting across multiple systems." }
+      { "q": "What's the difference between UnitLift and Trainerize?", "a": "Trainerize is a large English-only app for bigger coaching operations. UnitLift is simpler, in English and Croatian, with clear pricing and 5-minute setup." },
+      { "q": "How long does setup take?", "a": "Less than 5 minutes. Set up your profile, add tracking parameters and send your first client the app link. No long manuals." },
+      { "q": "Can UnitLift replace all my current tools?", "a": "For most coaches - yes. It replaces Excel, WhatsApp, Google Sheets and separate apps for training and nutrition plans." },
+      { "q": "What if I have more than 150 clients?", "a": "Scale supports up to 150 clients. Beyond that, add €10 a month per 25 extra clients. No hidden fees." },
+      { "q": "Does it work for coaches doing both training and nutrition?", "a": "Yes. All plans include both training and nutrition. The client sees both in one app - no splitting across systems." }
     ]
   },
   "seoPageTracking": {
     "heroBadge": "Client tracking software",
     "heroH1": "Client tracking software <span class=\"grad\">with automatic weekly check-ins</span>",
-    "heroSub": "UnitLift automatically collects weekly data from clients — measurements, photos, mood, sleep. You get a complete overview without a single manually written message.",
+    "heroSub": "UnitLift collects weekly measurements, photos and how the client feels. You see progress on one screen - without chasing messages.",
     "heroBtn1": "Try free for 14 days",
     "heroBtn2": "See how it works →",
     "heroNote": "Card required for activation · No charge for 14 days · Cancel anytime",
-    "mockupTitle": "UnitLift — Progress tracking",
+    "mockupTitle": "UnitLift - Progress tracking",
     "mockupClients": [
       { "initials": "AM", "name": "Ana Marković", "sub": "68.2 kg → 65.1 kg (-3.1 kg)", "status": "On track ✓", "type": "ok" },
       { "initials": "IH", "name": "Ivan Horvat", "sub": "82.0 kg → 86.5 kg (+4.5 kg)", "status": "Excellent ✓", "type": "ok" },
@@ -288,23 +294,23 @@
     "mockupStat2Val": "89%",  "mockupStat2Lbl": "Check-in submission rate",
     "problemTag": "The problem without a tracking system",
     "problemH2": "Without tracking you don't know<br/>if your coaching actually works",
-    "problemSub": "You feel like they're progressing, but you don't have the data to prove it. A client quits and you don't know if the problem was the plan, nutrition or insufficient accountability.",
+    "problemSub": "You feel they're progressing but you don't have numbers to prove it. When a client quits, you don't know if it was the plan, the food or motivation.",
     "problemCards": [
-      { "icon": "🔍", "title": "No visibility into progress", "text": "The client says 'it's going well' — but without concrete measurements and photos, those are just impressions. You can't see trends or adjust the plan based on data." },
-      { "icon": "📬", "title": "Check-in is chaos", "text": "The client sends measurements on WhatsApp, photos by email, a comment in another message. You collect everything manually and enter it into a spreadsheet. Every week." },
-      { "icon": "📉", "title": "Clients quit without accountability", "text": "Research shows clients who regularly submit check-ins have 3× greater success. Without a system that tracks them, you're missing the most powerful retention tool." }
+      { "icon": "🔍", "title": "No visibility into progress", "text": "The client says 'it's going well', but without measurements and photos, those are impressions. You can't see trends or adjust by data." },
+      { "icon": "📬", "title": "Check-in is chaos", "text": "The client sends measurements on WhatsApp, photos by email, a comment in another message. You collect it by hand, every week." },
+      { "icon": "📉", "title": "Clients quit without accountability", "text": "Clients who submit a check-in every week stay longer. Without a system, you're missing the strongest retention tool you have." }
     ],
-    "featTag": "The solution",
-    "featH2": "Automatic tracking.<br/>Complete picture of every client.",
-    "featSub": "UnitLift collects, organises and displays all client progress data — automatically, weekly, archived.",
+    "featTag": "What it looks like in practice",
+    "featH2": "Week by week -<br/>all archived without your effort.",
+    "featSub": "The client fills in a check-in in 2 minutes. You see it instantly - no copying, no chasing messages, no spreadsheets.",
     "features": [
-      { "icon": "✅", "title": "Structured weekly check-ins", "desc": "The client fills in a check-in from their phone: body weight, measurements, photos, energy level, sleep, plan adherence. All in one form, in 2 minutes." },
-      { "icon": "🔔", "title": "Automatic reminders", "desc": "The system sends a reminder to every client who hasn't submitted their check-in. Submission rate jumps from an average 40% to 90%+ without your intervention." },
-      { "icon": "📊", "title": "Progress graphs over time", "desc": "See the curve of weight, measurements and subjective feeling for each client over weeks and months. Adjust the plan based on real data, not assumptions." },
-      { "icon": "📸", "title": "Progress photo archive", "desc": "All photos are automatically archived chronologically. Compare week 1 and week 12 with one click. Private, secure, always accessible." },
-      { "icon": "⚡", "title": "Instant insight without admin", "desc": "As soon as the client submits their check-in, you see it. No copying data, no processing — just coaching based on fresh data." }
+      { "icon": "✅", "title": "Structured weekly check-in", "desc": "The client fills in: body weight, measurements, photos, energy, sleep, plan adherence. One form, two minutes." },
+      { "icon": "🔔", "title": "Automatic reminders", "desc": "The system sends a reminder to any client who hasn't submitted. Submission rate jumps from 40% to 90% without your intervention." },
+      { "icon": "📊", "title": "Progress graphs over time", "desc": "See the curve of weight, measurements and how the client feels across weeks and months. Adjust the plan on real data." },
+      { "icon": "📸", "title": "Progress photo archive", "desc": "All photos are archived chronologically. Compare week 1 and week 12 with one click. Private, secure, always there." },
+      { "icon": "⚡", "title": "Instant insight, no typing", "desc": "The moment a client submits a check-in, you see it. No copying, no processing - just coaching on fresh data." }
     ],
-    "featVisualTitle": "Client progress — automated",
+    "featVisualTitle": "Client progress - automated",
     "featVisualItems": [
       { "initials": "AM", "name": "Ana Marković", "meta": "Week 12 · -3.1 kg · On track", "badge": "✓ Submitted", "type": "ok" },
       { "initials": "IH", "name": "Ivan Horvat", "meta": "Week 8 · +4.5 kg · Excellent", "badge": "✓ Submitted", "type": "ok" },
@@ -313,28 +319,28 @@
     "featVisualStatVal": "89%",
     "featVisualStatLbl": "Check-in submission rate · Without a system: 38%",
     "usecaseTag": "Who uses UnitLift for tracking",
-    "usecaseH2": "For coaches who base their coaching on data",
+    "usecaseH2": "For coaches who care what's really happening with the client",
     "usecases": [
-      { "num": "01", "title": "Results-driven coach", "text": "You adjust every plan based on real data, not assumptions. Check-in data gives you concrete information for every adjustment session." },
-      { "num": "02", "title": "Coach with high retention", "text": "Clients who regularly submit check-ins stay 3× longer. An accountability system is nothing without the infrastructure to support it — UnitLift is that infrastructure." },
-      { "num": "03", "title": "Coach building a transformation portfolio", "text": "The photo archive and graphs automatically create your most powerful marketing asset: proof that coaching works." }
+      { "num": "01", "title": "You coach on data, not guesses", "text": "You adjust every plan based on real measurements. Check-in data gives you concrete input for every conversation with the client." },
+      { "num": "02", "title": "Your clients stay longer", "text": "Clients who submit a check-in every week stay longer. Regular reporting builds habit and accountability without your manual tracking." },
+      { "num": "03", "title": "You have proof your work delivers", "text": "A photo archive and progress graphs become your strongest marketing asset. Real results, not generic claims." }
     ],
     "faqTag": "FAQ",
     "faqH2": "About client tracking",
     "faqs": [
-      { "q": "What is the difference between UnitLift and Trainerize?", "a": "Trainerize is a complex platform in English, designed for larger coaching operations. UnitLift is simpler, available in Croatian, with transparent pricing and no hidden add-ons — and ready to use in 5 minutes." },
-      { "q": "What does the client fill in for a check-in?", "a": "The client fills in: body weight, optional measurements (waist, hips, bicep etc.), progress photos, energy level (1–10), sleep quality, nutrition and training plan adherence, and a free comment. Every field is optional — you set what's relevant to your coaching approach." },
-      { "q": "Can I compare progress photos?", "a": "Yes. All photos are automatically archived chronologically per client. You can compare any week with any other — front, side and back positions." },
-      { "q": "Does the system send automatic reminders?", "a": "Yes. Every client who hasn't submitted their check-in by a certain day of the week automatically receives a push notification on their phone. Submission rate jumps from an average 40% to 90%+." },
-      { "q": "Can I track clients who aren't in UnitLift?", "a": "UnitLift is designed for clients using the mobile app. For tracking their own progress without a coach's system, a client would need to use one of the generic fitness apps." }
+      { "q": "What's the difference between UnitLift and Trainerize?", "a": "Trainerize is a large English-only app for bigger coaching operations. UnitLift is simpler, in English and Croatian, with clear pricing and 5-minute setup." },
+      { "q": "What does the client fill in for a check-in?", "a": "Weight, measurements (waist, hips, bicep), photos, energy level, sleep, plan adherence and a free comment. Every field is optional - you decide what matters." },
+      { "q": "Can I compare progress photos?", "a": "Yes. All photos are archived chronologically per client. You can compare any week with any other - front, side and back." },
+      { "q": "Does the system send automatic reminders?", "a": "Yes. Any client who hasn't submitted by a set day of the week gets a push notification. Submission rate jumps from 40% to 90%." },
+      { "q": "Can I track clients who aren't in UnitLift?", "a": "UnitLift runs through the mobile app. Without the app, the client has no structured check-in - they'd need a separate fitness app." }
     ]
   },
-  "ctaT": "Stop wasting time on administration.",
-  "ctaS": "Set up UnitLift in 5 minutes and focus on what you do best — coaching.",
+  "ctaT": "Stop losing hours to busywork.",
+  "ctaS": "Set up UnitLift in 5 minutes and focus on what you do best - coaching.",
   "ctaB1": "Get started free →",
   "ctaB2": "Contact us",
   "ctaN": "Card required for activation · No charge for 14 days · Cancel anytime",
-  "tagline": "Coaching platform for online fitness coaches. More clients, less chaos.",
+  "tagline": "Personal trainer app and client workflow. Less mess, more actual coaching.",
   "payLbl": "Payments via:",
   "copy": "© 2026 UnitLift, owner Leon Lišinski. All rights reserved.",
   "footerCols": [
@@ -343,8 +349,8 @@
     { "title": "Legal", "links": [["Privacy Policy", "/en/privatnost"], ["Terms of Service", "/en/uvjeti"], ["GDPR", "/en/privatnost"]] }
   ],
   "heroFeats": ["Client overview", "Nutrition plans", "Training plans", "Check-in tracking", "Photo gallery", "Client chat"],
-  "mobImgAltTraining": "UnitLift – training plan",
-  "mobImgAltNutrition": "UnitLift – nutrition plan",
+  "mobImgAltTraining": "UnitLift personal trainer app - workout plan on a phone screen",
+  "mobImgAltNutrition": "Online coaching app - meal plan and macros on a phone",
   "common": {
     "navBack": "← Home",
     "langSwitchLabel": "Language:",
@@ -411,49 +417,57 @@
     "heroSub": "14 days free on all plans. Card required for activation.",
     "stats": [["5 min", "profile setup"], ["14 days", "free trial"], ["Fixed price", "no hidden costs"], ["€ 0", "client app"]],
     "whyTitle": "Why coaches choose UnitLift",
-    "whySub": "Everything you need for professional online coaching — no Excel, WhatsApp or endless PDFs.",
+    "whySub": "Everything you need for professional online coaching. No Excel, WhatsApp or endless PDFs.",
     "partnerTitle": "Are you a coach? Recommend UnitLift.",
-    "partnerText": "Every coach you refer brings you benefits. Contact us for details about our partner program.",
+    "partnerText": "Every coach you refer earns you perks. Reach out for details about our partner program.",
     "partnerBtn": "Contact us",
     "advCards": [
-      { "title": "Check-in tracking without the hassle", "desc": "Client fills in a check-in in two minutes. You instantly see progress — no messages, no waiting, no digging through WhatsApp." },
-      { "title": "One app for everything", "desc": "Plans, nutrition, communication, check-ins — all in one place. Forget Excel, WhatsApp, PDFs and other chaos tools." },
-      { "title": "Payment tracking in seconds", "desc": "See exactly who paid, who's late and how much you earned this month. No manual tracking, no awkward reminders." },
-      { "title": "Less hassle for clients", "desc": "Client downloads one app and everything is there. No registrations on 3 platforms, no links over SMS, no confusion." },
-      { "title": "Progress that shows", "desc": "All measurements, photo check-ins and comments archived automatically. Adjust programs based on data, not guessing." },
-      { "title": "Fewer apps, more peace of mind", "desc": "One subscription. One login. All in one. No more juggling dozens of tools and paying at every step." }
+      { "title": "Check-in without the hassle", "desc": "Client fills in a check-in in two minutes. You see progress instantly - no messages, no waiting, no digging through WhatsApp." },
+      { "title": "One app for everything", "desc": "Plans, nutrition, chat and check-in - all in one place. No Excel, WhatsApp or PDFs." },
+      { "title": "Payment tracking in seconds", "desc": "See who paid, who's late and how much you earned this month. No manual tracking, no awkward reminders." },
+      { "title": "Easier for clients", "desc": "Client downloads one app and everything is there. No registrations on three platforms, no links over SMS." },
+      { "title": "Progress that shows", "desc": "All measurements, photos and comments archived automatically. Adjust the plan on data, not guesses." },
+      { "title": "Fewer apps, more peace of mind", "desc": "One subscription, one login. No more juggling a dozen tools and paying at every step." }
     ]
   },
   "howItWorksPage": {
-    "badge": "Platform for coaches",
-    "heroTitle": "How UnitLift works",
-    "heroSub": "One platform. Coach works, client progresses.",
-    "coachBadge": "For coaches — web app",
-    "coachH2": "Everything a coach needs — on one screen",
-    "coachP": "Forget Excel, WhatsApp and PDFs. UnitLift is a web platform that centralizes your entire coaching business — from planning training and nutrition to tracking payments and communicating with clients.",
-    "coachFeats": ["Training and nutrition plans for every client", "Weekly check-in system with automatic reminders", "Financial overview — who has paid, whose subscription expires", "Integrated client chat", "Mobile overview — add web app to your home screen"],
-    "coachQuote": "\"Everything you need for professional online coaching — on one screen. Forget Excel, WhatsApp and PDFs.\"",
-    "clientBadge": "For clients — mobile app",
+    "badge": "One tool for the whole client loop",
+    "heroTitle": "How UnitLift actually works in real life",
+    "heroSub": "You: web, plans, money, messages. Your client: free app, weekly check-in, training. No more “which PDF was the latest?”.",
+    "coachBadge": "For coaches - web app",
+    "coachH2": "Everything you use with online clients - on one screen",
+    "coachP": "If plans sit in chat, check-ins in a spreadsheet and payments in your head, you'll stay stuck. UnitLift puts training and meal plans, check-in, chat and payments in one place, so the work looks like a real system.",
+    "coachFeats": ["Training and nutrition plans for every client", "Weekly check-in with automatic reminders", "Financial overview - who paid, whose subscription expires", "Integrated client chat", "Mobile overview - add web app to your home screen"],
+    "coachQuote": "\"Everything you need for professional online coaching - on one screen. No Excel, WhatsApp or PDFs.\"",
+    "clientBadge": "For clients - mobile app",
     "clientH2": "Clients download the app, you send them access",
-    "clientP": "The client downloads the free UnitLift app from the App Store or Google Play, creates an account and immediately sees the plans you assigned them. No paperwork, no PDFs, no WhatsApp messages with schedules.",
-    "clientFeats": ["Training and nutrition plans always available in the app", "Weekly check-in in 2 minutes — directly in the app", "Chat with coach — all messages in one place", "Push notifications for reminders and updates"],
-    "clientQuote": "\"Clients download the app, you send them access. From that moment — everything is automatic.\"",
+    "clientP": "The client downloads the free UnitLift app from the App Store or Google Play, creates an account and sees the plans you assigned. No paperwork, no PDFs, no WhatsApp messages.",
+    "clientFeats": ["Training and nutrition plans always in the app", "Weekly check-in in 2 minutes - directly in the app", "Chat with the coach - all messages in one place", "Push notifications for reminders and updates"],
+    "clientQuote": "\"Clients download the app, you send them access. From there, everything runs automatically.\"",
     "startBadge": "How to start",
     "startH2": "Three steps to a complete coaching system",
     "startP": "From registration to your first client in under 10 minutes.",
     "steps": [
-      { "n": "01", "t": "Set up your profile", "d": "Register and customize training and nutrition parameters to match your coaching approach. Fast and intuitive — in under 5 minutes." },
-      { "n": "02", "t": "Add clients", "d": "Invite clients by email. They download the mobile app and instantly have access to all their plans and check-ins." },
-      { "n": "03", "t": "Coach and track", "d": "Create plans, track progress through check-ins and communicate — all from one interface. Administration reduced to a minimum." }
+      { "n": "01", "t": "Set up your profile", "d": "Register and adjust training and nutrition parameters to match your approach. Fast and intuitive - under 5 minutes." },
+      { "n": "02", "t": "Invite clients", "d": "Invite clients by email. They download the mobile app and immediately have access to plans and check-in." },
+      { "n": "03", "t": "Coach and track", "d": "Write plans, track progress through check-in and chat - all from one interface. Busywork down to a minimum." }
     ],
     "ctaTitle": "Ready? Choose a plan.",
     "ctaSub": "14 days free on all plans. Card required for activation.",
     "ctaBtn": "See pricing →",
-    "ctaNote": "Card required for activation · No charge for 14 days · Cancel anytime"
+    "ctaNote": "Card required for activation · No charge for 14 days · Cancel anytime",
+    "bottomFaqTitle": "A few more questions before you start",
+    "bottomFaqs": [
+      { "q": "Can I see the client app before I commit?", "a": "Yes. Download the client app and walk through the same flow: profile, plan, check-in." },
+      { "q": "What if I already have clients in a spreadsheet?", "a": "Add them with the basics. You don't have to import years of history on day one - the old spreadsheet can stay as an archive." },
+      { "q": "Is this online coaching software and a workout plan app at the same time?", "a": "Same account, same data. You plan on the web, the client follows in the app. What people search for differs; the work doesn't." },
+      { "q": "What if a client refuses to install the app?", "a": "The full experience is built around the app. Without it, the client has fewer options for tracking - that's a platform limit." },
+      { "q": "Does this handle charging my clients for me?", "a": "You see who paid and your totals for a period. The agreement and how you collect money is still between you and the client." }
+    ]
   },
   "blogPage": {
     "heroTitle": "Tips, news and guides",
-    "heroSub": "Everything you need to know about online fitness coaching — from the source.",
+    "heroSub": "Everything a coach needs to know about online coaching - from the source.",
     "postsLbl": "posts",
     "catLbl": "categories",
     "filterAll": "All",
@@ -462,9 +476,10 @@
     "readTime": "read",
     "backToAll": "All articles",
     "ctaTitle": "Ready for the next step?",
-    "ctaText": "Try UnitLift free for 14 days and see how the platform can transform your coaching business.",
+    "ctaText": "Try UnitLift free for 14 days and see how one tool changes the way you coach online.",
     "ctaBtn": "Try for free →",
-    "moreToRead": "More to read"
+    "moreToRead": "More to read",
+    "authorBio": "Certified fitness coach and founder of UnitLift."
   },
   "legalPage": {
     "badge": "Legal documents",

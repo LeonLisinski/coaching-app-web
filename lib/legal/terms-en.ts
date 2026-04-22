@@ -5,7 +5,7 @@ export const termsEn: LegalDocument = {
   lastUpdated: 'March 18, 2025',
   version: '1.0',
   intro: 'These Terms of Service govern your use of the UnitLift application. Please read them carefully.',
-  callout: 'By using the UnitLift application at https://app.unitlift.com or in the mobile app you accept these Terms of Service. Please read them carefully.',
+  callout: 'In short: by using UnitLift you agree to these terms, how we bill you and how you use the service. Cancel anytime - details below.',
   sections: [
     {
       id: 'acceptance',
