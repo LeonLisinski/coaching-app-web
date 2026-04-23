@@ -3,6 +3,19 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 
+// Slides that use real screenshots (index → public path)
+const SCREENSHOTS: Record<number, string> = {
+  0: '/screenshot-dashboard.png',
+  1: '/screenshot-klijenti.png',
+  2: '/screenshot-treninzi.png',
+  3: '/screenshot-prehrana.png',
+  4: '/screenshot-checkin.png',
+  5: '/screenshot-financije.png',
+  7: '/screenshot-profil.png',
+}
+
+const TOTAL_SLIDES = 8
+
 function SidebarNav({ active, items, activeMap }: { active: number; items: { label: string; icon: React.ReactNode }[]; activeMap: number[] }) {
   return (
     <div className="msb">
@@ -40,105 +53,9 @@ export default function AppShowcase() {
       <svg key={6} width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>,
     ][i],
   }))
-  const activeMap = [0, 1, 2, 3, -1, 4, 5]
 
-  const SlideDashboard = () => (
-    <div className="mcnt">
-      <div className="mh">{t('dashGreeting')}</div>
-      <div className="msh">{t('dashDate')}</div>
-      <div className="mcards">
-        <div className="mcard"><div className="mcn">12</div><div className="mcl">{t('dashActiveClients')}</div></div>
-        <div className="mcard"><div className="mcn" style={{color:'#1a9e5a'}}>8</div><div className="mcl">{t('dashWeekCheckins')}</div></div>
-        <div className="mcard"><div className="mcn" style={{color:'#e06010'}}>2</div><div className="mcl">{t('dashLateCheckins')}</div></div>
-        <div className="mcard"><div className="mcn">87%</div><div className="mcl">{t('dashAvgConsistency')}</div></div>
-      </div>
-      <div className="mchart">
-        {[38,55,42,78,52,92,68].map((h, i) => (
-          <div key={i} className="mbar" style={{height:`${h}%`}} />
-        ))}
-      </div>
-    </div>
-  )
-
-  const SlideKlijenti = () => {
-    const clients = [
-      { init:'AM', bg:'linear-gradient(135deg,#0066FF,#4488ff)', name:'Ana Marković', sub: t('client1sub'), bdg:'bg2', lbl: t('client1badge') },
-      { init:'IH', bg:'linear-gradient(135deg,#1a9e5a,#3dbb78)', name:'Ivan Horvat',  sub: t('client2sub'), bdg:'bb2', lbl: t('client2badge') },
-      { init:'PK', bg:'linear-gradient(135deg,#e06010,#f0851a)', name:'Petra Kovač',  sub: t('client3sub'), bdg:'bo2', lbl: t('client3badge') },
-      { init:'MN', bg:'linear-gradient(135deg,#8833cc,#aa55ee)', name:'Maja Novak',   sub: t('client4sub'), bdg:'bg2', lbl: t('client4badge') },
-    ]
-    return (
-      <div className="mcnt">
-        <div className="mh">{t('clientsTitle')}</div>
-        <div className="msh">{t('clientsSub')}</div>
-        <div className="mlist">
-          {clients.map((c, i) => (
-            <div key={i} className="mcli">
-              <div className="mav" style={{background:c.bg}}>{c.init}</div>
-              <div><div className="mcln">{c.name}</div><div className="mclp">{c.sub}</div></div>
-              <span className={`mbdg ${c.bdg}`}>{c.lbl}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    )
-  }
-
-  const SlideTreninzi = () => (
-    <div className="mcnt">
-      <div className="mh">{t('workoutsTitle')}</div>
-      <div className="msh">{t('workoutsSub')}</div>
-      <div className="mwrk">
-        <div className="mday">
-          <div className="mdh"><span className="mdn">{t('workoutMonday')}</span><span className="mbdg bb2">4 {t('workoutExercises')}</span></div>
-          <div className="mexs">
-            <div className="mex"><span className="mexd" />Bench Press - 4×8 @ 60kg</div>
-            <div className="mex"><span className="mexd" />Overhead Press - 3×10 @ 40kg</div>
-            <div className="mex"><span className="mexd" />Tricep Dips - 3×12</div>
-          </div>
-        </div>
-        <div className="mday">
-          <div className="mdh"><span className="mdn">{t('workoutWednesday')}</span><span className="mbdg bb2">4 {t('workoutExercises')}</span></div>
-          <div className="mexs">
-            <div className="mex"><span className="mexd" />Deadlift - 3×5 @ 80kg</div>
-            <div className="mex"><span className="mexd" />Bent-over Row - 4×8 @ 55kg</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-
-  const SlidePrehrana = () => (
-    <div className="mcnt">
-      <div className="mh">{t('nutritionTitle')}</div>
-      <div className="msh">{t('nutritionSub')}</div>
-      <div className="mmacs">
-        <div className="mmac"><div className="mmacv" style={{color:'#0066FF'}}>3200</div><div className="mmacl">{t('calories')}</div></div>
-        <div className="mmac"><div className="mmacv" style={{color:'#1a9e5a'}}>200g</div><div className="mmacl">{t('protein')}</div></div>
-        <div className="mmac"><div className="mmacv" style={{color:'#e06010'}}>380g</div><div className="mmacl">{t('carbs')}</div></div>
-        <div className="mmac"><div className="mmacv" style={{color:'#8833cc'}}>90g</div><div className="mmacl">{t('fat')}</div></div>
-      </div>
-      <div className="mmrow"><div><div className="mmn">{t('breakfast')}</div><div className="mmc">{t('breakfastMeal')}</div></div><span className="mbdg bb2">720 kcal</span></div>
-      <div className="mmrow"><div><div className="mmn">{t('lunch')}</div><div className="mmc">{t('lunchMeal')}</div></div><span className="mbdg bb2">980 kcal</span></div>
-      <div className="mmrow"><div><div className="mmn">{t('dinner')}</div><div className="mmc">{t('dinnerMeal')}</div></div><span className="mbdg bb2">850 kcal</span></div>
-    </div>
-  )
-
-  const SlideFinancije = () => (
-    <div className="mcnt">
-      <div className="mh">{t('financeTitle')}</div>
-      <div className="msh">{t('financeSub')}</div>
-      <div className="mfin">
-        <div className="mfcs">
-          <div className="mfc"><div className="mfcn">1.840€</div><div className="mfcl">{t('financeRevenue')}</div></div>
-          <div className="mfc"><div className="mfcn" style={{color:'#1a9e5a'}}>12/12</div><div className="mfcl">{t('financePaid')}</div></div>
-        </div>
-        <div className="mclf"><div><div className="mfn">Ana Marković</div><div className="mfp">Premium · 150€/mj</div></div><span className="mbdg bg2">{t('paidBadge')}</span></div>
-        <div className="mclf"><div><div className="mfn">Ivan Horvat</div><div className="mfp">Standard · 100€/mj</div></div><span className="mbdg bg2">{t('paidBadge')}</span></div>
-        <div className="mclf"><div><div className="mfn">Petra Kovač</div><div className="mfp">Basic · 80€/mj</div></div><span className="mbdg bo2">{t('pendingBadge')}</span></div>
-      </div>
-    </div>
-  )
+  // Maps sidebar item index → slide index that activates it
+  const sidebarActiveMap = [0, 1, 2, 3, 4, 5, 6]
 
   const SlideChat = () => (
     <div className="mcnt">
@@ -155,11 +72,44 @@ export default function AppShowcase() {
     </div>
   )
 
-  const slideContents = [SlideDashboard, SlideKlijenti, SlideTreninzi, SlidePrehrana, SlideFinancije, SlideChat]
+  const SlideProfil = () => (
+    <div className="mcnt">
+      <div className="mh">{t('profileTitle')}</div>
+      <div className="msh">{t('profileSub')}</div>
+      <div className="mcli" style={{ marginBottom: 10, padding: '12px 11px' }}>
+        <div className="mav" style={{ width: 34, height: 34, background: 'linear-gradient(135deg,#0066FF,#4488ff)', fontSize: '.75rem' }}>MJ</div>
+        <div style={{ flex: 1 }}>
+          <div className="mcln">Marko Jurić</div>
+          <div className="mclp">Personal Trainer · Zagreb</div>
+        </div>
+        <span className="mbdg bb2">{t('profileBadge')}</span>
+      </div>
+      <div className="mfcs" style={{ marginBottom: 8 }}>
+        <div className="mfc">
+          <div className="mfcn">12</div>
+          <div className="mcl">{t('profileClients')}</div>
+        </div>
+        <div className="mfc">
+          <div className="mfcn" style={{ color: '#1a9e5a' }}>87%</div>
+          <div className="mcl">{t('profileConsistency')}</div>
+        </div>
+      </div>
+      <div className="mwrk">
+        {([t('profileSetting1'), t('profileSetting2'), t('profileSetting3')] as string[]).map((s, i) => (
+          <div key={i} className="mday" style={{ padding: '8px 11px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span className="mdn">{s}</span>
+            <span style={{ color: '#c0c4d8' }}>›</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+
+  const cssMockSlides: Record<number, React.FC> = { 6: SlideChat, 7: SlideProfil }
 
   function resetAp() {
     if (apRef.current) clearInterval(apRef.current)
-    apRef.current = setInterval(() => setCur((c) => (c + 1) % 6), 4800)
+    apRef.current = setInterval(() => setCur((c) => (c + 1) % TOTAL_SLIDES), 4800)
   }
 
   function gotoSlide(n: number) {
@@ -167,8 +117,8 @@ export default function AppShowcase() {
     resetAp()
   }
 
-  function prevSlide() { gotoSlide((cur - 1 + 6) % 6) }
-  function nextSlide() { gotoSlide((cur + 1) % 6) }
+  function prevSlide() { gotoSlide((cur - 1 + TOTAL_SLIDES) % TOTAL_SLIDES) }
+  function nextSlide() { gotoSlide((cur + 1) % TOTAL_SLIDES) }
 
   useEffect(() => {
     resetAp()
@@ -189,14 +139,26 @@ export default function AppShowcase() {
           </div>
 
           <div className="ss">
-            {slideContents.map((SlideComp, i) => (
-              <div key={i} className={`slide${i === cur ? ' active' : ''}`}>
-                <div className="mui">
-                  <SidebarNav active={i} items={sidebarItems} activeMap={activeMap} />
-                  <SlideComp />
+            {Array.from({ length: TOTAL_SLIDES }).map((_, i) => {
+              const screenshotSrc = SCREENSHOTS[i]
+              const CSSSlide = cssMockSlides[i]
+              return (
+                <div key={i} className={`slide${i === cur ? ' active' : ''}`}>
+                  {screenshotSrc ? (
+                    <img
+                      src={screenshotSrc}
+                      alt={slides[i] ?? ''}
+                      style={{ width: '92%', height: '88%', objectFit: 'cover', objectPosition: 'top left', borderRadius: 8 }}
+                    />
+                  ) : CSSSlide ? (
+                    <div className="mui">
+                      <SidebarNav active={i} items={sidebarItems} activeMap={sidebarActiveMap} />
+                      <CSSSlide />
+                    </div>
+                  ) : null}
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           <div className="sc">

@@ -495,7 +495,7 @@
     "seePricing": "See pricing"
   },
   "showcase": {
-    "slides": ["Dashboard", "Clients", "Workouts", "Nutrition", "Finance", "Chat"],
+    "slides": ["Dashboard", "Clients", "Workouts", "Nutrition", "Check-ins", "Finance", "Chat", "Profile"],
     "sidebarItems": ["Dashboard", "Clients", "Workouts", "Nutrition", "Check-ins", "Finance", "Chat"],
     "dashGreeting": "Good morning, Mark 👋",
     "dashDate": "Wednesday, March 18, 2026.",
@@ -541,6 +541,14 @@
     "chatMsg1": "Coach, I finished my workout! 4×8 @ 50kg ✅",
     "chatMsg2": "Great Petra! Was your form good?",
     "chatMsg3": "Last 2 reps were tough but I finished! 💪",
-    "chatMsg4": "Perfect! We're adding +2.5kg next week 🎯"
+    "chatMsg4": "Perfect! We're adding +2.5kg next week 🎯",
+    "profileTitle": "My profile",
+    "profileSub": "Settings & configuration",
+    "profileBadge": "Pro plan",
+    "profileClients": "Active clients",
+    "profileConsistency": "Avg. consistency",
+    "profileSetting1": "Account settings",
+    "profileSetting2": "Notifications",
+    "profileSetting3": "Billing & subscription"
   }
 }

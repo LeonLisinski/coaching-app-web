@@ -495,7 +495,7 @@
     "seePricing": "Pogledaj cijene"
   },
   "showcase": {
-    "slides": ["Dashboard", "Klijenti", "Treninzi", "Prehrana", "Financije", "Chat"],
+    "slides": ["Dashboard", "Klijenti", "Treninzi", "Prehrana", "Check-ini", "Financije", "Chat", "Profil"],
     "sidebarItems": ["Dashboard", "Klijenti", "Treninzi", "Prehrana", "Check-ini", "Financije", "Chat"],
     "dashGreeting": "Dobro jutro, Marko 👋",
     "dashDate": "Srijeda, 18. ožujka 2026.",
@@ -541,6 +541,14 @@
     "chatMsg1": "Trener, završila sam trening! 4×8 @ 50kg ✅",
     "chatMsg2": "Odlično Petra! Forma bila dobra?",
     "chatMsg3": "Posljednje 2 ripe bile teške ali završila! 💪",
-    "chatMsg4": "Savršeno! Povećavamo +2.5kg idući tjedan 🎯"
+    "chatMsg4": "Savršeno! Povećavamo +2.5kg idući tjedan 🎯",
+    "profileTitle": "Moj profil",
+    "profileSub": "Postavke i konfiguracija",
+    "profileBadge": "Pro plan",
+    "profileClients": "Aktivnih klijenata",
+    "profileConsistency": "Prosj. redovitost",
+    "profileSetting1": "Postavke računa",
+    "profileSetting2": "Obavijesti",
+    "profileSetting3": "Plaćanje i pretplata"
   }
 }
