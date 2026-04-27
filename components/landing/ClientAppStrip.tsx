@@ -23,7 +23,7 @@ export default function ClientAppStrip() {
     setMounted(true)
     const prefetch = () => {
       SHOTS.forEach(shot => {
-        fetch(`/_next/image?url=${encodeURIComponent(shot.src)}&w=828&q=75`)
+        fetch(`/_next/image?url=${encodeURIComponent(shot.src)}&w=1024&q=75`)
           .catch(() => {})
       })
     }

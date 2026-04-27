@@ -11,6 +11,7 @@ const SHOTS = [
   { src: '/screenshot-prehrana.png', label: 'Prehrana' },
   { src: '/screenshot-checkin.png', label: 'Check-in' },
   { src: '/screenshot-financije.png', label: 'Financije' },
+  { src: '/screenshot-chat.png', label: 'Chat' },
 ]
 
 const LOOP = [...SHOTS, ...SHOTS]
@@ -26,7 +27,7 @@ export default function DashboardStrip() {
     // /_next/image caches the resized result so the first lightbox open is instant.
     const prefetch = () => {
       SHOTS.forEach(shot => {
-        fetch(`/_next/image?url=${encodeURIComponent(shot.src)}&w=828&q=75`)
+        fetch(`/_next/image?url=${encodeURIComponent(shot.src)}&w=1024&q=75`)
           .catch(() => {})
       })
     }

@@ -12,6 +12,7 @@ const SCREENSHOTS: Record<number, string> = {
   3: '/screenshot-prehrana.png',
   4: '/screenshot-checkin.png',
   5: '/screenshot-financije.png',
+  6: '/screenshot-chat.png',
   7: '/screenshot-profil.png',
 }
 
