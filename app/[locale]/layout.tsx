@@ -19,11 +19,11 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 export const metadata: Metadata = {
   title: {
-    default: 'Aplikacija za osobne trenere | UnitLift',
+    default: 'Aplikacija za osobne trenere i online klijente | UnitLift',
     template: '%s',
   },
   description:
-    'Coaching aplikacija za online klijente: planovi treninga i prehrane, check-ini, poruke i plaćanja. Postavi u 5 minuta - 14 dana besplatno.',
+    'Aplikacija za osobne trenere s online klijentima: planovi treninga i prehrane, tjedni check-in, chat i plaćanja na jednom ekranu. Postavi za 5 minuta - 14 dana besplatno.',
   keywords: [
     'unitlift',
     'aplikacija za osobne trenere',
@@ -41,7 +41,13 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    other: [{ rel: 'manifest', url: '/site.webmanifest' }],
   },
   openGraph: {
     title: 'Aplikacija za osobne trenere - manje kaosa, više klijenata',

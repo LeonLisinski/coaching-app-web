@@ -170,7 +170,7 @@ export default function ClientApp() {
           onTransitionEnd={handleTransitionEnd}
         >
           {slides.map(({ feat, src }, i) => (
-            <div key={i} className="capp-car-slide">
+            <div key={i} className={`capp-car-slide${i === vi ? ' active' : ''}`}>
               <div className="capp-phone-glow">
                 <Image
                   src={src}
@@ -178,8 +178,8 @@ export default function ClientApp() {
                   width={390}
                   height={844}
                   className="capp-car-img"
-                  priority={i === 1}
-                  sizes="80vw"
+                  priority={i === 1 || i === 2}
+                  sizes="(max-width:768px) 220px, 260px"
                 />
               </div>
               <div className="capp-car-info">

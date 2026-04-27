@@ -1,18 +1,21 @@
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import RevealObserver from '@/components/landing/RevealObserver'
 import Navbar from '@/components/landing/Navbar'
 import Hero from '@/components/landing/Hero'
 import TrustBar from '@/components/landing/TrustBar'
 import HowItWorks from '@/components/landing/HowItWorks'
-import ClientApp from '@/components/landing/ClientApp'
-import Pricing from '@/components/landing/Pricing'
-import Testimonials from '@/components/landing/Testimonials'
-import FAQ from '@/components/landing/FAQ'
-import CTA from '@/components/landing/CTA'
-import Footer from '@/components/landing/Footer'
 import WaveDivider from '@/components/landing/WaveDivider'
 import { buildPageMetadata } from '@/lib/seo-metadata'
 import { SITE_URL } from '@/lib/site'
+
+// Below-fold components — lazy-loaded JS chunks, still SSR'd for SEO
+const ClientApp   = dynamic(() => import('@/components/landing/ClientApp'))
+const Pricing     = dynamic(() => import('@/components/landing/Pricing'))
+const Testimonials = dynamic(() => import('@/components/landing/Testimonials'))
+const FAQ         = dynamic(() => import('@/components/landing/FAQ'))
+const CTA         = dynamic(() => import('@/components/landing/CTA'))
+const Footer      = dynamic(() => import('@/components/landing/Footer'))
 
 interface Props {
   params: Promise<{ locale: string }>
@@ -25,18 +28,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return buildPageMetadata({
       locale: 'hr',
       pathname: '/',
-      title: 'Aplikacija za osobne trenere | UnitLift',
+      title: 'Aplikacija za osobne trenere i online klijente | UnitLift',
       description:
-        'Coaching aplikacija za online klijente: planovi treninga i prehrane, tjedni check-ini, chat i plaćanja. Postavi u 5 minuta - 14 dana besplatno.',
+        'Aplikacija za osobne trenere s online klijentima: planovi treninga i prehrane, tjedni check-in, chat i plaćanja na jednom ekranu. Postavi za 5 minuta - 14 dana besplatno.',
       languages: { hr: '/', en: '/en', 'x-default': '/' },
     })
   }
   return buildPageMetadata({
     locale: 'en',
     pathname: '/en',
-    title: 'Personal trainer app for online clients | UnitLift',
+    title: 'Personal trainer app for online coaching clients | UnitLift',
     description:
-      'Online coaching software: training and meal plans, weekly check-ins, chat and payments. Set up in 5 minutes - 14 days free.',
+      'Personal trainer software for online clients: training and meal plans, weekly check-ins, chat and payments in one tool. Set up in 5 minutes - 14 days free.',
     languages: { hr: '/', en: '/en', 'x-default': '/' },
   })
 }

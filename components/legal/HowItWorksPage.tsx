@@ -1,6 +1,12 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useLocale, useTranslations } from 'next-intl'
+import { useRouter } from 'next/navigation'
+import Link from 'next/link'
+import LogoSvg from '@/components/landing/LogoSvg'
+import DashboardStrip from '@/components/landing/DashboardStrip'
+import ClientAppStrip from '@/components/landing/ClientAppStrip'
 
 const PlusIcon = () => (
   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -8,10 +14,6 @@ const PlusIcon = () => (
     <line x1="5" y1="12" x2="19" y2="12" />
   </svg>
 )
-import { useLocale, useTranslations } from 'next-intl'
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'
-import LogoSvg from '@/components/landing/LogoSvg'
 
 export default function HowItWorksPage() {
   const locale = useLocale()
@@ -106,6 +108,9 @@ export default function HowItWorksPage() {
         </div>
       </div>
 
+      {/* Dashboard screenshots */}
+      <DashboardStrip />
+
       {/* Body */}
       <div className="legal-body">
         <div className="con">
@@ -128,6 +133,9 @@ export default function HowItWorksPage() {
             </div>
             <p className="hiw-quote">{t('howItWorksPage.coachQuote')}</p>
           </div>
+
+          {/* Client app screenshot strip */}
+          <ClientAppStrip />
 
           {/* Section 2: For clients */}
           <div className="hiw-section">

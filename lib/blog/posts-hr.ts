@@ -21,7 +21,7 @@ export const postsHr: BlogPost[] = [
     ...author,
     content: [
       { type: 'paragraph', text: 'Rast baze klijenata je najveći izazov svakog online trenera. Dobra vijest je da ti za to ne trebaju skupi oglasi.' },
-      { type: 'paragraph', text: 'U ovom tekstu prolazimo devet taktika koje stvarno rade. Sve su testirane kroz trenere koje pratimo na hrvatskom tržištu.' },
+      { type: 'paragraph', text: 'U ovom tekstu prolazimo devet taktika koje stvarno rade. Sve su testirane s trenerima koje pratimo na hrvatskom tržištu.' },
 
       { type: 'heading', text: '1. Definiraj idealnog klijenta' },
       { type: 'paragraph', text: 'Najčešća greška je pokušati raditi sa svima. Što uža niša, to bolja konverzija.' },
@@ -149,7 +149,7 @@ export const postsHr: BlogPost[] = [
 
       { type: 'heading', text: 'Zašto niska cijena ne privlači klijente' },
       { type: 'paragraph', text: 'Preniska cijena šalje krivi signal. Klijent koji plaća 50 eura mjesečno manje se angažira od klijenta koji plaća 200.' },
-      { type: 'paragraph', text: 'Visa cijena privlači ozbiljnije klijente koji žele rezultat. Manje churna, manje objašnjavanja.' },
+      { type: 'paragraph', text: 'Viša cijena privlači ozbiljnije klijente koji žele rezultat. Manje churna, manje objašnjavanja.' },
 
       { type: 'heading', text: 'Kako izračunati minimalnu cijenu' },
       { type: 'list', items: [
@@ -305,7 +305,7 @@ export const postsHr: BlogPost[] = [
     ...author,
     content: [
       { type: 'paragraph', text: 'Generički alati imaju jednu prednost: besplatni su. Zato većina trenera počinje s njima.' },
-      { type: 'paragraph', text: 'Pero za Google dokument, WhatsApp za komunikaciju, Revolut za uplatu. Funkcionira do određene razine.' },
+      { type: 'paragraph', text: 'Plan u Google dokumentu, WhatsApp za komunikaciju, Revolut za uplatu. Funkcionira do određene razine.' },
 
       { type: 'heading', text: 'Problem s više alata' },
       { type: 'paragraph', text: 'S 10 klijenata podaci se šire po pet alata. Klijent A piše na WhatsApp, B na Instagram, C mailom.' },
@@ -388,7 +388,7 @@ export const postsHr: BlogPost[] = [
 
       { type: 'heading', text: 'Što s porezom i pravnom formom' },
       { type: 'list', items: [
-        'Fiskalizacija je obavezna za uplate za usluge u Hrvatskoj',
+        'Fiskalizacija je obavezna pri naplati usluga u Hrvatskoj',
         'Za ozbiljniji posao preporučuje se obrt ili j.d.o.o.',
         'PDV se ne plaća do 40 tisuća eura prometa godišnje',
         'Strane uplate kroz Stripe automatski se konvertiraju',
@@ -447,7 +447,7 @@ export const postsHr: BlogPost[] = [
       { type: 'paragraph', text: 'U ovom tekstu prolazimo kako taj sustav izgleda u praksi.' },
 
       { type: 'heading', text: 'Princip: sustav, ne pamćenje' },
-      { type: 'paragraph', text: 'Ne smiješ se sjetiti klijenta jer ti padne na pamet. Svaki klijent mora imati datum check-ina i datum uplate.' },
+      { type: 'paragraph', text: 'Ne smiješ se sjetiti klijenta tek kad ti padne na pamet. Svaki klijent mora imati datum check-ina i datum uplate.' },
       { type: 'paragraph', text: 'Kad ti sustav govori što je na redu, ti radiš coaching umjesto pamćenja.' },
 
       { type: 'heading', text: 'Što automatizirati' },

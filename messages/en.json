@@ -496,6 +496,16 @@
   },
   "showcase": {
     "slides": ["Dashboard", "Clients", "Workouts", "Nutrition", "Check-ins", "Finance", "Chat", "Profile"],
+    "screenshotAlts": [
+      "UnitLift coaching dashboard - overview of clients, check-ins and revenue",
+      "Online client list in UnitLift personal trainer app",
+      "Client workout plan in UnitLift coaching software",
+      "Meal plan and macros in UnitLift personal trainer app",
+      "Weekly client check-in - progress tracking in UnitLift",
+      "Client payment tracking in UnitLift coaching platform",
+      "",
+      "Coach profile and settings in UnitLift online coaching app"
+    ],
     "sidebarItems": ["Dashboard", "Clients", "Workouts", "Nutrition", "Check-ins", "Finance", "Chat"],
     "dashGreeting": "Good morning, Mark 👋",
     "dashDate": "Wednesday, March 18, 2026.",

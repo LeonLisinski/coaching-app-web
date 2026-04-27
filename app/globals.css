@@ -392,7 +392,7 @@ footer::after{content:'';position:absolute;top:0;left:0;right:0;height:48px;back
 .capp-store-row{display:none}
 .capp-carousel-track{display:flex;will-change:transform}
 .capp-car-slide{flex-shrink:0;width:80vw;display:flex;flex-direction:column;align-items:center;text-align:center}
-.capp-car-img{max-width:260px;width:100%;height:auto;margin-bottom:20px}
+.capp-car-img{max-width:260px;width:100%;height:auto;margin-bottom:20px;aspect-ratio:390/844}
 .capp-car-info{padding:0 12px}
 .capp-car-title{font-size:1.25rem;font-weight:700;color:var(--lt);margin-top:8px;line-height:1.25}
 .capp-car-desc{font-size:.88rem;color:var(--ls);line-height:1.65;margin-top:6px}
@@ -436,8 +436,12 @@ footer::after{content:'';position:absolute;top:0;left:0;right:0;height:48px;back
   /* Client app - hide sticky scroll, show carousel */
   .capp-sticky-wrap{display:none}
   .capp-carousel-outer{display:block}
-  .capp-phone-glow{filter:drop-shadow(0 0 28px rgba(59,130,246,.3)) drop-shadow(0 0 56px rgba(59,130,246,.16))}
-  .capp-car-img{max-width:220px}
+  /* Remove glow on mobile carousel - portrait PNGs have opaque bg so it looks boxed */
+  .capp-carousel-outer .capp-phone-glow{filter:none}
+  /* Hide info text in non-active slides to prevent adjacent slides from peeking through */
+  .capp-car-slide .capp-car-info{opacity:0;pointer-events:none;transition:opacity .25s ease}
+  .capp-car-slide.active .capp-car-info{opacity:1;pointer-events:auto}
+  .capp-car-img{max-width:220px;width:220px}
   .capp-header{padding-top:56px}
   /* Store buttons */
   .capp-store-row{display:flex;justify-content:center;gap:10px;padding:24px 16px 0;flex-wrap:wrap}
@@ -510,6 +514,13 @@ footer::after{content:'';position:absolute;top:0;left:0;right:0;height:48px;back
   .legal-main{padding:24px 16px}
   .blog-list-body{padding:32px 16px 60px}
   .blog-filter-row{padding-inline:0;overflow-x:auto}
+}
+
+/* ─── GLOBAL BUTTON RESPONSIVE ─── */
+@media(max-width:400px){
+  .btn{font-size:.78rem;padding:9px 14px}
+  .btn-lg{font-size:.84rem;padding:11px 20px}
+  .btn-xl{font-size:.86rem;padding:12px 22px}
 }
 
 /* ─── LEGAL PAGES ─── */
@@ -728,7 +739,8 @@ a.contact-info-val:hover{color:var(--ba)}
 
 @media(max-width:900px){
   .blog-post-hero-meta{flex-direction:column;align-items:flex-start;gap:10px}
-  .blog-post-cta-inner{flex-direction:column;align-items:flex-start}
+  .blog-post-cta-inner{flex-direction:column;align-items:stretch}
+  .blog-post-cta .btn{width:100%;justify-content:center}
   .blog-list-body{padding:32px 16px 60px}
 }
 
@@ -899,4 +911,29 @@ a.contact-info-val:hover{color:var(--ba)}
 @media(max-width:600px){
   .seo-hero{padding:96px 5% 60px}
   .seo-h1{letter-spacing:-1px}
+  .seo-hcta{flex-direction:column;align-items:stretch}
+  .seo-hcta .btn{width:100%;justify-content:center}
+  .seo-hnote{white-space:normal}
 }
+
+/* ── Dashboard screenshot strip (kako-radi page) ── */
+/* Gradient bridge: legal-hero dark (#070b18) → strip light (var(--lg)) */
+.dstrip-outer{display:block;padding:72px 0 52px;background:var(--lg)}
+.dstrip-head{text-align:center;padding:0 5% 28px}
+.dstrip-badge{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ba);background:rgba(0,102,255,.09);border:1px solid rgba(0,102,255,.2);border-radius:20px;padding:5px 14px;margin-bottom:10px}
+.dstrip-sub{font-size:.9rem;color:var(--ls);margin:0;line-height:1.5}
+/* Mask fades edges, track animates */
+.dstrip-mask{overflow:hidden;mask-image:linear-gradient(90deg,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%)}
+.dstrip-track{display:flex;gap:14px;width:max-content;animation:dstrip-scroll 24s linear infinite}
+.dstrip-track:hover{animation-play-state:paused}
+.dstrip-card{flex-shrink:0;width:240px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.dstrip-img{width:240px;height:auto;border-radius:var(--r);border:1px solid var(--lb);aspect-ratio:16/10;object-fit:cover;object-position:top;box-shadow:0 4px 20px rgba(0,0,0,.07)}
+.dstrip-lbl{font-size:.74rem;color:var(--ls);font-weight:500}
+@keyframes dstrip-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@media(min-width:769px){.dstrip-outer,.castrip-outer{display:none}}
+/* ── Client app portrait strip ── */
+.castrip-outer{padding:0 0 40px;background:var(--lg);width:100vw;position:relative;left:50%;margin-left:-50vw}
+.castrip-track{display:flex;gap:14px;width:max-content;animation:dstrip-scroll 20s linear infinite}
+.castrip-track:hover{animation-play-state:paused}
+.castrip-card{flex-shrink:0;width:130px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.castrip-img{width:130px;height:auto;aspect-ratio:390/844;object-fit:cover;object-position:top}

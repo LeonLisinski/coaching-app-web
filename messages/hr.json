@@ -496,6 +496,16 @@
   },
   "showcase": {
     "slides": ["Dashboard", "Klijenti", "Treninzi", "Prehrana", "Check-ini", "Financije", "Chat", "Profil"],
+    "screenshotAlts": [
+      "UnitLift coaching dashboard - pregled klijenata, check-ina i prihoda",
+      "Popis online klijenata u UnitLift aplikaciji za osobne trenere",
+      "Plan treninga za klijenta u UnitLift coaching aplikaciji",
+      "Plan prehrane i makronutrijenti u UnitLift aplikaciji za trenere",
+      "Tjedni check-in klijenta - praćenje napretka u UnitLift alatu",
+      "Praćenje plaćanja klijenata u UnitLift coaching platformi",
+      "",
+      "Profil trenera i postavke u UnitLift online coaching aplikaciji"
+    ],
     "sidebarItems": ["Dashboard", "Klijenti", "Treninzi", "Prehrana", "Check-ini", "Financije", "Chat"],
     "dashGreeting": "Dobro jutro, Marko 👋",
     "dashDate": "Srijeda, 18. ožujka 2026.",

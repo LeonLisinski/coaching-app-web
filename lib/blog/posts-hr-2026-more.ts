@@ -165,11 +165,11 @@ export const blogPostsHr2026Rest: BlogPost[] = [
         'Zamjensku vježbu ako nema opreme',
         'Jasno mjesto gdje klijent unosi rezultat',
       ]},
-      { type: 'paragraph', text: 'Ako klijent ne zna što je danas na redu unutar 30 sekundi, plan je preduhačen. Skrati, ne dodaji.' },
+      { type: 'paragraph', text: 'Ako klijent ne zna što je danas na redu unutar 30 sekundi, plan je predugačak. Skrati, ne dodaj.' },
 
       { type: 'heading', text: 'Kada mijenjati plan' },
       { type: 'paragraph', text: 'Ako dva check-ina kažu da klijent ne stigne, smanji volumen. Ako tri tjedna ide glatko, povećaj opterećenje.' },
-      { type: 'paragraph', text: 'Velike promjene svakih šest tjedana, male korekcije svaki tjedan. Izbjegavaj šaljanje novog bloka svakog ponedjeljka.' },
+      { type: 'paragraph', text: 'Velike promjene svakih šest tjedana, male korekcije svaki tjedan. Izbjegavaj slanje novog bloka svakog ponedjeljka.' },
       { type: 'internal-link', text: '→ Kako zadržati klijenta kad se život upleće', href: '/hr/blog/kako-zadrzati-online-klijenta' },
 
       { type: 'heading', text: 'Kako predati plan klijentu' },

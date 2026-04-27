@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 
 // Slides that use real screenshots (index → public path)
 const SCREENSHOTS: Record<number, string> = {
@@ -41,6 +42,7 @@ export default function AppShowcase() {
   const apRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const slides = t.raw('slides') as string[]
+  const screenshotAlts = t.raw('screenshotAlts') as string[]
   const sidebarItems = (t.raw('sidebarItems') as string[]).map((label, i) => ({
     label,
     icon: [
@@ -145,11 +147,16 @@ export default function AppShowcase() {
               return (
                 <div key={i} className={`slide${i === cur ? ' active' : ''}`}>
                   {screenshotSrc ? (
-                    <img
-                      src={screenshotSrc}
-                      alt={slides[i] ?? ''}
-                      style={{ width: '92%', height: '88%', objectFit: 'cover', objectPosition: 'top left', borderRadius: 8 }}
-                    />
+                    <div style={{ position: 'relative', width: '92%', height: '88%', borderRadius: 8, overflow: 'hidden' }}>
+                      <Image
+                        src={screenshotSrc}
+                        alt={screenshotAlts[i] ?? slides[i] ?? ''}
+                        fill
+                        sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 800px"
+                        style={{ objectFit: 'cover', objectPosition: 'top left' }}
+                        priority={i === 0}
+                      />
+                    </div>
                   ) : CSSSlide ? (
                     <div className="mui">
                       <SidebarNav active={i} items={sidebarItems} activeMap={sidebarActiveMap} />

@@ -203,7 +203,7 @@ export default function BlogPostPage({ post, relatedPosts }: Props) {
                   <div className="blog-post-cta-title">{t('blogPage.ctaTitle')}</div>
                   <div className="blog-post-cta-text">{ctaBody}</div>
                 </div>
-                <a href={ctaHref} className="btn btn-p" style={{ whiteSpace: 'nowrap', fontSize: '.85rem' }}>
+                <a href={ctaHref} className="btn btn-p" style={{ fontSize: '.85rem' }}>
                   {ctaBtn}
                 </a>
               </div>
