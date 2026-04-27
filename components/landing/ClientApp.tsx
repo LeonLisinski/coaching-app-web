@@ -10,6 +10,7 @@ const IMAGES = [
   '/nutrition-portrait.png',
   '/chat-portrait.png',
   '/checkin-portrait.png',
+  '/profil-portrait.png',
 ]
 
 const IMG_W = 320

@@ -392,7 +392,7 @@ footer::after{content:'';position:absolute;top:0;left:0;right:0;height:48px;back
 .capp-store-row{display:none}
 .capp-carousel-track{display:flex;will-change:transform}
 .capp-car-slide{flex-shrink:0;width:80vw;display:flex;flex-direction:column;align-items:center;text-align:center}
-.capp-car-img{width:auto;height:auto;max-width:260px;margin-bottom:20px;aspect-ratio:390/844;display:block}
+.capp-car-img{width:auto;height:auto;max-width:260px;margin-bottom:20px;aspect-ratio:390/844;display:block;object-fit:cover;object-position:top center}
 .capp-car-info{padding:0 12px}
 .capp-car-title{font-size:1.25rem;font-weight:700;color:var(--lt);margin-top:8px;line-height:1.25}
 .capp-car-desc{font-size:.88rem;color:var(--ls);line-height:1.65;margin-top:6px}
