@@ -392,7 +392,7 @@ footer::after{content:'';position:absolute;top:0;left:0;right:0;height:48px;back
 .capp-store-row{display:none}
 .capp-carousel-track{display:flex;will-change:transform}
 .capp-car-slide{flex-shrink:0;width:80vw;display:flex;flex-direction:column;align-items:center;text-align:center}
-.capp-car-img{max-width:260px;width:100%;height:auto;margin-bottom:20px;aspect-ratio:390/844}
+.capp-car-img{width:auto;height:auto;max-width:260px;margin-bottom:20px;aspect-ratio:390/844;display:block}
 .capp-car-info{padding:0 12px}
 .capp-car-title{font-size:1.25rem;font-weight:700;color:var(--lt);margin-top:8px;line-height:1.25}
 .capp-car-desc{font-size:.88rem;color:var(--ls);line-height:1.65;margin-top:6px}
@@ -441,7 +441,7 @@ footer::after{content:'';position:absolute;top:0;left:0;right:0;height:48px;back
   /* Hide info text in non-active slides to prevent adjacent slides from peeking through */
   .capp-car-slide .capp-car-info{opacity:0;pointer-events:none;transition:opacity .25s ease}
   .capp-car-slide.active .capp-car-info{opacity:1;pointer-events:auto}
-  .capp-car-img{max-width:220px;width:220px}
+  .capp-car-img{width:min(74vw,260px);height:auto;max-width:none}
   .capp-header{padding-top:56px}
   /* Store buttons */
   .capp-store-row{display:flex;justify-content:center;gap:10px;padding:24px 16px 0;flex-wrap:wrap}
@@ -937,3 +937,29 @@ a.contact-info-val:hover{color:var(--ba)}
 .castrip-track:hover{animation-play-state:paused}
 .castrip-card{flex-shrink:0;width:130px;display:flex;flex-direction:column;align-items:center;gap:8px}
 .castrip-img{width:130px;height:auto;aspect-ratio:390/844;object-fit:cover;object-position:top}
+
+/* ─── STRIP LIGHTBOX ─── */
+.strip-lb{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center}
+.strip-lb-x{position:absolute;top:14px;right:16px;background:rgba(255,255,255,.12);border:none;color:#fff;width:42px;height:42px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:3}
+.strip-lb-x:hover{background:rgba(255,255,255,.28)}
+/* Arrows — absolutely positioned so they never push image out */
+.strip-lb-arr{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;width:48px;height:48px;border-radius:50%;font-size:2rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;user-select:none;z-index:3}
+.strip-lb-arr:hover{background:rgba(255,255,255,.28)}
+.strip-lb-prev{left:14px}
+.strip-lb-next{right:14px}
+.strip-lb-inner{display:flex;flex-direction:column;align-items:center;gap:10px}
+/* Landscape (dashboard screenshots 16:10) */
+.strip-lb-img-wrap{position:relative;border-radius:10px;overflow:hidden}
+.strip-lb-land{width:min(82vw,960px);height:min(72vh,600px)}
+/* Portrait (phone screenshots 9:19) */
+.strip-lb-port{width:min(48vw,320px);height:min(84vh,700px)}
+.strip-lb-footer{display:flex;align-items:center;justify-content:space-between;width:100%;padding:0 4px}
+.strip-lb-lbl{color:rgba(255,255,255,.8);font-size:.85rem;font-weight:600}
+.strip-lb-count{color:rgba(255,255,255,.4);font-size:.78rem}
+@media(max-width:600px){
+  .strip-lb-arr{width:40px;height:40px;font-size:1.5rem}
+  .strip-lb-prev{left:8px}
+  .strip-lb-next{right:8px}
+  .strip-lb-land{width:88vw;height:min(55vw,340px)}
+  .strip-lb-port{width:70vw;height:min(80vh,620px)}
+}

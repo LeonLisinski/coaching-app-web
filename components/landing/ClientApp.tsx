@@ -178,8 +178,8 @@ export default function ClientApp() {
                   width={390}
                   height={844}
                   className="capp-car-img"
-                  priority={i === 1 || i === 2}
-                  sizes="(max-width:768px) 220px, 260px"
+                  priority={i >= 1 && i <= 4}
+                  sizes="(max-width:768px) min(72vw,270px), 270px"
                 />
               </div>
               <div className="capp-car-info">
