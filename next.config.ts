@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   compress: true,
   images: {
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/webp'],
     deviceSizes: [390, 768, 1024, 1280, 1920],
     imageSizes: [260, 320, 640],
     minimumCacheTTL: 2592000, // 30 days
