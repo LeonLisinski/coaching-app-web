@@ -31,7 +31,7 @@ export default function DashboardStrip() {
           .catch(() => {})
       })
     }
-    const t = setTimeout(prefetch, 1200)
+    const t = setTimeout(prefetch, 3000)
     return () => clearTimeout(t)
   }, [])
 

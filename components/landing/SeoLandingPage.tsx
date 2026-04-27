@@ -2,14 +2,16 @@
 
 import { useState } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
+import dynamic from 'next/dynamic'
 import { useReveal } from '@/hooks/useReveal'
 import Navbar from './Navbar'
-import Testimonials from './Testimonials'
-import Pricing from './Pricing'
-import CTA from './CTA'
-import Footer from './Footer'
 import RevealObserver from './RevealObserver'
 import WaveDivider from './WaveDivider'
+
+const Testimonials = dynamic(() => import('./Testimonials'))
+const Pricing      = dynamic(() => import('./Pricing'))
+const CTA          = dynamic(() => import('./CTA'))
+const Footer       = dynamic(() => import('./Footer'))
 
 const PlusIcon = () => (
   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">

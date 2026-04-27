@@ -10,7 +10,6 @@ const SHOTS = [
   { src: '/nutrition-portrait.png', label: 'Prehrana' },
   { src: '/chat-portrait.png',      label: 'Chat' },
   { src: '/checkin-portrait.png',   label: 'Check-in' },
-  { src: '/profil-portrait.png',    label: 'Profil' },
 ]
 
 const LOOP = [...SHOTS, ...SHOTS]
@@ -28,7 +27,7 @@ export default function ClientAppStrip() {
           .catch(() => {})
       })
     }
-    const t = setTimeout(prefetch, 1200)
+    const t = setTimeout(prefetch, 3000)
     return () => clearTimeout(t)
   }, [])
 

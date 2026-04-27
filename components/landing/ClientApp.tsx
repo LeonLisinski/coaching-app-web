@@ -10,7 +10,6 @@ const IMAGES = [
   '/nutrition-portrait.png',
   '/chat-portrait.png',
   '/checkin-portrait.png',
-  '/profil-portrait.png',
 ]
 
 const IMG_W = 320
@@ -25,7 +24,7 @@ export default function ClientApp() {
     bullets: string[]
     imgAlt: string
   }>
-  const n = feats.length // 4
+  const n = feats.length
 
   // ─── Desktop: IntersectionObserver drives active screenshot ───────────────
   const [activeIdx, setActiveIdx] = useState(0)

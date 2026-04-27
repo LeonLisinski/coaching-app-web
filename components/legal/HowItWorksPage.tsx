@@ -4,9 +4,11 @@ import { useState, useEffect } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import LogoSvg from '@/components/landing/LogoSvg'
-import DashboardStrip from '@/components/landing/DashboardStrip'
-import ClientAppStrip from '@/components/landing/ClientAppStrip'
+
+const DashboardStrip = dynamic(() => import('@/components/landing/DashboardStrip'))
+const ClientAppStrip = dynamic(() => import('@/components/landing/ClientAppStrip'))
 
 const PlusIcon = () => (
   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">

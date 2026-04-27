@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from 'next-intl'
 import dynamic from 'next/dynamic'
 
-const AppShowcase = dynamic(() => import('./AppShowcase'), { ssr: false })
+const AppShowcase = dynamic(() => import('./AppShowcase'))
 
 export default function Hero() {
   const t = useTranslations()
