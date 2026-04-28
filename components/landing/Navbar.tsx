@@ -6,6 +6,8 @@ import { useLocale, useTranslations } from 'next-intl'
 import { useRouter, usePathname } from 'next/navigation'
 import LogoSvg from './LogoSvg'
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
+
 export default function Navbar() {
   const locale = useLocale()
   const t = useTranslations()
@@ -73,7 +75,7 @@ export default function Navbar() {
         </ul>
 
         <div className="navact">
-          <a href="https://app.unitlift.com/login" className="btn btn-g">
+          <a href={`${APP_URL}/login`} className="btn btn-g">
             {t('login')}
           </a>
           <a
@@ -105,7 +107,7 @@ export default function Navbar() {
           </a>
         ))}
         <a
-          href="https://app.unitlift.com/login"
+          href={`${APP_URL}/login`}
           onClick={() => setMenuOpen(false)}
         >
           {t('login')}

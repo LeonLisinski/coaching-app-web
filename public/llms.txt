@@ -24,7 +24,7 @@ Svi planovi uključuju 14-dnevno besplatno probno razdoblje. Naplata počinje te
 ## Kontakt i linkovi
 
 - Web: https://unitlift.com
-- Aplikacija: https://app.unitlift.com
+- Aplikacija: __APP_URL__
 - Email: support@unitlift.com
 - Privatnost: https://unitlift.com/hr/privatnost
 - Uvjeti: https://unitlift.com/hr/uvjeti

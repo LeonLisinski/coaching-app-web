@@ -8,6 +8,8 @@ import LogoSvg from '@/components/landing/LogoSvg'
 import type { BlogPost } from '@/lib/blog/types'
 import { getAugmentedContent, getResolvedCta } from '@/lib/blog/augment-post'
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
+
 const categoryColors: Record<string, string> = {
   vodic: '#2233ee',
   guide: '#2233ee',
@@ -85,7 +87,7 @@ export default function BlogPostPage({ post, relatedPosts }: Props) {
           <button className="langbtn navlang" onClick={switchLang}>
             {otherLocale.toUpperCase()} ↕
           </button>
-          <a href="https://app.unitlift.com/login" className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
+          <a href={`${APP_URL}/login`} className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
             {t('login')}
           </a>
           <a href={`/${locale}/cijene`} className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>

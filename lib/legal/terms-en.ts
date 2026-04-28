@@ -1,5 +1,7 @@
 import type { LegalDocument } from './types'
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'App URL is not configured'
+
 export const termsEn: LegalDocument = {
   title: 'Terms of Service',
   lastUpdated: 'March 18, 2025',
@@ -11,7 +13,7 @@ export const termsEn: LegalDocument = {
       id: 'acceptance',
       title: '1. Acceptance of Terms',
       content: [
-        { text: 'These Terms of Service ("Terms") govern your use of the UnitLift application available at https://app.unitlift.com and in the mobile application (collectively: "Service"). The Service is provided by UnitLift, obrt za digitalne usluge, vl. Leon Lišinski ("we", "Service Provider").' },
+        { text: `These Terms of Service ("Terms") govern your use of the UnitLift application available at ${APP_URL} and in the mobile application (collectively: "Service"). The Service is provided by UnitLift, obrt za digitalne usluge, vl. Leon Lišinski ("we", "Service Provider").` },
         { text: 'By registering or using the Service, you confirm that you have read, understood, and accepted these Terms. If you do not agree, please stop using the Service.' },
       ],
     },

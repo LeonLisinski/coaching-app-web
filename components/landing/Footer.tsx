@@ -3,11 +3,19 @@
 import { useTranslations, useLocale } from 'next-intl'
 import LogoSvg from './LogoSvg'
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
+
 
 function ObfuscatedEmail() {
   const user = 'info'
   const domain = 'unitlift.com'
   return <a href={`mailto:${user}@${domain}`}>{user}@{domain}</a>
+}
+
+function resolveAppUrl(href: string): string {
+  if (!href) return href
+  if (href.startsWith('__APP_URL__')) return `${APP_URL}${href.replace('__APP_URL__', '')}`
+  return href
 }
 
 const InstagramIcon = () => (
@@ -76,7 +84,7 @@ export default function Footer() {
               <ul className="fls">
                 {col.links.map(([label, href], j) => (
                   <li key={j}>
-                    <a href={href}>{label}</a>
+                    <a href={resolveAppUrl(href)}>{label}</a>
                   </li>
                 ))}
               </ul>

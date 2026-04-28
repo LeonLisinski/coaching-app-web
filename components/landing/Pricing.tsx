@@ -5,7 +5,7 @@ import { useReveal } from '@/hooks/useReveal'
 
 const PRICES = [29, 59, 99]
 const PLANS  = ['starter', 'pro', 'scale'] as const
-const APP_URL = 'https://app.unitlift.com'
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
 
 export default function Pricing() {
   const t = useTranslations()

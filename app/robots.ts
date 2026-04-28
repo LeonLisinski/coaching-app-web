@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/'],
       },
     ],
-    sitemap: 'https://unitlift.com/sitemap.xml',
+    sitemap: 'https://www.unitlift.com/sitemap.xml',
   }
 }

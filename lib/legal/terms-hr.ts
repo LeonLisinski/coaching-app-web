@@ -1,5 +1,7 @@
 import type { LegalDocument } from './types'
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'URL aplikacije nije konfiguriran'
+
 export const termsHr: LegalDocument = {
   title: 'Uvjeti korištenja',
   lastUpdated: '18. ožujka 2025.',
@@ -11,7 +13,7 @@ export const termsHr: LegalDocument = {
       id: 'prihvacanje',
       title: '1. Prihvaćanje uvjeta',
       content: [
-        { text: 'Ovi Uvjeti korištenja ("Uvjeti") reguliraju korištenje aplikacije UnitLift dostupne na https://app.unitlift.com i u mobilnoj aplikaciji (zajedno: "Usluga"). Uslugu pruža UnitLift, obrt za digitalne usluge, vl. Leon Lišinski ("mi", "Pružatelj usluge").' },
+        { text: `Ovi Uvjeti korištenja ("Uvjeti") reguliraju korištenje aplikacije UnitLift dostupne na ${APP_URL} i u mobilnoj aplikaciji (zajedno: "Usluga"). Uslugu pruža UnitLift, obrt za digitalne usluge, vl. Leon Lišinski ("mi", "Pružatelj usluge").` },
         { text: 'Registracijom ili korištenjem Usluge potvrđujete da ste pročitali, razumjeli i prihvatili ove Uvjete. Ako se ne slažete s Uvjetima, prestanite koristiti Uslugu.' },
       ],
     },

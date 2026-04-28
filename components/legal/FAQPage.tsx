@@ -7,6 +7,8 @@ import Link from 'next/link'
 import LogoSvg from '@/components/landing/LogoSvg'
 import type { FAQData } from '@/lib/faq/types'
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
+
 const PlusIcon = () => (
   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
     <line x1="12" y1="5" x2="12" y2="19" />
@@ -82,7 +84,7 @@ export default function FAQPage({ data }: { data: FAQData }) {
           <button className="langbtn navlang" onClick={switchLang}>
             {otherLocale.toUpperCase()} ↕
           </button>
-          <a href="https://app.unitlift.com/login" className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
+          <a href={`${APP_URL}/login`} className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
             {t('login')}
           </a>
           <a href={`/${locale}/cijene`} className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>

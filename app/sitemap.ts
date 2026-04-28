@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { postsHr } from '@/lib/blog/posts-hr'
 import { postsEn } from '@/lib/blog/posts-en'
 
-const BASE = 'https://unitlift.com'
+const BASE = 'https://www.unitlift.com'
 
 // Croatian (default locale) - no /hr/ prefix (localePrefix: 'as-needed')
 const staticRoutesHr = [

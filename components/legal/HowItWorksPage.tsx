@@ -7,6 +7,8 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import LogoSvg from '@/components/landing/LogoSvg'
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
+
 const DashboardStrip = dynamic(() => import('@/components/landing/DashboardStrip'))
 const ClientAppStrip = dynamic(() => import('@/components/landing/ClientAppStrip'))
 
@@ -67,7 +69,7 @@ export default function HowItWorksPage() {
           ))}
         </ul>
         <div className="navact">
-          <a href="https://app.unitlift.com/login" className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
+          <a href={`${APP_URL}/login`} className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
             {t('login')}
           </a>
           <a href={`/${locale}#cijene`} className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
@@ -87,7 +89,7 @@ export default function HowItWorksPage() {
         {navLinks.map(([label, href]) => (
           <a key={label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
         ))}
-        <a href="https://app.unitlift.com/login" onClick={() => setMenuOpen(false)}>{t('login')}</a>
+        <a href={`${APP_URL}/login`} onClick={() => setMenuOpen(false)}>{t('login')}</a>
         <a href={`/${locale}#cijene`} className="btn btn-p btn-fw mobc" onClick={() => setMenuOpen(false)}>
           {t('common.tryFree')}
         </a>

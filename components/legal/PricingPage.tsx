@@ -8,6 +8,7 @@ import LogoSvg from '@/components/landing/LogoSvg'
 
 const PLANS = ['starter', 'pro', 'scale'] as const
 const PRICES = [29, 59, 99]
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
 
 export default function PricingPage() {
   const locale = useLocale()
@@ -17,7 +18,6 @@ export default function PricingPage() {
 
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const APP_URL = 'https://app.unitlift.com'
 
   const navLabels = t.raw('nav') as string[]
   const navLinks = [
@@ -74,7 +74,7 @@ export default function PricingPage() {
           ))}
         </ul>
         <div className="navact">
-          <a href="https://app.unitlift.com/login" className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
+          <a href={`${APP_URL}/login`} className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
             {t('login')}
           </a>
           <a href={`/${locale}/cijene`} className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
@@ -94,7 +94,7 @@ export default function PricingPage() {
         {navLinks.map(([label, href]) => (
           <a key={label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
         ))}
-        <a href="https://app.unitlift.com/login" onClick={() => setMenuOpen(false)}>{t('login')}</a>
+        <a href={`${APP_URL}/login`} onClick={() => setMenuOpen(false)}>{t('login')}</a>
         <button className="langbtn mobc" onClick={() => { switchLang(); setMenuOpen(false) }}>
           {t('common.langSwitchLabel')} {otherLocale.toUpperCase()}
         </button>

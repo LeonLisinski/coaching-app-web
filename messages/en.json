@@ -344,7 +344,7 @@
   "payLbl": "Payments via:",
   "copy": "© 2026 UnitLift, owner Leon Lišinski. All rights reserved.",
   "footerCols": [
-    { "title": "Platform", "links": [["How it works", "/en/kako-radi"], ["Mobile app", "#funkcije"], ["Pricing", "/en/cijene"], ["Blog", "/en/blog"], ["Log in", "https://app.unitlift.com/login"]] },
+    { "title": "Platform", "links": [["How it works", "/en/kako-radi"], ["Mobile app", "#funkcije"], ["Pricing", "/en/cijene"], ["Blog", "/en/blog"], ["Log in", "__APP_URL__/login"]] },
     { "title": "Support", "links": [["FAQ", "/en/faq"], ["Contact", "/en/kontakt"], ["Email support", "mailto:support@unitlift.com"]] },
     { "title": "Legal", "links": [["Privacy Policy", "/en/privatnost"], ["Terms of Service", "/en/uvjeti"], ["GDPR", "/en/privatnost"]] }
   ],

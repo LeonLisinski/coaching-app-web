@@ -344,7 +344,7 @@
   "payLbl": "Plaćanje putem:",
   "copy": "© 2026 UnitLift, vl. Leon Lišinski. Sva prava pridržana.",
   "footerCols": [
-    { "title": "Platforma", "links": [["Kako radi", "/hr/kako-radi"], ["Mobilna aplikacija", "#funkcije"], ["Cijene", "/hr/cijene"], ["Blog", "/hr/blog"], ["Prijava", "https://app.unitlift.com/login"]] },
+    { "title": "Platforma", "links": [["Kako radi", "/hr/kako-radi"], ["Mobilna aplikacija", "#funkcije"], ["Cijene", "/hr/cijene"], ["Blog", "/hr/blog"], ["Prijava", "__APP_URL__/login"]] },
     { "title": "Podrška", "links": [["FAQ", "/hr/faq"], ["Kontakt", "/hr/kontakt"], ["Email podrška", "mailto:support@unitlift.com"]] },
     { "title": "Pravno", "links": [["Politika privatnosti", "/hr/privatnost"], ["Uvjeti korištenja", "/hr/uvjeti"], ["GDPR", "/hr/privatnost"]] }
   ],
