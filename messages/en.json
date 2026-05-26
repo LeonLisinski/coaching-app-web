@@ -344,7 +344,7 @@
   "payLbl": "Payments via:",
   "copy": "© 2026 UnitLift, owner Leon Lišinski. All rights reserved.",
   "footerCols": [
-    { "title": "Platform", "links": [["How it works", "/en/kako-radi"], ["Mobile app", "#funkcije"], ["Pricing", "/en/cijene"], ["Blog", "/en/blog"], ["Log in", "__APP_URL__/login"]] },
+    { "title": "Platform", "links": [["How it works", "/en/kako-radi"], ["Mobile app", "#funkcije"], ["Pricing", "/en/cijene"], ["Blog", "/en/blog"], ["Trainers", "/en/treneri"], ["Log in", "__APP_URL__/login"]] },
     { "title": "Support", "links": [["FAQ", "/en/faq"], ["Contact", "/en/kontakt"], ["Email support", "mailto:support@unitlift.com"]] },
     { "title": "Legal", "links": [["Privacy Policy", "/en/privatnost"], ["Terms of Service", "/en/uvjeti"], ["GDPR", "/en/privatnost"]] }
   ],
@@ -352,7 +352,7 @@
   "mobImgAltTraining": "UnitLift personal trainer app - workout plan on a phone screen",
   "mobImgAltNutrition": "Online coaching app - meal plan and macros on a phone",
   "common": {
-    "navBack": "← Home",
+    "navBack": "Home",
     "langSwitchLabel": "Language:",
     "menuAria": "Menu",
     "footerCopy": "© 2026 UnitLift, owner Leon Lišinski",
@@ -371,7 +371,6 @@
   "footer": {
     "company": "UnitLift, digital services",
     "owner": "owner Leon Lišinski",
-    "address": "Vijenac Ivana Meštrovića 80, Osijek, Croatia",
     "legal": "OIB: 61111415884 \u00a0·\u00a0 MB: 99113821"
   },
   "contact": {
@@ -491,7 +490,7 @@
   "notFound": {
     "title": "Page not found",
     "text": "The page you're looking for doesn't exist or has been moved. Go back to the homepage.",
-    "backHome": "← Home",
+    "backHome": "Home",
     "seePricing": "See pricing"
   },
   "showcase": {

@@ -19,7 +19,7 @@ export default function RootNotFound() {
             background: '#0066FF', color: '#fff', fontWeight: 700,
             fontSize: '0.95rem', padding: '13px 28px', borderRadius: 12, textDecoration: 'none',
           }}>
-            ← Početna
+            Početna
           </Link>
         </div>
       </body>

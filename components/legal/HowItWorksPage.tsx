@@ -64,8 +64,8 @@ export default function HowItWorksPage() {
           <span className="nw">UnitLift</span>
         </Link>
         <ul className="navlinks">
-          {navLinks.map(([label, href]) => (
-            <li key={label}><a href={href}>{label}</a></li>
+          {navLinks.map(([label, href], i) => (
+            <li key={label}><a href={href} className={i === 0 ? 'nav-home-link' : ''}>{label}</a></li>
           ))}
         </ul>
         <div className="navact">
@@ -76,7 +76,7 @@ export default function HowItWorksPage() {
             {t('common.tryFree')}
           </a>
           <button className="langbtn navlang" onClick={switchLang}>
-            {otherLocale.toUpperCase()} ↕
+            {locale.toUpperCase()}
           </button>
           <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label={t('common.menuAria')}>
             <span /><span /><span />

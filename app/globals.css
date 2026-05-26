@@ -21,6 +21,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 5%;height:66px;dis
 .navlinks{display:flex;align-items:center;gap:1.8rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
 .navlinks a{color:var(--w70);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .2s}
 .navlinks a:hover{color:var(--w)}
+.nav-home-link{background:linear-gradient(135deg,#7eb8ff 0%,#0066ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700!important}
+.nav-home-link:hover{-webkit-text-fill-color:transparent!important}
 .navact{display:flex;align-items:center;gap:8px}
 .hburg{display:none;background:none;border:1px solid var(--w20);border-radius:8px;padding:8px;cursor:pointer;flex-direction:column;gap:4px}
 .hburg span{display:block;width:18px;height:2px;background:var(--w70);border-radius:2px}
@@ -578,8 +580,8 @@ footer::after{content:'';position:absolute;top:0;left:0;right:0;height:48px;back
 .legal-toc-item:hover{color:var(--lt);background:var(--la)}
 .legal-toc-item.active{color:var(--ba);background:rgba(0,102,255,.07);border-left-color:var(--ba);font-weight:600}
 .legal-toc-back{margin-top:18px;padding-top:14px;border-top:1px solid var(--lb)}
-.legal-toc-back a{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;color:var(--ls);text-decoration:none;font-weight:500;transition:color .2s}
-.legal-toc-back a:hover{color:var(--ba)}
+.legal-toc-back a{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;color:var(--ls);text-decoration:none;font-weight:700;transition:opacity .2s;background:linear-gradient(135deg,#7eb8ff 0%,#0066ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.legal-toc-back a:hover{opacity:.75}
 
 /* Footer bar */
 .legal-footer-bar{background:var(--bdk);border-top:none;padding:22px 0;position:relative}
@@ -962,4 +964,147 @@ a.contact-info-val:hover{color:var(--ba)}
   .strip-lb-next{right:8px}
   .strip-lb-land{width:88vw;height:min(55vw,340px)}
   .strip-lb-port{width:70vw;height:min(80vh,620px)}
+}
+
+/* ── Trainers pages ─────────────────────────────────── */
+
+/* Listing page: hero extras */
+.trainers-hero-inner{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:24px}
+.trainers-hero-sub{color:rgba(255,255,255,.72);font-size:1.05rem;line-height:1.7;max-width:520px;margin:8px 0 0}
+.trainers-hero-stats{display:flex;align-items:stretch;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden;backdrop-filter:blur(8px)}
+.trainers-stat{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:14px 28px;flex:1;text-align:center}
+.trainers-stat-n{font-size:1.5rem;font-weight:800;background:linear-gradient(135deg,#7eb8ff,#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.trainers-stat span:last-child{font-size:.72rem;color:rgba(255,255,255,.55);font-weight:500;letter-spacing:.03em;text-transform:uppercase}
+.trainers-stat-sep{width:1px;background:rgba(255,255,255,.15);align-self:stretch}
+
+/* Listing section bg */
+.trainers-section{padding:72px 0 80px;background:linear-gradient(180deg,#eef2fb 0%,#f5f7ff 60%,#f9faff 100%)}
+
+/* Grid */
+.trainers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+
+/* Card */
+.trainer-card{
+  display:flex;flex-direction:column;background:#fff;border-radius:22px;
+  border:1px solid #e8edf8;overflow:visible;text-decoration:none;color:inherit;
+  transition:box-shadow .28s,transform .28s;position:relative;margin-top:52px;
+  box-shadow:0 2px 12px rgba(0,30,100,.06)
+}
+.trainer-card:hover{box-shadow:0 16px 48px rgba(0,60,200,.12);transform:translateY(-6px)}
+/* top accent line */
+.trainer-card::before{content:'';position:absolute;top:0;left:24px;right:24px;height:3px;border-radius:0 0 4px 4px;background:linear-gradient(90deg,#4da3ff,#0066ff);opacity:0;transition:opacity .28s}
+.trainer-card:hover::before{opacity:1}
+
+/* Founder card */
+.trainer-card--founder{border:1.5px solid #b3d4ff;background:linear-gradient(160deg,#f4f9ff 60%,#eaf3ff 100%);box-shadow:0 4px 20px rgba(0,102,255,.09)}
+.trainer-card--founder:hover{box-shadow:0 18px 52px rgba(0,102,255,.16);transform:translateY(-7px)}
+.trainer-founder-badge{position:absolute;top:14px;right:14px;z-index:2;background:linear-gradient(135deg,#0066ff,#0044cc);color:#fff;font-size:.66rem;font-weight:700;padding:4px 11px;border-radius:20px;letter-spacing:.04em;box-shadow:0 2px 8px rgba(0,102,255,.35)}
+
+/* Circle avatar — overflows top-left (larger: 92px) */
+.trainer-card-circle{
+  position:absolute;top:-46px;left:22px;
+  width:92px;height:92px;border-radius:50%;overflow:hidden;
+  border:4px solid #fff;box-shadow:0 4px 20px rgba(0,0,0,.18);
+  z-index:1;background:linear-gradient(135deg,#7eb8ff,#0066ff)
+}
+.trainer-card--founder .trainer-card-circle{border-color:#dceeff;box-shadow:0 4px 20px rgba(0,102,255,.3)}
+.trainer-card-circle img{width:100%;height:100%;object-fit:cover}
+.trainer-card-circle-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:800;color:#fff;background:linear-gradient(135deg,#7eb8ff,#0066ff)}
+.trainer-card--founder .trainer-card-circle-fallback{background:linear-gradient(135deg,#7eb8ff,#0044cc)}
+
+/* Card body */
+.trainer-card-body{padding:24px 22px 20px;padding-top:60px;flex:1;display:flex;flex-direction:column;gap:8px}
+.trainer-card-name{font-size:1.08rem;font-weight:700;color:#0a1024;letter-spacing:-.01em}
+.trainer-card-title{font-size:.77rem;color:#0066ff;font-weight:600;letter-spacing:.01em}
+.trainer-card--founder .trainer-card-title{color:#0055d4}
+.trainer-card-bio{font-size:.84rem;color:#5a6380;line-height:1.65;flex:1;margin:0}
+.trainer-card-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.trainer-tag{font-size:.69rem;padding:3px 9px;border-radius:20px;background:#eef2ff;color:#0055d4;font-weight:500;border:1px solid #dde6ff}
+.trainer-card--founder .trainer-tag{background:#daeeff;color:#003db8;border-color:#c0dcff}
+.trainer-card-cta{font-size:.82rem;color:#0066ff;font-weight:700;margin-top:6px;display:flex;align-items:center;gap:6px}
+.trainer-card-cta::after{content:'→';display:inline-block;transition:transform .2s}
+.trainer-card:hover .trainer-card-cta::after{transform:translateX(5px)}
+
+/* Placeholder cards */
+.trainer-card--placeholder{border:1.5px dashed #d4daf0;background:#fafbff;box-shadow:none;cursor:default;pointer-events:none;opacity:.65}
+.trainer-card--placeholder:hover{transform:none;box-shadow:none}
+.trainer-card--placeholder::before{display:none}
+.trainer-card-circle--ph{background:linear-gradient(135deg,#dde5f7,#c8d5ee)}
+.trainer-card-soon{position:absolute;top:14px;right:14px;font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#8a98c4;background:#edf0fa;border:1px solid #d4daf0;border-radius:20px;padding:3px 10px}
+.trainer-ph-name{height:14px;width:60%;background:#dde5f7;border-radius:6px;margin-bottom:6px}
+.trainer-ph-title{height:10px;width:80%;background:#e8edf8;border-radius:6px;margin-bottom:8px}
+.trainer-ph-bio{height:10px;width:100%;background:#eef1f9;border-radius:6px;margin-bottom:5px}
+.trainer-ph-bio--short{width:70%}
+.trainer-ph-tags{display:flex;gap:6px;margin-top:8px}
+.trainer-ph-tag{height:20px;width:90px;background:#eef1f9;border-radius:20px}
+.trainer-ph-cta{height:11px;width:40%;background:#dde5f7;border-radius:6px;margin-top:10px}
+
+/* Trainers page CTA banner */
+.trainers-cta{margin-top:3.5rem}
+.trainers-cta-inner{display:flex;align-items:center;gap:24px;flex-wrap:wrap;background:linear-gradient(135deg,#061030,#0d2060);border-radius:20px;padding:28px 32px;border:1px solid rgba(100,160,255,.15);box-shadow:0 8px 40px rgba(0,30,120,.18)}
+.trainers-cta-title{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:4px}
+.trainers-cta-text{font-size:.86rem;color:rgba(255,255,255,.68);line-height:1.55}
+
+/* ── Trainer PROFILE hero ─── */
+.trainer-hero{position:relative;overflow:hidden}
+.trainer-hero-inner{position:relative;z-index:1;display:flex;align-items:flex-start;gap:28px;flex-wrap:wrap}
+.trainer-hero--founder .legal-hero-bg{opacity:.9}
+.trainer-hero-avatar{flex-shrink:0;border-radius:50%;overflow:hidden;border:3px solid rgba(255,255,255,.25)}
+.trainer-hero-avatar--lg{width:160px;height:160px;border:4px solid rgba(255,255,255,.3);box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.trainer-hero--founder .trainer-hero-avatar{border-color:rgba(100,180,255,.5);box-shadow:0 0 0 3px rgba(100,180,255,.2)}
+.trainer-hero-avatar img{width:100%;height:100%;object-fit:cover}
+.trainer-avatar-lg{width:160px;height:160px;border-radius:50%;background:linear-gradient(135deg,#7eb8ff,#0066ff);display:flex;align-items:center;justify-content:center;font-size:2.8rem;font-weight:800;color:#fff}
+.trainer-hero-title{color:rgba(255,255,255,.7);font-size:.95rem;margin:4px 0 0}
+.trainer-hero-location{display:flex;align-items:center;gap:5px;color:rgba(255,255,255,.55);font-size:.82rem;margin-top:6px}
+
+/* Trainer contact buttons */
+.trainer-contact-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+.trainer-contact-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;font-size:.87rem;font-weight:600;text-decoration:none;transition:opacity .2s}
+.trainer-contact-instagram{background:#e1306c;color:#fff}
+.trainer-contact-whatsapp{background:#25d366;color:#fff}
+.trainer-contact-email{background:#0066ff;color:#fff}
+.trainer-contact-btn:hover{opacity:.85}
+
+/* Coaching CTA block */
+.trainer-coaching-cta{margin-top:2rem;background:linear-gradient(135deg,#0a1024,#0d2060);border-radius:16px;padding:28px}
+.trainer-coaching-cta-inner{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.trainer-coaching-cta-icon{font-size:1.8rem;flex-shrink:0}
+.trainer-coaching-cta-title{font-size:1rem;font-weight:700;color:#fff;margin-bottom:4px}
+.trainer-coaching-cta-text{font-size:.85rem;color:rgba(255,255,255,.7);line-height:1.5}
+.trainer-coaching-cta-btn{display:inline-block;background:#fff;color:#0a1024;font-size:.87rem;font-weight:700;padding:11px 22px;border-radius:10px;text-decoration:none;white-space:nowrap;transition:background .2s,transform .15s;flex-shrink:0}
+.trainer-coaching-cta-btn:hover{background:#f0f4ff;transform:scale(1.02)}
+
+/* Trainer sidebar */
+.trainer-sidebar-card{background:#f0f4ff;border-radius:12px;padding:16px;border:1px solid #e4ecff}
+.trainer-info-row{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 0;border-bottom:1px solid #e4eaff;font-size:.82rem;gap:8px}
+.trainer-info-row:last-child{border-bottom:none}
+.trainer-info-label{color:#666;font-weight:500;flex-shrink:0}
+.trainer-info-val{color:#0a1024;font-weight:600;text-align:right}
+.trainer-sidebar-contact{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:8px;font-size:.82rem;font-weight:500;color:#333;text-decoration:none;background:#f0f4ff;border:1px solid #dde4ff;transition:background .2s}
+.trainer-sidebar-contact:hover{background:#e0eaff}
+.trainer-sidebar-cta-btn{display:block;text-align:center;background:linear-gradient(135deg,#0066ff,#0044cc);color:#fff;font-size:.87rem;font-weight:700;padding:12px 16px;border-radius:10px;text-decoration:none;transition:opacity .2s,transform .15s}
+.trainer-sidebar-cta-btn:hover{opacity:.9;transform:scale(1.02)}
+
+@media(max-width:900px){
+  .trainers-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .trainers-section{padding:52px 0 60px}
+  .trainers-grid{grid-template-columns:1fr;gap:24px}
+  /* Stats: keep all 3 in one row, shrink content */
+  .trainers-hero-stats{width:100%;box-sizing:border-box}
+  .trainers-stat{padding:12px 6px}
+  .trainers-stat-n{font-size:1.15rem}
+  .trainers-stat span:last-child{font-size:.58rem;letter-spacing:.02em}
+  /* Profile hero */
+  .trainer-hero-inner{flex-direction:column;align-items:center;text-align:center}
+  .trainer-hero-location{justify-content:center}
+  .trainer-hero-avatar--lg{width:110px;height:110px}
+  /* CTA blocks */
+  .trainers-cta-inner,.trainer-coaching-cta-inner{flex-direction:column;align-items:stretch;text-align:center}
+  .trainer-contact-btns{justify-content:center}
+  .trainer-coaching-cta-btn{text-align:center}
+  /* Cards: give a bit more breathing room for the overflow circle */
+  .trainer-card{margin-top:56px}
+  .trainer-card-body{padding:22px 18px 18px;padding-top:64px}
 }

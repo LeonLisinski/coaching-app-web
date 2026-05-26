@@ -88,7 +88,7 @@ export default function LegalPage({ doc, docType }: LegalPageProps) {
 
         <div className="navact">
           <button className="langbtn navlang" onClick={switchLang}>
-            {otherLocale.toUpperCase()} ↕
+            {locale.toUpperCase()}
           </button>
           <a href={`${APP_URL}/login`} className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
             {t('login')}
@@ -206,9 +206,6 @@ export default function LegalPage({ doc, docType }: LegalPageProps) {
               </div>
               <div className="legal-toc-back">
                 <a href={`/${locale}`}>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
-                    <path d="M6 2L1 7l5 5M1 7h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
                   {t('legalPage.backHome')}
                 </a>
               </div>

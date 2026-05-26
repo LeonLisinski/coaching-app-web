@@ -2,7 +2,7 @@ import type { LegalDocument } from './types'
 
 export const privacyEn: LegalDocument = {
   title: 'Privacy Policy',
-  lastUpdated: 'March 20, 2025',
+  lastUpdated: 'May 26, 2026',
   version: '1.0',
   intro: 'This Privacy Policy describes how we collect, use, and protect your personal data.',
   callout: 'In short: your data is safe. We do not share it with third parties and we do not sell it. Cancel anytime - details below.',
@@ -15,7 +15,6 @@ export const privacyEn: LegalDocument = {
         {
           items: [
             'UnitLift, obrt za digitalne usluge, vl. Leon Lišinski',
-            'Vijenac Ivana Meštrovića 80, Osijek, Croatia',
             'Tax ID (OIB): 61111415884',
             'Business Registration Number: 99113821',
             'Email: support@unitlift.com',
@@ -35,6 +34,7 @@ export const privacyEn: LegalDocument = {
             'Profile photo (avatar) - optional',
             'Training and nutrition data (plans, meals, recipes, foods)',
             'Check-in data defined by your trainer - such as steps, sleep hours, mood, etc.',
+            'Check-in photos submitted by the client as part of progress tracking',
             'Messages exchanged between trainer and client within the app',
           ],
         },
@@ -146,6 +146,7 @@ export const privacyEn: LegalDocument = {
             'Access to data is restricted to authorized personnel only',
           ],
         },
+        { text: 'As a platform operator, we may technically access stored files exclusively for the purpose of technical support, security, and troubleshooting. Access is restricted and documented.' },
       ],
     },
     {
@@ -177,7 +178,6 @@ export const privacyEn: LegalDocument = {
         {
           items: [
             'UnitLift, obrt za digitalne usluge, vl. Leon Lišinski',
-            'Vijenac Ivana Meštrovića 80, Osijek, Croatia',
             'Email: support@unitlift.com',
           ],
         },

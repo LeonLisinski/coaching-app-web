@@ -89,13 +89,13 @@ export default function BlogListPage({ posts }: Props) {
           <span className="nw">UnitLift</span>
         </Link>
         <ul className="navlinks">
-          {navLinks.map(([label, href]) => (
-            <li key={label}><a href={href}>{label}</a></li>
+          {navLinks.map(([label, href], i) => (
+            <li key={label}><a href={href} className={i === 0 ? 'nav-home-link' : ''}>{label}</a></li>
           ))}
         </ul>
         <div className="navact">
           <button className="langbtn navlang" onClick={switchLang}>
-            {otherLocale.toUpperCase()} ↕
+            {locale.toUpperCase()}
           </button>
           <a href={`${APP_URL}/login`} className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
             {t('login')}

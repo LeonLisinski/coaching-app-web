@@ -2,7 +2,7 @@ import type { LegalDocument } from './types'
 
 export const privacyHr: LegalDocument = {
   title: 'Politika privatnosti',
-  lastUpdated: '20. ožujka 2025.',
+  lastUpdated: '26. svibnja 2026.',
   version: '1.0',
   intro: 'Ova Politika privatnosti opisuje kako prikupljamo, koristimo i štitimo vaše osobne podatke.',
   callout: 'Ukratko: tvoji podaci su sigurni. Ne dijelimo ih s trećima i ne prodajemo nikome. Otkaži kad hoćeš - detalji su u nastavku.',
@@ -15,9 +15,6 @@ export const privacyHr: LegalDocument = {
         {
           items: [
             'UnitLift, obrt za digitalne usluge, vl. Leon Lišinski',
-            'Vijenac Ivana Meštrovića 80, Osijek, Hrvatska',
-            'OIB: 61111415884',
-            'Matični broj obrta: 99113821',
             'E-mail: support@unitlift.com',
           ],
         },
@@ -35,6 +32,7 @@ export const privacyHr: LegalDocument = {
             'Fotografija profila (avatar) - opcionalno',
             'Podaci o treningu i prehrani (planovi, obroci, recepti, namirnice)',
             'Podaci za check-in koje trener definira - primjerice broj koraka, sati sna, raspoloženje i slično',
+            'Fotografije za check-in koje klijent šalje u sklopu praćenja napretka',
             'Poruke razmijenjene između trenera i klijenta unutar aplikacije',
           ],
         },
@@ -146,6 +144,7 @@ export const privacyHr: LegalDocument = {
             'Pristup podacima ograničen je na ovlaštene osobe',
           ],
         },
+        { text: 'Kao operater platforme možemo tehnički pristupiti pohranjenim datotekama isključivo u svrhu tehničke podrške, sigurnosti i rješavanja problema. Pristup je ograničen i dokumentiran.' },
       ],
     },
     {
@@ -177,7 +176,6 @@ export const privacyHr: LegalDocument = {
         {
           items: [
             'UnitLift, obrt za digitalne usluge, vl. Leon Lišinski',
-            'Vijenac Ivana Meštrovića 80, Osijek, Hrvatska',
             'E-mail: support@unitlift.com',
           ],
         },

@@ -169,7 +169,6 @@ export const termsEn: LegalDocument = {
         {
           items: [
             'UnitLift, obrt za digitalne usluge, vl. Leon Lišinski',
-            'Vijenac Ivana Meštrovića 80, Osijek, Croatia',
             'Email: support@unitlift.com',
           ],
         },

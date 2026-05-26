@@ -344,7 +344,7 @@
   "payLbl": "Plaćanje putem:",
   "copy": "© 2026 UnitLift, vl. Leon Lišinski. Sva prava pridržana.",
   "footerCols": [
-    { "title": "Platforma", "links": [["Kako radi", "/hr/kako-radi"], ["Mobilna aplikacija", "#funkcije"], ["Cijene", "/hr/cijene"], ["Blog", "/hr/blog"], ["Prijava", "__APP_URL__/login"]] },
+    { "title": "Platforma", "links": [["Kako radi", "/hr/kako-radi"], ["Mobilna aplikacija", "#funkcije"], ["Cijene", "/hr/cijene"], ["Blog", "/hr/blog"], ["Treneri", "/hr/treneri"], ["Prijava", "__APP_URL__/login"]] },
     { "title": "Podrška", "links": [["FAQ", "/hr/faq"], ["Kontakt", "/hr/kontakt"], ["Email podrška", "mailto:support@unitlift.com"]] },
     { "title": "Pravno", "links": [["Politika privatnosti", "/hr/privatnost"], ["Uvjeti korištenja", "/hr/uvjeti"], ["GDPR", "/hr/privatnost"]] }
   ],
@@ -352,7 +352,7 @@
   "mobImgAltTraining": "UnitLift aplikacija za trenere - ekran plana treninga na mobitelu",
   "mobImgAltNutrition": "Online coaching aplikacija - ekran plana prehrane i makronutrijenata",
   "common": {
-    "navBack": "← Početna",
+    "navBack": "Početna",
     "langSwitchLabel": "Jezik:",
     "menuAria": "Menu",
     "footerCopy": "© 2026 UnitLift, vl. Leon Lišinski",
@@ -371,7 +371,6 @@
   "footer": {
     "company": "UnitLift, obrt za digitalne usluge",
     "owner": "vl. Leon Lišinski",
-    "address": "Vijenac Ivana Meštrovića 80, Osijek",
     "legal": "OIB: 61111415884 \u00a0·\u00a0 MB: 99113821"
   },
   "contact": {
@@ -491,7 +490,7 @@
   "notFound": {
     "title": "Stranica nije pronađena",
     "text": "Stranica koju tražiš ne postoji ili je premještena. Vrati se na početnu stranicu.",
-    "backHome": "← Početna",
+    "backHome": "Početna",
     "seePricing": "Pogledaj cijene"
   },
   "showcase": {

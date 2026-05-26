@@ -86,7 +86,7 @@ export default function Navbar() {
             {t('common.tryFree')}
           </a>
           <button className="langbtn navlang" onClick={toggleLang}>
-            {otherLocale.toUpperCase()}
+            {locale.toUpperCase()}
           </button>
           <button
             className="hburg"

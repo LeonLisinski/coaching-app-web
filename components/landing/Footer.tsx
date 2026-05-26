@@ -71,7 +71,6 @@ export default function Footer() {
             <div className="fco">
               {t('footer.company')}<br />
               {t('footer.owner')}<br />
-              {t('footer.address')}<br />
               {t('footer.legal')}<br />
               <ObfuscatedEmail />
             </div>
