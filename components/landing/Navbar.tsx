@@ -47,7 +47,7 @@ export default function Navbar() {
     { label: navLabels[0], href: `/${locale}/kako-radi` },
     { label: navLabels[1], href: '#funkcije' },
     { label: navLabels[2], href: `/${locale}/cijene` },
-    { label: navLabels[3], href: `/${locale}/blog` },
+    { label: navLabels[3], href: `/${locale}/treneri` },
     { label: navLabels[4], href: `/${locale}/faq` },
   ]
 

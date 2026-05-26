@@ -34,7 +34,7 @@ export default function HowItWorksPage() {
     [navLabels[0], `/${locale}/kako-radi`],
     [navLabels[1], `/${locale}#funkcije`],
     [navLabels[2], `/${locale}/cijene`],
-    ['Blog', `/${locale}/blog`],
+    [navLabels[3], `/${locale}/treneri`],
     ['FAQ', `/${locale}/faq`],
   ]
 
