@@ -65,7 +65,7 @@ export default function TrainerProfilePage({ trainer: trainerRaw }: { trainer: T
 
   const quickInfo = trainer.quickInfo ?? [
     ...(trainer.certifications?.length ? [{ label: 'Iskustvo', value: trainer.certifications[0] }] : []),
-    { label: 'Specijalnosti', value: `${trainer.specialties.length} područja` },
+    { label: 'Specijalnosti', value: `${trainer.specialties?.length ?? 0} područja` },
   ]
 
   return (

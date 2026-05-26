@@ -24,6 +24,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   })
 }
 
-export default async function TreneriPage({ params: _params }: Props) {
+export default async function TreneriPage() {
   return <TrainersListPage trainers={trainers} />
 }
