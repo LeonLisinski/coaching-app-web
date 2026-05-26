@@ -24,7 +24,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   })
 }
 
-export default async function TreneriPage({ params }: Props) {
-  const { locale } = await params
+export default async function TreneriPage({ params: _params }: Props) {
   return <TrainersListPage trainers={trainers} />
 }

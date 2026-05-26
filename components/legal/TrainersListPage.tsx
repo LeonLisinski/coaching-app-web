@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { useLocale, useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
@@ -16,7 +17,7 @@ function TrainerCard({ trainer, locale }: { trainer: Trainer; locale: string }) 
     <Link href={`/${locale}/treneri/${trainer.slug}`} className={`trainer-card${trainer.isFounder ? ' trainer-card--founder' : ''}`}>
       <div className="trainer-card-circle">
         {trainer.image ? (
-          <img src={trainer.image} alt={trainer.name} style={{ objectPosition: imgPos }} />
+          <Image src={trainer.image} alt={trainer.name} fill style={{ objectFit: 'cover', objectPosition: imgPos }} sizes="92px" />
         ) : (
           <div className="trainer-card-circle-fallback">
             {trainer.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()}

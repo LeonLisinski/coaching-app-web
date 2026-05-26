@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { useLocale, useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
@@ -103,7 +104,7 @@ export default function TrainerProfilePage({ trainer: trainerRaw }: { trainer: T
         <div className="legal-hero-inner trainer-hero-inner">
           <div className="trainer-hero-avatar trainer-hero-avatar--lg">
             {trainer.image ? (
-              <img src={trainer.image} alt={trainer.name} style={{ objectPosition: trainer.imagePosition ?? 'center center' }} />
+              <Image src={trainer.image} alt={trainer.name} fill style={{ objectFit: 'cover', objectPosition: trainerRaw.imagePosition ?? 'center center' }} sizes="160px" />
             ) : (
               <div className="trainer-avatar-lg">
                 {trainer.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()}

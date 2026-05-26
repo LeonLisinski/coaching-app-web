@@ -23,9 +23,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = isHr
     ? `${trainer.name} - osobni trener | UnitLift`
     : `${trainer.name} - personal trainer | UnitLift`
-  const description = isHr
+  const description = (isHr
     ? trainer.shortBio
-    : (trainer.en?.shortBio ?? trainer.shortBio)
+    : (trainer.en?.shortBio ?? trainer.shortBio)) ?? ''
   return buildPageMetadata({
     locale: isHr ? 'hr' : 'en',
     pathname: isHr ? `/treneri/${slug}` : `/en/treneri/${slug}`,
@@ -43,6 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function TrainerPage({ params }: Props) {
   const { slug } = await params
   const trainer = getTrainerBySlug(slug)
-  if (!trainer) notFound()
+  if (!trainer) return notFound()
   return <TrainerProfilePage trainer={trainer} />
 }
