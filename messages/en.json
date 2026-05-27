@@ -36,49 +36,67 @@
     { "t": "Communication without the mess", "d": "All client messages in one place. No more messy WhatsApp conversations and lost messages." }
   ],
   "priceLbl": "Pricing",
-  "priceTit": "Three plans. You choose by client count.",
-  "priceSub": "Same features in every plan - only the number of seats changes.",
+  "priceTit": "One system for your entire online coaching business.",
+  "priceSub": "Every feature included. Choose a plan based on your number of active clients.",
   "pop": "Most popular",
+  "foundingBannerTitle": "Founding offer",
+  "foundingBannerDesc": "50% off forever — valid while your subscription stays active.",
+  "foundingBannerEnds": "Offer ends {date}.",
+  "foundingLabel": "founding price",
   "tiers": [
     {
       "name": "Starter", "price": 29,
-      "clients": "Up to 15 clients",
-      "feats": [
-        "For the coach signing up first clients who wants order from day one",
-        "Up to 15 active clients"
-      ],
+      "clients": "Up to 10 active clients",
+      "desc": "For the coach professionally managing their first online clients.",
+      "feats": [],
       "btn": "Start free"
     },
     {
       "name": "Pro", "price": 59,
-      "clients": "Up to 50 clients",
-      "feats": [
-        "For the active coach who won't lose their week to busywork",
-        "Up to 50 active clients",
-        "Custom logo and colors in client app"
-      ],
+      "clients": "Up to 30 active clients",
+      "desc": "For the active coach building a serious online coaching business.",
+      "feats": [],
       "btn": "Start free"
     },
     {
       "name": "Scale", "price": 99,
-      "clients": "Up to 150 clients",
-      "feats": [
-        "For the coach running coaching as a full job",
-        "Up to 150 active clients",
-        "Custom logo and colors in client app"
-      ],
+      "clients": "Up to 75 active clients",
+      "desc": "For the coach whose primary business is online coaching.",
+      "feats": [],
       "btn": "Start free"
     }
   ],
   "baseFeats": [
-    "Training and nutrition plans",
-    "Track what matters - steps, sleep, weight, mood",
-    "Client chat",
-    "Client mobile app (free)",
-    "See instantly who paid and how much you earned"
+    "All UnitLift features",
+    "Free client app",
+    "No per-client fees"
   ],
-  "scaleNote": "More than 150 clients? +€10/mo for every additional 25.",
-  "priceNote": "All plans include a 14-day free trial. Card required for activation.",
+  "allIncludedTitle": "Everything included in every plan",
+  "includedCoachingTitle": "Coaching",
+  "includedClientsTitle": "Clients",
+  "includedBusinessTitle": "Business",
+  "includedCoaching": [
+    "Training and nutrition plans",
+    "Workout load analysis",
+    "Calorie and macro calculator",
+    "PDF reports per client"
+  ],
+  "includedClients": [
+    "Check-ins and progress photos",
+    "Chat with images and video",
+    "Free client mobile app",
+    "Activate and deactivate clients"
+  ],
+  "includedBusiness": [
+    "Coaching application forms",
+    "Calendar and calls",
+    "Payments and finances",
+    "Mobile view for coaches"
+  ],
+  "includedExtras": "Croatian and English · Dark/light mode · Custom colors and logo",
+  "activeClientNote": "An active client is a client you are currently coaching. Deactivated clients and their data are kept, but do not count toward your plan limit.",
+  "scaleNote": "More than 75 active clients? Scale + €10/mo for every additional 25.",
+  "priceNote": "14 days free. Billing starts after the trial period ends. Cancel anytime.",
   "testLbl": "Reviews",
   "testTit": "Coaches who switched to the system",
   "testimonials": [

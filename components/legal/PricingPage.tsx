@@ -10,6 +10,22 @@ const PLANS = ['starter', 'pro', 'scale'] as const
 const PRICES = [29, 59, 99]
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
 
+function isFoundingPromoActive() {
+  const end = process.env.NEXT_PUBLIC_FOUNDING_PROMO_END
+  if (!end) return false
+  return Date.now() < new Date(end).getTime()
+}
+
+function foundingPromoEndDate(locale: string) {
+  const end = process.env.NEXT_PUBLIC_FOUNDING_PROMO_END
+  if (!end) return null
+  try {
+    return new Date(end).toLocaleDateString(locale === 'en' ? 'en-GB' : 'hr-HR', {
+      day: 'numeric', month: 'long', year: 'numeric',
+    })
+  } catch { return end }
+}
+
 export default function PricingPage() {
   const locale = useLocale()
   const t = useTranslations()
@@ -36,16 +52,22 @@ export default function PricingPage() {
   }, [])
 
   const tiers = (t.raw('tiers') as Array<{
-    name: string; price: number; clients: string; feats: string[]; btn: string
+    name: string; price: number; clients: string; desc: string; feats: string[]; btn: string
   }>).map((tier, i) => ({
     ...tier,
     popular: i === 1,
-    note: i === 2 ? t('scaleNote') : null,
   }))
 
   const baseFeats = t.raw('baseFeats') as string[]
   const advCards = t.raw('pricingPage.advCards') as Array<{ title: string; desc: string }>
   const stats = t.raw('pricingPage.stats') as [string, string][]
+
+  const includedCoaching = t.raw('includedCoaching') as string[]
+  const includedClients  = t.raw('includedClients')  as string[]
+  const includedBusiness = t.raw('includedBusiness') as string[]
+
+  const promoActive  = isFoundingPromoActive()
+  const promoEndDate = foundingPromoEndDate(locale)
 
   const IcoCheckin = <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
   const IcoPhone   = <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" strokeWidth="2.5"/></svg>
@@ -119,7 +141,7 @@ export default function PricingPage() {
         <div className="con">
 
           {/* Intro */}
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '36px' }}>
             <h2 style={{ fontSize: 'clamp(1.5rem,2.8vw,2.2rem)', fontWeight: 800, color: 'var(--lt)', marginBottom: '12px', letterSpacing: '-.5px' }}>
               {t('priceTit')}
             </h2>
@@ -128,31 +150,63 @@ export default function PricingPage() {
             </p>
           </div>
 
+          {/* Founding promo banner */}
+          {promoActive && (
+            <div style={{
+              display: 'flex', alignItems: 'flex-start', gap: '12px',
+              maxWidth: '620px', margin: '0 auto 32px',
+              background: 'linear-gradient(135deg,rgba(0,102,255,.07),rgba(0,85,238,.04))',
+              border: '1px solid rgba(0,102,255,.22)',
+              borderRadius: '16px', padding: '16px 20px',
+            }}>
+              <span style={{ fontSize: '1.2rem', lineHeight: 1, paddingTop: '2px' }}>✦</span>
+              <div>
+                <p style={{ margin: '0 0 4px', fontWeight: 700, fontSize: '.9rem', color: 'var(--lt)' }}>
+                  {t('foundingBannerTitle')}
+                </p>
+                <p style={{ margin: 0, fontSize: '.82rem', color: 'var(--ls)', lineHeight: 1.55 }}>
+                  {t('foundingBannerDesc')}
+                  {promoEndDate && <> {t('foundingBannerEnds', { date: promoEndDate })}</>}
+                </p>
+              </div>
+            </div>
+          )}
+
           {/* Pricing cards */}
           <div className="pg pricing-page-grid" style={{ marginTop: 0 }}>
             {tiers.map((tier, i) => (
               <div key={i} className={`pc pricing-page-card ${['basic', 'pop', 'elite'][i]}`} style={{ paddingTop: tier.popular ? '50px' : undefined }}>
                 {tier.popular && <div className="popbdg">{t('pop')}</div>}
                 <div className="ptier">{tier.name}</div>
-                <div className="pamt">€<span>{PRICES[i]}</span><span className="psmall">/{t('common.monthSuffix')}</span></div>
-                <div className="pper" style={{ marginBottom: '22px' }}>{tier.clients}</div>
+
+                {/* Price — show founding discount if promo active */}
+                {promoActive ? (
+                  <div style={{ marginBottom: '4px' }}>
+                    <div className="pamt" style={{ marginBottom: '2px' }}>
+                      €<span>{(PRICES[i] / 2).toFixed(2).replace('.00', '')}</span>
+                      <span className="psmall">/{t('common.monthSuffix')}</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                      <span style={{ fontSize: '.78rem', color: '#9ca3af', textDecoration: 'line-through' }}>€{PRICES[i]}</span>
+                      <span style={{ fontSize: '.7rem', fontWeight: 700, color: '#0066ff', background: 'rgba(0,102,255,.1)', borderRadius: '6px', padding: '2px 8px' }}>
+                        {t('foundingLabel')}
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="pamt">€<span>{PRICES[i]}</span><span className="psmall">/{t('common.monthSuffix')}</span></div>
+                )}
+
+                <div className="pper" style={{ marginBottom: '8px' }}>{tier.clients}</div>
+                {tier.desc && (
+                  <p style={{ fontSize: '.82rem', color: 'var(--ls)', marginBottom: '18px', lineHeight: 1.5 }}>{tier.desc}</p>
+                )}
                 <div className="pdiv" />
                 <ul className="pfeats">
-                  {tier.feats.map((feat, j) => (
+                  {baseFeats.map((feat, j) => (
                     <li key={j}><span className="pchk">✓</span>{feat}</li>
                   ))}
-                  {baseFeats.map((feat, j) => (
-                    <li key={`base-${j}`} className="pfeat-muted">
-                      <span className="pchk pchk-muted">✓</span>
-                      {feat}
-                    </li>
-                  ))}
                 </ul>
-                {tier.note && (
-                  <p style={{ marginBottom: '12px', fontSize: '.75rem', color: 'var(--lt)', textAlign: 'center', lineHeight: 1.5 }}>
-                    {tier.note}
-                  </p>
-                )}
                 <a
                   href={`${APP_URL}/register?plan=${PLANS[i]}`}
                   className="btn btn-p btn-fw"
@@ -164,12 +218,18 @@ export default function PricingPage() {
             ))}
           </div>
 
-          <p style={{ textAlign: 'center', marginTop: '28px', color: 'var(--ls)', fontSize: '.83rem' }}>
-            {t('priceNote')}
-          </p>
+          {/* Active client note + scale overage note */}
+          <div style={{ textAlign: 'center', marginTop: '24px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+            <p style={{ color: 'var(--ls)', fontSize: '.8rem', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
+              {t('activeClientNote')}
+            </p>
+            <p style={{ color: 'var(--ls)', fontSize: '.8rem', margin: 0 }}>
+              {t('scaleNote')}
+            </p>
+          </div>
 
           {/* Stats row */}
-          <div className="pp-stats-row">
+          <div className="pp-stats-row" style={{ marginTop: '40px' }}>
             {stats.map(([val, lbl]) => (
               <div key={lbl} className="pp-stat">
                 <span className="pp-stat-val">{val}</span>
@@ -178,8 +238,39 @@ export default function PricingPage() {
             ))}
           </div>
 
+          {/* All included grid */}
+          <div style={{ marginTop: '56px', marginBottom: '16px' }}>
+            <h2 style={{ fontSize: 'clamp(1.3rem,2.5vw,1.9rem)', fontWeight: 800, color: 'var(--lt)', textAlign: 'center', marginBottom: '32px', letterSpacing: '-.4px' }}>
+              {t('allIncludedTitle')}
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '24px' }}>
+              {[
+                { title: t('includedCoachingTitle'), items: includedCoaching },
+                { title: t('includedClientsTitle'),  items: includedClients  },
+                { title: t('includedBusinessTitle'), items: includedBusiness },
+              ].map(col => (
+                <div key={col.title}>
+                  <p style={{ fontWeight: 700, fontSize: '.8rem', letterSpacing: '.08em', textTransform: 'uppercase', color: '#0066ff', marginBottom: '14px' }}>
+                    {col.title}
+                  </p>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    {col.items.map(item => (
+                      <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '.88rem', color: 'var(--lt)', lineHeight: 1.4 }}>
+                        <span style={{ color: '#0066ff', fontWeight: 700, flexShrink: 0 }}>✓</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <p style={{ textAlign: 'center', marginTop: '24px', fontSize: '.8rem', color: 'var(--ls)' }}>
+              {t('includedExtras')}
+            </p>
+          </div>
+
           {/* Advantages */}
-          <div className="pp-advantages" style={{ background: '#fff', border: '1px solid var(--lb)' }}>
+          <div className="pp-advantages" style={{ background: '#fff', border: '1px solid var(--lb)', marginTop: '40px' }}>
             <h2 className="pp-adv-h2" style={{ color: 'var(--lt)', marginBottom: '8px' }}>
               {t('pricingPage.whyTitle')}
             </h2>
@@ -199,18 +290,10 @@ export default function PricingPage() {
             </div>
           </div>
 
-          {/* Partner section */}
-          <div className="pp-partner" style={{ background: 'var(--bdk)' }}>
-            <div className="pp-partner-inner">
-              <div>
-                <h3 className="pp-partner-h">{t('pricingPage.partnerTitle')}</h3>
-                <p className="pp-partner-p">{t('pricingPage.partnerText')}</p>
-              </div>
-              <a href="mailto:info@unitlift.com" className="btn btn-g">
-                {t('pricingPage.partnerBtn')}
-              </a>
-            </div>
-          </div>
+          {/* Price note */}
+          <p style={{ textAlign: 'center', marginTop: '28px', color: 'var(--ls)', fontSize: '.83rem' }}>
+            {t('priceNote')}
+          </p>
 
         </div>
       </div>

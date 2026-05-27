@@ -36,49 +36,67 @@
     { "t": "Komunikacija bez zbrke", "d": "Sve poruke s klijentima na jednom mjestu. Nema više zbrkanih WhatsApp razgovora i izgubljenih poruka." }
   ],
   "priceLbl": "Cijene",
-  "priceTit": "Tri plana. Biraš po broju klijenata.",
-  "priceSub": "Iste funkcije u svim planovima - mijenja se samo broj mjesta.",
+  "priceTit": "Jedan sustav za cijeli online coaching.",
+  "priceSub": "Sve funkcije uključene. Odaberi plan prema broju aktivnih klijenata.",
   "pop": "Najpopularniji",
+  "foundingBannerTitle": "Founding ponuda",
+  "foundingBannerDesc": "50% popusta zauvijek — vrijedi dok je pretplata neprekinuto aktivna.",
+  "foundingBannerEnds": "Ponuda završava {date}.",
+  "foundingLabel": "founding cijena",
   "tiers": [
     {
       "name": "Starter", "price": 29,
-      "clients": "Do 15 klijenata",
-      "feats": [
-        "Za trenera koji prima prve klijente i želi red odmah",
-        "Do 15 aktivnih klijenata"
-      ],
+      "clients": "Do 10 aktivnih klijenata",
+      "desc": "Za trenera koji počinje profesionalno voditi online klijente.",
+      "feats": [],
       "btn": "Kreni besplatno"
     },
     {
       "name": "Pro", "price": 59,
-      "clients": "Do 50 klijenata",
-      "feats": [
-        "Za aktivnog trenera koji ne želi gubiti vrijeme na organiziranje",
-        "Do 50 aktivnih klijenata",
-        "Vlastiti logo i boje u klijentskoj aplikaciji"
-      ],
+      "clients": "Do 30 aktivnih klijenata",
+      "desc": "Za aktivnog trenera koji gradi ozbiljan online coaching posao.",
+      "feats": [],
       "btn": "Kreni besplatno"
     },
     {
       "name": "Scale", "price": 99,
-      "clients": "Do 150 klijenata",
-      "feats": [
-        "Za trenera kojemu je coaching pun posao",
-        "Do 150 aktivnih klijenata",
-        "Vlastiti logo i boje u klijentskoj aplikaciji"
-      ],
+      "clients": "Do 75 aktivnih klijenata",
+      "desc": "Za trenera kojemu je online coaching glavni posao.",
+      "feats": [],
       "btn": "Kreni besplatno"
     }
   ],
   "baseFeats": [
-    "Planovi treninga i prehrane",
-    "Prati što ti je važno - koraci, san, težina, raspoloženje",
-    "Chat s klijentima",
-    "Mobilna aplikacija za klijente (besplatna)",
-    "Vidi odmah tko je platio i koliko si zaradio"
+    "Sve UnitLift funkcije",
+    "Besplatna klijentska aplikacija",
+    "Bez naknade po klijentu"
   ],
-  "scaleNote": "Više od 150 klijenata? +€10/mj za svakih dodatnih 25.",
-  "priceNote": "Svi planovi uključuju 14-dnevno besplatno probno razdoblje. Kartica potrebna za aktivaciju.",
+  "allIncludedTitle": "Sve uključeno u svaki plan",
+  "includedCoachingTitle": "Coaching",
+  "includedClientsTitle": "Klijenti",
+  "includedBusinessTitle": "Poslovanje",
+  "includedCoaching": [
+    "Planovi treninga i prehrane",
+    "Analiza opterećenja plana",
+    "Kalkulator kalorija i makronutrijenata",
+    "PDF izvještaji po klijentu"
+  ],
+  "includedClients": [
+    "Check-inovi i slike napretka",
+    "Chat sa slikama i videom",
+    "Besplatna klijentska aplikacija",
+    "Aktivacija i deaktivacija klijenata"
+  ],
+  "includedBusiness": [
+    "Prijave za coaching",
+    "Kalendar i pozivi",
+    "Plaćanja i financije",
+    "Mobilni prikaz za trenera"
+  ],
+  "includedExtras": "Hrvatski i engleski jezik · Dark/light način rada · Prilagodba boja i logotipa",
+  "activeClientNote": "Aktivni klijent je klijent kojemu trenutno vodiš coaching. Deaktivirani klijenti i njihovi podaci ostaju spremljeni, ali se ne računaju u limit plana.",
+  "scaleNote": "Više od 75 aktivnih klijenata? Scale + €10/mj za svakih dodatnih 25.",
+  "priceNote": "14 dana besplatno. Naplata počinje tek nakon probnog razdoblja. Otkazivanje u svako doba.",
   "testLbl": "Recenzije",
   "testTit": "Treneri koji su prešli na sustav",
   "testimonials": [
