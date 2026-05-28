@@ -99,9 +99,8 @@ export async function sendAdminNewBookingEmail(params: {
         <p style="color:#525280;font-size:12px;margin:0 0 6px;text-transform:uppercase;letter-spacing:.06em;font-weight:700">Napomena</p>
         <p style="color:#0a0a20;font-size:14px;line-height:1.7;margin:0;white-space:pre-wrap">${esc(message)}</p>
       </div>` : ''}
-      <div style="display:flex;gap:12px;margin-top:20px">
-        <a href="${adminUrl}/confirm/${bookingId}" style="background:#2a8cff;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px">✓ Potvrdi termin</a>
-        <a href="${adminUrl}/reject/${bookingId}" style="background:#f5f7ff;color:#444;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;border:1px solid #dde2f5">✗ Odbij zahtjev</a>
+      <div style="margin-top:20px">
+        <a href="${adminUrl}" style="background:#2a8cff;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px">→ Otvori admin panel</a>
       </div>
       <p style="color:#888;font-size:12px;margin-top:20px">ID: ${bookingId}</p>
     </div>`
