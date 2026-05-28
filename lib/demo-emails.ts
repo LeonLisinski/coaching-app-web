@@ -24,8 +24,8 @@ function formatDateTime(date: string, time: string, locale: string): string {
 }
 
 const header = `
-  <div style="background:#080818;padding:20px 24px;border-radius:12px;margin-bottom:24px">
-    <img src="https://unitlift.com/logo.png" alt="UnitLift" height="28" style="height:28px" />
+  <div style="background:#080818;padding:18px 24px;border-radius:12px;margin-bottom:24px;display:flex;align-items:center">
+    <span style="font-family:system-ui,sans-serif;font-size:1.15rem;font-weight:800;color:#fff;letter-spacing:-.5px">Unit<span style="color:#2a8cff">Lift</span></span>
   </div>`
 
 // ─── 1. User: request received ───────────────────────────────────────────────

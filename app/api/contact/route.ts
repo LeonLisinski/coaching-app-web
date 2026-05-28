@@ -60,8 +60,8 @@ export async function POST(req: NextRequest) {
       subject: `[${safeTopic}] Poruka od ${safeName}`,
       html: `
         <div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:24px">
-          <div style="background:#080818;padding:20px 24px;border-radius:12px;margin-bottom:24px">
-            <img src="https://unitlift.com/logo.png" alt="UnitLift" height="28" style="height:28px" />
+          <div style="background:#080818;padding:18px 24px;border-radius:12px;margin-bottom:24px">
+            <span style="font-family:system-ui,sans-serif;font-size:1.15rem;font-weight:800;color:#fff;letter-spacing:-.5px">Unit<span style="color:#2a8cff">Lift</span></span>
           </div>
           <h2 style="color:#0a0a20;margin:0 0 8px">Nova poruka s kontakt forme</h2>
           <p style="color:#525280;margin:0 0 24px;font-size:14px">Primljeno putem unitlift.com/kontakt</p>
