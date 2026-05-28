@@ -1,9 +1,8 @@
 import { Resend } from 'resend'
 
-const resend    = new Resend(process.env.RESEND_API_KEY)
-const FROM      = 'UnitLift <onboarding@resend.dev>'
-const ADMIN_TO  = process.env.ADMIN_EMAIL ?? 'leon@unitlift.com'
-const APP_URL   = process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.unitlift.com'
+const resend   = new Resend(process.env.RESEND_API_KEY)
+const FROM     = 'UnitLift <onboarding@resend.dev>'
+const ADMIN_TO = process.env.ADMIN_EMAIL ?? 'leon@unitlift.com'
 
 function esc(s: string | null | undefined): string {
   if (!s) return ''

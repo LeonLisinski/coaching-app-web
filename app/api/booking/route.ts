@@ -123,11 +123,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'DB error' }, { status: 500 })
     }
 
-    const bookingId  = data.id
-    const adminUrl   = `${SITE_URL}/admin/bookings`
-    const bookingUrl = locale === 'en'
-      ? `${SITE_URL}/en/prezentacija`
-      : `${SITE_URL}/prezentacija`
+    const bookingId = data.id
+    const adminUrl  = `${SITE_URL}/admin/bookings`
 
     // Send emails (non-fatal)
     await Promise.allSettled([

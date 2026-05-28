@@ -125,7 +125,7 @@ export default function AdminBookingsPage() {
               <p style={{ margin: '0 0 6px', color: '#0a0a20', fontWeight: 600 }}>🗓 {fmtDT(b.booking_date, b.booking_time)}</p>
               {b.num_clients != null && <p style={{ margin: '0 0 4px', color: '#525280', fontSize: '.85rem' }}>Klijenata: {b.num_clients}</p>}
               {b.current_tool  && <p style={{ margin: '0 0 4px', color: '#525280', fontSize: '.85rem' }}>Alat: {b.current_tool}</p>}
-              {b.message       && <p style={{ margin: '0 0 4px', color: '#525280', fontSize: '.85rem', fontStyle: 'italic' }}>"{b.message}"</p>}
+              {b.message       && <p style={{ margin: '0 0 4px', color: '#525280', fontSize: '.85rem', fontStyle: 'italic' }}>&quot;{b.message}&quot;</p>}
               {b.admin_note    && <p style={{ margin: '0 0 4px', color: '#7c3aed', fontSize: '.8rem' }}>Napomena: {b.admin_note}</p>}
               <p style={{ margin: '8px 0 0', color: '#9ca3af', fontSize: '.75rem' }}>
                 {new Date(b.created_at).toLocaleDateString('hr-HR')} · {b.locale.toUpperCase()} · {b.id.slice(0, 8)}
