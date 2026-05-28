@@ -11,7 +11,8 @@ function esc(s: string | null | undefined): string {
 
 function formatDateTime(date: string, time: string, locale: string): string {
   try {
-    const d = new Date(`${date}T${time}:00`)
+    const t = time.slice(0, 5) // "18:00:00" → "18:00"
+    const d = new Date(`${date}T${t}:00`)
     return d.toLocaleString(locale === 'en' ? 'en-GB' : 'hr-HR', {
       timeZone: 'Europe/Zagreb',
       weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',

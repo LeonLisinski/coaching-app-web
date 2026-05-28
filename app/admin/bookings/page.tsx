@@ -33,7 +33,8 @@ const STATUS_LABELS: Record<string, string> = {
 
 function fmtDT(date: string, time: string) {
   try {
-    return new Date(`${date}T${time}:00`).toLocaleString('hr-HR', {
+    const t = time.slice(0, 5) // "18:00:00" → "18:00"
+    return new Date(`${date}T${t}:00`).toLocaleString('hr-HR', {
       timeZone: 'Europe/Zagreb', day: 'numeric', month: 'short', year: 'numeric',
       hour: '2-digit', minute: '2-digit',
     })
