@@ -59,21 +59,26 @@ export default function Pricing() {
         {promoActive && (
           <div style={{
             maxWidth: '560px', margin: '0 auto 32px',
-            background: 'rgba(255,107,0,.06)',
-            border: '1.5px solid rgba(255,107,0,.3)',
-            borderRadius: '16px', padding: '16px 22px',
-            display: 'flex', alignItems: 'flex-start', gap: '14px',
+            background: '#fffaf5',
+            border: '1px solid rgba(200,100,20,.22)',
+            borderRadius: '14px', padding: '16px 20px',
+            display: 'flex', alignItems: 'flex-start', gap: '12px',
           }}>
-            <span style={{ fontSize: '1.2rem', lineHeight: 1, paddingTop: '2px', flexShrink: 0 }}>🎉</span>
+            <span style={{ fontSize: '1.1rem', lineHeight: 1, paddingTop: '3px', flexShrink: 0 }}>🎉</span>
             <div>
-              <p style={{ margin: '0 0 4px', fontWeight: 700, fontSize: '.9rem', color: 'var(--lt)', letterSpacing: '-.2px' }}>
-                {t('foundingBannerTitle').replace('🎉 ', '')}
+              <p style={{ margin: '0 0 5px', fontWeight: 700, fontSize: '.88rem', color: 'var(--lt)', letterSpacing: '-.2px' }}>
+                {t('foundingBannerTitle')}
               </p>
-              <p style={{ margin: '0 0 8px', fontSize: '.8rem', color: 'var(--ls)', lineHeight: 1.55 }}>
+              <p style={{ margin: '0 0 10px', fontSize: '.79rem', color: 'var(--ls)', lineHeight: 1.6 }}>
                 {t('foundingBannerDesc')}
               </p>
               {promoEndDate && (
-                <span style={{ fontSize: '.75rem', fontWeight: 600, color: '#e05a00', background: 'rgba(255,107,0,.1)', borderRadius: '6px', padding: '3px 10px' }}>
+                <span style={{
+                  display: 'inline-block', fontSize: '.73rem', fontWeight: 600,
+                  color: '#b84a00', background: 'rgba(180,80,0,.08)',
+                  border: '1px solid rgba(180,80,0,.15)',
+                  borderRadius: '5px', padding: '2px 9px',
+                }}>
                   {t('foundingBannerEnds', { date: promoEndDate })}
                 </span>
               )}
@@ -123,9 +128,15 @@ export default function Pricing() {
                 ))}
               </ul>
               {i === 2 && (
-                <p style={{ marginBottom: '12px', fontSize: '.75rem', color: 'var(--lt)', textAlign: 'center', lineHeight: 1.5 }}>
-                  {t('scaleNote')}
-                </p>
+                <div style={{
+                  marginBottom: '14px', padding: '9px 12px',
+                  background: 'rgba(0,0,0,.03)', borderRadius: '8px',
+                  border: '1px solid rgba(0,0,0,.07)',
+                }}>
+                  <p style={{ margin: 0, fontSize: '.76rem', color: 'var(--ls)', lineHeight: 1.5 }}>
+                    {t('scaleNote')}
+                  </p>
+                </div>
               )}
               <a
                 href={`${APP_URL}/register?plan=${PLANS[i]}`}
