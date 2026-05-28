@@ -154,30 +154,25 @@ export default function PricingPage() {
           {promoActive && (
             <div style={{
               maxWidth: '620px', margin: '0 auto 32px',
-              background: '#fffaf5',
-              border: '1px solid rgba(200,100,20,.22)',
-              borderRadius: '14px', padding: '16px 22px',
-              display: 'flex', alignItems: 'flex-start', gap: '12px',
+              background: 'linear-gradient(135deg,#ff6b00,#ff9500)',
+              borderRadius: '16px', padding: '18px 24px',
+              boxShadow: '0 6px 24px rgba(255,107,0,.28)',
             }}>
-              <span style={{ fontSize: '1.1rem', lineHeight: 1, paddingTop: '3px', flexShrink: 0 }}>🎉</span>
-              <div>
-                <p style={{ margin: '0 0 5px', fontWeight: 700, fontSize: '.9rem', color: 'var(--lt)', letterSpacing: '-.2px' }}>
-                  {t('foundingBannerTitle')}
-                </p>
-                <p style={{ margin: '0 0 10px', fontSize: '.81rem', color: 'var(--ls)', lineHeight: 1.6 }}>
-                  {t('foundingBannerDesc')}
-                </p>
-                {promoEndDate && (
-                  <span style={{
-                    display: 'inline-block', fontSize: '.74rem', fontWeight: 600,
-                    color: '#b84a00', background: 'rgba(180,80,0,.08)',
-                    border: '1px solid rgba(180,80,0,.15)',
-                    borderRadius: '5px', padding: '2px 9px',
-                  }}>
-                    {t('foundingBannerEnds', { date: promoEndDate })}
-                  </span>
-                )}
-              </div>
+              <p style={{ margin: '0 0 6px', fontWeight: 800, fontSize: '.98rem', color: '#fff', letterSpacing: '-.2px' }}>
+                🎉 {t('foundingBannerTitle')}
+              </p>
+              <p style={{ margin: '0 0 12px', fontSize: '.82rem', color: 'rgba(255,255,255,.88)', lineHeight: 1.55 }}>
+                {t('foundingBannerDesc')}
+              </p>
+              {promoEndDate && (
+                <span style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '5px',
+                  fontSize: '.76rem', fontWeight: 600, color: '#fff',
+                  background: 'rgba(0,0,0,.2)', borderRadius: '6px', padding: '3px 10px',
+                }}>
+                  ⏳ {t('foundingBannerEnds', { date: promoEndDate })}
+                </span>
+              )}
             </div>
           )}
 
@@ -185,8 +180,21 @@ export default function PricingPage() {
           <div className="pg pricing-page-grid" style={{ marginTop: 0 }}>
             {tiers.map((tier, i) => (
               <div key={i} className={`pc pricing-page-card ${['basic', 'pop', 'elite'][i]}`}
-                style={{ paddingTop: tier.popular ? '50px' : undefined }}>
+                style={{ paddingTop: tier.popular ? '50px' : undefined, position: 'relative' }}>
                 {tier.popular && <div className="popbdg">{t('pop')}</div>}
+
+                {/* PROMO badge — same top-right corner on all cards */}
+                {promoActive && (
+                  <div style={{
+                    position: 'absolute', top: 0, right: 0,
+                    background: 'linear-gradient(135deg,#ff6b00,#ff9500)',
+                    color: '#fff', fontWeight: 800, fontSize: '.62rem', letterSpacing: '.05em',
+                    padding: '4px 11px', borderRadius: '0 12px 0 9px',
+                  }}>
+                    {t('foundingLabel')}
+                  </div>
+                )}
+
                 <div className="ptier">{tier.name}</div>
 
                 {/* Price — show founding discount if promo active */}
@@ -217,17 +225,6 @@ export default function PricingPage() {
                     <li key={j}><span className="pchk">✓</span>{feat}</li>
                   ))}
                 </ul>
-                {i === 2 && (
-                  <div style={{
-                    margin: '0 0 14px', padding: '9px 12px',
-                    background: 'rgba(0,0,0,.03)', borderRadius: '8px',
-                    border: '1px solid rgba(0,0,0,.07)',
-                  }}>
-                    <p style={{ margin: 0, fontSize: '.76rem', color: 'var(--ls)', lineHeight: 1.5 }}>
-                      {t('scaleNote')}
-                    </p>
-                  </div>
-                )}
                 <a
                   href={`${APP_URL}/register?plan=${PLANS[i]}`}
                   className="btn btn-p btn-fw"

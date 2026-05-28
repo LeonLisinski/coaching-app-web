@@ -39,9 +39,9 @@
   "priceTit": "One system for your entire online coaching business.",
   "priceSub": "Every feature included. Choose a plan based on your number of active clients.",
   "pop": "Most popular",
-  "foundingBannerTitle": "Founding promo — 50% off your first 12 months",
-  "foundingBannerDesc": "Pay half price for your entire first year. Discount applies only while your subscription stays active — once cancelled, it's permanently lost.",
-  "foundingBannerEnds": "⏳ Promo ends {date}.",
+  "foundingBannerTitle": "Founding promo - 50% off your first 12 months",
+  "foundingBannerDesc": "Billed monthly. Valid while your subscription stays active.",
+  "foundingBannerEnds": "Promo ends {date}.",
   "foundingLabel": "PROMO -50%",
   "tiers": [
     {
