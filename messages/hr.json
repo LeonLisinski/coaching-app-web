@@ -39,10 +39,10 @@
   "priceTit": "Jedan sustav za cijeli online coaching.",
   "priceSub": "Sve funkcije uključene. Odaberi plan prema broju aktivnih klijenata.",
   "pop": "Najpopularniji",
-  "foundingBannerTitle": "Founding ponuda",
-  "foundingBannerDesc": "50% popusta zauvijek — vrijedi dok je pretplata neprekinuto aktivna.",
-  "foundingBannerEnds": "Ponuda završava {date}.",
-  "foundingLabel": "founding cijena",
+  "foundingBannerTitle": "🎉 Osnivačka promo akcija — 50% popusta prvih 12 mjeseci",
+  "foundingBannerDesc": "Plati upola manje cijelu prvu godinu. Popust vrijedi samo dok je pretplata aktivna — jednom otkaže, zauvijek se gubi.",
+  "foundingBannerEnds": "⏳ Akcija traje do {date}.",
+  "foundingLabel": "PROMO -50%",
   "tiers": [
     {
       "name": "Starter", "price": 29,
