@@ -153,27 +153,26 @@ export default function PricingPage() {
           {/* Founding promo banner */}
           {promoActive && (
             <div style={{
-              maxWidth: '660px', margin: '0 auto 36px',
-              background: 'linear-gradient(135deg, #ff6b00 0%, #ff8c00 50%, #ffaa00 100%)',
-              borderRadius: '20px', padding: '22px 30px',
-              boxShadow: '0 8px 32px rgba(255,107,0,.3)',
+              maxWidth: '620px', margin: '0 auto 32px',
+              background: 'rgba(255,107,0,.06)',
+              border: '1.5px solid rgba(255,107,0,.3)',
+              borderRadius: '16px', padding: '18px 24px',
+              display: 'flex', alignItems: 'flex-start', gap: '14px',
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-                <span style={{ fontSize: '1.5rem', lineHeight: 1 }}>🎉</span>
-                <p style={{ margin: 0, fontWeight: 800, fontSize: '1.1rem', color: '#fff', letterSpacing: '-.3px' }}>
+              <span style={{ fontSize: '1.3rem', lineHeight: 1, paddingTop: '2px', flexShrink: 0 }}>🎉</span>
+              <div>
+                <p style={{ margin: '0 0 5px', fontWeight: 700, fontSize: '.95rem', color: 'var(--lt)', letterSpacing: '-.2px' }}>
                   {t('foundingBannerTitle').replace('🎉 ', '')}
                 </p>
-              </div>
-              <p style={{ margin: 0, fontSize: '.88rem', color: 'rgba(255,255,255,.9)', lineHeight: 1.6 }}>
-                {t('foundingBannerDesc')}
-              </p>
-              {promoEndDate && (
-                <div style={{ marginTop: '12px', display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(0,0,0,.18)', borderRadius: '8px', padding: '5px 14px' }}>
-                  <span style={{ fontSize: '.8rem', fontWeight: 700, color: '#fff' }}>
-                    ⏳ {t('foundingBannerEnds', { date: promoEndDate })}
+                <p style={{ margin: '0 0 10px', fontSize: '.83rem', color: 'var(--ls)', lineHeight: 1.6 }}>
+                  {t('foundingBannerDesc')}
+                </p>
+                {promoEndDate && (
+                  <span style={{ fontSize: '.77rem', fontWeight: 600, color: '#e05a00', background: 'rgba(255,107,0,.1)', borderRadius: '6px', padding: '3px 10px' }}>
+                    {t('foundingBannerEnds', { date: promoEndDate })}
                   </span>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           )}
 
@@ -181,25 +180,8 @@ export default function PricingPage() {
           <div className="pg pricing-page-grid" style={{ marginTop: 0 }}>
             {tiers.map((tier, i) => (
               <div key={i} className={`pc pricing-page-card ${['basic', 'pop', 'elite'][i]}`}
-                style={{
-                  paddingTop: tier.popular ? '50px' : undefined,
-                  outline: promoActive ? '2px solid rgba(255,107,0,.3)' : undefined,
-                  position: 'relative',
-                }}>
+                style={{ paddingTop: tier.popular ? '50px' : undefined }}>
                 {tier.popular && <div className="popbdg">{t('pop')}</div>}
-
-                {/* Promo ribbon */}
-                {promoActive && (
-                  <div style={{
-                    position: 'absolute', top: tier.popular ? '46px' : '0', right: '0',
-                    background: 'linear-gradient(135deg,#ff6b00,#ffaa00)',
-                    color: '#fff', fontWeight: 800, fontSize: '.63rem', letterSpacing: '.06em',
-                    padding: '4px 12px', borderRadius: '0 12px 0 10px',
-                  }}>
-                    {t('foundingLabel')}
-                  </div>
-                )}
-
                 <div className="ptier">{tier.name}</div>
 
                 {/* Price — show founding discount if promo active */}
@@ -210,13 +192,8 @@ export default function PricingPage() {
                       <span className="psmall">/{t('common.monthSuffix')}</span>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px', flexWrap: 'wrap' }}>
-                      <span style={{ fontSize: '.8rem', color: '#9ca3af', textDecoration: 'line-through' }}>€{PRICES[i]}/mj</span>
-                      <span style={{
-                        fontSize: '.72rem', fontWeight: 800, color: '#fff',
-                        background: 'linear-gradient(135deg,#ff6b00,#ffaa00)',
-                        borderRadius: '6px', padding: '2px 8px',
-                        boxShadow: '0 2px 8px rgba(255,107,0,.3)',
-                      }}>
+                      <span style={{ fontSize: '.78rem', color: '#9ca3af', textDecoration: 'line-through' }}>€{PRICES[i]}</span>
+                      <span style={{ fontSize: '.7rem', fontWeight: 700, color: '#e05a00', background: 'rgba(255,107,0,.1)', borderRadius: '5px', padding: '2px 8px' }}>
                         uštedi €{(PRICES[i] / 2 * 12).toFixed(0)}/god
                       </span>
                     </div>
