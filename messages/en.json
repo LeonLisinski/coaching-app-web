@@ -41,7 +41,7 @@
   "pop": "Most popular",
   "foundingBannerTitle": "Founding promo - 50% off your first 12 months",
   "foundingBannerDesc": "Billed monthly. Valid while your subscription stays active.",
-  "foundingBannerEnds": "Promo ends {date}.",
+  "foundingBannerEnds": "Promo ends {date}",
   "foundingLabel": "PROMO -50%",
   "tiers": [
     {

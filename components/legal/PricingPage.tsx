@@ -152,27 +152,26 @@ export default function PricingPage() {
 
           {/* Founding promo banner */}
           {promoActive && (
-            <div style={{
-              maxWidth: '620px', margin: '0 auto 32px',
-              background: 'linear-gradient(135deg,#ff6b00,#ff9500)',
-              borderRadius: '16px', padding: '18px 24px',
-              boxShadow: '0 6px 24px rgba(255,107,0,.28)',
-            }}>
-              <p style={{ margin: '0 0 6px', fontWeight: 800, fontSize: '.98rem', color: '#fff', letterSpacing: '-.2px' }}>
-                🎉 {t('foundingBannerTitle')}
-              </p>
-              <p style={{ margin: '0 0 12px', fontSize: '.82rem', color: 'rgba(255,255,255,.88)', lineHeight: 1.55 }}>
-                {t('foundingBannerDesc')}
-              </p>
-              {promoEndDate && (
-                <span style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '5px',
-                  fontSize: '.76rem', fontWeight: 600, color: '#fff',
-                  background: 'rgba(0,0,0,.2)', borderRadius: '6px', padding: '3px 10px',
-                }}>
-                  ⏳ {t('foundingBannerEnds', { date: promoEndDate })}
-                </span>
-              )}
+            <div style={{ maxWidth: '620px', margin: '0 auto 32px' }}>
+              <div style={{
+                background: 'linear-gradient(135deg,#f07020,#f5a020)',
+                borderRadius: '14px', padding: '16px 24px',
+                boxShadow: '0 4px 18px rgba(220,100,0,.22)',
+              }}>
+                <p style={{ margin: 0, fontWeight: 800, fontSize: '.98rem', color: '#fff', letterSpacing: '-.2px' }}>
+                  🎉 {t('foundingBannerTitle')}
+                </p>
+              </div>
+              <div style={{ paddingTop: '8px', textAlign: 'center' }}>
+                <p style={{ margin: '0 0 4px', fontSize: '.75rem', color: 'var(--ls)', lineHeight: 1.5 }}>
+                  * {t('foundingBannerDesc')}
+                </p>
+                {promoEndDate && (
+                  <p style={{ margin: 0, fontSize: '.73rem', color: 'var(--ls)' }}>
+                    ⏳ {t('foundingBannerEnds', { date: promoEndDate })}
+                  </p>
+                )}
+              </div>
             </div>
           )}
 
@@ -183,13 +182,13 @@ export default function PricingPage() {
                 style={{ paddingTop: tier.popular ? '50px' : undefined, position: 'relative' }}>
                 {tier.popular && <div className="popbdg">{t('pop')}</div>}
 
-                {/* PROMO badge — same top-right corner on all cards */}
+                {/* PROMO badge — consistent position on all cards (below NAJPOPULARNIJI on Pro) */}
                 {promoActive && (
                   <div style={{
-                    position: 'absolute', top: 0, right: 0,
-                    background: 'linear-gradient(135deg,#ff6b00,#ff9500)',
+                    position: 'absolute', top: '40px', right: 0,
+                    background: 'linear-gradient(135deg,#f07020,#f5a020)',
                     color: '#fff', fontWeight: 800, fontSize: '.62rem', letterSpacing: '.05em',
-                    padding: '4px 11px', borderRadius: '0 12px 0 9px',
+                    padding: '4px 11px', borderRadius: '0 0 0 9px',
                   }}>
                     {t('foundingLabel')}
                   </div>

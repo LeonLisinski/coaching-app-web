@@ -41,7 +41,7 @@
   "pop": "Najpopularniji",
   "foundingBannerTitle": "Osnivačka promo akcija - 50% popusta prvih 12 mjeseci",
   "foundingBannerDesc": "Obračunava se mjesečno. Vrijedi dok je pretplata neprekinuto aktivna.",
-  "foundingBannerEnds": "Akcija traje do {date}.",
+  "foundingBannerEnds": "Akcija traje do {date}",
   "foundingLabel": "PROMO -50%",
   "tiers": [
     {
