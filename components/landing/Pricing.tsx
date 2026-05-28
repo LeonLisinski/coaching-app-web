@@ -58,22 +58,32 @@ export default function Pricing() {
         {/* Founding promo banner */}
         {promoActive && (
           <div style={{
-            maxWidth: '540px', margin: '24px auto 56px',
-            background: '#fff7ed',
-            border: '1px solid #f5892a',
-            borderRadius: '10px', padding: '14px 22px',
+            maxWidth: '520px', margin: '16px auto 36px',
+            background: '#fff0e0',
+            border: '1px solid #d97318',
+            borderLeft: '4px solid #d97318',
+            borderRadius: '8px', padding: '12px 18px',
+            boxShadow: '0 2px 8px rgba(180,90,0,.1)',
+            display: 'flex', alignItems: 'center', gap: '16px',
           }}>
-            <p style={{ margin: '0 0 3px', fontWeight: 700, fontSize: '.72rem', color: '#b84e00', letterSpacing: '.08em', textTransform: 'uppercase' }}>
+            <div style={{
+              flexShrink: 0, background: '#d97318', color: '#fff',
+              fontWeight: 800, fontSize: '.7rem', letterSpacing: '.06em',
+              padding: '5px 10px', borderRadius: '6px', textTransform: 'uppercase',
+              lineHeight: 1.3, textAlign: 'center',
+            }}>
               {t('foundingBannerTitle')}
-            </p>
-            <p style={{ margin: '0 0 4px', fontWeight: 600, fontSize: '.92rem', color: '#c25800' }}>
-              {t('foundingBannerDesc')}
-            </p>
-            {promoEndDate && (
-              <p style={{ margin: 0, fontSize: '.76rem', color: '#c97a30' }}>
-                {t('foundingBannerEnds', { date: promoEndDate })}
+            </div>
+            <div>
+              <p style={{ margin: '0 0 2px', fontWeight: 700, fontSize: '.9rem', color: '#9b3800', lineHeight: 1.2 }}>
+                {t('foundingBannerDesc')}
               </p>
-            )}
+              {promoEndDate && (
+                <p style={{ margin: 0, fontSize: '.74rem', color: '#b85c20' }}>
+                  {t('foundingBannerEnds', { date: promoEndDate })}
+                </p>
+              )}
+            </div>
           </div>
         )}
 
@@ -87,9 +97,9 @@ export default function Pricing() {
               {promoActive && (
                 <div style={{
                   position: 'absolute', top: '40px', right: 0,
-                  background: '#fff7ed', border: '1px solid #f5892a', borderRight: 'none',
-                  color: '#b84e00', fontWeight: 700, fontSize: '.65rem', letterSpacing: '.04em',
-                  padding: '3px 10px', borderRadius: '6px 0 0 6px',
+                  background: '#d97318', color: '#fff',
+                  fontWeight: 800, fontSize: '.63rem', letterSpacing: '.05em',
+                  padding: '3px 10px', borderRadius: '5px 0 0 5px',
                 }}>
                   {t('foundingLabel')}
                 </div>
