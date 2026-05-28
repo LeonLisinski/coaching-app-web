@@ -124,7 +124,7 @@ export async function POST(req: NextRequest) {
     }
 
     const bookingId = data.id
-    const adminUrl  = `${SITE_URL}/admin/bookings`
+    const adminUrl  = 'https://admin.unitlift.com/prezentacije'
 
     // Send emails (non-fatal)
     await Promise.allSettled([
