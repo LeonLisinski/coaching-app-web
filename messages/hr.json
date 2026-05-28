@@ -37,12 +37,12 @@
   ],
   "priceLbl": "Cijene",
   "priceTit": "Jedan sustav za cijeli online coaching.",
-  "priceSub": "Sve funkcije uključene. Odaberi plan prema broju aktivnih klijenata.",
+  "priceSub": "Odaberi plan prema broju aktivnih klijenata. Sve funkcije su uključene u svaki plan.",
   "pop": "Najpopularniji",
-  "foundingBannerTitle": "Osnivačka promo akcija - 50% popusta prvih 12 mjeseci",
-  "foundingBannerDesc": "Obračunava se mjesečno. Vrijedi dok je pretplata neprekinuto aktivna.",
-  "foundingBannerEnds": "Akcija traje do {date}",
-  "foundingLabel": "PROMO -50%",
+  "foundingBannerTitle": "OSNIVAČKA PONUDA",
+  "foundingBannerDesc": "50% popusta prvih 12 mjeseci",
+  "foundingBannerEnds": "Dostupno do {date}",
+  "foundingLabel": "-50%",
   "tiers": [
     {
       "name": "Starter", "price": 29,
@@ -96,7 +96,7 @@
   "includedExtras": "Hrvatski i engleski jezik · Dark/light način rada · Prilagodba boja i logotipa",
   "activeClientNote": "Aktivni klijent je klijent kojemu trenutno vodiš coaching. Deaktivirani klijenti i njihovi podaci ostaju spremljeni, ali se ne računaju u limit plana.",
   "scaleNote": "Više od 75 aktivnih klijenata? Scale + €10/mj za svakih dodatnih 25.",
-  "priceNote": "14 dana besplatno. Naplata počinje tek nakon probnog razdoblja. Otkazivanje u svako doba.",
+  "priceNote": "14 dana besplatno · Nakon probnog razdoblja naplata je mjesečna · Osnivački popust vrijedi 12 mjeseci uz aktivnu pretplatu · Otkazivanje u bilo kojem trenutku",
   "testLbl": "Recenzije",
   "testTit": "Treneri koji su prešli na sustav",
   "testimonials": [

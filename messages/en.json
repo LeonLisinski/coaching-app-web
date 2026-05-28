@@ -37,12 +37,12 @@
   ],
   "priceLbl": "Pricing",
   "priceTit": "One system for your entire online coaching business.",
-  "priceSub": "Every feature included. Choose a plan based on your number of active clients.",
+  "priceSub": "Choose a plan based on your number of active clients. Every feature is included in every plan.",
   "pop": "Most popular",
-  "foundingBannerTitle": "Founding promo - 50% off your first 12 months",
-  "foundingBannerDesc": "Billed monthly. Valid while your subscription stays active.",
-  "foundingBannerEnds": "Promo ends {date}",
-  "foundingLabel": "PROMO -50%",
+  "foundingBannerTitle": "FOUNDING OFFER",
+  "foundingBannerDesc": "50% off your first 12 months",
+  "foundingBannerEnds": "Available until {date}",
+  "foundingLabel": "-50%",
   "tiers": [
     {
       "name": "Starter", "price": 29,
@@ -96,7 +96,7 @@
   "includedExtras": "Croatian and English · Dark/light mode · Custom colors and logo",
   "activeClientNote": "An active client is a client you are currently coaching. Deactivated clients and their data are kept, but do not count toward your plan limit.",
   "scaleNote": "More than 75 active clients? Scale + €10/mo for every additional 25.",
-  "priceNote": "14 days free. Billing starts after the trial period ends. Cancel anytime.",
+  "priceNote": "14 days free · Monthly billing after trial · Founding discount valid for 12 months with active subscription · Cancel anytime",
   "testLbl": "Reviews",
   "testTit": "Coaches who switched to the system",
   "testimonials": [
