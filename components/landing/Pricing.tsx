@@ -158,6 +158,20 @@ export default function Pricing() {
         <p style={{ textAlign: 'center', marginTop: '6px', color: 'var(--ls)', fontSize: '.83rem' }}>
           {t('scaleNote')}
         </p>
+
+        {/* Demo CTA below pricing */}
+        <div style={{ textAlign: 'center', marginTop: '32px', paddingTop: '28px', borderTop: '1px solid rgba(0,0,0,.06)' }}>
+          <p style={{ color: 'var(--ls)', fontSize: '.85rem', marginBottom: '12px' }}>
+            {t('demo.ctaDesc')}
+          </p>
+          <a
+            href={`/prezentacija`}
+            className="btn btn-g"
+            style={{ color: 'var(--ba)', borderColor: 'var(--ba)' }}
+          >
+            {t('demo.ctaBtn')}
+          </a>
+        </div>
       </div>
     </section>
   )

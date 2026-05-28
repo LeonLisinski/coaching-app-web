@@ -1107,3 +1107,46 @@ a.contact-info-val:hover{color:var(--ba)}
   .trainer-card{margin-top:56px}
   .trainer-card-body{padding:22px 18px 18px;padding-top:64px}
 }
+
+/* ─── Booking page ───────────────────────────────────────────────────────── */
+.booking-page{max-width:880px;margin:0 auto;padding:48px 16px 80px}
+.booking-hero{text-align:center;margin-bottom:40px}
+.booking-form{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.booking-col{display:flex;flex-direction:column}
+.booking-hint{color:var(--ls);font-size:.83rem;margin:6px 0 12px}
+.booking-timezone{color:var(--ls);font-size:.74rem;margin-top:10px;text-align:center}
+
+/* Calendar */
+.cal-wrapper{background:#f8faff;border:1px solid #e5e9f8;border-radius:12px;padding:16px;user-select:none}
+.cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.cal-month{font-weight:700;font-size:.9rem;color:var(--lt)}
+.cal-nav{background:none;border:1px solid #e5e9f8;border-radius:6px;width:30px;height:30px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;color:var(--lt)}
+.cal-nav:hover{background:#e5e9f8}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-dayname{text-align:center;font-size:.65rem;font-weight:700;color:var(--ls);text-transform:uppercase;padding:4px 0}
+.cal-day{background:none;border:1px solid transparent;border-radius:7px;padding:6px 0;font-size:.82rem;cursor:pointer;color:var(--lt);text-align:center;transition:all .15s}
+.cal-day:hover:not(:disabled){background:#e8f0ff;border-color:#2a8cff44}
+.cal-day-sel{background:#2a8cff!important;color:#fff!important;border-color:#2a8cff!important}
+.cal-day-past{color:#c0c0d0;cursor:default}
+
+/* Time slots */
+.slot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:8px 0 0}
+.slot-btn{background:#f8faff;border:1px solid #e5e9f8;border-radius:7px;padding:7px 4px;font-size:.82rem;cursor:pointer;color:var(--lt);font-weight:600;transition:all .15s}
+.slot-btn:hover{background:#e8f0ff;border-color:#2a8cff44}
+.slot-btn-sel{background:#2a8cff!important;color:#fff!important;border-color:#2a8cff!important}
+
+/* Form rows */
+.cf-row{display:flex;flex-direction:column;margin-bottom:14px}
+.cf-label{font-size:.78rem;font-weight:600;color:var(--lt);margin-bottom:5px;letter-spacing:.01em}
+.cf-input{padding:9px 12px;border:1px solid #dde2f5;border-radius:8px;font-size:.88rem;font-family:var(--f);color:var(--lt);background:#fff;outline:none;transition:border-color .15s;resize:vertical}
+.cf-input:focus{border-color:#2a8cff}
+.cf-error{color:#dc2626;font-size:.82rem;margin:0 0 10px}
+
+/* Success */
+.booking-success{text-align:center;padding:80px 24px;max-width:480px;margin:0 auto}
+.booking-success-icon{width:60px;height:60px;background:#22c55e;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:#fff;margin:0 auto 20px}
+
+@media(max-width:680px){
+  .booking-form{grid-template-columns:1fr}
+  .slot-grid{grid-template-columns:repeat(3,1fr)}
+}

@@ -577,5 +577,30 @@
     "profileSetting1": "Account settings",
     "profileSetting2": "Notifications",
     "profileSetting3": "Billing & subscription"
+  },
+  "demo": {
+    "ctaBtn": "Book a free demo",
+    "ctaDesc": "15 minutes · no obligation · see how UnitLift fits your coaching workflow",
+    "pageTitle": "Book a free demo",
+    "pageDesc": "In 15 minutes, we will show you how UnitLift can simplify managing clients, plans, check-ins, messages and payments.",
+    "pageNote": "No obligation. After submitting your request, we will confirm the appointment by email.",
+    "formName": "Full name",
+    "formEmail": "Email address",
+    "formDate": "Select a date",
+    "formTime": "Select a time slot",
+    "formClients": "Number of active clients (optional)",
+    "formTool": "How do you currently manage your clients? (optional)",
+    "formToolOptions": ["Google Sheets / Excel", "Trainerize", "TrueCoach", "PT Distinction", "Pen & paper", "Other"],
+    "formMessage": "What would you like to see in the demo? (optional)",
+    "formSubmit": "Submit booking request",
+    "formSubmitting": "Sending...",
+    "successTitle": "Request received!",
+    "successDesc": "We will get in touch via email to confirm your appointment. See you soon!",
+    "noSlotsDate": "No available slots for the selected date.",
+    "noSlotsWeek": "Select a date from the calendar.",
+    "errorDouble": "That slot was just taken. Please choose another time.",
+    "errorGeneral": "Something went wrong. Please try again.",
+    "selectDate": "Select a date first",
+    "timezone": "All times are in the Europe/Zagreb timezone (CET/CEST)."
   }
 }

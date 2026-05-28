@@ -577,5 +577,30 @@
     "profileSetting1": "Postavke računa",
     "profileSetting2": "Obavijesti",
     "profileSetting3": "Plaćanje i pretplata"
+  },
+  "demo": {
+    "ctaBtn": "Rezerviraj besplatnu prezentaciju",
+    "ctaDesc": "15 minuta · bez obveze · pokazat ćemo ti kako UnitLift odgovara tvom načinu rada",
+    "pageTitle": "Rezerviraj besplatnu prezentaciju",
+    "pageDesc": "U 15 minuta pokazat ćemo ti kako UnitLift može pojednostaviti vođenje klijenata, planova, check-inova, poruka i naplata.",
+    "pageNote": "Bez obveze. Nakon slanja zahtjeva potvrdit ćemo termin e-poštom.",
+    "formName": "Ime i prezime",
+    "formEmail": "E-mail adresa",
+    "formDate": "Odaberi datum",
+    "formTime": "Odaberi termin",
+    "formClients": "Broj aktivnih klijenata (neobavezno)",
+    "formTool": "Kako trenutačno vodiš klijente? (neobavezno)",
+    "formToolOptions": ["Google Sheets / Excel", "Trainerize", "TrueCoach", "PT Distinction", "Pen & paper", "Drugo"],
+    "formMessage": "Što želiš vidjeti u prezentaciji? (neobavezno)",
+    "formSubmit": "Pošalji zahtjev za rezervaciju",
+    "formSubmitting": "Slanje...",
+    "successTitle": "Zahtjev je zaprimljen!",
+    "successDesc": "Javit ćemo ti se e-poštom radi potvrde termina. Vidimo se uskoro!",
+    "noSlotsDate": "Nema dostupnih termina za odabrani datum.",
+    "noSlotsWeek": "Odaberi datum iz kalendara.",
+    "errorDouble": "Odabrani termin je upravo rezerviran. Molimo odaberi drugi.",
+    "errorGeneral": "Nešto je pošlo po krivu. Pokušaj ponovo.",
+    "selectDate": "Najprije odaberi datum",
+    "timezone": "Svi termini su u vremenskoj zoni Europe/Zagreb (CET/CEST)."
   }
 }

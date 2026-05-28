@@ -33,11 +33,14 @@ export default function Hero() {
           <a href={`/${locale}#cijene`} className="btn btn-p btn-xl">
             {t('btn1')}
           </a>
-          <a href={`/${locale}/kako-radi`} className="btn btn-g btn-lg">
-            {t('btn2')}
+          <a href={`/${locale}/prezentacija`} className="btn btn-g btn-lg">
+            {t('demo.ctaBtn')}
           </a>
         </div>
         <p className="hnote">{t('note')}</p>
+        <p style={{ marginTop: '8px', color: 'rgba(255,255,255,.42)', fontSize: '.77rem' }}>
+          {t('demo.ctaDesc')}
+        </p>
       </div>
 
       {/* Desktop: app mockup slideshow */}

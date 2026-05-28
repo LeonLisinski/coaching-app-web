@@ -15,10 +15,13 @@ export default function CTA() {
         <a href={`/${locale}#cijene`} className="btn btn-p btn-xl">
           {t('ctaB1')}
         </a>
-        <a href="mailto:support@unitlift.com" className="btn btn-g btn-lg">
-          {t('ctaB2')}
+        <a href={`/${locale}/prezentacija`} className="btn btn-g btn-lg">
+          {t('demo.ctaBtn')}
         </a>
       </div>
+      <p style={{ marginTop: '10px', color: 'rgba(255,255,255,.42)', fontSize: '.77rem' }}>
+        {t('demo.ctaDesc')}
+      </p>
       <p style={{ marginTop: '18px', color: 'rgba(255,255,255,.5)', fontSize: '.8rem' }}>
         {t('ctaN')}
       </p>
