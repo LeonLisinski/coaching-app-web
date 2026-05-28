@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
     const rawEmail    = email.trim() // use raw email for headers, not HTML-escaped
 
     const { error } = await resend.emails.send({
-      from: 'UnitLift Kontakt <onboarding@resend.dev>',
+      from: 'UnitLift <no-reply@unitlift.com>',
       to: 'leon@unitlift.com',
       replyTo: rawEmail,
       subject: `[${safeTopic}] Poruka od ${safeName}`,

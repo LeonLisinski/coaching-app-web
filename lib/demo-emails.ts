@@ -1,7 +1,7 @@
 import { Resend } from 'resend'
 
 const resend   = new Resend(process.env.RESEND_API_KEY)
-const FROM     = 'UnitLift <onboarding@resend.dev>'
+const FROM     = 'UnitLift <no-reply@unitlift.com>'
 const ADMIN_TO = process.env.ADMIN_EMAIL ?? 'leon@unitlift.com'
 
 function esc(s: string | null | undefined): string {
