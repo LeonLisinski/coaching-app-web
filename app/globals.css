@@ -439,9 +439,10 @@ footer::after{content:'';position:absolute;top:0;left:0;right:0;height:48px;back
   .tcar-slide{width:85vw}
   .legal-body{padding:32px 16px 60px}
   .hnote{white-space:normal;text-align:center}
-  .hcta-outer{padding:0 16px}
-  .hcta{flex-direction:column;align-items:stretch;gap:10px}
-  .hero .btn-xl,.hero .btn-lg{width:100%;justify-content:center;text-align:center}
+  .hcta-outer{padding:0 8px;max-width:100%}
+  .hcta{flex-direction:column!important;align-items:stretch!important;gap:12px}
+  .hcta .btn{width:100%!important;max-width:100%!important;justify-content:center;text-align:center;white-space:normal}
+  .hero .btn-xl,.hero .btn-lg{width:100%!important;max-width:100%!important;justify-content:center}
   .bk-grid{grid-template-columns:1fr;gap:24px}
   /* Client app - hide sticky scroll, show carousel */
   .capp-sticky-wrap{display:none}
