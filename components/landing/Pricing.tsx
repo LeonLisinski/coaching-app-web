@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import { useReveal } from '@/hooks/useReveal'
 
@@ -37,8 +38,11 @@ export default function Pricing() {
   const baseFeats = t.raw('baseFeats') as string[]
   const ref = useReveal<HTMLElement>()
 
-  const promoActive  = isFoundingPromoActive()
-  const promoEndDate = foundingPromoEndDate(locale)
+  // Must be client-only — toLocaleDateString differs between Node.js and browser ICU
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
+  const promoActive  = mounted && isFoundingPromoActive()
+  const promoEndDate = mounted ? foundingPromoEndDate(locale) : null
 
   const tierClass = ['basic', 'pop', 'elite']
 
