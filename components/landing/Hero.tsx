@@ -28,7 +28,7 @@ export default function Hero() {
 
       <p className="hsub">{t('sub')}</p>
 
-      <div>
+      <div className="hcta-outer">
         <div className="hcta">
           <a href={`/${locale}#cijene`} className="btn btn-p btn-xl">
             {t('btn1')}
@@ -38,9 +38,6 @@ export default function Hero() {
           </a>
         </div>
         <p className="hnote">{t('note')}</p>
-        <p style={{ marginTop: '8px', color: 'rgba(255,255,255,.42)', fontSize: '.77rem' }}>
-          {t('demo.ctaDesc')}
-        </p>
       </div>
 
       {/* Desktop: app mockup slideshow */}

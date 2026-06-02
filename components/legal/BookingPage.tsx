@@ -222,13 +222,8 @@ export default function BookingPage() {
                 {t('demo.pageNote')}
               </p>
 
-              {/* 2-column layout */}
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)',
-                gap: '40px',
-                alignItems: 'start',
-              }}>
+              {/* 2-column layout → single column on mobile */}
+              <div className="bk-grid">
 
                 {/* ── LEFT: Calendar + time slots ── */}
                 <div>
@@ -381,7 +376,7 @@ export default function BookingPage() {
                     type="submit"
                     className="btn btn-p btn-fw"
                     disabled={submitting || !selectedDate || !selectedTime || !name || !email}
-                    style={{ marginTop: '4px', opacity: (submitting || !selectedDate || !selectedTime || !name || !email) ? 0.6 : 1 }}
+                    style={{ marginTop: '4px', opacity: (submitting || !selectedDate || !selectedTime || !name || !email) ? 0.6 : 1, width: '100%' }}
                   >
                     {submitting ? t('demo.formSubmitting') : t('demo.formSubmit')}
                   </button>
