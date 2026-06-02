@@ -66,8 +66,12 @@ export default function PricingPage() {
   const includedClients  = t.raw('includedClients')  as string[]
   const includedBusiness = t.raw('includedBusiness') as string[]
 
-  const promoActive  = isFoundingPromoActive()
-  const promoEndDate = foundingPromoEndDate(locale)
+  // Promo values must be client-only to avoid SSR/client hydration mismatch
+  // (toLocaleDateString produces different output in Node.js vs browsers)
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
+  const promoActive  = mounted && isFoundingPromoActive()
+  const promoEndDate = mounted ? foundingPromoEndDate(locale) : null
 
   const IcoCheckin = <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
   const IcoPhone   = <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" strokeWidth="2.5"/></svg>

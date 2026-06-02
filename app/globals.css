@@ -435,6 +435,9 @@ footer::after{content:'';position:absolute;top:0;left:0;right:0;height:48px;back
   .tcar-track{padding-left:0}
   .tcar-slide{width:85vw}
   .legal-body{padding:32px 16px 60px}
+  .hnote{white-space:normal;text-align:center}
+  .hcta{flex-direction:column;align-items:center;gap:10px}
+  .hero .btn-xl,.hero .btn-lg{width:100%;max-width:340px;justify-content:center}
   /* Client app - hide sticky scroll, show carousel */
   .capp-sticky-wrap{display:none}
   .capp-carousel-outer{display:block}
