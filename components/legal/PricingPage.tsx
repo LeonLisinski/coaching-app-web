@@ -10,22 +10,6 @@ const PLANS = ['starter', 'pro', 'scale'] as const
 const PRICES = [29, 59, 99]
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
 
-function isFoundingPromoActive() {
-  const end = process.env.NEXT_PUBLIC_FOUNDING_PROMO_END
-  if (!end) return false
-  return Date.now() < new Date(end).getTime()
-}
-
-function foundingPromoEndDate(locale: string) {
-  const end = process.env.NEXT_PUBLIC_FOUNDING_PROMO_END
-  if (!end) return null
-  try {
-    return new Date(end).toLocaleDateString(locale === 'en' ? 'en-GB' : 'hr-HR', {
-      day: 'numeric', month: 'long', year: 'numeric',
-    })
-  } catch { return end }
-}
-
 export default function PricingPage() {
   const locale = useLocale()
   const t = useTranslations()
@@ -65,13 +49,6 @@ export default function PricingPage() {
   const includedCoaching = t.raw('includedCoaching') as string[]
   const includedClients  = t.raw('includedClients')  as string[]
   const includedBusiness = t.raw('includedBusiness') as string[]
-
-  // Promo values must be client-only to avoid SSR/client hydration mismatch
-  // (toLocaleDateString produces different output in Node.js vs browsers)
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => setMounted(true), [])
-  const promoActive  = mounted && isFoundingPromoActive()
-  const promoEndDate = mounted ? foundingPromoEndDate(locale) : null
 
   const IcoCheckin = <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
   const IcoPhone   = <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" strokeWidth="2.5"/></svg>
@@ -154,38 +131,6 @@ export default function PricingPage() {
             </p>
           </div>
 
-          {/* Founding promo banner */}
-          {promoActive && (
-            <div style={{
-              maxWidth: '520px', margin: '16px auto 36px',
-              background: '#fff0e0',
-              border: '1px solid #d97318',
-              borderLeft: '4px solid #d97318',
-              borderRadius: '8px', padding: '12px 18px',
-              boxShadow: '0 2px 8px rgba(180,90,0,.1)',
-              display: 'flex', alignItems: 'center', gap: '16px',
-            }}>
-              <div style={{
-                flexShrink: 0, background: '#d97318', color: '#fff',
-                fontWeight: 800, fontSize: '.7rem', letterSpacing: '.06em',
-                padding: '5px 10px', borderRadius: '6px', textTransform: 'uppercase',
-                lineHeight: 1.3, textAlign: 'center',
-              }}>
-                {t('foundingBannerTitle')}
-              </div>
-              <div>
-                <p style={{ margin: '0 0 2px', fontWeight: 700, fontSize: '.9rem', color: '#9b3800', lineHeight: 1.2 }}>
-                  {t('foundingBannerDesc')}
-                </p>
-                {promoEndDate && (
-                  <p style={{ margin: 0, fontSize: '.74rem', color: '#b85c20' }}>
-                    {t('foundingBannerEnds', { date: promoEndDate })}
-                  </p>
-                )}
-              </div>
-            </div>
-          )}
-
           {/* Pricing cards */}
           <div className="pg pricing-page-grid" style={{ marginTop: 0 }}>
             {tiers.map((tier, i) => (
@@ -193,37 +138,9 @@ export default function PricingPage() {
                 style={{ paddingTop: tier.popular ? '50px' : undefined, position: 'relative' }}>
                 {tier.popular && <div className="popbdg">{t('pop')}</div>}
 
-                {/* Promo badge */}
-                {promoActive && (
-                  <div style={{
-                    position: 'absolute', top: '40px', right: 0,
-                    background: '#d97318', color: '#fff',
-                    fontWeight: 800, fontSize: '.63rem', letterSpacing: '.05em',
-                    padding: '3px 10px', borderRadius: '5px 0 0 5px',
-                  }}>
-                    {t('foundingLabel')}
-                  </div>
-                )}
-
                 <div className="ptier">{tier.name}</div>
 
-                {/* Price — show founding discount if promo active */}
-                {promoActive ? (
-                  <div style={{ marginBottom: '4px' }}>
-                    <div className="pamt" style={{ marginBottom: '2px' }}>
-                      €<span>{(PRICES[i] / 2).toFixed(2).replace('.00', '')}</span>
-                      <span className="psmall">/{t('common.monthSuffix')}</span>
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px', flexWrap: 'wrap' }}>
-                      <span style={{ fontSize: '.78rem', color: '#9ca3af', textDecoration: 'line-through' }}>€{PRICES[i]}</span>
-                      <span style={{ fontSize: '.7rem', fontWeight: 700, color: '#e05a00', background: 'rgba(255,107,0,.1)', borderRadius: '5px', padding: '2px 8px' }}>
-                        uštedi €{(PRICES[i] / 2 * 12).toFixed(0)}/god
-                      </span>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="pamt">€<span>{PRICES[i]}</span><span className="psmall">/{t('common.monthSuffix')}</span></div>
-                )}
+                <div className="pamt">€<span>{PRICES[i]}</span><span className="psmall">/{t('common.monthSuffix')}</span></div>
 
                 <div className="pper" style={{ marginBottom: '8px' }}>{tier.clients}</div>
                 {tier.desc && (
@@ -347,3 +264,5 @@ export default function PricingPage() {
     </div>
   )
 }
+
+

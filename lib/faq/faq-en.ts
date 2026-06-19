@@ -37,7 +37,7 @@ export const faqEn: FAQData = {
       questions: [
         {
           q: 'How much does UnitLift cost?',
-          a: 'Three plans: Starter (€29/mo - up to 15 clients), Pro (€59/mo - up to 50) and Scale (€99/mo - up to 150). All plans share the same features - only the client count differs. Each includes a 14-day free trial.',
+          a: 'Three plans: Starter (€29/mo - up to 10 clients), Pro (€59/mo - up to 30) and Scale (€99/mo - up to 75). All plans share the same features - only the client count differs. Each includes a 14-day free trial.',
         },
         {
           q: 'Can I change my plan at any time?',
@@ -63,7 +63,7 @@ export const faqEn: FAQData = {
       questions: [
         {
           q: 'How many clients can I have?',
-          a: 'Starter - up to 15, Pro - up to 50, Scale - up to 150 active clients. Above 150 on Scale, add €10/mo per 25 extra clients. Archive clients to free up spots within your limit.',
+          a: 'Starter - up to 10, Pro - up to 30, Scale - up to 75 active clients. Above 75 on Scale, add €10/mo per 25 extra clients. Archive clients to free up spots within your limit.',
         },
         {
           q: 'Can I use my own branding?',

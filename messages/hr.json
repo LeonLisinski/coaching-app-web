@@ -39,10 +39,6 @@
   "priceTit": "Jedan sustav za cijeli online coaching.",
   "priceSub": "Odaberi plan prema broju aktivnih klijenata. Sve funkcije su uključene u svaki plan.",
   "pop": "Najpopularniji",
-  "foundingBannerTitle": "OSNIVAČKA PONUDA",
-  "foundingBannerDesc": "50% popusta prvih 12 mjeseci",
-  "foundingBannerEnds": "Dostupno do {date}",
-  "foundingLabel": "-50%",
   "tiers": [
     {
       "name": "Starter", "price": 29,
@@ -283,7 +279,7 @@
     "usecases": [
       { "num": "01", "title": "Počinješ s online treningom", "text": "Postavljanje traje 5 minuta. Od prvog dana izgledaš profesionalnije od trenera koji šalju planove preko WhatsAppa. Klijenti to primijete." },
       { "num": "02", "title": "Imaš 10-30 klijenata i gušiš se u tablicama", "text": "Svaki novi klijent ne bi smio biti gužva. Primanje, planiranje, praćenje i plaćanje idu automatski. Ti se baviš treningom." },
-      { "num": "03", "title": "Gradiš veću trenersku tvrtku", "text": "Scale plan podržava do 150 klijenata. Više trenera, jedan sustav, jedan pregled - za cijeli tim." }
+      { "num": "03", "title": "Gradiš veću trenersku tvrtku", "text": "Scale plan podržava do 75 klijenata. Više trenera, jedan sustav, jedan pregled - za cijeli tim." }
     ],
     "faqTag": "Česta pitanja",
     "faqH2": "O platformi za coaching",
@@ -291,7 +287,7 @@
       { "q": "Koja je razlika između UnitLifta i Trainerizea?", "a": "Trainerize je velika aplikacija na engleskom, za veće coaching tvrtke. UnitLift je jednostavniji, na hrvatskom i engleskom, s jasnim cijenama i postavljanjem u 5 minuta." },
       { "q": "Koliko vremena treba za postavljanje?", "a": "Manje od 5 minuta. Postaviš profil, dodaš parametre za check-in i pošalješ prvom klijentu link za aplikaciju." },
       { "q": "Može li UnitLift zamijeniti sve moje alate?", "a": "Za većinu trenera - da. Zamjenjuje Excel, WhatsApp, Google Sheets i zasebne aplikacije za planove treninga i prehrane." },
-      { "q": "Što ako imam više od 150 klijenata?", "a": "Scale plan ide do 150 klijenata. Za više, dodaje se 10€ mjesečno za svakih dodatnih 25. Bez skrivenih naknada." },
+      { "q": "Što ako imam više od 75 klijenata?", "a": "Scale plan ide do 75 klijenata. Za više, dodaje se 10€ mjesečno za svakih dodatnih 25. Bez skrivenih naknada." },
       { "q": "Radi li za trenere koji rade i prehranu i treninge?", "a": "Da. Svi planovi uključuju i treninge i prehranu. Klijent vidi oboje u jednoj aplikaciji." }
     ]
   },

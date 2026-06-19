@@ -37,7 +37,7 @@ export const faqHr: FAQData = {
       questions: [
         {
           q: 'Koliko košta UnitLift?',
-          a: 'Tri plana: Starter (29 €/mj - do 15 klijenata), Pro (59 €/mj - do 50 klijenata) i Scale (99 €/mj - do 150 klijenata). Svi planovi imaju iste funkcije, razlika je u broju klijenata. Svaki ima 14 dana besplatno.',
+          a: 'Tri plana: Starter (29 €/mj - do 10 klijenata), Pro (59 €/mj - do 30 klijenata) i Scale (99 €/mj - do 75 klijenata). Svi planovi imaju iste funkcije, razlika je u broju klijenata. Svaki ima 14 dana besplatno.',
         },
         {
           q: 'Mogu li promijeniti plan?',
@@ -63,7 +63,7 @@ export const faqHr: FAQData = {
       questions: [
         {
           q: 'Koliko klijenata mogu imati?',
-          a: 'Starter - do 15, Pro - do 50, Scale - do 150 aktivnih klijenata. Iznad 150 na Scaleu plaća se dodatno 10 €/mj za svakih 25. Klijente možeš arhivirati i osloboditi mjesto za nove.',
+          a: 'Starter - do 10, Pro - do 30, Scale - do 75 aktivnih klijenata. Iznad 75 na Scaleu plaća se dodatno 10 €/mj za svakih 25. Klijente možeš arhivirati i osloboditi mjesto za nove.',
         },
         {
           q: 'Mogu li imati vlastiti branding?',

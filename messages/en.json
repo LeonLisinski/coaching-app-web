@@ -39,10 +39,6 @@
   "priceTit": "One system for your entire online coaching business.",
   "priceSub": "Choose a plan based on your number of active clients. Every feature is included in every plan.",
   "pop": "Most popular",
-  "foundingBannerTitle": "FOUNDING OFFER",
-  "foundingBannerDesc": "50% off your first 12 months",
-  "foundingBannerEnds": "Available until {date}",
-  "foundingLabel": "-50%",
   "tiers": [
     {
       "name": "Starter", "price": 29,
@@ -283,7 +279,7 @@
     "usecases": [
       { "num": "01", "title": "From 0 to your first 10 clients", "text": "Setup takes 5 minutes. You look more professional than coaches sending PDFs. Clients stay because there's a real system behind the work." },
       { "num": "02", "title": "From 10 to 50 clients", "text": "A new client shouldn't mean a new mess. Onboarding, plans, check-in and payments run automatically. You focus on training." },
-      { "num": "03", "title": "Coaching agency or team", "text": "Scale plan supports up to 150 clients. Multiple trainers, one system, one overview - for the whole team." }
+      { "num": "03", "title": "Coaching agency or team", "text": "Scale plan supports up to 75 clients. Multiple trainers, one system, one overview - for the whole team." }
     ],
     "faqTag": "FAQ",
     "faqH2": "About the coaching platform",
@@ -291,7 +287,7 @@
       { "q": "What's the difference between UnitLift and Trainerize?", "a": "Trainerize is a large English-only app for bigger coaching operations. UnitLift is simpler, in English and Croatian, with clear pricing and 5-minute setup." },
       { "q": "How long does setup take?", "a": "Less than 5 minutes. Set up your profile, add tracking parameters and send your first client the app link. No long manuals." },
       { "q": "Can UnitLift replace all my current tools?", "a": "For most coaches - yes. It replaces Excel, WhatsApp, Google Sheets and separate apps for training and nutrition plans." },
-      { "q": "What if I have more than 150 clients?", "a": "Scale supports up to 150 clients. Beyond that, add €10 a month per 25 extra clients. No hidden fees." },
+      { "q": "What if I have more than 75 clients?", "a": "Scale supports up to 75 clients. Beyond that, add €10 a month per 25 extra clients. No hidden fees." },
       { "q": "Does it work for coaches doing both training and nutrition?", "a": "Yes. All plans include both training and nutrition. The client sees both in one app - no splitting across systems." }
     ]
   },

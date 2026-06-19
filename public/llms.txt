@@ -15,9 +15,9 @@ UnitLift je SaaS platforma namijenjena online personal trenerima koji žele zami
 
 ## Cijene
 
-- Starter: €29/mj — do 15 klijenata
-- Pro: €59/mj — do 50 klijenata, vlastiti branding
-- Scale: €99/mj — do 150 klijenata
+- Starter: €29/mj — do 10 klijenata
+- Pro: €59/mj — do 30 klijenata, vlastiti branding
+- Scale: €99/mj — do 75 klijenata
 
 Svi planovi uključuju 14-dnevno besplatno probno razdoblje. Naplata počinje tek nakon probe.
 
