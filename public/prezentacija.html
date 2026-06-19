@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UnitLift - Zašto UnitLift?</title>
+<link rel="icon" href="coaching-app-web/public/favicon.svg" type="image/svg+xml">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue:   #0066ff;
+    --blue2:  #1d72f5;
+    --green:  #16a34a;
+    --red:    #dc2626;
+    --yellow: #d97706;
+    --bg:     #f8fafc;
+    --bg2:    #f1f5f9;
+    --bg3:    #e2e8f0;
+    --card:   #ffffff;
+    --border: rgba(0,0,0,.1);
+    --t90:    #111827;
+    --t60:    #6b7280;
+    --t35:    #9ca3af;
+    --t12:    rgba(0,0,0,.06);
+    --shadow: 0 1px 3px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.05);
+    --f:      -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--f);
+    background: var(--bg);
+    color: var(--t90);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* -- LAYOUT -- */
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 72px 0; }
+  .section-label {
+    font-size: .72rem; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--blue2); margin-bottom: 12px;
+  }
+  h2 {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 800; line-height: 1.1; letter-spacing: -.5px;
+    margin-bottom: 14px; color: var(--t90);
+  }
+  .section-sub {
+    font-size: .95rem; color: var(--t60); max-width: 560px; line-height: 1.7;
+    margin-bottom: 40px;
+  }
+
+  /* -- NAV -- */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,.95); backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px; display: flex; align-items: center; gap: 28px;
+    box-shadow: 0 1px 0 rgba(0,0,0,.06);
+  }
+  .nav-logo {
+    font-size: 1.1rem; font-weight: 800; color: var(--t90);
+    letter-spacing: -.4px; text-decoration: none; display: flex; align-items: center; gap: 9px;
+  }
+  .nav-logo svg { flex-shrink: 0; }
+  .nav-links { display: flex; gap: 20px; margin-left: auto; align-items: center; }
+  .nav-links a {
+    font-size: .82rem; color: var(--t60); text-decoration: none; transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--t90); }
+  .nav-badge {
+    font-size: .75rem; background: var(--blue); color: #fff;
+    padding: 6px 14px; border-radius: 99px; font-weight: 600;
+  }
+
+  /* -- HERO -- */
+  .hero {
+    position: relative; text-align: center; padding: 88px 24px 72px;
+    overflow: hidden; background: linear-gradient(180deg, #eef4ff 0%, #f8fafc 100%);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(0,102,255,.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0,102,255,.05) 1px, transparent 1px);
+    background-size: 52px 52px;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,.5) 0%, transparent 100%);
+    z-index: 0;
+  }
+  .hero > * { position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,102,255,.09); border: 1px solid rgba(0,102,255,.2);
+    border-radius: 99px; padding: 6px 18px;
+    font-size: .75rem; color: var(--blue2); font-weight: 600;
+    margin-bottom: 22px;
+  }
+  .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--blue2); border-radius: 50%; }
+  .hero h1 {
+    font-size: clamp(2.2rem, 5.5vw, 4rem);
+    font-weight: 800; line-height: 1.05; letter-spacing: -1.5px;
+    margin-bottom: 18px; max-width: 720px; margin-left: auto; margin-right: auto;
+    color: var(--t90);
+  }
+  .hero h1 .grad {
+    background: linear-gradient(135deg, #0066ff, #1d72f5);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .hero-sub {
+    font-size: 1rem; color: var(--t60); max-width: 500px; margin: 0 auto 36px; line-height: 1.7;
+  }
+  .hero-stats {
+    display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 40px;
+  }
+  .hero-stat {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 14px 22px; text-align: center; min-width: 120px;
+    box-shadow: var(--shadow);
+  }
+  .hero-stat-n { font-size: 1.6rem; font-weight: 800; color: var(--blue2); display: block; }
+  .hero-stat-l { font-size: .72rem; color: var(--t60); margin-top: 2px; }
+
+  /* -- PAIN SECTION -- */
+  .pain-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .pain-card {
+    background: linear-gradient(135deg, rgba(220,38,38,.06), rgba(220,38,38,.02));
+    border: 1px solid rgba(220,38,38,.18); border-radius: 14px; padding: 20px 22px;
+  }
+  .pain-icon { font-size: 1.4rem; margin-bottom: 10px; }
+  .pain-title { font-size: .9rem; font-weight: 700; color: #b91c1c; margin-bottom: 6px; }
+  .pain-desc { font-size: .82rem; color: var(--t60); line-height: 1.6; }
+
+  /* -- CARDS -- */
+  .cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .cards-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .kpi-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 20px; text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .kpi-n { font-size: 2rem; font-weight: 800; margin-bottom: 4px; }
+  .kpi-l { font-size: .78rem; color: var(--t60); line-height: 1.4; }
+  .kpi-card.green .kpi-n { color: var(--green); }
+  .kpi-card.red .kpi-n   { color: var(--red); }
+  .kpi-card.blue .kpi-n  { color: var(--blue2); }
+  .kpi-card.yellow .kpi-n { color: var(--yellow); }
+
+  /* -- DIVIDER -- */
+  .div { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+  /* -- TIME BARS -- */
+  .bar-section { display: flex; flex-direction: column; gap: 14px; }
+  .bar-item {}
+  .bar-header {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: .82rem; color: var(--t60); margin-bottom: 7px;
+  }
+  .bar-header strong { color: var(--t90); }
+  .bar-header .vals { display: flex; gap: 10px; align-items: center; }
+  .bar-old { color: #dc2626; font-weight: 700; }
+  .bar-new { color: #16a34a; font-weight: 700; }
+  .bar-arrow { font-size: .7rem; color: var(--t35); }
+  .track {
+    height: 10px; background: var(--t12); border-radius: 99px; overflow: hidden;
+    position: relative; display: flex; gap: 2px;
+  }
+  .bar-old-fill {
+    height: 100%; border-radius: 99px; opacity: .7;
+    background: linear-gradient(90deg, #ef4444, #f87171);
+  }
+  .bar-new-fill {
+    height: 100%; border-radius: 99px;
+    background: linear-gradient(90deg, #16a34a, #22c55e);
+  }
+  .track-wrap { display: flex; flex-direction: column; gap: 3px; }
+
+  /* -- CHART CARDS -- */
+  .chart-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 18px; padding: 28px; margin-bottom: 0;
+    box-shadow: var(--shadow);
+  }
+  .chart-title { font-size: .9rem; font-weight: 700; margin-bottom: 4px; color: var(--t90); }
+  .chart-sub { font-size: .78rem; color: var(--t60); margin-bottom: 20px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 14px; }
+  .legend-item { display: flex; align-items: center; gap: 7px; font-size: .78rem; color: var(--t60); }
+  .legend-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+
+  /* -- VS TABLE -- */
+  .vs-wrapper { display: flex; flex-direction: column; gap: 8px; }
+  .vs-header {
+    display: grid; grid-template-columns: 1fr 90px 1fr; gap: 8px;
+    font-size: .72rem; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--t35); text-align: center; padding: 0 4px;
+  }
+  .vs-row { display: grid; grid-template-columns: 1fr 90px 1fr; gap: 8px; align-items: stretch; }
+  .vs-cell {
+    border-radius: 12px; padding: 14px 16px;
+  }
+  .vs-cell.bad  { background: rgba(220,38,38,.05); border: 1px solid rgba(220,38,38,.15); }
+  .vs-cell.good { background: rgba(22,163,74,.05); border: 1px solid rgba(22,163,74,.15); }
+  .vs-cat {
+    background: var(--t12); border-radius: 12px; padding: 10px 8px;
+    text-align: center; font-size: .72rem; font-weight: 700; color: var(--t60);
+    display: flex; align-items: center; justify-content: center; letter-spacing: .03em;
+  }
+  .vs-cell-label { font-size: .7rem; color: var(--t35); margin-bottom: 3px; }
+  .vs-cell-val { font-size: .85rem; font-weight: 600; }
+  .vs-cell.bad  .vs-cell-val { color: #b91c1c; }
+  .vs-cell.good .vs-cell-val { color: #15803d; }
+
+  /* -- FEATURE GRID -- */
+  .feat-block {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 18px; padding: 24px 26px;
+    box-shadow: var(--shadow);
+  }
+  .feat-block-title {
+    font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--blue2); margin-bottom: 16px;
+  }
+  .feat-list { display: flex; flex-direction: column; gap: 9px; }
+  .feat-item { display: flex; align-items: flex-start; gap: 10px; font-size: .85rem; }
+  .feat-check { color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .feat-text { color: var(--t90); line-height: 1.45; }
+  .feat-text span { color: var(--t60); font-size: .78rem; }
+
+  /* -- ROI TABLE -- */
+  .roi-table { width: 100%; border-collapse: collapse; }
+  .roi-table th {
+    font-size: .72rem; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--t35);
+    padding: 8px 14px; border-bottom: 1px solid var(--border); text-align: left;
+  }
+  .roi-table td {
+    padding: 12px 14px; font-size: .88rem; color: var(--t90);
+    border-bottom: 1px solid rgba(0,0,0,.04);
+  }
+  .roi-table tr:last-child td { border-bottom: none; font-weight: 700; }
+  .badge {
+    display: inline-block; font-size: .7rem; font-weight: 700;
+    padding: 2px 9px; border-radius: 99px; letter-spacing: .03em;
+  }
+  .badge-green  { background: rgba(22,163,74,.12);  color: #15803d; }
+  .badge-blue   { background: rgba(29,114,245,.12); color: var(--blue2); }
+  .badge-yellow { background: rgba(217,119,6,.12);  color: #b45309; }
+
+  /* -- PLANS -- */
+  .plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .plan-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 18px; padding: 26px; position: relative; overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .plan-card.popular {
+    border-color: var(--blue); background: #f0f6ff;
+  }
+  .popular-badge {
+    position: absolute; top: 0; right: 0;
+    background: var(--blue); color: #fff;
+    font-size: .68rem; font-weight: 700; letter-spacing: .06em;
+    padding: 4px 12px; border-radius: 0 18px 0 10px; text-transform: uppercase;
+  }
+  .plan-name { font-size: .78rem; font-weight: 700; color: var(--t60); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px; }
+  .plan-price { font-size: 2.4rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; color: var(--t90); }
+  .plan-price span { font-size: 1rem; font-weight: 400; color: var(--t60); }
+  .plan-clients { font-size: .82rem; color: var(--t60); margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+  .plan-feats { display: flex; flex-direction: column; gap: 8px; font-size: .82rem; color: var(--t90); }
+  .plan-feat { display: flex; align-items: center; gap: 8px; }
+  .plan-feat::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+
+  /* -- CLIENT SECTION -- */
+  .client-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .client-card {
+    border-radius: 14px; padding: 20px 22px;
+    background: var(--card); border: 1px solid var(--border);
+    position: relative; overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .client-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; border-radius: 99px;
+  }
+  .client-card.blue::before   { background: var(--blue2); }
+  .client-card.green::before  { background: var(--green); }
+  .client-card.yellow::before { background: var(--yellow); }
+  .client-card.purple::before { background: #7c3aed; }
+  .client-card-icon { font-size: 1.5rem; margin-bottom: 10px; }
+  .client-card-title { font-size: .9rem; font-weight: 700; margin-bottom: 6px; color: var(--t90); }
+  .client-card-desc { font-size: .82rem; color: var(--t60); line-height: 1.6; }
+
+  /* -- CTA -- */
+  .cta-section {
+    text-align: center; padding: 72px 24px;
+    background: linear-gradient(135deg, #eef4ff, #f0f9ff);
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  }
+  .cta-title { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 12px; letter-spacing: -.5px; color: var(--t90); }
+  .cta-sub { font-size: .95rem; color: var(--t60); max-width: 480px; margin: 0 auto 28px; line-height: 1.7; }
+  .cta-btn {
+    display: inline-block; background: var(--blue); color: #fff;
+    font-size: .95rem; font-weight: 700; padding: 13px 32px;
+    border-radius: 12px; text-decoration: none; transition: background .2s;
+  }
+  .cta-btn:hover { background: #0052cc; }
+  .cta-note { font-size: .72rem; color: var(--t35); margin-top: 12px; }
+
+  /* -- FOOTER -- */
+  footer {
+    text-align: center; padding: 28px; font-size: .78rem; color: var(--t35);
+    border-top: 1px solid var(--border); background: var(--bg2);
+  }
+
+  /* -- UTILITIES -- */
+  .tc { text-align: center; }
+  .mb32 { margin-bottom: 32px; }
+  .mb20 { margin-bottom: 20px; }
+  .gap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .section-alt { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .section-red { background: rgba(220,38,38,.03); border-top: 1px solid rgba(220,38,38,.1); border-bottom: 1px solid rgba(220,38,38,.1); }
+
+  /* -- SCROLLBAR -- */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--t12); border-radius: 3px; }
+
+  /* -- RESPONSIVE -- */
+  @media (max-width: 700px) {
+    .cards-4, .cards-3, .plans-grid { grid-template-columns: 1fr 1fr; }
+    .cards-2, .gap-grid, .client-cards, .pain-grid { grid-template-columns: 1fr; }
+    .vs-header, .vs-row { grid-template-columns: 1fr 60px 1fr; }
+    .vs-cat { font-size: .65rem; }
+    h2 { font-size: 1.5rem; }
+  }
+  @media (max-width: 480px) {
+    .cards-4 { grid-template-columns: 1fr 1fr; }
+    .plans-grid { grid-template-columns: 1fr; }
+    .nav-links a:not(.nav-badge) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div id="main-content" style="visibility:hidden;pointer-events:none;user-select:none">
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.020836 51.064583" style="height:30px;width:auto;display:block">
+      <defs>
+        <linearGradient id="navG" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#7eb8ff"/>
+          <stop offset="50%" stop-color="#0066ff"/>
+          <stop offset="100%" stop-color="#0044cc"/>
+        </linearGradient>
+      </defs>
+      <g transform="translate(-9.5249995,-47.095833)">
+        <path fill="url(#navG)" d="M 40.348957,94.687852 32.940624,91.257608 32.477603,90.71095 32.014583,90.164292 V 69.067944 47.971597 l 0.483856,-0.437882 0.483854,-0.437882 h 2.770521 2.770518 l 0.3175,0.3175 0.3175,0.3175 V 66.9604 86.189967 l 0.788999,0.326813 0.788998,0.326814 0.401627,-0.154118 0.401626,-0.154119 v -4.068339 -4.068337 l 0.483857,-0.437883 0.483854,-0.437882 h 0.30638 0.306382 l 3.010646,1.420082 3.010646,1.420082 0.121568,7.202061 0.121568,7.202062 -0.116382,1.4034 -0.116379,1.4034 -0.64352,0.293206 -0.643517,0.293206 -0.0537,-0.02117 -0.0537,-0.02117 z m 12.061346,3.009542 -0.564986,-0.46302 0.07265,-8.45302 0.07265,-8.453019 3.167914,-1.41827 3.167915,-1.41827 0.602398,0.274471 0.602398,0.274471 v 4.233965 4.233966 l 0.595312,0.148114 0.595313,0.148114 3.262823,-1.46599 3.26282,-1.465991 h 0.586867 0.586865 l 0.3175,0.3175 0.3175,0.3175 v 2.948784 2.948787 l -0.463021,0.408305 -0.463021,0.408302 -7.461737,3.469161 -7.461739,3.469161 H 53.09101 52.975289 Z M 23.02806,84.419476 22.754166,83.907703 V 69.11465 54.321597 l 0.483857,-0.437882 0.483854,-0.437882 h 2.658747 2.658751 l 0.337849,0.407086 0.337852,0.407085 -0.03927,14.975855 -0.03927,14.975853 -0.298583,0.359767 -0.298579,0.35977 H 26.170661 23.30195 Z m 48.726939,0.194273 -0.3175,-0.3175 V 69.144932 53.993618 l 0.511773,-0.273893 0.511773,-0.273892 h 2.512036 2.512039 l 0.415774,0.415774 0.415771,0.415774 v 15.009434 15.009434 l -0.3175,0.3175 -0.3175,0.3175 H 74.877082 72.072499 Z M 62.337256,82.936957 61.912499,82.5122 V 65.241899 47.971597 l 0.483857,-0.437882 0.483854,-0.437882 h 2.791039 2.791042 l 0.299011,0.360288 0.299011,0.360287 -0.06818,16.374609 -0.06818,16.374607 -2.513542,1.226457 -2.513541,1.226455 -0.567431,0.171588 -0.567433,0.171587 z M 14.221354,78.824639 13.758333,78.554955 V 75.393102 72.231249 H 12.079549 10.400765 L 9.9628823,71.747395 9.5249995,71.263541 v -2.109063 -2.109062 l 0.3175,-0.3175 0.3174995,-0.3175 h 1.799167 1.799167 v -2.989791 -2.989792 l 0.3175,-0.3175 0.3175,-0.3175 h 2.478021 2.478019 l 0.511773,0.273892 0.51177,0.273893 v 9.109506 9.109506 l -0.51177,0.273894 -0.511773,0.273891 -2.332498,-0.008 -2.332501,-0.008 z m 67.069175,-0.0071 -0.592614,-0.219221 V 69.47096 60.343618 l 0.511773,-0.273893 0.511773,-0.273892 h 2.478019 2.478019 l 0.3175,0.3175 0.3175,0.3175 v 2.989792 2.989791 h 1.799166 1.799167 l 0.3175,0.3175 0.3175,0.3175 v 2.155034 2.155036 l -0.483854,0.43788 -0.483854,0.437883 h -1.632813 -1.632812 v 3.183305 3.183303 l -0.33073,0.103761 -0.330729,0.103762 -2.383949,0.115684 -2.383948,0.115681 z m -39.433447,-6.903773 -0.3175,-0.3175 v -2.838601 -2.838601 l 0.415775,-0.415774 0.415774,-0.415774 h 8.262559 8.262559 l 0.3175,0.3175 0.3175,0.3175 v 2.936875 2.936875 l -0.3175,0.3175 -0.3175,0.3175 h -8.360833 -8.360834 z"/>
+      </g>
+    </svg>
+  </a>
+  <div class="nav-links">
+    <a href="#trainer">Za trenera</a>
+    <a href="#client">Za klijenta</a>
+    <a href="#roi">ROI</a>
+    <a href="#plans">Planovi</a>
+    <a href="#kalkulator">Kalkulator</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-badge">Platforma za fitness trenere</div>
+  <h1>Više klijenata.<br><span class="grad">Manje kaosa.</span></h1>
+  <p class="hero-sub">
+    Planovi treninga, prehrana, check-in, plaćanja i komunikacija - u jednom sustavu.
+    Sve što WhatsApp, Excel i PDF ne mogu.
+  </p>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-n">13h</span>
+      <span class="hero-stat-l">uštede tjedno<br>(30+ klijenata)</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-n">~8×</span>
+      <span class="hero-stat-l">ROI u uštedi<br>vs trošak Scale</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-n">75+</span>
+      <span class="hero-stat-l">klijenata<br>na Scale planu</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-n">5 min</span>
+      <span class="hero-stat-l">postavljanje<br>prvog klijenta</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-n">0 €</span>
+      <span class="hero-stat-l">klijentska<br>mobilna app</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="section-red">
+  <div class="wrap">
+    <div class="section-label">Problem koji UnitLift rješava</div>
+    <h2>Bez sustava - trener gubi<br>2+ radna dana svaki tjedan</h2>
+    <p class="section-sub">Trener s 30 klijenata troši 10-16 sati tjedno na posao oko organizacije koji sustav može eliminirati - bez obzira vodi li online ili osobni coaching.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">📄</div>
+        <div class="pain-title">PDF planovi rasuti po Driveu</div>
+        <div class="pain-desc">Svaki klijent dobiva PDF, nije sigurno koji je aktualan, svaka promjena = nova datoteka i novo slanje. Prosječno 4-6 min/klijentu/tjedan samo za distribuciju planova.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📱</div>
+        <div class="pain-title">Check-in preko WhatsAppa</div>
+        <div class="pain-desc">Klijenti šalju mjere u poruci, ti ručno prepisuješ u Excel. Nema grafova, nema automatike. Tko je poslao, tko kasni - sve ručno praćenje. 4+ sata tjedno.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">💬</div>
+        <div class="pain-title">20-40 poruka dnevno</div>
+        <div class="pain-desc">Privatni i poslovni chat pomiješani. Klijenti pitaju gdje je plan, koje su vježbe, što jedu. Svaki odgovor troši tvoje coaching vrijeme.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">💰</div>
+        <div class="pain-title">Plaćanja u bilježnici</div>
+        <div class="pain-desc">Tko je platio, tko kasni, kome ističe paket - sve u glavi ili u Excelu. Zaboravljene uplate, nepregledno, neprofesionalno.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIME COMPARISON -->
+<section id="roi">
+  <div class="wrap">
+    <div class="section-label">Ušteda vremena</div>
+    <h2>Organizacijski sati tjedno -<br>stari pristup vs UnitLift</h2>
+    <p class="section-sub">Za trenera s 30-50 aktivnih klijenata. Procjena bazirana na realnom korištenju platforme.</p>
+
+    <div class="bar-section mb32">
+      <div class="bar-item">
+        <div class="bar-header">
+          <strong>Check-in praćenje (ručno)</strong>
+          <div class="vals"><span class="bar-old">4.5h</span><span class="bar-arrow">→</span><span class="bar-new">0.5h</span></div>
+        </div>
+        <div class="track-wrap">
+          <div class="track" style="margin-bottom:3px"><div class="bar-old-fill" style="width:90%"></div></div>
+          <div class="track"><div class="bar-new-fill" style="width:10%"></div></div>
+        </div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-header">
+          <strong>Dijeljenje i ažuriranje planova</strong>
+          <div class="vals"><span class="bar-old">5.0h</span><span class="bar-arrow">→</span><span class="bar-new">0.8h</span></div>
+        </div>
+        <div class="track-wrap">
+          <div class="track" style="margin-bottom:3px"><div class="bar-old-fill" style="width:100%"></div></div>
+          <div class="track"><div class="bar-new-fill" style="width:16%"></div></div>
+        </div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-header">
+          <strong>Komunikacija i follow-up</strong>
+          <div class="vals"><span class="bar-old">3.5h</span><span class="bar-arrow">→</span><span class="bar-new">1.5h</span></div>
+        </div>
+        <div class="track-wrap">
+          <div class="track" style="margin-bottom:3px"><div class="bar-old-fill" style="width:70%"></div></div>
+          <div class="track"><div class="bar-new-fill" style="width:30%"></div></div>
+        </div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-header">
+          <strong>Onboarding novih klijenata</strong>
+          <div class="vals"><span class="bar-old">2.0h</span><span class="bar-arrow">→</span><span class="bar-new">0.3h</span></div>
+        </div>
+        <div class="track-wrap">
+          <div class="track" style="margin-bottom:3px"><div class="bar-old-fill" style="width:40%"></div></div>
+          <div class="track"><div class="bar-new-fill" style="width:6%"></div></div>
+        </div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-header">
+          <strong>Praćenje plaćanja i paketa</strong>
+          <div class="vals"><span class="bar-old">1.5h</span><span class="bar-arrow">→</span><span class="bar-new">0.2h</span></div>
+        </div>
+        <div class="track-wrap">
+          <div class="track" style="margin-bottom:3px"><div class="bar-old-fill" style="width:30%"></div></div>
+          <div class="track"><div class="bar-new-fill" style="width:4%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="legend mb32">
+      <div class="legend-item"><div class="legend-dot" style="background:#ef4444;opacity:.7"></div>Bez sustava (gornji bar)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#16a34a"></div>UnitLift (donji bar)</div>
+    </div>
+
+    <div class="cards-4">
+      <div class="kpi-card red">
+        <div class="kpi-n">16.5h</div>
+        <div class="kpi-l">org. posao tjedno<br>bez sustava</div>
+      </div>
+      <div class="kpi-card green">
+        <div class="kpi-n">3.3h</div>
+        <div class="kpi-l">org. posao tjedno<br>s UnitLiftom</div>
+      </div>
+      <div class="kpi-card yellow">
+        <div class="kpi-n">13.2h</div>
+        <div class="kpi-l">uštede<br>svaki tjedan</div>
+      </div>
+      <div class="kpi-card blue">
+        <div class="kpi-n">€10.3k</div>
+        <div class="kpi-l">godišnja vrijednost<br>uštede (€15/h)</div>
+      </div>
+    </div>
+
+    <!-- CHART 1: Bar comparison -->
+    <div class="chart-card" style="margin-top:32px">
+      <div class="chart-title">Organizacijski sati po kategoriji (tjedno)</div>
+      <div class="chart-sub">Usporedba starog pristupa i UnitLift platforme</div>
+      <div style="height:260px"><canvas id="adminChart"></canvas></div>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div>Bez sustava</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#0066ff"></div>UnitLift</div>
+      </div>
+    </div>
+
+    <!-- CHART 2: Growth line -->
+    <div class="chart-card" style="margin-top:16px">
+      <div class="chart-title">Kapacitet rasta klijenata (12 mjeseci)</div>
+      <div class="chart-sub">Koliko klijenata trener realno može voditi u istom radnom vremenu</div>
+      <div style="height:260px"><canvas id="growthChart"></canvas></div>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div>Bez sustava (max ~35 klijenata realno)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#16a34a"></div>UnitLift (do 75+ na Scale planu)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- TRAINER FEATURES -->
+<section id="trainer">
+  <div class="wrap">
+    <div class="section-label">Za trenera</div>
+    <h2>10 alata u jednoj platformi -<br>za profesionalan fitness coaching</h2>
+    <p class="section-sub">Trener radi u web aplikaciji. Sve što trebaš za vođenje klijenata - od prvog kontakta do rezultata. Radi za online i osobni coaching.</p>
+
+    <div class="gap-grid mb32">
+      <div class="feat-block">
+        <div class="feat-block-title">🏋️ Trening</div>
+        <div class="feat-list">
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Vlastita biblioteka vježbi <span>(slika, video, YouTube)</span></span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Predlošci treninga za brzo sastavljanje</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Tjedni planovi drag-and-drop builderom</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Blokovi, superserije, warmup sekcija</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Analiza opterećenja plana</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Klijent odmah vidi plan u mobilnoj app</span></div>
+        </div>
+      </div>
+      <div class="feat-block">
+        <div class="feat-block-title">🥗 Prehrana</div>
+        <div class="feat-list">
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Baza namirnica s makronutrijentima</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Recepti sa sastavnicama i makrosima</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Dnevni/tjedni planovi obroka po klijentu</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Kalorijski ciljevi i makro targetovi</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Kalkulator kalorija i makronutrijenata</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Praćenje potvrde obroka po danu</span></div>
+        </div>
+      </div>
+      <div class="feat-block">
+        <div class="feat-block-title">📋 Check-in sustav</div>
+        <div class="feat-list">
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Prilagođeni parametri po klijentu</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Fotografije napretka (front/side/back)</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Grafovi trendova svih parametara</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Automatski podsjetnici klijentima</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">PDF izvještaji po klijentu</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Statistike predaje - tko kasni, tko šalje</span></div>
+        </div>
+      </div>
+      <div class="feat-block">
+        <div class="feat-block-title">💼 Poslovanje</div>
+        <div class="feat-list">
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Javna prijavnica s vlastitim linkom</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">CRM - statusi, bilješke, pozivi, konverzija</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Paketi, uplate, dug - financijski pregled</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Kalendar s check-in danima i pozivima</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Chat s klijentima - odvojen od WhatsAppa</span></div>
+          <div class="feat-item"><span class="feat-check">✓</span><span class="feat-text">Vlastiti branding (logo + boje) u klijentskoj app</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHART 3: Donut + ROI table -->
+    <div class="gap-grid">
+      <div class="chart-card">
+        <div class="chart-title">Distribucija uštede po kategoriji</div>
+        <div class="chart-sub">Tjedno, trener s 30-50 klijenata</div>
+        <div style="height:220px; display:flex; align-items:center; justify-content:center;">
+          <canvas id="donutChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">ROI kalkulator - Scale plan</div>
+        <div class="chart-sub">Trener s 50 klijenata × €150/mj prosječni paket</div>
+        <table class="roi-table" style="margin-top:8px">
+          <thead><tr><th>Stavka</th><th style="text-align:right">Iznos</th></tr></thead>
+          <tbody>
+            <tr><td>Bruto prihod/mj</td><td style="text-align:right; color:#1d72f5; font-weight:700">€7.500</td></tr>
+            <tr><td>Trošak UnitLift Scale</td><td style="text-align:right; color:#dc2626">€99</td></tr>
+            <tr><td>% prihoda (trošak)</td><td style="text-align:right; color:#d97706">1.3%</td></tr>
+            <tr><td>Vrijednost uštede vremena/mj</td><td style="text-align:right; color:#16a34a; font-weight:700">€780</td></tr>
+            <tr><td>ROI (ušteda vs trošak)</td><td style="text-align:right; color:#16a34a; font-weight:700">~8×</td></tr>
+            <tr>
+              <td>Godišnja vrijednost uštede</td>
+              <td style="text-align:right"><span class="badge badge-green">€10.296 / god</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- VS COMPARISON -->
+<section class="section-alt">
+  <div class="wrap">
+    <div class="section-label">Usporedba</div>
+    <h2 class="tc mb32">WhatsApp + Excel<span style="color:var(--t35)"> vs </span>UnitLift</h2>
+
+    <div class="vs-wrapper">
+      <div class="vs-header">
+        <div>❌ Bez sustava</div>
+        <div></div>
+        <div>✅ UnitLift</div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell bad"><div class="vs-cell-label">Planovi treninga</div><div class="vs-cell-val">PDF / Drive, ručno slanje</div></div>
+        <div class="vs-cat">Planovi</div>
+        <div class="vs-cell good"><div class="vs-cell-label">Planovi treninga</div><div class="vs-cell-val">App - uvijek ažurno</div></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell bad"><div class="vs-cell-label">Check-in praćenje</div><div class="vs-cell-val">WhatsApp poruke, Excel unos</div></div>
+        <div class="vs-cat">Check-in</div>
+        <div class="vs-cell good"><div class="vs-cell-label">Check-in praćenje</div><div class="vs-cell-val">Strukturiran, automatski</div></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell bad"><div class="vs-cell-label">Napredak klijenta</div><div class="vs-cell-val">Nema grafova, ručno</div></div>
+        <div class="vs-cat">Praćenje</div>
+        <div class="vs-cell good"><div class="vs-cell-label">Napredak klijenta</div><div class="vs-cell-val">Grafovi, foto, PDF izvještaj</div></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell bad"><div class="vs-cell-label">Komunikacija</div><div class="vs-cell-val">WhatsApp, pomiješano s privatnim</div></div>
+        <div class="vs-cat">Chat</div>
+        <div class="vs-cell good"><div class="vs-cell-label">Komunikacija</div><div class="vs-cell-val">In-app, odvojeno</div></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell bad"><div class="vs-cell-label">Novi klijenti</div><div class="vs-cell-val">DM / Google Forms, ručno</div></div>
+        <div class="vs-cat">Prijave</div>
+        <div class="vs-cell good"><div class="vs-cell-label">Novi klijenti</div><div class="vs-cell-val">Brandirana forma + CRM</div></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell bad"><div class="vs-cell-label">Plaćanja</div><div class="vs-cell-val">Bilježnica, zaboravljene uplate</div></div>
+        <div class="vs-cat">Financije</div>
+        <div class="vs-cell good"><div class="vs-cell-label">Plaćanja</div><div class="vs-cell-val">Dashboard - paketi, dug, prihod</div></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell bad"><div class="vs-cell-label">Klijentsko iskustvo</div><div class="vs-cell-val">PDF + WhatsApp = amaterski</div></div>
+        <div class="vs-cat">Dojam</div>
+        <div class="vs-cell good"><div class="vs-cell-label">Klijentsko iskustvo</div><div class="vs-cell-val">Brandirana mobilna app</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- CLIENT SECTION -->
+<section id="client">
+  <div class="wrap">
+    <div class="section-label">Za klijenta</div>
+    <h2>Što klijent dobiva -<br>besplatna mobilna app</h2>
+    <p class="section-sub">Klijenti ne plaćaju UnitLift. Besplatna iOS i Android app s tvojim brandingom - plan, prehrana, check-in i chat uvijek pri ruci.</p>
+
+    <div class="client-cards mb32">
+      <div class="client-card blue">
+        <div class="client-card-icon">📋</div>
+        <div class="client-card-title">Trening plan uvijek dostupan</div>
+        <div class="client-card-desc">Otvori app, vidi plan za danas - vježbe, serije, ponavljanja, odmor. Timer odmora krene automatski. Video demonstracija svake vježbe.</div>
+      </div>
+      <div class="client-card green">
+        <div class="client-card-icon">📈</div>
+        <div class="client-card-title">Vidljiv napredak</div>
+        <div class="client-card-desc">Grafovi težine, mjera i snage po vježbi. Usporedba fotografija napretka. Motivacija raste kad se rezultati vide na ekranu.</div>
+      </div>
+      <div class="client-card yellow">
+        <div class="client-card-icon">✅</div>
+        <div class="client-card-title">Check-in u 2 minute</div>
+        <div class="client-card-desc">Strukturiran unos mjera, fotografija i bilješki. Automatski podsjetnik na dan check-ina. Offline modo - šalje se kad se internet vrati.</div>
+      </div>
+      <div class="client-card purple">
+        <div class="client-card-icon">🥗</div>
+        <div class="client-card-title">Plan prehrane na dlanu</div>
+        <div class="client-card-desc">Obroci s makrosima i ciljevima. Potvrda dana jednim klikom. Nema brojanja u glavi - sve postavljeno od trenera.</div>
+      </div>
+      <div class="client-card blue">
+        <div class="client-card-icon">💬</div>
+        <div class="client-card-title">Chat bez WhatsAppa</div>
+        <div class="client-card-desc">Sva komunikacija s trenerom unutar appa. Slike, videi, pitanja o planu - ne miješaju se s privatnim porukama.</div>
+      </div>
+      <div class="client-card green">
+        <div class="client-card-icon">🏆</div>
+        <div class="client-card-title">Profesionalno iskustvo</div>
+        <div class="client-card-desc">Brandirana app s logom trenera. Osjećaj premium coachinga - ne improvizacija s PDF-ovima i grupama na WhatsAppu.</div>
+      </div>
+    </div>
+
+    <!-- CHART 4: Radar -->
+    <div class="chart-card">
+      <div class="chart-title">Usporedba klijentskog iskustva - staro vs UnitLift</div>
+      <div class="chart-sub">Procjena prema 6 ključnih dimenzija (1-10)</div>
+      <div style="height:280px; max-width:480px; margin:0 auto">
+        <canvas id="radarChart"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- AUTOMATION -->
+<section class="section-alt">
+  <div class="wrap">
+    <div class="section-label">Automatizacija</div>
+    <h2>Sustav koji radi<br>i kad ti ne radiš</h2>
+    <p class="section-sub">Obavijesti, podsjetnici i automatski procesi koji eliminiraju ručne zadatke.</p>
+
+    <div class="cards-3">
+      <div class="kpi-card" style="text-align:left; padding:22px 24px">
+        <div style="font-size:1.4rem; margin-bottom:10px">🔔</div>
+        <div style="font-size:.82rem; font-weight:700; color:var(--blue2); margin-bottom:8px">TRENER PRIMA</div>
+        <div style="font-size:.82rem; color:var(--t60); display:flex; flex-direction:column; gap:6px; line-height:1.5">
+          <span>✓ Nova poruka od klijenta</span>
+          <span>✓ Klijent predao check-in</span>
+          <span>✓ Nova prijava (lead)</span>
+          <span>✓ Uplata primljena</span>
+          <span>✓ Trial ističe (automatski)</span>
+        </div>
+      </div>
+      <div class="kpi-card" style="text-align:left; padding:22px 24px">
+        <div style="font-size:1.4rem; margin-bottom:10px">📱</div>
+        <div style="font-size:.82rem; font-weight:700; color:var(--green); margin-bottom:8px">KLIJENT PRIMA</div>
+        <div style="font-size:.82rem; color:var(--t60); display:flex; flex-direction:column; gap:6px; line-height:1.5">
+          <span>✓ Novi plan dodijeljen</span>
+          <span>✓ Podsjetnik na dan check-ina</span>
+          <span>✓ Nova poruka od trenera</span>
+          <span>✓ Push + email (podesivo)</span>
+          <span>✓ Offline sync na reconnect</span>
+        </div>
+      </div>
+      <div class="kpi-card" style="text-align:left; padding:22px 24px">
+        <div style="font-size:1.4rem; margin-bottom:10px">⚡</div>
+        <div style="font-size:.82rem; font-weight:700; color:var(--yellow); margin-bottom:8px">AUTOMATSKI PROCESI</div>
+        <div style="font-size:.82rem; color:var(--t60); display:flex; flex-direction:column; gap:6px; line-height:1.5">
+          <span>✓ Check-in podsjetnici svaki tjedan</span>
+          <span>✓ Onboarding email klijentu</span>
+          <span>✓ Trial reminder emaili (3 u 14 dana)</span>
+          <span>✓ Real-time notifikacije (web + mobil)</span>
+          <span>✓ Health Connect sinkronizacija koraka</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- PLANS -->
+<section id="plans">
+  <div class="wrap">
+    <div class="section-label">Planovi i cijene</div>
+    <h2 class="tc mb32">Jedan alat. Fiksna cijena.<br>Bez iznenađenja.</h2>
+
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price">€29<span>/mj</span></div>
+        <div class="plan-clients">Do <strong>10 aktivnih klijenata</strong><br>Za trenere koji počinju s coachingom</div>
+        <div class="plan-feats">
+          <div class="plan-feat">Sve UnitLift funkcije</div>
+          <div class="plan-feat">Besplatna klijentska app</div>
+          <div class="plan-feat">Vlastiti branding</div>
+          <div class="plan-feat">Bez naknade po klijentu</div>
+          <div class="plan-feat">14 dana besplatno</div>
+        </div>
+      </div>
+      <div class="plan-card popular">
+        <div class="popular-badge">Najpopularnije</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price">€59<span>/mj</span></div>
+        <div class="plan-clients">Do <strong>30 aktivnih klijenata</strong><br>Za aktivnog trenera koji gradi ozbiljan posao</div>
+        <div class="plan-feats">
+          <div class="plan-feat">Sve iz Startera</div>
+          <div class="plan-feat">30 aktivnih klijenata</div>
+          <div class="plan-feat">Prioritetna podrška</div>
+          <div class="plan-feat">Napredne statistike</div>
+          <div class="plan-feat">14 dana besplatno</div>
+        </div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Scale</div>
+        <div class="plan-price">€99<span>/mj</span></div>
+        <div class="plan-clients">Do <strong>75 aktivnih klijenata</strong><br>Za trenere kojima je coaching glavni posao</div>
+        <div class="plan-feats">
+          <div class="plan-feat">Sve iz Proa</div>
+          <div class="plan-feat">75 aktivnih klijenata</div>
+          <div class="plan-feat">+€10/mj za svakih 25 više</div>
+          <div class="plan-feat">1.3% prihoda (50 klijenata)</div>
+          <div class="plan-feat">14 dana besplatno</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center; margin-top:16px; font-size:.78rem; color:var(--t35)">
+      Svi planovi uključuju: sve funkcije, besplatnu klijentsku app, vlastiti branding, HR i EN jezik, dark/light mod · Bez ugovorne obveze
+    </p>
+
+    <!-- CHART 5: Value vs cost -->
+    <div class="chart-card" style="margin-top:28px">
+      <div class="chart-title">Prihod koji plan generira vs trošak (po planu × prosječni paket €150/mj)</div>
+      <div class="chart-sub">Scale plan = 1.3% prihoda. Svaki dodani klijent donosi +€150, trošak sustava je fiksan.</div>
+      <div style="height:200px"><canvas id="valueChart"></canvas></div>
+    </div>
+  </div>
+</section>
+
+<!-- KALKULATOR -->
+<section id="kalkulator" style="background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+<div class="wrap">
+  <div class="section-label">Personalizirani izračun</div>
+  <h2>Kalkulator uštede - tvoji brojevi</h2>
+  <p class="section-sub" style="margin-bottom:32px">Unesi svoje trenutne podatke i rezultati se ažuriraju uživo. Primjer za tvoj coaching posao.</p>
+
+  <div class="calc-layout">
+
+    <!-- LIJEVO: UNOSI -->
+    <div class="calc-inputs-panel">
+      <div class="calc-panel-title">Tvoji podaci</div>
+
+      <div class="calc-field">
+        <div class="calc-frow">
+          <label class="calc-label">Trenutni broj klijenata</label>
+          <div class="calc-val-box"><input class="calc-num" id="num-clients" type="number" min="1" max="200" value="20" oninput="syncR(this,'rng-clients');calc()"><span class="calc-unit">kl</span></div>
+        </div>
+        <input class="calc-range" id="rng-clients" type="range" min="1" max="100" value="20" oninput="syncN(this,'num-clients');calc()">
+        <p class="calc-hint">Klijenti koje trenutno vodiš</p>
+      </div>
+
+      <div class="calc-field">
+        <div class="calc-frow">
+          <label class="calc-label">Cijena paketa</label>
+          <div class="calc-val-box"><input class="calc-num" id="num-price" type="number" min="20" max="1000" value="150" oninput="syncR(this,'rng-price');calc()"><span class="calc-unit">€/mj</span></div>
+        </div>
+        <input class="calc-range" id="rng-price" type="range" min="20" max="500" value="150" oninput="syncN(this,'num-price');calc()">
+        <p class="calc-hint">Prosječna cijena tvojih coaching paketa</p>
+      </div>
+
+      <div class="calc-field">
+        <div class="calc-frow">
+          <label class="calc-label">Ciljani broj klijenata (12 mj)</label>
+          <div class="calc-val-box"><input class="calc-num" id="num-target" type="number" min="1" max="200" value="35" oninput="syncR(this,'rng-target');calc()"><span class="calc-unit">kl</span></div>
+        </div>
+        <input class="calc-range" id="rng-target" type="range" min="1" max="100" value="35" oninput="syncN(this,'num-target');calc()">
+        <p class="calc-hint">Koliko klijenata želiš voditi za godinu dana</p>
+      </div>
+
+      <div class="calc-field">
+        <div class="calc-frow">
+          <label class="calc-label">Org. posao tjedno</label>
+          <div class="calc-val-box"><input class="calc-num" id="num-hours" type="number" min="1" max="50" value="10" oninput="syncR(this,'rng-hours');calc()"><span class="calc-unit">h</span></div>
+        </div>
+        <input class="calc-range" id="rng-hours" type="range" min="1" max="40" value="10" oninput="syncN(this,'num-hours');calc()">
+        <p class="calc-hint">Praćenje, planovi, poruke, uplate - sve što nije direktan rad s klijentom</p>
+      </div>
+
+      <div class="calc-field">
+        <div class="calc-frow">
+          <label class="calc-label">Onboarding novog klijenta</label>
+          <div class="calc-val-box"><input class="calc-num" id="num-onboard" type="number" min="5" max="300" value="60" oninput="syncR(this,'rng-onboard');calc()"><span class="calc-unit">min</span></div>
+        </div>
+        <input class="calc-range" id="rng-onboard" type="range" min="5" max="180" value="60" oninput="syncN(this,'num-onboard');calc()">
+        <p class="calc-hint">Minute za postavljanje novog klijenta (slanje materijala, objašnjavanje, postavljanje)</p>
+      </div>
+
+      <div class="calc-field">
+        <div class="calc-frow">
+          <label class="calc-label">Vrijednost tvojih sati</label>
+          <div class="calc-val-box"><input class="calc-num" id="num-rate" type="number" min="5" max="200" value="20" oninput="syncR(this,'rng-rate');calc()"><span class="calc-unit">€/h</span></div>
+        </div>
+        <input class="calc-range" id="rng-rate" type="range" min="5" max="100" value="20" oninput="syncN(this,'num-rate');calc()">
+        <p class="calc-hint">Koliko ti vrijedi jedan sat - koristi se za izračun financijske vrijednosti uštede</p>
+      </div>
+    </div>
+
+    <!-- DESNO: REZULTATI -->
+    <div class="calc-results-panel">
+
+      <!-- 4 metrike -->
+      <div class="calc-metrics">
+        <div class="calc-metric red">
+          <div class="calc-m-label">Tjedno gubiš</div>
+          <div class="calc-m-val" id="res-old-hours">10.0h</div>
+          <div class="calc-m-sub">na org. posao</div>
+        </div>
+        <div class="calc-metric green">
+          <div class="calc-m-label">S UnitLiftom ostaje ti</div>
+          <div class="calc-m-val" id="res-new-hours">2.0h</div>
+          <div class="calc-m-sub">tjedno org. posla</div>
+        </div>
+        <div class="calc-metric blue">
+          <div class="calc-m-label">Godišnja vrijednost uštede</div>
+          <div class="calc-m-val" id="res-yearly">€8.320</div>
+          <div class="calc-m-sub">ušteda × 52 tj × satnica</div>
+        </div>
+        <div class="calc-metric yellow">
+          <div class="calc-m-label">Potencijal rasta prihoda</div>
+          <div class="calc-m-val" id="res-potential">+€2.250/mj</div>
+          <div class="calc-m-sub">razlika: cilj vs sad</div>
+        </div>
+      </div>
+
+      <!-- Graf 1: Horizontalni bar - kategorije -->
+      <div class="chart-card" style="margin-bottom:14px">
+        <div class="chart-title">Organizacijski posao po kategoriji (h/tjedan)</div>
+        <div class="chart-sub">Raspodjela tvojih sati - trenutno vs. UnitLift procjena</div>
+        <div style="height:200px"><canvas id="calcBarChart"></canvas></div>
+        <div class="legend" style="margin-top:10px">
+          <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div>Sad</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#0066ff"></div>UnitLift</div>
+        </div>
+      </div>
+
+      <!-- Graf 2: Line - prihod 3 godine -->
+      <div class="chart-card" style="margin-bottom:14px">
+        <div class="chart-title">Prihod kroz 36 mjeseci (€/mj)</div>
+        <div class="chart-sub">Projekcija rasta sa i bez sustava</div>
+        <div style="height:200px"><canvas id="calcLineChart"></canvas></div>
+        <div class="legend" style="margin-top:10px">
+          <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div>Bez sustava</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#16a34a"></div>S UnitLiftom</div>
+        </div>
+      </div>
+
+      <!-- Usporedne kartice -->
+      <div class="cmp-cards">
+        <div class="cmp-card cmp-bad">
+          <div class="cmp-card-title">❌ Sad</div>
+          <div class="cmp-row"><span class="cmp-lbl">Org. posao</span><span class="cmp-val bad" id="cmp-hours-old">10.0h/tjedan</span></div>
+          <div class="cmp-row"><span class="cmp-lbl">Rad s klijentima</span><span class="cmp-val" id="cmp-coaching-old">30h/tjedan</span></div>
+          <div class="cmp-row"><span class="cmp-lbl">Onboarding</span><span class="cmp-val bad" id="cmp-onboard-old">60 min</span></div>
+          <div class="cmp-row"><span class="cmp-lbl">Prihod/mj</span><span class="cmp-val" id="cmp-revenue-old">€3.000</span></div>
+        </div>
+        <div class="cmp-card cmp-good">
+          <div class="cmp-card-title">✅ UnitLift</div>
+          <div class="cmp-row"><span class="cmp-lbl">Org. posao</span><span class="cmp-val good" id="cmp-hours-new">2.0h/tjedan</span></div>
+          <div class="cmp-row"><span class="cmp-lbl">Rad s klijentima</span><span class="cmp-val" id="cmp-coaching-new">38h/tjedan</span></div>
+          <div class="cmp-row"><span class="cmp-lbl">Onboarding</span><span class="cmp-val good" id="cmp-onboard-new">6 min</span></div>
+          <div class="cmp-row"><span class="cmp-lbl">Prihod/mj (cilj)</span><span class="cmp-val" id="cmp-revenue-new">€5.250</span></div>
+        </div>
+      </div>
+
+      <!-- Preporuka plana -->
+      <div class="plan-rec">
+        <div class="plan-rec-label">Preporučeni plan za tebe</div>
+        <div class="plan-rec-row">
+          <div>
+            <span class="plan-rec-name" id="res-plan-name">Pro</span>
+            <span class="plan-rec-price" id="res-plan-price">€59/mj</span>
+          </div>
+          <div class="plan-rec-right">
+            <div class="plan-rec-detail">Pokriva: <strong id="res-plan-coverage">0.39 klijenata (1.3% prihoda)</strong></div>
+            <div class="plan-rec-detail">ROI uštede: <strong id="res-roi">11×</strong></div>
+          </div>
+        </div>
+        <div class="plan-rec-note" id="res-plan-note">Za 35 klijenata preporučujemo Pro plan. UnitLift te košta manje od jednog klijenta, a vraća više od 11× vrijednosti u uštedi sati.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</section>
+
+<style>
+  /* -- CALCULATOR STYLES -- */
+  .calc-layout {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  .calc-inputs-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 72px;
+  }
+  .calc-panel-title {
+    font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--blue2); margin-bottom: 20px;
+  }
+  .calc-field { margin-bottom: 20px; }
+  .calc-field:last-child { margin-bottom: 0; }
+  .calc-frow { display: flex; justify-content: space-between; align-items: center; margin-bottom: 7px; }
+  .calc-label { font-size: .82rem; font-weight: 600; color: var(--t90); }
+  .calc-val-box { display: flex; align-items: center; gap: 4px; }
+  .calc-num {
+    width: 64px; text-align: right; font-size: .9rem; font-weight: 700;
+    color: var(--blue2); background: rgba(29,114,245,.07);
+    border: 1px solid rgba(29,114,245,.2); border-radius: 8px;
+    padding: 3px 7px; outline: none;
+    -moz-appearance: textfield;
+  }
+  .calc-num::-webkit-inner-spin-button,
+  .calc-num::-webkit-outer-spin-button { -webkit-appearance: none; }
+  .calc-num:focus { border-color: var(--blue); background: rgba(29,114,245,.1); }
+  .calc-unit { font-size: .72rem; color: var(--t60); min-width: 28px; }
+  .calc-range {
+    width: 100%; height: 5px; margin-bottom: 5px;
+    -webkit-appearance: none; appearance: none;
+    background: linear-gradient(to right, var(--blue) 0%, var(--blue) var(--pct, 19%), var(--bg3) var(--pct, 19%), var(--bg3) 100%);
+    border-radius: 99px; outline: none; cursor: pointer;
+  }
+  .calc-range::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 16px; height: 16px;
+    background: var(--blue); border-radius: 50%; cursor: pointer;
+    box-shadow: 0 0 0 3px rgba(0,102,255,.15);
+  }
+  .calc-range::-moz-range-thumb {
+    width: 16px; height: 16px; background: var(--blue);
+    border: none; border-radius: 50%; cursor: pointer;
+  }
+  .calc-hint { font-size: .72rem; color: var(--t35); line-height: 1.4; }
+
+  /* Results panel */
+  .calc-results-panel { display: flex; flex-direction: column; gap: 14px; }
+
+  /* Metric cards */
+  .calc-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .calc-metric {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 16px 18px;
+    box-shadow: var(--shadow); text-align: center;
+  }
+  .calc-metric.red   { border-top: 3px solid var(--red); }
+  .calc-metric.green { border-top: 3px solid var(--green); }
+  .calc-metric.blue  { border-top: 3px solid var(--blue); }
+  .calc-metric.yellow { border-top: 3px solid var(--yellow); }
+  .calc-m-label { font-size: .7rem; color: var(--t60); margin-bottom: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+  .calc-m-val { font-size: 1.55rem; font-weight: 800; }
+  .calc-metric.red .calc-m-val   { color: var(--red); }
+  .calc-metric.green .calc-m-val { color: var(--green); }
+  .calc-metric.blue .calc-m-val  { color: var(--blue2); }
+  .calc-metric.yellow .calc-m-val { color: var(--yellow); }
+  .calc-m-sub { font-size: .7rem; color: var(--t35); margin-top: 2px; }
+
+  /* Comparison cards */
+  .cmp-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .cmp-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px; box-shadow: var(--shadow); }
+  .cmp-card.cmp-bad  { border-top: 3px solid rgba(220,38,38,.4); }
+  .cmp-card.cmp-good { border-top: 3px solid rgba(22,163,74,.4); }
+  .cmp-card-title { font-size: .82rem; font-weight: 700; margin-bottom: 12px; color: var(--t90); }
+  .cmp-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,.04); }
+  .cmp-row:last-child { border-bottom: none; }
+  .cmp-lbl { font-size: .78rem; color: var(--t60); }
+  .cmp-val { font-size: .82rem; font-weight: 600; color: var(--t90); }
+  .cmp-val.bad  { color: #b91c1c; }
+  .cmp-val.good { color: #15803d; }
+
+  /* Plan recommendation */
+  .plan-rec {
+    background: linear-gradient(135deg, #eef4ff, #f0f9ff);
+    border: 1px solid rgba(0,102,255,.2);
+    border-radius: 14px; padding: 20px 22px;
+  }
+  .plan-rec-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--blue2); margin-bottom: 10px; }
+  .plan-rec-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+  .plan-rec-name { font-size: 1.3rem; font-weight: 800; color: var(--t90); margin-right: 8px; }
+  .plan-rec-price { font-size: .9rem; font-weight: 600; color: var(--blue2); background: rgba(0,102,255,.1); padding: 2px 10px; border-radius: 99px; }
+  .plan-rec-right { text-align: right; }
+  .plan-rec-detail { font-size: .78rem; color: var(--t60); line-height: 1.6; }
+  .plan-rec-note { font-size: .82rem; color: var(--t60); line-height: 1.6; border-top: 1px solid rgba(0,102,255,.1); padding-top: 10px; }
+
+  @media (max-width: 860px) {
+    .calc-layout { grid-template-columns: 1fr; }
+    .calc-inputs-panel { position: static; }
+  }
+  @media (max-width: 500px) {
+    .calc-metrics { grid-template-columns: 1fr 1fr; }
+    .cmp-cards { grid-template-columns: 1fr; }
+  }
+</style>
+
+<footer>
+  © 2026 UnitLift. Sva prava pridržana. · <a href="https://unitlift.com" style="color:var(--blue2); text-decoration:none">unitlift.com</a>
+</footer>
+
+<script>
+const GRID_COLOR = 'rgba(0,0,0,0.07)';
+const TICK_COLOR = '#9ca3af';
+
+Chart.defaults.color = TICK_COLOR;
+Chart.defaults.borderColor = GRID_COLOR;
+Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif';
+
+// -- 1. Organizacijski bar chart
+new Chart(document.getElementById('adminChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Check-in', 'Planovi', 'Komunikacija', 'Onboarding', 'Financije'],
+    datasets: [
+      {
+        label: 'Bez sustava',
+        data: [4.5, 5.0, 3.5, 2.0, 1.5],
+        backgroundColor: 'rgba(239,68,68,0.7)',
+        borderRadius: 5, borderSkipped: false,
+      },
+      {
+        label: 'UnitLift',
+        data: [0.5, 0.8, 1.5, 0.3, 0.2],
+        backgroundColor: 'rgba(0,102,255,0.8)',
+        borderRadius: 5, borderSkipped: false,
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(1) + 'h' } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 12 }, color: TICK_COLOR } },
+      y: {
+        grid: { color: GRID_COLOR },
+        ticks: { callback: v => v + 'h', font: { size: 11 }, color: TICK_COLOR },
+        title: { display: true, text: 'Sati / tjedan', font: { size: 11 }, color: TICK_COLOR }
+      }
+    }
+  }
+});
+
+// -- 2. Growth line chart
+new Chart(document.getElementById('growthChart'), {
+  type: 'line',
+  data: {
+    labels: ['Mj 1','Mj 2','Mj 3','Mj 4','Mj 5','Mj 6','Mj 7','Mj 8','Mj 9','Mj 10','Mj 11','Mj 12'],
+    datasets: [
+      {
+        label: 'Bez sustava',
+        data: [20,22,25,28,30,32,33,34,35,35,35,35],
+        borderColor: '#ef4444',
+        backgroundColor: 'rgba(239,68,68,0.07)',
+        fill: true, tension: 0.4, pointRadius: 3,
+        borderDash: [5,3]
+      },
+      {
+        label: 'UnitLift',
+        data: [22,26,32,38,44,50,55,60,65,68,72,75],
+        borderColor: '#16a34a',
+        backgroundColor: 'rgba(22,163,74,0.07)',
+        fill: true, tension: 0.4, pointRadius: 3
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y + ' klijenata' } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 11 }, color: TICK_COLOR, maxRotation: 0 } },
+      y: {
+        min: 0, max: 80,
+        grid: { color: GRID_COLOR },
+        ticks: { callback: v => v + ' kl', font: { size: 11 }, color: TICK_COLOR },
+        title: { display: true, text: 'Aktivni klijenti', font: { size: 11 }, color: TICK_COLOR }
+      }
+    }
+  }
+});
+
+// -- 3. Donut - time saved per category
+new Chart(document.getElementById('donutChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Check-in (4h)', 'Planovi (4.2h)', 'Komunikacija (2h)', 'Onboarding (1.7h)', 'Financije (1.3h)'],
+    datasets: [{
+      data: [4, 4.2, 2, 1.7, 1.3],
+      backgroundColor: ['#ef4444','#f59e0b','#3b82f6','#22c55e','#a78bfa'],
+      borderWidth: 0,
+      hoverOffset: 8
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    cutout: '62%',
+    plugins: {
+      legend: { position: 'right', labels: { font: { size: 11 }, boxWidth: 10, padding: 12, color: TICK_COLOR } },
+      tooltip: { callbacks: { label: ctx => ctx.label + ': ' + ctx.parsed.toFixed(1) + 'h' } }
+    }
+  }
+});
+
+// -- 4. Radar - client experience
+new Chart(document.getElementById('radarChart'), {
+  type: 'radar',
+  data: {
+    labels: ['Jasnoća plana', 'Praćenje napretka', 'Komunikacija', 'Profesionalnost', 'Accountability', 'Jednostavnost'],
+    datasets: [
+      {
+        label: 'Bez sustava',
+        data: [3, 2, 4, 3, 3, 4],
+        borderColor: '#ef4444',
+        backgroundColor: 'rgba(239,68,68,0.1)',
+        pointBackgroundColor: '#ef4444',
+        borderWidth: 2, pointRadius: 4
+      },
+      {
+        label: 'UnitLift',
+        data: [9, 9, 8, 9, 8, 9],
+        borderColor: '#16a34a',
+        backgroundColor: 'rgba(22,163,74,0.1)',
+        pointBackgroundColor: '#16a34a',
+        borderWidth: 2, pointRadius: 4
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { labels: { font: { size: 11 }, boxWidth: 10, color: TICK_COLOR } }
+    },
+    scales: {
+      r: {
+        min: 0, max: 10,
+        grid: { color: GRID_COLOR },
+        angleLines: { color: GRID_COLOR },
+        pointLabels: { font: { size: 11 }, color: '#4b5563' },
+        ticks: { display: false, stepSize: 2 }
+      }
+    }
+  }
+});
+
+// -- 5. Plan value vs cost
+new Chart(document.getElementById('valueChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Starter (10 kl × €150)', 'Pro (30 kl × €150)', 'Scale (50 kl × €150)'],
+    datasets: [
+      {
+        label: 'Prihod (€)',
+        data: [1500, 4500, 7500],
+        backgroundColor: 'rgba(29,114,245,0.65)',
+        borderRadius: 5, borderSkipped: false,
+      },
+      {
+        label: 'Trošak UnitLift (€)',
+        data: [29, 59, 99],
+        backgroundColor: 'rgba(239,68,68,0.65)',
+        borderRadius: 5, borderSkipped: false,
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { labels: { font: { size: 11 }, boxWidth: 10, color: TICK_COLOR } },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': €' + ctx.parsed.y.toLocaleString('hr') } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 11 }, color: TICK_COLOR, maxRotation: 0 } },
+      y: {
+        grid: { color: GRID_COLOR },
+        ticks: { callback: v => '€' + v.toLocaleString('hr'), font: { size: 11 }, color: TICK_COLOR }
+      }
+    }
+  }
+});
+</script>
+
+<script>
+let calcBarChart, calcLineChart;
+
+function syncN(rangeEl, numId) {
+  document.getElementById(numId).value = rangeEl.value;
+  updateRangeGradient(rangeEl);
+}
+function syncR(numEl, rangeId) {
+  const r = document.getElementById(rangeId);
+  r.value = numEl.value;
+  updateRangeGradient(r);
+}
+function updateRangeGradient(r) {
+  const min = +r.min, max = +r.max, val = +r.value;
+  const pct = ((val - min) / (max - min) * 100).toFixed(1) + '%';
+  r.style.setProperty('--pct', pct);
+  r.style.background = `linear-gradient(to right, #0066ff 0%, #0066ff ${pct}, #e2e8f0 ${pct}, #e2e8f0 100%)`;
+}
+
+function fmtEur(n) { return '€' + Math.round(n).toLocaleString('hr'); }
+function fmtH(n)   { return n.toFixed(1) + 'h'; }
+
+function calc() {
+  const clients     = Math.max(1, +document.getElementById('num-clients').value);
+  const price       = Math.max(1, +document.getElementById('num-price').value);
+  const target      = Math.max(clients, +document.getElementById('num-target').value);
+  const orgHours    = Math.max(0.5, +document.getElementById('num-hours').value);
+  const onboardMins = Math.max(1, +document.getElementById('num-onboard').value);
+  const hourlyRate  = Math.max(1, +document.getElementById('num-rate').value);
+
+  // UnitLift savings — based on measured 80% avg reduction
+  const unitliftHours = Math.max(0.5, orgHours * 0.20);
+  const savedHours    = orgHours - unitliftHours;
+  const yearlyVal     = Math.round(savedHours * 52 * hourlyRate);
+  const revNow        = clients * price;
+  const revTarget     = target  * price;
+  const revPotential  = revTarget - revNow;
+
+  // Per-category split (proportional, based on real ratios from page data)
+  const w = { track: 0.307, plans: 0.345, msg: 0.241, pay: 0.103 };
+  const reduce = { track: 0.111, plans: 0.16, msg: 0.429, pay: 0.133 };
+  const catOld = [orgHours * w.track, orgHours * w.plans, orgHours * w.msg, orgHours * w.pay];
+  const catNew = [catOld[0]*reduce.track, catOld[1]*reduce.plans, catOld[2]*reduce.msg, catOld[3]*reduce.pay];
+
+  // -- Update metric cards
+  document.getElementById('res-old-hours').textContent = fmtH(orgHours);
+  document.getElementById('res-new-hours').textContent = fmtH(unitliftHours);
+  document.getElementById('res-yearly').textContent    = fmtEur(yearlyVal);
+  document.getElementById('res-potential').textContent = (revPotential >= 0 ? '+' : '') + fmtEur(revPotential) + '/mj';
+
+  // -- Update comparison cards
+  document.getElementById('cmp-hours-old').textContent    = fmtH(orgHours) + '/tjedan';
+  document.getElementById('cmp-hours-new').textContent    = fmtH(unitliftHours) + '/tjedan';
+  document.getElementById('cmp-coaching-old').textContent = (40 - orgHours).toFixed(0) + 'h/tjedan';
+  document.getElementById('cmp-coaching-new').textContent = (40 - unitliftHours).toFixed(0) + 'h/tjedan';
+  document.getElementById('cmp-onboard-old').textContent  = Math.round(onboardMins) + ' min';
+  document.getElementById('cmp-onboard-new').textContent  = Math.max(1, Math.round(onboardMins * 0.08)) + ' min';
+  document.getElementById('cmp-revenue-old').textContent  = fmtEur(revNow) + '/mj';
+  document.getElementById('cmp-revenue-new').textContent  = fmtEur(revTarget) + '/mj (cilj)';
+
+  // -- Update bar chart
+  calcBarChart.data.datasets[0].data = catOld.map(v => +v.toFixed(2));
+  calcBarChart.data.datasets[1].data = catNew.map(v => +v.toFixed(2));
+  calcBarChart.update('none');
+
+  // -- Update line chart (36 months)
+  const noSys = Array.from({length: 36}, (_, i) => {
+    const growth = Math.min(1.25, 1 + (i / 60) * 0.3);
+    return Math.round(clients * growth * price);
+  });
+  const withUL = Array.from({length: 36}, (_, i) => {
+    let c;
+    if (i <= 12) {
+      c = clients + (target - clients) * (i / 12);
+    } else {
+      c = target * Math.pow(1.08, (i - 12) / 12);
+    }
+    return Math.round(c * price);
+  });
+  calcLineChart.data.datasets[0].data = noSys;
+  calcLineChart.data.datasets[1].data = withUL;
+  calcLineChart.update('none');
+
+  // -- Plan recommendation
+  const plan = target <= 10 ? { name: 'Starter', price: 29, max: 10 } :
+               target <= 30 ? { name: 'Pro',     price: 59, max: 30 } :
+                              { name: 'Scale',   price: 99, max: 75  };
+  const roiX = yearlyVal > 0 ? Math.round(yearlyVal / (plan.price * 12)) : 0;
+  const pctOfRevenue = ((plan.price / revNow) * 100).toFixed(1);
+
+  document.getElementById('res-plan-name').textContent     = plan.name;
+  document.getElementById('res-plan-price').textContent    = '€' + plan.price + '/mj';
+  document.getElementById('res-plan-coverage').textContent = (plan.price / price).toFixed(2) + ' klijenata (' + pctOfRevenue + '% prihoda)';
+  document.getElementById('res-roi').textContent           = roiX + '×';
+  document.getElementById('res-plan-note').textContent     =
+    'Za ' + target + ' klijenata preporučujemo ' + plan.name + ' plan. UnitLift te košta ' +
+    fmtEur(plan.price) + '/mj — manje od jednog klijenta (' + fmtEur(price) + '/mj) — a vraća ' +
+    roiX + '× vrijednosti u uštedi sati (' + fmtEur(yearlyVal) + ' godišnje).';
+}
+
+// Init calculator charts
+(function initCalcCharts() {
+  const GRID = 'rgba(0,0,0,0.07)';
+  const TICK = '#9ca3af';
+
+  calcBarChart = new Chart(document.getElementById('calcBarChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Praćenje', 'Planovi', 'Poruke', 'Uplate'],
+      datasets: [
+        { label: 'Sad',      data: [3.07, 3.45, 2.41, 1.03], backgroundColor: 'rgba(239,68,68,.7)',  borderRadius: 5, borderSkipped: false },
+        { label: 'UnitLift', data: [0.34, 0.55, 1.03, 0.14], backgroundColor: 'rgba(0,102,255,.75)', borderRadius: 5, borderSkipped: false }
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.x.toFixed(1) + 'h' } }
+      },
+      scales: {
+        x: { grid: { color: GRID }, ticks: { callback: v => v + 'h', font: { size: 11 }, color: TICK } },
+        y: { grid: { display: false }, ticks: { font: { size: 12 }, color: TICK } }
+      },
+      animation: { duration: 250 }
+    }
+  });
+
+  const mLabels = Array.from({length: 36}, (_, i) => i === 0 ? 'Sad' : i % 6 === 0 ? 'Mj ' + i : '');
+  calcLineChart = new Chart(document.getElementById('calcLineChart'), {
+    type: 'line',
+    data: {
+      labels: mLabels,
+      datasets: [
+        {
+          label: 'Bez sustava',
+          data: Array.from({length: 36}, (_, i) => Math.round(20 * Math.min(1.25, 1 + i/200) * 150)),
+          borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,.06)',
+          fill: true, tension: 0.4, pointRadius: 0, borderDash: [5,3], borderWidth: 2
+        },
+        {
+          label: 'UnitLift',
+          data: Array.from({length: 36}, (_, i) => {
+            const c = i <= 12 ? 20 + (35-20)*(i/12) : 35 * Math.pow(1.08,(i-12)/12);
+            return Math.round(c * 150);
+          }),
+          borderColor: '#16a34a', backgroundColor: 'rgba(22,163,74,.07)',
+          fill: true, tension: 0.4, pointRadius: 0, borderWidth: 2
+        }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ctx.dataset.label + ': ' + fmtEur(ctx.parsed.y) + '/mj',
+            title: ctx => 'Mj ' + ctx[0].dataIndex
+          }
+        }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 10 }, color: TICK, maxRotation: 0 } },
+        y: { grid: { color: GRID }, ticks: { callback: v => '€' + (v/1000).toFixed(0) + 'k', font: { size: 11 }, color: TICK } }
+      },
+      animation: { duration: 250 }
+    }
+  });
+
+  // Init slider gradients and run first calc
+  ['rng-clients','rng-price','rng-target','rng-hours','rng-onboard','rng-rate'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) updateRangeGradient(el);
+  });
+  calc();
+})();
+</script>
+
+</div><!-- /main-content -->
+
+</body>
+
+<style>
+#pw-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #0f172a;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Inter', sans-serif;
+}
+#pw-box {
+  background: #1e293b; border: 1px solid #334155;
+  border-radius: 20px; padding: 48px 40px;
+  width: 360px; text-align: center;
+  box-shadow: 0 24px 64px rgba(0,0,0,.6);
+}
+#pw-box svg { margin-bottom: 20px; }
+#pw-box h2 { color: #f1f5f9; font-size: 1.3rem; font-weight: 700; margin: 0 0 6px; }
+#pw-box p  { color: #94a3b8; font-size: .85rem; margin: 0 0 28px; }
+#pw-input {
+  width: 100%; box-sizing: border-box;
+  background: #0f172a; border: 1px solid #334155;
+  color: #f1f5f9; font-size: 1rem; font-weight: 600;
+  border-radius: 10px; padding: 12px 16px;
+  text-align: center; letter-spacing: .12em;
+  outline: none; margin-bottom: 14px;
+  transition: border-color .2s;
+}
+#pw-input:focus { border-color: #0066ff; }
+#pw-btn {
+  width: 100%; background: #0066ff; color: #fff;
+  border: none; border-radius: 10px; padding: 13px;
+  font-size: .95rem; font-weight: 700; cursor: pointer;
+  transition: background .2s;
+}
+#pw-btn:hover { background: #0052d6; }
+#pw-err { color: #f87171; font-size: .82rem; margin-top: 10px; min-height: 18px; }
+</style>
+
+<div id="pw-overlay">
+  <div id="pw-box">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.020836 51.064583" style="height:36px;width:auto;display:block;margin:0 auto 20px">
+      <defs>
+        <linearGradient id="pwLogoG" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#7eb8ff"/>
+          <stop offset="50%" stop-color="#0066ff"/>
+          <stop offset="100%" stop-color="#0044cc"/>
+        </linearGradient>
+      </defs>
+      <g transform="translate(-9.5249995,-47.095833)">
+        <path fill="url(#pwLogoG)" d="M 40.348957,94.687852 32.940624,91.257608 32.477603,90.71095 32.014583,90.164292 V 69.067944 47.971597 l 0.483856,-0.437882 0.483854,-0.437882 h 2.770521 2.770518 l 0.3175,0.3175 0.3175,0.3175 V 66.9604 86.189967 l 0.788999,0.326813 0.788998,0.326814 0.401627,-0.154118 0.401626,-0.154119 v -4.068339 -4.068337 l 0.483857,-0.437883 0.483854,-0.437882 h 0.30638 0.306382 l 3.010646,1.420082 3.010646,1.420082 0.121568,7.202061 0.121568,7.202062 -0.116382,1.4034 -0.116379,1.4034 -0.64352,0.293206 -0.643517,0.293206 -0.0537,-0.02117 -0.0537,-0.02117 z m 12.061346,3.009542 -0.564986,-0.46302 0.07265,-8.45302 0.07265,-8.453019 3.167914,-1.41827 3.167915,-1.41827 0.602398,0.274471 0.602398,0.274471 v 4.233965 4.233966 l 0.595312,0.148114 0.595313,0.148114 3.262823,-1.46599 3.26282,-1.465991 h 0.586867 0.586865 l 0.3175,0.3175 0.3175,0.3175 v 2.948784 2.948787 l -0.463021,0.408305 -0.463021,0.408302 -7.461737,3.469161 -7.461739,3.469161 H 53.09101 52.975289 Z M 23.02806,84.419476 22.754166,83.907703 V 69.11465 54.321597 l 0.483857,-0.437882 0.483854,-0.437882 h 2.658747 2.658751 l 0.337849,0.407086 0.337852,0.407085 -0.03927,14.975855 -0.03927,14.975853 -0.298583,0.359767 -0.298579,0.35977 H 26.170661 23.30195 Z m 48.726939,0.194273 -0.3175,-0.3175 V 69.144932 53.993618 l 0.511773,-0.273893 0.511773,-0.273892 h 2.512036 2.512039 l 0.415774,0.415774 0.415771,0.415774 v 15.009434 15.009434 l -0.3175,0.3175 -0.3175,0.3175 H 74.877082 72.072499 Z M 62.337256,82.936957 61.912499,82.5122 V 65.241899 47.971597 l 0.483857,-0.437882 0.483854,-0.437882 h 2.791039 2.791042 l 0.299011,0.360288 0.299011,0.360287 -0.06818,16.374609 -0.06818,16.374607 -2.513542,1.226457 -2.513541,1.226455 -0.567431,0.171588 -0.567433,0.171587 z M 14.221354,78.824639 13.758333,78.554955 V 75.393102 72.231249 H 12.079549 10.400765 L 9.9628823,71.747395 9.5249995,71.263541 v -2.109063 -2.109062 l 0.3175,-0.3175 0.3174995,-0.3175 h 1.799167 1.799167 v -2.989791 -2.989792 l 0.3175,-0.3175 0.3175,-0.3175 h 2.478021 2.478019 l 0.511773,0.273892 0.51177,0.273893 v 9.109506 9.109506 l -0.51177,0.273894 -0.511773,0.273891 -2.332498,-0.008 -2.332501,-0.008 z m 67.069175,-0.0071 -0.592614,-0.219221 V 69.47096 60.343618 l 0.511773,-0.273893 0.511773,-0.273892 h 2.478019 2.478019 l 0.3175,0.3175 0.3175,0.3175 v 2.989792 2.989791 h 1.799166 1.799167 l 0.3175,0.3175 0.3175,0.3175 v 2.155034 2.155036 l -0.483854,0.43788 -0.483854,0.437883 h -1.632813 -1.632812 v 3.183305 3.183303 l -0.33073,0.103761 -0.330729,0.103762 -2.383949,0.115684 -2.383948,0.115681 z m -39.433447,-6.903773 -0.3175,-0.3175 v -2.838601 -2.838601 l 0.415775,-0.415774 0.415774,-0.415774 h 8.262559 8.262559 l 0.3175,0.3175 0.3175,0.3175 v 2.936875 2.936875 l -0.3175,0.3175 -0.3175,0.3175 h -8.360833 -8.360834 z"/>
+      </g>
+    </svg>
+    <h2>UnitLift Prezentacija</h2>
+    <p>Interno. Unesi lozinku za pristup.</p>
+    <input id="pw-input" type="password" placeholder="Lozinka" autocomplete="off"
+      onkeydown="if(event.key==='Enter')checkPw()">
+    <button id="pw-btn" onclick="checkPw()">Nastavi →</button>
+    <div id="pw-err"></div>
+  </div>
+</div>
+
+<script>
+(function() {
+  /* SHA-256 hash of the password - never stored in plain text */
+  const H = '72bf1913c1ea8dba8518c780ce140abbec3c64e73911aad68cd0b490b9b20dab';
+  const SK = 'ul_ph';
+
+  async function sha256(str) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+  }
+
+  function unlock() {
+    const ov = document.getElementById('pw-overlay');
+    const mc = document.getElementById('main-content');
+    if (mc) { mc.style.visibility = 'visible'; mc.style.pointerEvents = ''; mc.style.userSelect = ''; }
+    if (ov) { ov.style.opacity = '0'; ov.style.transition = 'opacity .3s'; setTimeout(() => { if(ov) ov.remove(); }, 320); }
+  }
+
+  function lock() {
+    const mc = document.getElementById('main-content');
+    if (mc) { mc.style.visibility = 'hidden'; mc.style.pointerEvents = 'none'; }
+    sessionStorage.removeItem(SK);
+  }
+
+  /* Check saved session */
+  if (sessionStorage.getItem(SK) === H) {
+    unlock();
+  }
+
+  /* Guard: watch for overlay removal without auth */
+  const guard = new MutationObserver(() => {
+    if (sessionStorage.getItem(SK) !== H) {
+      lock();
+    }
+  });
+  guard.observe(document.documentElement, { childList: true, subtree: true, attributes: true });
+
+  window.checkPw = async function() {
+    const val = document.getElementById('pw-input').value;
+    const h = await sha256(val);
+    if (h === H) {
+      sessionStorage.setItem(SK, H);
+      guard.disconnect();
+      unlock();
+    } else {
+      document.getElementById('pw-err').textContent = 'Pogrešna lozinka.';
+      document.getElementById('pw-input').style.borderColor = '#f87171';
+      document.getElementById('pw-input').value = '';
+      setTimeout(() => {
+        const e = document.getElementById('pw-err');
+        const i = document.getElementById('pw-input');
+        if (e) e.textContent = '';
+        if (i) i.style.borderColor = '';
+      }, 2500);
+    }
+  };
+})();
+</script>
+
+</body>
+</html>
