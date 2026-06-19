@@ -13,7 +13,7 @@ const securityHeaders = [
     value: [
       "default-src 'self'",
       // Next.js inline scripts + Google Analytics
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net",
       // Next.js image optimization + external images
       "img-src 'self' data: blob: https://*.googletagmanager.com https://www.google-analytics.com",
       // Styles: inline (Next.js CSS-in-JS) + Google Fonts
