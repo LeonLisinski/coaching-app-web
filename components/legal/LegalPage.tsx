@@ -2,12 +2,12 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import LogoSvg from '@/components/landing/LogoSvg'
+import LegalNavbar from './LegalNavbar'
 import type { LegalDocument } from '@/lib/legal/types'
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.unitlift.com'
 
 interface LegalPageProps {
   doc: LegalDocument
@@ -17,31 +17,8 @@ interface LegalPageProps {
 export default function LegalPage({ doc, docType }: LegalPageProps) {
   const locale = useLocale()
   const t = useTranslations()
-  const router = useRouter()
   const [activeId, setActiveId] = useState<string>(doc.sections[0]?.id ?? '')
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const tocRef = useRef<HTMLDivElement>(null)
-
-  const otherLocale = locale === 'hr' ? 'en' : 'hr'
-  const termsSlug = '/uvjeti'
-  const privacySlug = '/privatnost'
-  const currentSlug = docType === 'terms' ? termsSlug : privacySlug
-
-  const navLabels = t.raw('nav') as string[]
-  const mainNavLinks = [
-    [navLabels[0], `/${locale}/kako-radi`],
-    [navLabels[1], `/${locale}#funkcije`],
-    [navLabels[2], `/${locale}/cijene`],
-    [navLabels[3], `/${locale}/treneri`],
-    ['FAQ', `/${locale}/faq`],
-  ]
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   useEffect(() => {
     const sectionEls = doc.sections.map(s => document.getElementById(s.id)).filter(Boolean) as HTMLElement[]
@@ -64,55 +41,13 @@ export default function LegalPage({ doc, docType }: LegalPageProps) {
     }
   }
 
-  function switchLang() {
-    try { localStorage.setItem('unitlift_locale', otherLocale) } catch {}
-    router.push(`/${otherLocale}${currentSlug}`)
-  }
+  const termsSlug = '/uvjeti'
+  const privacySlug = '/privatnost'
+  const currentSlug = docType === 'terms' ? termsSlug : privacySlug
 
   return (
     <div className="legal-root">
-      {/* Navbar */}
-      <nav className={scrolled ? 'scrolled' : ''}>
-        <Link href={`/${locale}`} className="nl">
-          <LogoSvg height={28} />
-          <span className="nw">UnitLift</span>
-        </Link>
-
-        <ul className="navlinks">
-          {mainNavLinks.map(([label, href]) => (
-            <li key={label}>
-              <a href={href}>{label}</a>
-            </li>
-          ))}
-        </ul>
-
-        <div className="navact">
-          <button className="langbtn navlang" onClick={switchLang}>
-            {locale.toUpperCase()}
-          </button>
-          <a href={`${APP_URL}/login`} className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {t('login')}
-          </a>
-          <a href={`/${locale}/cijene`} className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {t('common.tryFree')}
-          </a>
-          <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label={t('common.menuAria')}>
-            <span /><span /><span />
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile menu */}
-      <div className={`mobmenu${menuOpen ? ' open' : ''}`}>
-        {mainNavLinks.map(([label, href]) => (
-          <a key={label} href={href} onClick={() => setMenuOpen(false)}>
-            {label}
-          </a>
-        ))}
-        <button className="langbtn mobc" onClick={() => { switchLang(); setMenuOpen(false) }}>
-          {t('common.langSwitchLabel')} {otherLocale.toUpperCase()}
-        </button>
-      </div>
+      <LegalNavbar switchPath={currentSlug} />
 
       {/* Hero */}
       <div className="legal-hero">

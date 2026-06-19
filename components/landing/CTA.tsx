@@ -19,10 +19,7 @@ export default function CTA() {
           {t('demo.ctaBtn')}
         </a>
       </div>
-      <p style={{ marginTop: '10px', color: 'rgba(255,255,255,.42)', fontSize: '.77rem' }}>
-        {t('demo.ctaDesc')}
-      </p>
-      <p style={{ marginTop: '18px', color: 'rgba(255,255,255,.5)', fontSize: '.8rem' }}>
+      <p style={{ marginTop: '12px', color: 'rgba(255,255,255,.45)', fontSize: '.77rem' }}>
         {t('ctaN')}
       </p>
     </section>

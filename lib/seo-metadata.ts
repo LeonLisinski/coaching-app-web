@@ -40,12 +40,14 @@ export function buildPageMetadata({
       siteName: 'UnitLift',
       locale: locale === 'hr' ? 'hr_HR' : 'en_US',
       type: 'website',
-      images: [
+        images: [
         {
           url: OG_IMAGE,
           width: 1200,
           height: 630,
-          alt: 'UnitLift - aplikacija za osobne trenere i online klijente',
+          alt: locale === 'hr'
+            ? 'UnitLift - aplikacija za osobne trenere i online klijente'
+            : 'UnitLift - app for personal trainers and online clients',
         },
       ],
     },

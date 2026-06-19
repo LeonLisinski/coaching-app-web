@@ -1,14 +1,17 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { useReveal } from '@/hooks/useReveal'
+import { routing } from '@/i18n/routing'
 
-const PRICES = [29, 59, 99]
-const PLANS  = ['starter', 'pro', 'scale'] as const
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
+import { PLANS, PRICES } from '@/lib/pricing-config'
+
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.unitlift.com'
 
 export default function Pricing() {
   const t = useTranslations()
+  const locale = useLocale()
+  const lp = (path: string) => locale === routing.defaultLocale ? path : `/${locale}${path}`
   const tiers = t.raw('tiers') as Array<{
     name: string
     price: number
@@ -44,8 +47,8 @@ export default function Pricing() {
               <div className="ptier">{tier.name}</div>
 
               <div className="pamt">
-                €<span>{PRICES[i]}</span>
-                <span className="psmall">/mj</span>
+                €<span>{PRICES[PLANS[i]]}</span>
+                <span className="psmall">/{t('common.monthSuffix')}</span>
               </div>
 
               <div className="pper" style={{ marginBottom: '8px' }}>{tier.clients}</div>
@@ -81,11 +84,8 @@ export default function Pricing() {
 
         {/* Demo CTA below pricing */}
         <div style={{ textAlign: 'center', marginTop: '32px', paddingTop: '28px', borderTop: '1px solid rgba(0,0,0,.06)' }}>
-          <p style={{ color: 'var(--ls)', fontSize: '.85rem', marginBottom: '12px' }}>
-            {t('demo.ctaDesc')}
-          </p>
           <a
-            href={`/prezentacija`}
+            href={lp('/prezentacija')}
             className="btn btn-g"
             style={{ color: 'var(--ba)', borderColor: 'var(--ba)' }}
           >

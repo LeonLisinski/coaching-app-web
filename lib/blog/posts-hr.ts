@@ -93,7 +93,7 @@ export const postsHr: BlogPost[] = [
       { type: 'paragraph', text: 'Ako imaš pet ili više aktivnih klijenata i osjećaš da administracija jede vrijeme, imaš jasan signal.' },
       { type: 'paragraph', text: 'Aplikacija ti daje automatske podsjetnike, mobilni pristup za klijenta, komunikaciju na jednom mjestu i pregled uplata. Excel to ne može.' },
 
-      { type: 'internal-link', text: '→ Pogledaj što UnitLift nudi za online trenere', href: '/hr/software-za-online-fitness-trenere' },
+      { type: 'internal-link', text: '→ Pogledaj što UnitLift nudi za online trenere', href: '/software-za-online-fitness-trenere' },
     ],
   },
   {
@@ -249,7 +249,7 @@ export const postsHr: BlogPost[] = [
         'GDPR usklađenost i sigurno čuvanje podataka',
       ]},
 
-      { type: 'internal-link', text: '→ Pogledaj što UnitLift nudi za online trenere', href: '/hr/software-za-online-fitness-trenere' },
+      { type: 'internal-link', text: '→ Pogledaj što UnitLift nudi za online trenere', href: '/software-za-online-fitness-trenere' },
     ],
   },
   {

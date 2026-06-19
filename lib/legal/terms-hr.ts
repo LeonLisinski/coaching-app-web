@@ -1,11 +1,11 @@
 import type { LegalDocument } from './types'
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'URL aplikacije nije konfiguriran'
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.unitlift.com'
 
 export const termsHr: LegalDocument = {
   title: 'Uvjeti korištenja',
-  lastUpdated: '18. ožujka 2025.',
-  version: '1.0',
+  lastUpdated: '26. svibnja 2026.',
+  version: '1.1',
   intro: 'Ovi Uvjeti korištenja reguliraju korištenje aplikacije UnitLift. Molimo pročitajte ih pažljivo.',
   callout: 'Ukratko: korištenjem UnitLifta pristaješ na ove uvjete, način naplate i pravila korištenja. Otkaži kad hoćeš - detalji su u nastavku.',
   sections: [

@@ -3,18 +3,23 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 
-const SHOTS = [
-  { src: '/home-portrait.png',      label: 'Pregled' },
-  { src: '/vjezbe-portrait.png',    label: 'Treninzi' },
-  { src: '/nutrition-portrait.png', label: 'Prehrana' },
-  { src: '/chat-portrait.png',      label: 'Chat' },
-  { src: '/checkin-portrait.png',   label: 'Check-in' },
+const SRCS = [
+  '/home-portrait.png',
+  '/vjezbe-portrait.png',
+  '/nutrition-portrait.png',
+  '/chat-portrait.png',
+  '/checkin-portrait.png',
 ]
 
-const LOOP = [...SHOTS, ...SHOTS]
-
 export default function ClientAppStrip() {
+  const t = useTranslations('clientApp')
+  const labels = t.raw('shots') as string[]
+
+  const SHOTS = SRCS.map((src, i) => ({ src, label: labels[i] ?? '' }))
+  const LOOP  = [...SHOTS, ...SHOTS]
+
   const [lb, setLb] = useState<number | null>(null)
   const [mounted, setMounted] = useState(false)
   const touchX = useRef(0)
@@ -23,25 +28,25 @@ export default function ClientAppStrip() {
     setMounted(true)
     const prefetch = () => {
       SHOTS.forEach(shot => {
-        fetch(`/_next/image?url=${encodeURIComponent(shot.src)}&w=1024&q=75`)
-          .catch(() => {})
+        fetch(`/_next/image?url=${encodeURIComponent(shot.src)}&w=1024&q=75`).catch(() => {})
       })
     }
-    const t = setTimeout(prefetch, 3000)
-    return () => clearTimeout(t)
+    const timer = setTimeout(prefetch, 3000)
+    return () => clearTimeout(timer)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const open  = (i: number) => setLb(i % SHOTS.length)
   const close = useCallback(() => setLb(null), [])
-  const prev  = useCallback(() => setLb(i => i === null ? null : (i - 1 + SHOTS.length) % SHOTS.length), [])
-  const next  = useCallback(() => setLb(i => i === null ? null : (i + 1) % SHOTS.length), [])
+  const prev  = useCallback(() => setLb(i => i === null ? null : (i - 1 + SHOTS.length) % SHOTS.length), [SHOTS.length])
+  const next  = useCallback(() => setLb(i => i === null ? null : (i + 1) % SHOTS.length), [SHOTS.length])
 
   useEffect(() => {
     if (lb === null) return
     const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape')      close()
-      if (e.key === 'ArrowLeft')   prev()
-      if (e.key === 'ArrowRight')  next()
+      if (e.key === 'Escape')     close()
+      if (e.key === 'ArrowLeft')  prev()
+      if (e.key === 'ArrowRight') next()
     }
     window.addEventListener('keydown', handler)
     document.body.style.overflow = 'hidden'
@@ -64,14 +69,14 @@ export default function ClientAppStrip() {
       role="dialog"
       aria-modal="true"
     >
-      <button className="strip-lb-x" onClick={close} aria-label="Zatvori">✕</button>
-      <button className="strip-lb-arr strip-lb-prev" onClick={e => { e.stopPropagation(); prev() }} aria-label="Prethodna">‹</button>
+      <button className="strip-lb-x" onClick={close} aria-label={t('close')}>✕</button>
+      <button className="strip-lb-arr strip-lb-prev" onClick={e => { e.stopPropagation(); prev() }} aria-label={t('prev')}>‹</button>
 
       <div className="strip-lb-inner" onClick={e => e.stopPropagation()}>
         <div className="strip-lb-img-wrap strip-lb-port">
           <Image
             src={SHOTS[lb].src}
-            alt={`UnitLift klijentska aplikacija - ${SHOTS[lb].label}`}
+            alt={t('imageAlt', { label: SHOTS[lb].label })}
             fill
             sizes="(max-width:768px) 70vw, 320px"
             style={{ objectFit: 'contain' }}
@@ -84,7 +89,7 @@ export default function ClientAppStrip() {
         </div>
       </div>
 
-      <button className="strip-lb-arr strip-lb-next" onClick={e => { e.stopPropagation(); next() }} aria-label="Sljedeća">›</button>
+      <button className="strip-lb-arr strip-lb-next" onClick={e => { e.stopPropagation(); next() }} aria-label={t('next')}>›</button>
     </div>
   )
 
@@ -92,8 +97,8 @@ export default function ClientAppStrip() {
     <>
       <div className="castrip-outer">
         <div className="dstrip-head">
-          <span className="dstrip-badge">Klijentska mobilna aplikacija</span>
-          <p className="dstrip-sub">Što klijent vidi u aplikaciji — besplatno za iOS i Android</p>
+          <span className="dstrip-badge">{t('badge')}</span>
+          <p className="dstrip-sub">{t('sub')}</p>
         </div>
         <div className="dstrip-mask">
           <div className="castrip-track">
@@ -109,7 +114,7 @@ export default function ClientAppStrip() {
               >
                 <Image
                   src={shot.src}
-                  alt={`UnitLift klijentska aplikacija - ${shot.label}`}
+                  alt={t('imageAlt', { label: shot.label })}
                   width={390}
                   height={844}
                   className="castrip-img"
@@ -123,7 +128,6 @@ export default function ClientAppStrip() {
         </div>
       </div>
 
-      {/* Render lightbox via portal — bypasses overflow:hidden on parent elements */}
       {mounted && lightbox && createPortal(lightbox, document.body)}
     </>
   )

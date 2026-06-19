@@ -4,10 +4,10 @@
   "ctaNav": "Isprobaj besplatno",
   "badge": "Aplikacija za osobne trenere s online klijentima",
   "h1": "Više klijenata.<br><span class=\"grad\">Manje kaosa.</span>",
-  "sub": "Planovi treninga i prehrane, tjedni check-in, plaćanja i poruke. Sve u jednom alatu. Postavi u 5 minuta, 14 dana besplatno.",
-  "btn1": "Kreni besplatno i odaberi plan →",
+  "sub": "Treninzi, prehrana, check-in, poruke i plaćanja u jednom sustavu za online trenere.",
+  "btn1": "Isprobaj 14 dana besplatno",
   "btn2": "Pogledaj kako radi",
-  "note": "Kartica potrebna za aktivaciju · Bez naplate 14 dana · Otkaži kad hoćeš",
+  "note": "14 dana besplatno · Bez ugovorne obveze · Otkaži kad želiš",
   "trust": ["GDPR sukladan", "iOS & Android za klijente", "Postavljanje za 5 minuta", "Napravljeno u Hrvatskoj", "Enkriptirana pohrana"],
   "howLbl": "Kako radi",
   "howTit": "Od registracije do prvog klijenta za 10 minuta.",
@@ -29,7 +29,7 @@
   ],
   "mobLbl": "Mobilna aplikacija",
   "mobTit": "Za trenere i klijente.<br>Uvijek dostupno.",
-  "mobSub": "Trener prati sve s mobitela. Klijent ima vlastitu aplikaciju s planovima, check-inovima i chatom.",
+  "mobSub": "Trener prati sve s mobitela. Klijent ima vlastitu aplikaciju s planovima, check-in praćenjem i chatom.",
   "mobFeats": [
     { "t": "Trener - sve na dlanu", "d": "Vidiš check-ine, plaćanja i poruke svakog klijenta na mobitelu. Dodaj aplikaciju na početni ekran i prati sve u hodu." },
     { "t": "Klijent - check-in za 2 minute", "d": "Klijent otvori aplikaciju, popuni check-in i spremi. Ti odmah vidiš napredak - bez jedne poruke." },
@@ -78,7 +78,7 @@
     "PDF izvještaji po klijentu"
   ],
   "includedClients": [
-    "Check-inovi i slike napretka",
+    "Check-in i slike napretka",
     "Chat sa slikama i videom",
     "Besplatna klijentska aplikacija",
     "Aktivacija i deaktivacija klijenata"
@@ -92,9 +92,10 @@
   "includedExtras": "Hrvatski i engleski jezik · Dark/light način rada · Prilagodba boja i logotipa",
   "activeClientNote": "Aktivni klijent je klijent kojemu trenutno vodiš coaching. Deaktivirani klijenti i njihovi podaci ostaju spremljeni, ali se ne računaju u limit plana.",
   "scaleNote": "Više od 75 aktivnih klijenata? Scale + €10/mj za svakih dodatnih 25.",
-  "priceNote": "14 dana besplatno · Otkazivanje u bilo kojem trenutku",
+  "priceNote": "14 dana besplatno · Bez ugovorne obveze · Otkaži kad želiš",
   "testLbl": "Recenzije",
   "testTit": "Treneri koji su prešli na sustav",
+  "testSubtitle": "Primjeri iskustava korisnika",
   "testimonials": [
     { "q": "Konačno imam jedno mjesto za sve. Prije sam koristio WhatsApp, Excel i par drugih aplikacija. Sada štedim sat vremena dnevno.", "name": "Marko K.", "role": "Online fitness trener, Zagreb", "badge": "Trener" },
     { "q": "Prešao sam s 8 na 15 klijenata bez dodatnog stresa. Sustav automatski podsjeća klijente, a ja odmah vidim tko kasni s check-inom.", "name": "Tomislav N.", "role": "Strength coach, Osijek", "badge": "Trener" },
@@ -188,8 +189,8 @@
       { "initials": "IH", "name": "Ivan Horvat", "sub": "Check-in poslan", "status": "Predano ✓", "type": "ok" },
       { "initials": "PK", "name": "Petra Kovač", "sub": "Novi plan dostupan", "status": "Na čekanju", "type": "warn" }
     ],
-    "mockupStat1Val": "98%", "mockupStat1Lbl": "Stopa predaje check-ina",
-    "mockupStat2Val": "4.9★", "mockupStat2Lbl": "Ocjena klijenata",
+    "mockupStat1Val": "98%", "mockupStat1Lbl": "Stopa predaje check-ina · Primjer",
+    "mockupStat2Val": "4.9★", "mockupStat2Lbl": "Ocjena klijenata · Primjer",
     "problemTag": "Kako klijenti doživljavaju tvoj rad",
     "problemH2": "Klijent koji traži plan po porukama<br/>brzo odustane",
     "problemSub": "Kvaliteta tvog rada ne smije ovisiti o tome hoće li klijent naći PDF. Iskustvo klijenta počinje čim izađe iz teretane.",
@@ -215,7 +216,7 @@
       { "initials": "TN", "name": "Tomislav Novak", "meta": "Podsjetnik poslan automatski", "badge": "Na čekanju", "type": "warn" }
     ],
     "featVisualStatVal": "94%",
-    "featVisualStatLbl": "Klijenata predaje check-in na vrijeme · Prosjek platforma: 42%",
+    "featVisualStatLbl": "Klijenata predaje check-in na vrijeme · Prosjek platforma: 42% · Primjer",
     "usecaseTag": "Tko koristi UnitLift",
     "usecaseH2": "Za trenere kojima je važan dojam koji ostavljaju",
     "usecases": [
@@ -305,7 +306,7 @@
       { "initials": "PK", "name": "Petra Kovač", "sub": "Check-in nije predan", "status": "Kasni ⚠", "type": "late" }
     ],
     "mockupStat1Val": "12 tj.", "mockupStat1Lbl": "Prosječno praćenje",
-    "mockupStat2Val": "89%",  "mockupStat2Lbl": "Stopa predaje check-ina",
+    "mockupStat2Val": "89%",  "mockupStat2Lbl": "Stopa predaje check-ina · Primjer",
     "problemTag": "Bez sustava praćenja",
     "problemH2": "\"Ide dobro\" nije podatak.<br/>Podaci su podaci.",
     "problemSub": "Osjećaš da napreduju, ali nemaš brojke. Kad klijent odustane, ne znaš je li problem bio plan, prehrana ili motivacija.",
@@ -331,7 +332,7 @@
       { "initials": "PK", "name": "Petra Kovač", "meta": "Podsjetnik poslan automatski", "badge": "Na čekanju", "type": "warn" }
     ],
     "featVisualStatVal": "89%",
-    "featVisualStatLbl": "Stopa predaje check-ina · Prosjek bez sustava: 38%",
+    "featVisualStatLbl": "Stopa predaje check-ina · Prosjek bez sustava: 38% · Primjer",
     "usecaseTag": "Za koga je ovo",
     "usecaseH2": "Za trenere kojima je važno<br/>što se stvarno događa s klijentom",
     "usecases": [
@@ -351,16 +352,16 @@
   },
   "ctaT": "Prestani gubiti sate na sitne stvari.",
   "ctaS": "Postavi UnitLift u 5 minuta i fokusiraj se na ono što znaš - coaching.",
-  "ctaB1": "Kreni besplatno →",
+  "ctaB1": "Isprobaj 14 dana besplatno",
   "ctaB2": "Kontaktiraj nas",
-  "ctaN": "Kartica potrebna za aktivaciju · Bez naplate 14 dana · Otkaži kad hoćeš",
+  "ctaN": "14 dana besplatno · Bez ugovorne obveze · Otkaži kad želiš",
   "tagline": "Aplikacija za osobne trenere i online klijente. Manje nereda, više stvarnog rada.",
   "payLbl": "Plaćanje putem:",
-  "copy": "© 2026 UnitLift, vl. Leon Lišinski. Sva prava pridržana.",
+  "copy": "© 2026 UnitLift. Sva prava pridržana.",
   "footerCols": [
-    { "title": "Platforma", "links": [["Kako radi", "/hr/kako-radi"], ["Mobilna aplikacija", "#funkcije"], ["Cijene", "/hr/cijene"], ["Blog", "/hr/blog"], ["Treneri", "/hr/treneri"], ["Prijava", "__APP_URL__/login"]] },
-    { "title": "Podrška", "links": [["FAQ", "/hr/faq"], ["Kontakt", "/hr/kontakt"], ["Email podrška", "mailto:support@unitlift.com"]] },
-    { "title": "Pravno", "links": [["Politika privatnosti", "/hr/privatnost"], ["Uvjeti korištenja", "/hr/uvjeti"], ["GDPR", "/hr/privatnost"]] }
+    { "title": "Platforma", "links": [["Kako radi", "/kako-radi"], ["Mobilna aplikacija", "__HOME__#funkcije"], ["Cijene", "/cijene"], ["Blog", "/blog"], ["Treneri", "/treneri"], ["Prijava", "__APP_URL__/login"]] },
+    { "title": "Podrška", "links": [["FAQ", "/faq"], ["Kontakt", "/kontakt"], ["Email podrška", "mailto:support@unitlift.com"]] },
+    { "title": "Pravno", "links": [["Politika privatnosti", "/privatnost"], ["Uvjeti korištenja", "/uvjeti"], ["GDPR", "/privatnost"]] }
   ],
   "heroFeats": ["Pregled klijenata", "Planovi prehrane", "Planovi treninga", "Check-in praćenje", "Galerija fotografija", "Chat s klijentima"],
   "mobImgAltTraining": "UnitLift aplikacija za trenere - ekran plana treninga na mobitelu",
@@ -369,7 +370,7 @@
     "navBack": "Početna",
     "langSwitchLabel": "Jezik:",
     "menuAria": "Menu",
-    "footerCopy": "© 2026 UnitLift, vl. Leon Lišinski",
+    "footerCopy": "© 2026 UnitLift. Sva prava pridržana.",
     "contact": "Kontakt",
     "terms": "Uvjeti korištenja",
     "termsShort": "Uvjeti",
@@ -427,8 +428,8 @@
   "pricingPage": {
     "badge": "Cijene i planovi",
     "heroTitle": "Jednostavne cijene. Bez iznenađenja.",
-    "heroSub": "14 dana besplatno na svim planovima. Kartica potrebna za aktivaciju.",
-    "stats": [["5 min", "postavljanje profila"], ["14 dana", "besplatno probno"], ["Fiksna cijena", "bez skrivenih troškova"], ["0 €", "klijentska aplikacija"]],
+    "heroSub": "14 dana besplatno na svim planovima. Besplatno otkazivanje.",
+    "stats": [["5 min", "postavljanje profila"], ["14 dana", "besplatno"], ["Fiksna cijena", "bez skrivenih troškova"], ["0 €", "klijentska aplikacija"]],
     "whyTitle": "Zašto treneri biraju UnitLift",
     "whySub": "Sve što treba za profesionalan online coaching. Bez Excela, WhatsAppa i hrpe PDF-ova.",
     "partnerTitle": "Trener si? Preporuči UnitLift.",
@@ -466,7 +467,7 @@
       { "n": "03", "t": "Vodi i prati", "d": "Pišeš planove, pratiš napredak kroz check-in i komuniciraš - sve iz jednog sučelja. Organiziranje palo na minimum." }
     ],
     "ctaTitle": "Spreman? Odaberi plan.",
-    "ctaSub": "14 dana besplatno na svim planovima. Kartica potrebna za aktivaciju.",
+    "ctaSub": "14 dana besplatno na svim planovima. Besplatno otkazivanje.",
     "ctaBtn": "Pogledaj cijene →",
     "ctaNote": "Kartica potrebna za aktivaciju · Bez naplate 14 dana · Otkaži kad hoćeš",
     "bottomFaqTitle": "Još pitanja prije nego kreneš",
@@ -516,7 +517,7 @@
       "Plan prehrane i makronutrijenti u UnitLift aplikaciji za trenere",
       "Tjedni check-in klijenta - praćenje napretka u UnitLift alatu",
       "Praćenje plaćanja klijenata u UnitLift coaching platformi",
-      "",
+      "Chat s klijentima u UnitLift coaching aplikaciji",
       "Profil trenera i postavke u UnitLift online coaching aplikaciji"
     ],
     "sidebarItems": ["Dashboard", "Klijenti", "Treninzi", "Prehrana", "Check-ini", "Financije", "Chat"],
@@ -575,6 +576,7 @@
     "profileSetting3": "Plaćanje i pretplata"
   },
   "demo": {
+    "heroLink": "Rezerviraj demo",
     "ctaBtn": "Rezerviraj besplatnu prezentaciju",
     "ctaDesc": "15 minuta · bez obveze · pokazat ćemo ti kako UnitLift odgovara tvom načinu rada",
     "pageTitle": "Rezerviraj besplatnu prezentaciju",
@@ -598,5 +600,45 @@
     "errorGeneral": "Nešto je pošlo po krivu. Pokušaj ponovo.",
     "selectDate": "Najprije odaberi datum",
     "timezone": "Svi termini su u vremenskoj zoni Europe/Zagreb (CET/CEST)."
+  },
+  "reviewDot": "Recenzija {n}",
+  "trainer": {
+    "founderBadge": "⚡ Osnivač UnitLifta",
+    "badge": "UnitLift trener",
+    "about": "O treneru",
+    "specialties": "Specijalnosti",
+    "certs": "Certifikati i edukacije",
+    "contactSection": "Kontaktiraj trenera",
+    "contactIntro": "Javi se za više informacija ili dogovor oko coaching programa.",
+    "ctaTitle": "Želiš trenirati s {name}?",
+    "ctaText": "Prijavi se za coaching i ostvari svoj cilj uz strukturiran trening, individualan pristup i redovito praćenje napretka.",
+    "ctaBtn": "Prijavi se za coaching",
+    "allTrainers": "Svi treneri",
+    "quickInfo": "Brze informacije",
+    "contactSidebar": "Kontakt",
+    "footerLink": "Treneri",
+    "quickInfoExp": "Iskustvo",
+    "quickInfoAreas": "područja",
+    "founderCardBadge": "⚡ Osnivač",
+    "viewProfile": "Pogledaj profil",
+    "comingSoon": "Uskoro",
+    "listBadge": "UnitLift mreža trenera",
+    "listTitle": "Pronađi svog trenera",
+    "listSub": "Certificirani osobni treneri koji koriste UnitLift sustav - strukturiran trening, redovito praćenje i jasan napredak.",
+    "statTrainers": "trenera",
+    "statCertified": "certificirani",
+    "statInPerson": "& uživo",
+    "ctaListTitle": "Postani UnitLift trener",
+    "ctaListText": "Jesi li certificirani trener koji želi digitalizirati rad s klijentima i proširiti bazu klijenata? Javi se — predstavi se i otvori svoju prijavu.",
+    "ctaListBtn": "Kontaktiraj nas"
+  },
+  "clientApp": {
+    "badge": "Klijentska mobilna aplikacija",
+    "sub": "Što klijent vidi u aplikaciji — besplatno za iOS i Android",
+    "shots": ["Pregled", "Treninzi", "Prehrana", "Chat", "Check-in"],
+    "close": "Zatvori",
+    "prev": "Prethodna",
+    "next": "Sljedeća",
+    "imageAlt": "UnitLift klijentska aplikacija - {label}"
   }
 }

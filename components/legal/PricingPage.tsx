@@ -1,39 +1,17 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import LogoSvg from '@/components/landing/LogoSvg'
+import LegalNavbar from './LegalNavbar'
 
-const PLANS = ['starter', 'pro', 'scale'] as const
-const PRICES = [29, 59, 99]
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
+import { PLANS, PRICES } from '@/lib/pricing-config'
+
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.unitlift.com'
 
 export default function PricingPage() {
   const locale = useLocale()
   const t = useTranslations()
-  const router = useRouter()
-  const otherLocale = locale === 'hr' ? 'en' : 'hr'
-
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
-
-  const navLabels = t.raw('nav') as string[]
-  const navLinks = [
-    [t('common.navBack'), `/${locale}`],
-    [navLabels[0], `/${locale}/kako-radi`],
-    [navLabels[1], `/${locale}#funkcije`],
-    [navLabels[2], `/${locale}/cijene`],
-    [navLabels[3], `/${locale}/treneri`],
-    ['FAQ', `/${locale}/faq`],
-  ]
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   const tiers = (t.raw('tiers') as Array<{
     name: string; price: number; clients: string; desc: string; feats: string[]; btn: string
@@ -41,6 +19,8 @@ export default function PricingPage() {
     ...tier,
     popular: i === 1,
   }))
+
+  const navLabels = t.raw('nav') as string[]
 
   const baseFeats = t.raw('baseFeats') as string[]
   const advCards = t.raw('pricingPage.advCards') as Array<{ title: string; desc: string }>
@@ -58,50 +38,9 @@ export default function PricingPage() {
   const IcoLock    = <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
   const icons = [IcoCheckin, IcoPhone, IcoMoney, IcoApps, IcoChart, IcoLock]
 
-  function switchLang() {
-    try { localStorage.setItem('unitlift_locale', otherLocale) } catch {}
-    router.push(`/${otherLocale}/cijene`)
-  }
-
   return (
     <div className="legal-root">
-      {/* Navbar */}
-      <nav className={scrolled ? 'scrolled' : ''} style={{ background: scrolled ? 'rgba(10,16,36,.97)' : 'rgba(10,16,36,.9)' }}>
-        <Link href={`/${locale}`} className="nl">
-          <LogoSvg height={28} />
-          <span className="nw">UnitLift</span>
-        </Link>
-        <ul className="navlinks">
-          {navLinks.map(([label, href], i) => (
-            <li key={label}><a href={href} className={i === 0 ? 'nav-home-link' : ''}>{label}</a></li>
-          ))}
-        </ul>
-        <div className="navact">
-          <a href={`${APP_URL}/login`} className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {t('login')}
-          </a>
-          <a href={`/${locale}/cijene`} className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {t('common.tryFree')}
-          </a>
-          <button className="langbtn navlang" onClick={switchLang}>
-            {locale.toUpperCase()}
-          </button>
-          <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label={t('common.menuAria')}>
-            <span /><span /><span />
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile menu */}
-      <div className={`mobmenu${menuOpen ? ' open' : ''}`}>
-        {navLinks.map(([label, href]) => (
-          <a key={label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
-        ))}
-        <a href={`${APP_URL}/login`} onClick={() => setMenuOpen(false)}>{t('login')}</a>
-        <button className="langbtn mobc" onClick={() => { switchLang(); setMenuOpen(false) }}>
-          {t('common.langSwitchLabel')} {otherLocale.toUpperCase()}
-        </button>
-      </div>
+      <LegalNavbar switchPath="/cijene" />
 
       {/* Hero */}
       <div className="legal-hero">
@@ -140,7 +79,7 @@ export default function PricingPage() {
 
                 <div className="ptier">{tier.name}</div>
 
-                <div className="pamt">€<span>{PRICES[i]}</span><span className="psmall">/{t('common.monthSuffix')}</span></div>
+                <div className="pamt">€<span>{PRICES[PLANS[i]]}</span><span className="psmall">/{t('common.monthSuffix')}</span></div>
 
                 <div className="pper" style={{ marginBottom: '8px' }}>{tier.clients}</div>
                 {tier.desc && (
@@ -163,11 +102,8 @@ export default function PricingPage() {
             ))}
           </div>
 
-          {/* Active client note + scale overage note */}
-          <div style={{ textAlign: 'center', marginTop: '24px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-            <p style={{ color: 'var(--ls)', fontSize: '.8rem', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
-              {t('activeClientNote')}
-            </p>
+          {/* Scale overage note */}
+          <div style={{ textAlign: 'center', marginTop: '24px' }}>
             <p style={{ color: 'var(--ls)', fontSize: '.8rem', margin: 0 }}>
               {t('scaleNote')}
             </p>
@@ -188,26 +124,28 @@ export default function PricingPage() {
             <h2 style={{ fontSize: 'clamp(1.3rem,2.5vw,1.9rem)', fontWeight: 800, color: 'var(--lt)', textAlign: 'center', marginBottom: '32px', letterSpacing: '-.4px' }}>
               {t('allIncludedTitle')}
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '24px' }}>
-              {[
-                { title: t('includedCoachingTitle'), items: includedCoaching },
-                { title: t('includedClientsTitle'),  items: includedClients  },
-                { title: t('includedBusinessTitle'), items: includedBusiness },
-              ].map(col => (
-                <div key={col.title}>
-                  <p style={{ fontWeight: 700, fontSize: '.8rem', letterSpacing: '.08em', textTransform: 'uppercase', color: '#0066ff', marginBottom: '14px' }}>
-                    {col.title}
-                  </p>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    {col.items.map(item => (
-                      <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '.88rem', color: 'var(--lt)', lineHeight: 1.4 }}>
-                        <span style={{ color: '#0066ff', fontWeight: 700, flexShrink: 0 }}>✓</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(180px, 220px))', gap: '40px' }}>
+                {[
+                  { title: t('includedCoachingTitle'), items: includedCoaching },
+                  { title: t('includedClientsTitle'),  items: includedClients  },
+                  { title: t('includedBusinessTitle'), items: includedBusiness },
+                ].map(col => (
+                  <div key={col.title}>
+                    <p style={{ fontWeight: 700, fontSize: '.8rem', letterSpacing: '.08em', textTransform: 'uppercase', color: '#0066ff', marginBottom: '14px' }}>
+                      {col.title}
+                    </p>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                      {col.items.map(item => (
+                        <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '.88rem', color: 'var(--lt)', lineHeight: 1.4 }}>
+                          <span style={{ color: '#0066ff', fontWeight: 700, flexShrink: 0 }}>✓</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </div>
             <p style={{ textAlign: 'center', marginTop: '24px', fontSize: '.8rem', color: 'var(--ls)' }}>
               {t('includedExtras')}

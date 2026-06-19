@@ -33,8 +33,8 @@ export default function Hero() {
           <a href={`/${locale}#cijene`} className="btn btn-p btn-xl">
             {t('btn1')}
           </a>
-          <a href={`/${locale}/prezentacija`} className="btn btn-g btn-lg">
-            {t('demo.ctaBtn')}
+          <a href={`/${locale}/prezentacija`} className="hdemo-link">
+            {t('demo.heroLink')}
           </a>
         </div>
         <p className="hnote">{t('note')}</p>

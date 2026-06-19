@@ -9,6 +9,19 @@ const SITE_URL = process.env.NEXT_PUBLIC_APP_URL
   ? process.env.NEXT_PUBLIC_APP_URL.replace('app.', 'www.')
   : 'https://www.unitlift.com'
 
+// Simple in-memory rate limit: max 5 booking attempts per IP per minute
+const rateLimit = new Map<string, { count: number; resetAt: number }>()
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now()
+  const entry = rateLimit.get(ip)
+  if (!entry || entry.resetAt < now) {
+    rateLimit.set(ip, { count: 1, resetAt: now + 60_000 })
+    return true
+  }
+  entry.count++
+  return entry.count <= 5
+}
+
 // ─── GET /api/booking?date=YYYY-MM-DD ────────────────────────────────────────
 // Returns available time slots for a given date.
 export async function GET(req: NextRequest) {
@@ -79,6 +92,11 @@ export async function GET(req: NextRequest) {
 
 // ─── POST /api/booking ────────────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
+  const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
+  if (!checkRateLimit(ip)) {
+    return NextResponse.json({ error: 'Too many requests. Please try again in a minute.' }, { status: 429 })
+  }
+
   try {
     const body = await req.json()
     const { name, email, bookingDate, bookingTime, numClients, currentTool, message, locale } = body

@@ -1,40 +1,20 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import LogoSvg from '@/components/landing/LogoSvg'
+import LegalNavbar from './LegalNavbar'
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.unitlift.com'
 
 export default function ContactPage() {
   const locale = useLocale()
   const t = useTranslations()
-  const router = useRouter()
-  const otherLocale = locale === 'hr' ? 'en' : 'hr'
 
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [form, setForm] = useState({ name: '', email: '', topic: '', message: '' })
   const [errors, setErrors] = useState<Record<string, string>>({})
-
-  const navLabels = t.raw('nav') as string[]
-  const navLinks = [
-    [t('common.navBack'), `/${locale}`],
-    [navLabels[0], `/${locale}/kako-radi`],
-    [navLabels[1], `/${locale}#funkcije`],
-    [navLabels[2], `/${locale}/cijene`],
-    [navLabels[3], `/${locale}/treneri`],
-    ['FAQ', `/${locale}/faq`],
-  ]
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   const validate = () => {
     const e: Record<string, string> = {}
@@ -73,48 +53,9 @@ export default function ContactPage() {
 
   const topicList = t.raw('contact.topics') as string[]
 
-  function switchLang() {
-    try { localStorage.setItem('unitlift_locale', otherLocale) } catch {}
-    router.push(`/${otherLocale}/kontakt`)
-  }
-
   return (
     <div className="legal-root">
-      {/* Navbar */}
-      <nav className={scrolled ? 'scrolled' : ''}>
-        <Link href={`/${locale}`} className="nl">
-          <LogoSvg height={28} />
-          <span className="nw">UnitLift</span>
-        </Link>
-        <ul className="navlinks">
-          {navLinks.map(([label, href], i) => (
-            <li key={label}><a href={href} className={i === 0 ? 'nav-home-link' : ''}>{label}</a></li>
-          ))}
-        </ul>
-        <div className="navact">
-          <button className="langbtn navlang" onClick={switchLang}>
-            {locale.toUpperCase()}
-          </button>
-          <a href={`${APP_URL}/login`} className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {t('login')}
-          </a>
-          <a href={`/${locale}/cijene`} className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {t('common.tryFree')}
-          </a>
-          <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label={t('common.menuAria')}>
-            <span /><span /><span />
-          </button>
-        </div>
-      </nav>
-
-      <div className={`mobmenu${menuOpen ? ' open' : ''}`}>
-        {navLinks.map(([label, href]) => (
-          <a key={label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
-        ))}
-        <button className="langbtn mobc" onClick={() => { switchLang(); setMenuOpen(false) }}>
-          {t('common.langSwitchLabel')} {otherLocale.toUpperCase()}
-        </button>
-      </div>
+      <LegalNavbar switchPath="/kontakt" />
 
       {/* Hero */}
       <div className="legal-hero">
@@ -175,7 +116,7 @@ export default function ContactPage() {
                     <input
                       className={`cf-input${errors.email ? ' error' : ''}`}
                       type="email"
-                      placeholder="marko@email.com"
+                      placeholder={locale === 'en' ? 'john@example.com' : 'marko@email.com'}
                       value={form.email}
                       onChange={e => set('email', e.target.value)}
                     />

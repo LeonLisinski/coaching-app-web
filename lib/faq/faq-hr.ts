@@ -67,7 +67,7 @@ export const faqHr: FAQData = {
         },
         {
           q: 'Mogu li imati vlastiti branding?',
-          a: 'Da, branding je dostupan na Pro i Scale planu. U postavkama dodaš logo i odabereš primarne boje. Klijenti vide tvoj brand u aplikaciji umjesto UnitLifta.',
+          a: 'Da, branding je dostupan na svim planovima. U postavkama dodaš logo i odabereš primarne boje. Klijenti vide tvoj brand u aplikaciji umjesto UnitLifta.',
         },
         {
           q: 'Kako funkcioniraju check-ini?',

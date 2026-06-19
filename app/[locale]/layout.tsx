@@ -20,7 +20,7 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 export const metadata: Metadata = {
   title: {
     default: 'Aplikacija za osobne trenere i online klijente | UnitLift',
-    template: '%s',
+    template: '%s | UnitLift',
   },
   description:
     'Aplikacija za osobne trenere s online klijentima: planovi treninga i prehrane, tjedni check-in, chat i plaćanja na jednom ekranu. Postavi za 5 minuta - 14 dana besplatno.',

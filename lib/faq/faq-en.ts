@@ -67,7 +67,7 @@ export const faqEn: FAQData = {
         },
         {
           q: 'Can I use my own branding?',
-          a: 'Yes, branding is available on Pro and Scale. In settings, add your logo and pick primary colors. Clients see your brand inside the app instead of UnitLift\'s.',
+          a: 'Yes, branding is available on all plans. In settings, add your logo and pick primary colors. Clients see your brand inside the app instead of UnitLift\'s.',
         },
         {
           q: 'How do check-ins work?',

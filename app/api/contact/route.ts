@@ -29,7 +29,7 @@ function escapeHtml(str: string): string {
 export async function POST(req: NextRequest) {
   const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
   if (!checkRateLimit(ip)) {
-    return NextResponse.json({ error: 'Previše zahtjeva. Pokušaj za minutu.' }, { status: 429 })
+    return NextResponse.json({ error: 'Too many requests. Please try again in a minute.' }, { status: 429 })
   }
 
   try {

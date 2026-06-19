@@ -3,8 +3,7 @@
 import { useTranslations, useLocale } from 'next-intl'
 import LogoSvg from './LogoSvg'
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
-
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.unitlift.com'
 
 function ObfuscatedEmail() {
   const user = 'info'
@@ -12,9 +11,13 @@ function ObfuscatedEmail() {
   return <a href={`mailto:${user}@${domain}`}>{user}@{domain}</a>
 }
 
-function resolveAppUrl(href: string): string {
+function resolveLink(href: string, locale: string): string {
   if (!href) return href
   if (href.startsWith('__APP_URL__')) return `${APP_URL}${href.replace('__APP_URL__', '')}`
+  if (href.startsWith('__HOME__')) {
+    const homeBase = locale === 'hr' ? '' : `/${locale}`
+    return `${homeBase}${href.replace('__HOME__', '')}`
+  }
   return href
 }
 
@@ -83,7 +86,7 @@ export default function Footer() {
               <ul className="fls">
                 {col.links.map(([label, href], j) => (
                   <li key={j}>
-                    <a href={resolveAppUrl(href)}>{label}</a>
+                    <a href={resolveLink(href, locale)}>{label}</a>
                   </li>
                 ))}
               </ul>

@@ -123,6 +123,7 @@ export default function Testimonials() {
             className="stit"
             dangerouslySetInnerHTML={{ __html: t.raw('testTit') as string }}
           />
+          <p className="testimonials-subtitle">{t('testSubtitle')}</p>
         </div>
       </div>
 
@@ -192,7 +193,7 @@ export default function Testimonials() {
                   key={d}
                   className={`tcar-dot${dotActive === d ? ' active' : ''}`}
                   onClick={() => go(d + CLONES)}
-                  aria-label={`Recenzija ${d + 1}`}
+                  aria-label={t('reviewDot', { n: d + 1 })}
                 />
               ))}
             </div>

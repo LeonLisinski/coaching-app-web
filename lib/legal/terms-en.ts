@@ -1,11 +1,11 @@
 import type { LegalDocument } from './types'
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'App URL is not configured'
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.unitlift.com'
 
 export const termsEn: LegalDocument = {
   title: 'Terms of Service',
-  lastUpdated: 'March 18, 2025',
-  version: '1.0',
+  lastUpdated: 'May 26, 2026',
+  version: '1.1',
   intro: 'These Terms of Service govern your use of the UnitLift application. Please read them carefully.',
   callout: 'In short: by using UnitLift you agree to these terms, how we bill you and how you use the service. Cancel anytime - details below.',
   sections: [

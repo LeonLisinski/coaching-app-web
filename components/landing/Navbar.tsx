@@ -3,14 +3,21 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
-import { useRouter, usePathname } from 'next/navigation'
+import { useRouter, usePathname } from '@/i18n/navigation'
 import LogoSvg from './LogoSvg'
+import { routing } from '@/i18n/routing'
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.unitlift.com'
+
+/** Returns a locale-aware path, omitting the prefix for the default locale. */
+function localePath(locale: string, path: string) {
+  return locale === routing.defaultLocale ? path : `/${locale}${path}`
+}
 
 export default function Navbar() {
   const locale = useLocale()
   const t = useTranslations()
+  // next-intl's router/pathname strip the locale segment automatically
   const router = useRouter()
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
@@ -22,14 +29,12 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Restore preferred locale on first load (intentionally runs once on mount)
+  // Restore preferred locale on first mount
   useEffect(() => {
     try {
       const saved = localStorage.getItem('unitlift_locale')
       if (saved && saved !== locale) {
-        const segments = pathname.split('/')
-        segments[1] = saved
-        router.replace(segments.join('/') || '/')
+        router.replace(pathname, { locale: saved })
       }
     } catch {}
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
@@ -37,21 +42,22 @@ export default function Navbar() {
   function toggleLang() {
     const next = locale === 'hr' ? 'en' : 'hr'
     try { localStorage.setItem('unitlift_locale', next) } catch {}
-    const segments = pathname.split('/')
-    segments[1] = next
-    router.push(segments.join('/') || '/')
+    router.push(pathname, { locale: next })
   }
 
   const navLabels = t.raw('nav') as string[]
+  const homeHref = localePath(locale, '/')
+
   const navItems = [
-    { label: navLabels[0], href: `/${locale}/kako-radi` },
-    { label: navLabels[1], href: '#funkcije' },
-    { label: navLabels[2], href: `/${locale}/cijene` },
-    { label: navLabels[3], href: `/${locale}/treneri` },
-    { label: navLabels[4], href: `/${locale}/faq` },
+    { label: navLabels[0], href: localePath(locale, '/kako-radi') },
+    { label: navLabels[1], href: `${homeHref}#funkcije` },
+    { label: navLabels[2], href: localePath(locale, '/cijene') },
+    { label: navLabels[3], href: localePath(locale, '/treneri') },
+    { label: navLabels[4], href: localePath(locale, '/faq') },
   ]
 
   const otherLocale = locale === 'hr' ? 'en' : 'hr'
+  const cijeneHref = `${homeHref}#cijene`
 
   return (
     <>
@@ -61,7 +67,7 @@ export default function Navbar() {
           background: scrolled ? 'rgba(10,16,36,.97)' : 'rgba(10,16,36,.9)',
         }}
       >
-        <Link href={`/${locale}`} className="nl">
+        <Link href={homeHref} className="nl">
           <LogoSvg height={26} />
           <span className="nw">UnitLift</span>
         </Link>
@@ -79,7 +85,7 @@ export default function Navbar() {
             {t('login')}
           </a>
           <a
-            href={`/${locale}#cijene`}
+            href={cijeneHref}
             className="btn btn-p"
             aria-label={t('common.tryFreeAria')}
           >
@@ -113,7 +119,7 @@ export default function Navbar() {
           {t('login')}
         </a>
         <a
-          href={`/${locale}#cijene`}
+          href={cijeneHref}
           className="btn btn-p btn-fw mobc"
           onClick={() => setMenuOpen(false)}
           aria-label={t('common.tryFreeMenuAria')}

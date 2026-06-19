@@ -25,8 +25,8 @@ export const blogPostsHr2026Rest: BlogPost[] = [
     content: [
       { type: 'paragraph', text: 'Online osobni trener radi s klijentima preko mobitela i poruka. Ovaj tekst je za trenere koji tek počinju i žele postaviti rad čisto od prvog dana.' },
       { type: 'paragraph', text: 'Prolazimo što ti zaista treba na startu, kako dobiti prve klijente i koje alate koristiti. Bez teorije, samo praktični koraci.' },
-      { type: 'internal-link', text: '→ Devet taktika za veću bazu klijenata', href: '/hr/blog/kako-povecati-bazu-klijenata' },
-      { type: 'internal-link', text: '→ Kako postaviti cijene bez podcjenjivanja', href: '/hr/blog/kako-postaviti-cijene' },
+      { type: 'internal-link', text: '→ Devet taktika za veću bazu klijenata', href: '/blog/kako-povecati-bazu-klijenata' },
+      { type: 'internal-link', text: '→ Kako postaviti cijene bez podcjenjivanja', href: '/blog/kako-postaviti-cijene' },
 
       { type: 'heading', text: 'Što trebaš prije prvog klijenta' },
       { type: 'list', items: [
@@ -45,7 +45,7 @@ export const blogPostsHr2026Rest: BlogPost[] = [
         'Traži dva ili tri klijenta za testiranje, uz manju cijenu',
         'Nakon mjesec dana traži preporuke i kratki testimonijal',
       ]},
-      { type: 'internal-link', text: '→ Onboarding: što s novim klijentom u prvom tjednu', href: '/hr/blog/onboarding-novi-klijent' },
+      { type: 'internal-link', text: '→ Onboarding: što s novim klijentom u prvom tjednu', href: '/blog/onboarding-novi-klijent' },
 
       { type: 'heading', text: 'Minimalni alati za start' },
       { type: 'list', items: [
@@ -58,7 +58,7 @@ export const blogPostsHr2026Rest: BlogPost[] = [
 
       { type: 'heading', text: 'Kad posao postane ozbiljan' },
       { type: 'paragraph', text: 'Kod tri ili više klijenata više nije “hobi navečer”. Tada izračunaj koliko vremena trošiš na jednog klijenta i koliko ti ostaje za dolazak novih ljudi.' },
-      { type: 'internal-link', text: '→ Koliko zarađivati kao online trener', href: '/hr/blog/kako-zaraditi-vise-kao-online-fitness-trener' },
+      { type: 'internal-link', text: '→ Koliko zarađivati kao online trener', href: '/blog/kako-zaraditi-vise-kao-online-fitness-trener' },
 
       { type: 'heading', text: 'Česta pitanja' },
       { type: 'subheading', text: 'Moram li odmah imati stranicu i logo?' },
@@ -92,8 +92,8 @@ export const blogPostsHr2026Rest: BlogPost[] = [
     content: [
       { type: 'paragraph', text: 'Check-in je kratak pregled napretka klijenta jednom tjedno. Klijent javlja što je odradio, kako se osjeća i ima li problema.' },
       { type: 'paragraph', text: 'Bez check-ina online coaching postaje slanje planova u prazno. S dobrim check-inom vidiš trendove i reagiraš na vrijeme.' },
-      { type: 'internal-link', text: '→ Pet savjeta za bolje check-in razgovore', href: '/hr/blog/savjeti-za-check-in-razgovore' },
-      { type: 'internal-link', text: '→ Kako zadržati klijenta dulje od tri mjeseca', href: '/hr/blog/kako-zadrzati-online-klijenta' },
+      { type: 'internal-link', text: '→ Pet savjeta za bolje check-in razgovore', href: '/blog/savjeti-za-check-in-razgovore' },
+      { type: 'internal-link', text: '→ Kako zadržati klijenta dulje od tri mjeseca', href: '/blog/kako-zadrzati-online-klijenta' },
 
       { type: 'heading', text: 'Što check-in treba sadržavati' },
       { type: 'list', items: [
@@ -116,11 +116,11 @@ export const blogPostsHr2026Rest: BlogPost[] = [
         'Potvrdi plan za idući tjedan ili predloži promjenu',
         'Postavi jedno kratko pitanje ako nešto nije jasno',
       ]},
-      { type: 'internal-link', text: '→ Kako planovi treninga izgledaju za online klijente', href: '/hr/blog/planovi-treninga-online-klijenti' },
+      { type: 'internal-link', text: '→ Kako planovi treninga izgledaju za online klijente', href: '/blog/planovi-treninga-online-klijenti' },
 
       { type: 'heading', text: 'Check-in i naplata idu zajedno' },
       { type: 'paragraph', text: 'Ako klijent plaća mjesec unaprijed, a check-in ne šalje tjedno, teško je ići u dublje promjene plana. Veži check-in uz paket.' },
-      { type: 'internal-link', text: '→ Kako organizirati 20 online klijenata', href: '/hr/blog/kako-organizirati-online-klijente' },
+      { type: 'internal-link', text: '→ Kako organizirati 20 online klijenata', href: '/blog/kako-organizirati-online-klijente' },
 
       { type: 'heading', text: 'Česta pitanja' },
       { type: 'subheading', text: 'Je li check-in isto što i pitanje “kako si”?' },
@@ -154,8 +154,8 @@ export const blogPostsHr2026Rest: BlogPost[] = [
     content: [
       { type: 'paragraph', text: 'Dobar online plan treninga klijent može otvoriti iz mobitela i odmah znati što raditi. Bez dugih tablica i bez traženja po chatu.' },
       { type: 'paragraph', text: 'U ovom tekstu prolazimo što plan treba sadržavati, kako ga poslati i kada ga mijenjati.' },
-      { type: 'internal-link', text: '→ Što je check-in i kako ga povezati s planom', href: '/hr/blog/sto-je-check-in-online-coaching' },
-      { type: 'internal-link', text: '→ Koliko vremena odlazi na 10, 20 i 30 klijenata', href: '/hr/blog/koliko-vremena-za-online-klijente' },
+      { type: 'internal-link', text: '→ Što je check-in i kako ga povezati s planom', href: '/blog/sto-je-check-in-online-coaching' },
+      { type: 'internal-link', text: '→ Koliko vremena odlazi na 10, 20 i 30 klijenata', href: '/blog/koliko-vremena-za-online-klijente' },
 
       { type: 'heading', text: 'Što plan za jedan tjedan treba sadržavati' },
       { type: 'list', items: [
@@ -170,7 +170,7 @@ export const blogPostsHr2026Rest: BlogPost[] = [
       { type: 'heading', text: 'Kada mijenjati plan' },
       { type: 'paragraph', text: 'Ako dva check-ina kažu da klijent ne stigne, smanji volumen. Ako tri tjedna ide glatko, povećaj opterećenje.' },
       { type: 'paragraph', text: 'Velike promjene svakih šest tjedana, male korekcije svaki tjedan. Izbjegavaj slanje novog bloka svakog ponedjeljka.' },
-      { type: 'internal-link', text: '→ Kako zadržati klijenta kad se život upleće', href: '/hr/blog/kako-zadrzati-online-klijenta' },
+      { type: 'internal-link', text: '→ Kako zadržati klijenta kad se život upleće', href: '/blog/kako-zadrzati-online-klijenta' },
 
       { type: 'heading', text: 'Kako predati plan klijentu' },
       { type: 'paragraph', text: 'Najgore je plan slati kao PDF preko WhatsApp-a. Klijent ga izgubi u razgovoru i opet pita gdje je.' },
@@ -180,7 +180,7 @@ export const blogPostsHr2026Rest: BlogPost[] = [
         'Video ili slika za vježbu koju klijent prvi put radi',
         'Napomena kad klijent ne može trenirati tri puta tjedno',
       ]},
-      { type: 'internal-link', text: '→ Kako organizirati online klijente u jedan sustav', href: '/hr/blog/kako-organizirati-online-klijente' },
+      { type: 'internal-link', text: '→ Kako organizirati online klijente u jedan sustav', href: '/blog/kako-organizirati-online-klijente' },
 
       { type: 'heading', text: 'Česta pitanja' },
       { type: 'subheading', text: 'Trebam li video za svaku vježbu?' },
@@ -214,8 +214,8 @@ export const blogPostsHr2026Rest: BlogPost[] = [
     content: [
       { type: 'paragraph', text: 'Većina klijenata ne odustaje zbog lošeg plana. Odustaju jer nemaju osjećaj da napreduju i jer ne vide gdje ide sljedećih mjesec dana.' },
       { type: 'paragraph', text: 'U ovom tekstu prolazimo zašto se to događa u drugom i trećem mjesecu i što napraviti da klijent ostane šest ili dvanaest mjeseci.' },
-      { type: 'internal-link', text: '→ Kako postaviti check-in koji daje pravu sliku', href: '/hr/blog/sto-je-check-in-online-coaching' },
-      { type: 'internal-link', text: '→ Pet savjeta za bolje check-in razgovore', href: '/hr/blog/savjeti-za-check-in-razgovore' },
+      { type: 'internal-link', text: '→ Kako postaviti check-in koji daje pravu sliku', href: '/blog/sto-je-check-in-online-coaching' },
+      { type: 'internal-link', text: '→ Pet savjeta za bolje check-in razgovore', href: '/blog/savjeti-za-check-in-razgovore' },
 
       { type: 'heading', text: 'Što se događa u drugom i trećem mjesecu' },
       { type: 'paragraph', text: 'Prvi mjesec klijent je pun motivacije. Drugi mjesec nastupa rutina. Treći mjesec traži jasno gdje ide sljedeća faza.' },
@@ -270,8 +270,8 @@ export const blogPostsHr2026Rest: BlogPost[] = [
     content: [
       { type: 'paragraph', text: 'Koliko sati tjedno troši prosječan online trener? Ovisi o broju klijenata, ali i o sustavu koji koristi.' },
       { type: 'paragraph', text: 'U ovom tekstu dajemo realne brojeve za 10, 20 i 30 klijenata. Brojevi su iz razgovora s trenerima koje pratimo.' },
-      { type: 'internal-link', text: '→ Kako organizirati 20 online klijenata', href: '/hr/blog/kako-organizirati-online-klijente' },
-      { type: 'internal-link', text: '→ Što automatizirati u online coachingu', href: '/hr/blog/automatizacija-u-coachingu' },
+      { type: 'internal-link', text: '→ Kako organizirati 20 online klijenata', href: '/blog/kako-organizirati-online-klijente' },
+      { type: 'internal-link', text: '→ Što automatizirati u online coachingu', href: '/blog/automatizacija-u-coachingu' },
 
       { type: 'heading', text: 'Gdje vrijeme zaista odlazi' },
       { type: 'list', items: [
@@ -293,7 +293,7 @@ export const blogPostsHr2026Rest: BlogPost[] = [
 
       { type: 'heading', text: 'Što radi najveću razliku' },
       { type: 'paragraph', text: 'Predlošci planova koje samo prilagodiš. Standardna pitanja za check-in. Automatski podsjetnici. Sve troje može skratiti tjedan za više od pet sati.' },
-      { type: 'internal-link', text: '→ Cijene i paketi: kako postaviti', href: '/hr/blog/kako-postaviti-cijene' },
+      { type: 'internal-link', text: '→ Cijene i paketi: kako postaviti', href: '/blog/kako-postaviti-cijene' },
 
       { type: 'heading', text: 'Kad trebaš pomoć' },
       { type: 'paragraph', text: 'Kad tjedno trošiš više od 30 sati, vrijeme je za promjenu. Prvo sustav, onda asistent. Ne obratno.' },
@@ -330,8 +330,8 @@ export const blogPostsHr2026Rest: BlogPost[] = [
     content: [
       { type: 'paragraph', text: 'Prvi tjedan s novim klijentom odlučuje o sljedećih šest mjeseci. Ako klijent odmah zna pravila igre, ostaje dulje.' },
       { type: 'paragraph', text: 'U ovom tekstu prolazimo što napraviti dan po dan: upitnik, plan, prvi check-in i kako postaviti očekivanja.' },
-      { type: 'internal-link', text: '→ Što je check-in i kako ga postaviti', href: '/hr/blog/sto-je-check-in-online-coaching' },
-      { type: 'internal-link', text: '→ Kako planovi treninga izgledaju online', href: '/hr/blog/planovi-treninga-online-klijenti' },
+      { type: 'internal-link', text: '→ Što je check-in i kako ga postaviti', href: '/blog/sto-je-check-in-online-coaching' },
+      { type: 'internal-link', text: '→ Kako planovi treninga izgledaju online', href: '/blog/planovi-treninga-online-klijenti' },
 
       { type: 'heading', text: 'Dan 0: pristup i pravila' },
       { type: 'list', items: [
@@ -357,7 +357,7 @@ export const blogPostsHr2026Rest: BlogPost[] = [
 
       { type: 'heading', text: 'Kraj prvog tjedna: mali check-in' },
       { type: 'paragraph', text: 'Pet pitanja koje ćeš ponavljati svaki tjedan. Klijent se navikne, ti dobiješ jasnu sliku kako mu ide.' },
-      { type: 'internal-link', text: '→ Kad klijent posustane: kako ga zadržati', href: '/hr/blog/kako-zadrzati-online-klijenta' },
+      { type: 'internal-link', text: '→ Kad klijent posustane: kako ga zadržati', href: '/blog/kako-zadrzati-online-klijenta' },
 
       { type: 'heading', text: 'Česta pitanja' },
       { type: 'subheading', text: 'Koliko dug upitnik?' },

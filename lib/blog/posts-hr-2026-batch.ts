@@ -30,7 +30,7 @@ export const blogPostsHr2026: BlogPost[] = [
     content: [
       { type: 'paragraph', text: 'MyPTHub je jedan od poznatijih alata za online trenere. Ako radiš s klijentima u Hrvatskoj, ključno pitanje je jedno: vrijedi li cijena i kompleksnost za ono što ti zapravo trebaš.' },
       { type: 'paragraph', text: 'U ovom tekstu prolazimo što MyPTHub radi dobro, gdje zapinje kod nas i kako izgleda hrvatska alternativa. Ista logika vrijedi i za Trainerize pa možeš usporediti oba članka.' },
-      { type: 'internal-link', text: '→ Trainerize alternative za trenere u Hrvatskoj', href: '/hr/blog/trainerize-alternative-hrvatska' },
+      { type: 'internal-link', text: '→ Trainerize alternative za trenere u Hrvatskoj', href: '/blog/trainerize-alternative-hrvatska' },
 
       { type: 'heading', text: 'Što MyPTHub radi dobro' },
       { type: 'paragraph', text: 'MyPTHub ima veliku bazu vježbi, video biblioteku i pakete. Integracije, izvještaji i grupni treninzi rade na razini velike platforme.' },
@@ -52,7 +52,7 @@ export const blogPostsHr2026: BlogPost[] = [
         'Treba li tvom klijentu sučelje na hrvatskom',
         'Koliko od ponuđenih funkcija zaista koristiš',
       ]},
-      { type: 'internal-link', text: '→ TrueCoach alternative za online trenere', href: '/hr/blog/truecoach-alternative' },
+      { type: 'internal-link', text: '→ TrueCoach alternative za online trenere', href: '/blog/truecoach-alternative' },
 
       { type: 'heading', text: 'Kad ima smisla hrvatska aplikacija' },
       { type: 'paragraph', text: 'Ako vodiš do 50 klijenata, UnitLift ti daje planove, check-in, poruke i plaćanja na jednom mjestu. Aplikacija je na hrvatskom, cijene su u eurima, podrška odgovara na hrvatskom.' },
@@ -64,7 +64,7 @@ export const blogPostsHr2026: BlogPost[] = [
         'Otvori jednu usporedbu (TrueCoach ili Trainerize) za širi pogled',
         'Probaj UnitLift 14 dana s dva stvarna klijenta',
       ]},
-      { type: 'internal-link', text: '→ Zašto Excel nije dovoljan za online klijente', href: '/hr/blog/zasto-excel-nije-dovoljan' },
+      { type: 'internal-link', text: '→ Zašto Excel nije dovoljan za online klijente', href: '/blog/zasto-excel-nije-dovoljan' },
 
       { type: 'heading', text: 'Česta pitanja' },
       { type: 'subheading', text: 'Je li MyPTHub na hrvatskom?' },
@@ -98,8 +98,8 @@ export const blogPostsHr2026: BlogPost[] = [
     content: [
       { type: 'paragraph', text: 'TrueCoach je popularan kod trenera s 10 do 50 klijenata. Daje čist prikaz vježbi i videa, ali prehrana, uplate i check-in često žive u drugim alatima.' },
       { type: 'paragraph', text: 'Ako trošiš sate tjedno prebacujući između aplikacija, vrijedi pogledati alternative. U ovom tekstu uspoređujemo TrueCoach s hrvatskom aplikacijom UnitLift.' },
-      { type: 'internal-link', text: '→ MyPTHub usporedba za trenere u Hrvatskoj', href: '/hr/blog/mypthub-alternative-hrvatska' },
-      { type: 'internal-link', text: '→ Zašto Excel nije dovoljan kad broj klijenata raste', href: '/hr/blog/zasto-excel-nije-dovoljan' },
+      { type: 'internal-link', text: '→ MyPTHub usporedba za trenere u Hrvatskoj', href: '/blog/mypthub-alternative-hrvatska' },
+      { type: 'internal-link', text: '→ Zašto Excel nije dovoljan kad broj klijenata raste', href: '/blog/zasto-excel-nije-dovoljan' },
 
       { type: 'heading', text: 'Što TrueCoach radi dobro' },
       { type: 'paragraph', text: 'TrueCoach ima čisto sučelje za planove treninga i video vježbe. Klijenti lako prate trening iz mobitela.' },
@@ -121,7 +121,7 @@ export const blogPostsHr2026: BlogPost[] = [
       { type: 'heading', text: 'Kad ima smisla hrvatska aplikacija' },
       { type: 'paragraph', text: 'UnitLift drži plan treninga, prehranu, check-in, poruke i plaćanja na jednom mjestu. Aplikacija je na hrvatskom, klijent i ti gledate isti raspored.' },
       { type: 'paragraph', text: 'Klijent dobije besplatnu mobilnu aplikaciju. Otvara plan treninga, šalje check-in i piše ti bez instalacije dodatnih alata.' },
-      { type: 'internal-link', text: '→ Online coaching platforma - što trener zapravo kupuje', href: '/hr/blog/online-coaching-treneri-platforma' },
+      { type: 'internal-link', text: '→ Online coaching platforma - što trener zapravo kupuje', href: '/blog/online-coaching-treneri-platforma' },
 
       { type: 'heading', text: 'Što napraviti u 14 dana testa' },
       { type: 'list', items: [

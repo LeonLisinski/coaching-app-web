@@ -1,14 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import LogoSvg from '@/components/landing/LogoSvg'
+import LegalNavbar from './LegalNavbar'
 import type { BlogPost } from '@/lib/blog/types'
 import { getAugmentedContent, getResolvedCta } from '@/lib/blog/augment-post'
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.unitlift.com'
 
 const categoryColors: Record<string, string> = {
   vodic: '#2233ee',
@@ -35,11 +34,6 @@ interface Props {
 export default function BlogPostPage({ post, relatedPosts }: Props) {
   const locale = useLocale()
   const t = useTranslations()
-  const router = useRouter()
-  const otherLocale = locale === 'hr' ? 'en' : 'hr'
-
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
 
   const catColor = categoryColors[post.categorySlug] || '#2233ee'
 
@@ -49,64 +43,10 @@ export default function BlogPostPage({ post, relatedPosts }: Props) {
   const ctaBtn = cta.btn.trim() ? cta.btn : t('blogPage.ctaBtn')
   const ctaHref = cta.href
 
-  const navLabels = t.raw('nav') as string[]
-  const navLinks = [
-    [t('common.navBack'), `/${locale}`],
-    [navLabels[0], `/${locale}/kako-radi`],
-    [navLabels[1], `/${locale}#funkcije`],
-    [navLabels[2], `/${locale}/cijene`],
-    [navLabels[3], `/${locale}/treneri`],
-    ['FAQ', `/${locale}/faq`],
-  ]
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  function switchLang() {
-    try { localStorage.setItem('unitlift_locale', otherLocale) } catch {}
-    router.push(`/${otherLocale}/blog`)
-  }
 
   return (
     <div className="legal-root">
-      {/* Navbar */}
-      <nav className={scrolled ? 'scrolled' : ''}>
-        <Link href={`/${locale}`} className="nl">
-          <LogoSvg height={28} />
-          <span className="nw">UnitLift</span>
-        </Link>
-        <ul className="navlinks">
-          {navLinks.map(([label, href], i) => (
-            <li key={label}><a href={href} className={i === 0 ? 'nav-home-link' : ''}>{label}</a></li>
-          ))}
-        </ul>
-        <div className="navact">
-          <button className="langbtn navlang" onClick={switchLang}>
-            {locale.toUpperCase()}
-          </button>
-          <a href={`${APP_URL}/login`} className="btn btn-g" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {t('login')}
-          </a>
-          <a href={`/${locale}/cijene`} className="btn btn-p" style={{ fontSize: '.82rem', padding: '7px 16px' }}>
-            {t('common.tryFree')}
-          </a>
-          <button className="hburg" onClick={() => setMenuOpen(o => !o)} aria-label={t('common.menuAria')}>
-            <span /><span /><span />
-          </button>
-        </div>
-      </nav>
-
-      <div className={`mobmenu${menuOpen ? ' open' : ''}`}>
-        {navLinks.map(([label, href]) => (
-          <a key={label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
-        ))}
-        <button className="langbtn mobc" onClick={() => { switchLang(); setMenuOpen(false) }}>
-          {t('common.langSwitchLabel')} {otherLocale.toUpperCase()}
-        </button>
-      </div>
+      <LegalNavbar switchPath="/blog" />
 
       {/* Hero */}
       <div className="legal-hero blog-post-hero" style={{ '--post-color': catColor } as React.CSSProperties}>

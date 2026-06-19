@@ -35,7 +35,7 @@ const activeTrainers: Trainer[] = [
       { label: 'Fokus', value: 'Snaga, mišićna masa i tjelesna kompozicija' },
     ],
     contactIntro: 'Zanima te online coaching ili želiš saznati odgovara li moj pristup tvom cilju? Javi se putem Instagrama ili e-maila i dogovorit ćemo kratki razgovor.',
-    instagram: 'https://www.instagram.com/unitlift.app/',
+    instagram: 'https://www.instagram.com/leonlisinski/',
     email: 'leon@unitlift.com',
     coachingLink: 'https://app.unitlift.com/leonlisinski/prijava',
     en: {
@@ -101,8 +101,7 @@ const activeTrainers: Trainer[] = [
       { label: 'Fokus', value: 'Snaga, pokret i sigurna progresija' },
     ],
     contactIntro: 'Želiš strukturiran trening, siguran napredak i program prilagođen svom cilju? Javi se putem Instagrama ili e-maila i dogovori početni razgovor.',
-    instagram: 'https://www.instagram.com/',
-    email: 'filip@unitlift.com',
+    instagram: 'https://www.instagram.com/_pusicc/',
     coachingLink: 'https://app.unitlift.com/filippusic/prijava',
     en: {
       title: 'Personal trainer & physiotherapy student',
@@ -168,8 +167,7 @@ const activeTrainers: Trainer[] = [
       { label: 'Fokus', value: 'Mišićna masa i estetska transformacija' },
     ],
     contactIntro: 'Želiš izgraditi više mišićne mase, poboljšati formu ili ozbiljnije pristupiti svom treningu? Javi se putem Instagrama ili e-maila i dogovori početni razgovor.',
-    instagram: 'https://www.instagram.com/',
-    email: 'borna@unitlift.com',
+    instagram: 'https://www.instagram.com/kovacevic.borna_/',
     coachingLink: 'https://app.unitlift.com/bornakovacevic/prijava',
     en: {
       title: 'Personal trainer & bodybuilder',

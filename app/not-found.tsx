@@ -15,7 +15,7 @@ export default function RootNotFound() {
           <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.55)', maxWidth: 400, lineHeight: 1.6, margin: '0 0 36px' }}>
             Vrati se na početnu stranicu.
           </p>
-          <Link href="/hr" style={{
+          <Link href="/" style={{
             background: '#0066FF', color: '#fff', fontWeight: 700,
             fontSize: '0.95rem', padding: '13px 28px', borderRadius: 12, textDecoration: 'none',
           }}>

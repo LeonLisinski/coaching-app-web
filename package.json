@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "prebuild": "node scripts/generate-icons.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -15,8 +16,7 @@
     "next-intl": "^4.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "resend": "^6.9.4",
-    "stripe": "^20.4.1"
+    "resend": "^6.9.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
