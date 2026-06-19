@@ -7,8 +7,6 @@ import LogoSvg from '@/components/landing/LogoSvg'
 import LegalNavbar from './LegalNavbar'
 import type { LegalDocument } from '@/lib/legal/types'
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.unitlift.com'
-
 interface LegalPageProps {
   doc: LegalDocument
   docType: 'terms' | 'privacy'

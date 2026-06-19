@@ -5,10 +5,6 @@ import {
   sendAdminNewBookingEmail,
 } from '@/lib/demo-emails'
 
-const SITE_URL = process.env.NEXT_PUBLIC_APP_URL
-  ? process.env.NEXT_PUBLIC_APP_URL.replace('app.', 'www.')
-  : 'https://www.unitlift.com'
-
 // Simple in-memory rate limit: max 5 booking attempts per IP per minute
 const rateLimit = new Map<string, { count: number; resetAt: number }>()
 function checkRateLimit(ip: string): boolean {

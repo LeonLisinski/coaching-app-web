@@ -6,8 +6,6 @@ import Link from 'next/link'
 import LogoSvg from '@/components/landing/LogoSvg'
 import LegalNavbar from './LegalNavbar'
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.unitlift.com'
-
 // ─── Calendar helpers ────────────────────────────────────────────────────────
 function padDate(n: number) { return String(n).padStart(2, '0') }
 function toDateStr(y: number, m: number, d: number) {

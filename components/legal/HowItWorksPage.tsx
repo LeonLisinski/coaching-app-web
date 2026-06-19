@@ -7,8 +7,6 @@ import dynamic from 'next/dynamic'
 import LogoSvg from '@/components/landing/LogoSvg'
 import LegalNavbar from './LegalNavbar'
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.unitlift.com'
-
 const DashboardStrip = dynamic(() => import('@/components/landing/DashboardStrip'))
 const ClientAppStrip = dynamic(() => import('@/components/landing/ClientAppStrip'))
 

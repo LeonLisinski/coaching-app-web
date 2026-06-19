@@ -7,8 +7,6 @@ import LogoSvg from '@/components/landing/LogoSvg'
 import LegalNavbar from './LegalNavbar'
 import type { BlogPost } from '@/lib/blog/types'
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.unitlift.com'
-
 const categoryColors: Record<string, string> = {
   vodic: '#2233ee',
   guide: '#2233ee',

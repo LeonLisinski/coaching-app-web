@@ -8,8 +8,6 @@ import LegalNavbar from './LegalNavbar'
 import type { Trainer } from '@/lib/trainers/types'
 import { resolveTrainer } from '@/lib/trainers/types'
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.unitlift.com'
-
 function TrainerCard({ trainer, locale, tr }: { trainer: Trainer; locale: string; tr: ReturnType<typeof useTranslations> }) {
   const imgPos = trainer.imagePosition ?? 'center center'
   return (

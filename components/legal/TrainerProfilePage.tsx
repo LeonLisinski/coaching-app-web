@@ -8,8 +8,6 @@ import LegalNavbar from './LegalNavbar'
 import type { Trainer } from '@/lib/trainers/types'
 import { resolveTrainer } from '@/lib/trainers/types'
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.unitlift.com'
-
 const InstagramIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -38,9 +36,9 @@ export default function TrainerProfilePage({ trainer: trainerRaw }: { trainer: T
 
   const trainer = resolveTrainer(trainerRaw, locale)
 
-  const ctaName = locale === 'en'
+  const ctaName = (locale === 'en'
     ? (trainerRaw.firstName ?? trainerRaw.name.split(' ')[0])
-    : trainerRaw.instrumentalName
+    : trainerRaw.instrumentalName) ?? trainerRaw.name
 
   const quickInfo = trainer.quickInfo ?? [
     ...(trainer.certifications?.length ? [{ label: tr('quickInfoExp'), value: trainer.certifications[0] }] : []),

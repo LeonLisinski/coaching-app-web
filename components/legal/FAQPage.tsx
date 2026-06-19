@@ -7,8 +7,6 @@ import LogoSvg from '@/components/landing/LogoSvg'
 import LegalNavbar from './LegalNavbar'
 import type { FAQData } from '@/lib/faq/types'
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.unitlift.com'
-
 const PlusIcon = () => (
   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
     <line x1="12" y1="5" x2="12" y2="19" />

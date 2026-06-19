@@ -6,8 +6,6 @@ import Link from 'next/link'
 import LogoSvg from '@/components/landing/LogoSvg'
 import LegalNavbar from './LegalNavbar'
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.unitlift.com'
-
 export default function ContactPage() {
   const locale = useLocale()
   const t = useTranslations()
